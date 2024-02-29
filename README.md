@@ -10,7 +10,7 @@
 
 O software tem como objetivo desenvolver atividades simuladas como recurso  metodológico para o ensino de processos industriais nos cursos técnicos e  tecnológicos. A aplicação foi desenvolvida com a linguagem de programação Java e pode ser executada em qualquer ambiente com suporte ao Java ou em navegadores com a extensão Cheerpj.
 
-## Componentes ☕️
+# Componentes ☕️
 
 <table>
   <tr>
@@ -41,8 +41,22 @@ O software tem como objetivo desenvolver atividades simuladas como recurso  meto
   </tr>
 </table>
 
-## Sumário 🔍
+# Sumário 🔍
 1. Features
 2. Como intalar e executar
 3. Exemplos
+
+## 2 - Como instalar e executar
+
+**Aviso!** Certifique-se te ter uma versão compatível do Java instalado em sua máquina antes de seguir com a passo a passo abaixo.
+
+**Versão local:**
+
+**Passo 01:** Faça download do repositório com a extensão .zip
+![image](https://github.com/giovaneneves7/Industrial-Process-Simulator-Software/assets/123518676/52321d63-da3b-41d2-82a9-ba0ad3d13add)
+**Passo 02:** Extraia do arquivo .zip. <br>
+**Passo 03:** Execute o comando abaixo no terminal, na basta onde o arquivo .zip foi extraído:
+```
+java -jar ./Industrial-Process-Simulator-Software/artifacts/IPSS.jar
+```
 

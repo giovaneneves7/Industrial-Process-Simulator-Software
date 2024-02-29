@@ -23,27 +23,46 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="230" max="32767" attributes="0"/>
+=======
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="175" max="32767" attributes="0"/>
+              <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+>>>>>>> parent of a46c0e0 (Adcionei um novo botão)
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
               <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="86" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+              <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="160" max="32767" attributes="0"/>
+>>>>>>> parent of a46c0e0 (Adcionei um novo botão)
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+<<<<<<< HEAD
     <Component class="javax.swing.JToggleButton" name="jToggleButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
+=======
+    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jRadioButton1"/>
+>>>>>>> parent of a46c0e0 (Adcionei um novo botão)
       </Properties>
     </Component>
   </SubComponents>

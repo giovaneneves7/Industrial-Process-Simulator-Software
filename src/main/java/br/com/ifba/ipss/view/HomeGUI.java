@@ -26,27 +26,48 @@ public class HomeGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
         jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jToggleButton1.setText("jToggleButton1");
+=======
+        jRadioButton1 = new javax.swing.JRadioButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jRadioButton1.setText("jRadioButton1");
+>>>>>>> parent of a46c0e0 (Adcionei um novo botão)
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addComponent(jToggleButton1)
                 .addContainerGap(230, Short.MAX_VALUE))
+=======
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(175, Short.MAX_VALUE)
+                .addComponent(jRadioButton1)
+                .addGap(127, 127, 127))
+>>>>>>> parent of a46c0e0 (Adcionei um novo botão)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(191, 191, 191)
                 .addComponent(jToggleButton1)
                 .addContainerGap(86, Short.MAX_VALUE))
+=======
+                .addGap(119, 119, 119)
+                .addComponent(jRadioButton1)
+                .addContainerGap(160, Short.MAX_VALUE))
+>>>>>>> parent of a46c0e0 (Adcionei um novo botão)
         );
 
         pack();
@@ -88,6 +109,10 @@ public class HomeGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JToggleButton jToggleButton1;
+=======
+    private javax.swing.JRadioButton jRadioButton1;
+>>>>>>> parent of a46c0e0 (Adcionei um novo botão)
     // End of variables declaration//GEN-END:variables
 }

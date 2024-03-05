@@ -31,7 +31,8 @@ public class PrototipoTela extends javax.swing.JFrame {
         LabTítulo = new javax.swing.JLabel();
         PnlMenu = new javax.swing.JPanel();
         PnlFerramentas = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        BtnFerramenta = new javax.swing.JButton();
+        PnlExpansão = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,38 +68,52 @@ public class PrototipoTela extends javax.swing.JFrame {
         PnlFerramentas.setBackground(new java.awt.Color(255, 255, 255));
         PnlFerramentas.setLayout(new javax.swing.BoxLayout(PnlFerramentas, javax.swing.BoxLayout.LINE_AXIS));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotãoFeramenta.1.1.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnFerramenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotãoFeramenta.1.1.png"))); // NOI18N
+        BtnFerramenta.setBorderPainted(false);
+        BtnFerramenta.setContentAreaFilled(false);
+        BtnFerramenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnFerramentaActionPerformed(evt);
             }
         });
-        PnlFerramentas.add(jButton1);
+        PnlFerramentas.add(BtnFerramenta);
 
         PnlAreadeTrabalho.add(PnlFerramentas);
-        PnlFerramentas.setBounds(1280, 0, 87, 820);
+        PnlFerramentas.setBounds(1260, 0, 90, 820);
+
+        PnlExpansão.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout PnlExpansãoLayout = new javax.swing.GroupLayout(PnlExpansão);
+        PnlExpansão.setLayout(PnlExpansãoLayout);
+        PnlExpansãoLayout.setHorizontalGroup(
+            PnlExpansãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 13, Short.MAX_VALUE)
+        );
+        PnlExpansãoLayout.setVerticalGroup(
+            PnlExpansãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 820, Short.MAX_VALUE)
+        );
+
+        PnlAreadeTrabalho.add(PnlExpansão);
+        PnlExpansão.setBounds(1350, 0, 13, 820);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 1362, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 1362, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtnFerramentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFerramentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BtnFerramentaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,11 +151,12 @@ public class PrototipoTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnFerramenta;
     private javax.swing.JLabel LabTítulo;
     private javax.swing.JPanel PnlAreadeTrabalho;
+    private javax.swing.JPanel PnlExpansão;
     private javax.swing.JPanel PnlFerramentas;
     private javax.swing.JPanel PnlFixo;
     private javax.swing.JPanel PnlMenu;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,12 +6,12 @@ package br.com.ifba.ipss.view;
 
 /**
  *
- * @author lorrane
+ * @author curso
  */
 public class PrototipoTela extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewJFrame
+     * Creates new form PrototipoTela
      */
     public PrototipoTela() {
         initComponents();
@@ -26,301 +26,79 @@ public class PrototipoTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        TexTítulo = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        PainelFerramentas = new javax.swing.JPanel();
-        PainelFixo = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        Painel2 = new javax.swing.JPanel();
-        TexReator = new javax.swing.JLabel();
-        Painel3 = new javax.swing.JPanel();
-        txtBomba = new javax.swing.JLabel();
-        Painel4 = new javax.swing.JPanel();
-        xtTubulação = new javax.swing.JLabel();
-        painel6 = new javax.swing.JPanel();
-        TxtManômentro = new javax.swing.JLabel();
-        Painel1 = new javax.swing.JPanel();
-        TxtOutros = new javax.swing.JLabel();
-        Painel8 = new javax.swing.JPanel();
-        TxtConexões = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        TexTítulo1 = new javax.swing.JLabel();
-        Tetvavulas = new javax.swing.JLabel();
-        Painel5 = new javax.swing.JPanel();
+        PnlAreadeTrabalho = new javax.swing.JPanel();
+        PnlFixo = new javax.swing.JPanel();
+        LabTítulo = new javax.swing.JLabel();
+        PnlMenu = new javax.swing.JPanel();
+        PnlFerramentas = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(51, 102, 0));
+        PnlAreadeTrabalho.setBackground(new java.awt.Color(204, 204, 204));
+        PnlAreadeTrabalho.setLayout(null);
 
-        TexTítulo.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        TexTítulo.setForeground(new java.awt.Color(255, 255, 255));
-        TexTítulo.setText("EduSimLab - Laboratório Virtual de Simulação Educacional de Processos");
+        PnlFixo.setBackground(new java.awt.Color(0, 102, 51));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(450, Short.MAX_VALUE)
-                .addComponent(TexTítulo)
-                .addGap(438, 438, 438))
+        LabTítulo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        LabTítulo.setForeground(new java.awt.Color(255, 255, 255));
+        LabTítulo.setText("EduSimLab - Laboratório Virtual de Simulação de Processos");
+        PnlFixo.add(LabTítulo);
+
+        PnlAreadeTrabalho.add(PnlFixo);
+        PnlFixo.setBounds(0, 0, 1360, 30);
+
+        PnlMenu.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout PnlMenuLayout = new javax.swing.GroupLayout(PnlMenu);
+        PnlMenu.setLayout(PnlMenuLayout);
+        PnlMenuLayout.setHorizontalGroup(
+            PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1360, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TexTítulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        PnlMenuLayout.setVerticalGroup(
+            PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1460, 30);
+        PnlAreadeTrabalho.add(PnlMenu);
+        PnlMenu.setBounds(0, 20, 1360, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        PnlFerramentas.setBackground(new java.awt.Color(255, 255, 255));
+        PnlFerramentas.setLayout(new javax.swing.BoxLayout(PnlFerramentas, javax.swing.BoxLayout.LINE_AXIS));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotãoFeramenta.1.1.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(0, 20, 820, 0);
+        PnlFerramentas.add(jButton1);
 
-        PainelFerramentas.setBackground(new java.awt.Color(204, 204, 204));
+        PnlAreadeTrabalho.add(PnlFerramentas);
+        PnlFerramentas.setBounds(1280, 0, 87, 820);
 
-        javax.swing.GroupLayout PainelFerramentasLayout = new javax.swing.GroupLayout(PainelFerramentas);
-        PainelFerramentas.setLayout(PainelFerramentasLayout);
-        PainelFerramentasLayout.setHorizontalGroup(
-            PainelFerramentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 1362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
-        PainelFerramentasLayout.setVerticalGroup(
-            PainelFerramentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
-
-        getContentPane().add(PainelFerramentas);
-        PainelFerramentas.setBounds(1400, 30, 60, 750);
-
-        PainelFixo.setBackground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout PainelFixoLayout = new javax.swing.GroupLayout(PainelFixo);
-        PainelFixo.setLayout(PainelFixoLayout);
-        PainelFixoLayout.setHorizontalGroup(
-            PainelFixoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1460, Short.MAX_VALUE)
-        );
-        PainelFixoLayout.setVerticalGroup(
-            PainelFixoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(PainelFixo);
-        PainelFixo.setBounds(0, 30, 1460, 60);
-        getContentPane().add(jTabbedPane1);
-        jTabbedPane1.setBounds(410, 150, 0, 1);
-
-        Painel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        TexReator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        TexReator.setText("Reatores");
-
-        javax.swing.GroupLayout Painel2Layout = new javax.swing.GroupLayout(Painel2);
-        Painel2.setLayout(Painel2Layout);
-        Painel2Layout.setHorizontalGroup(
-            Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel2Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(TexReator)
-                .addContainerGap(74, Short.MAX_VALUE))
-        );
-        Painel2Layout.setVerticalGroup(
-            Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel2Layout.createSequentialGroup()
-                .addComponent(TexReator, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 664, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(Painel2);
-        Painel2.setBounds(0, 90, 200, 690);
-
-        Painel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        txtBomba.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        txtBomba.setText("Bomba");
-
-        javax.swing.GroupLayout Painel3Layout = new javax.swing.GroupLayout(Painel3);
-        Painel3.setLayout(Painel3Layout);
-        Painel3Layout.setHorizontalGroup(
-            Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel3Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(txtBomba)
-                .addContainerGap(75, Short.MAX_VALUE))
-        );
-        Painel3Layout.setVerticalGroup(
-            Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel3Layout.createSequentialGroup()
-                .addComponent(txtBomba)
-                .addGap(0, 664, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(Painel3);
-        Painel3.setBounds(200, 90, 200, 690);
-
-        Painel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        xtTubulação.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        xtTubulação.setText("Tubulações");
-
-        javax.swing.GroupLayout Painel4Layout = new javax.swing.GroupLayout(Painel4);
-        Painel4.setLayout(Painel4Layout);
-        Painel4Layout.setHorizontalGroup(
-            Painel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel4Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(xtTubulação)
-                .addContainerGap(55, Short.MAX_VALUE))
-        );
-        Painel4Layout.setVerticalGroup(
-            Painel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel4Layout.createSequentialGroup()
-                .addComponent(xtTubulação, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(658, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(Painel4);
-        Painel4.setBounds(400, 90, 200, 690);
-
-        painel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        TxtManômentro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        TxtManômentro.setText("Manômetro");
-
-        javax.swing.GroupLayout painel6Layout = new javax.swing.GroupLayout(painel6);
-        painel6.setLayout(painel6Layout);
-        painel6Layout.setHorizontalGroup(
-            painel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painel6Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(TxtManômentro)
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
-        painel6Layout.setVerticalGroup(
-            painel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TxtManômentro)
-                .addContainerGap(658, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(painel6);
-        painel6.setBounds(600, 90, 200, 690);
-
-        Painel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        TxtOutros.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        TxtOutros.setText("Outros");
-
-        javax.swing.GroupLayout Painel1Layout = new javax.swing.GroupLayout(Painel1);
-        Painel1.setLayout(Painel1Layout);
-        Painel1Layout.setHorizontalGroup(
-            Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(TxtOutros)
-                .addContainerGap(74, Short.MAX_VALUE))
-        );
-        Painel1Layout.setVerticalGroup(
-            Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TxtOutros)
-                .addContainerGap(658, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(Painel1);
-        Painel1.setBounds(1200, 90, 200, 690);
-
-        Painel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        TxtConexões.setBackground(new java.awt.Color(0, 0, 0));
-        TxtConexões.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        TxtConexões.setText("Coenxões");
-
-        javax.swing.GroupLayout Painel8Layout = new javax.swing.GroupLayout(Painel8);
-        Painel8.setLayout(Painel8Layout);
-        Painel8Layout.setHorizontalGroup(
-            Painel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel8Layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
-                .addComponent(TxtConexões, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
-        );
-        Painel8Layout.setVerticalGroup(
-            Painel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel8Layout.createSequentialGroup()
-                .addComponent(TxtConexões, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 647, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(Painel8);
-        Painel8.setBounds(1000, 90, 200, 690);
-
-        jPanel2.setBackground(new java.awt.Color(51, 102, 0));
-
-        TexTítulo1.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        TexTítulo1.setForeground(new java.awt.Color(255, 255, 255));
-        TexTítulo1.setText("EduSimLab - Laboratório Virtual de Simulação Educacional de Processos");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(450, Short.MAX_VALUE)
-                .addComponent(TexTítulo1)
-                .addGap(438, 438, 438))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TexTítulo1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 0, 1460, 30);
-
-        Tetvavulas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Tetvavulas.setText("Vávulas");
-        getContentPane().add(Tetvavulas);
-        Tetvavulas.setBounds(870, 100, 63, 22);
-
-        Painel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        javax.swing.GroupLayout Painel5Layout = new javax.swing.GroupLayout(Painel5);
-        Painel5.setLayout(Painel5Layout);
-        Painel5Layout.setHorizontalGroup(
-            Painel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 196, Short.MAX_VALUE)
-        );
-        Painel5Layout.setVerticalGroup(
-            Painel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 684, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(Painel5);
-        Painel5.setBounds(800, 90, 200, 688);
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,7 +126,6 @@ public class PrototipoTela extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(PrototipoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -359,27 +136,11 @@ public class PrototipoTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Painel1;
-    private javax.swing.JPanel Painel2;
-    private javax.swing.JPanel Painel3;
-    private javax.swing.JPanel Painel4;
-    private javax.swing.JPanel Painel5;
-    private javax.swing.JPanel Painel8;
-    private javax.swing.JPanel PainelFerramentas;
-    private javax.swing.JPanel PainelFixo;
-    private javax.swing.JLabel Tetvavulas;
-    private javax.swing.JLabel TexReator;
-    private javax.swing.JLabel TexTítulo;
-    private javax.swing.JLabel TexTítulo1;
-    private javax.swing.JLabel TxtConexões;
-    private javax.swing.JLabel TxtManômentro;
-    private javax.swing.JLabel TxtOutros;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JPanel painel6;
-    private javax.swing.JLabel txtBomba;
-    private javax.swing.JLabel xtTubulação;
+    private javax.swing.JLabel LabTítulo;
+    private javax.swing.JPanel PnlAreadeTrabalho;
+    private javax.swing.JPanel PnlFerramentas;
+    private javax.swing.JPanel PnlFixo;
+    private javax.swing.JPanel PnlMenu;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

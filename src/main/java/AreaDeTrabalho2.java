@@ -28,6 +28,9 @@ public class AreaDeTrabalho2 extends javax.swing.JFrame {
         pnlFixo = new javax.swing.JPanel();
         LabTítulo = new javax.swing.JLabel();
         pnlMenu = new javax.swing.JPanel();
+        lblExit = new javax.swing.JLabel();
+        lblTravessão = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         pnlFerramentas = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         pnlExtensao = new javax.swing.JPanel();
@@ -80,15 +83,37 @@ public class AreaDeTrabalho2 extends javax.swing.JFrame {
 
         pnlMenu.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
+
+        lblTravessão.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Travessão.png"))); // NOI18N
+
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
         pnlMenu.setLayout(pnlMenuLayout);
         pnlMenuLayout.setHorizontalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1780, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMenuLayout.createSequentialGroup()
+                .addContainerGap(1254, Short.MAX_VALUE)
+                .addComponent(lblTravessão, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblExit)
+                .addGap(437, 437, 437))
         );
         pnlMenuLayout.setVerticalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGroup(pnlMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTravessão, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlMenuLayout.createSequentialGroup()
+                        .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblExit)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 2, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         getContentPane().add(pnlMenu);
@@ -323,11 +348,14 @@ public class AreaDeTrabalho2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabTítulo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblBombas;
     private javax.swing.JLabel lblConexoes;
+    private javax.swing.JLabel lblExit;
     private javax.swing.JLabel lblManometros;
     private javax.swing.JLabel lblOutros;
     private javax.swing.JLabel lblReatores;
+    private javax.swing.JLabel lblTravessão;
     private javax.swing.JLabel lblTubulcao;
     private javax.swing.JLabel lblVavulas;
     private javax.swing.JPanel pnlBombas;

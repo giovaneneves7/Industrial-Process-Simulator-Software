@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package br.com.ifba.ipss.view;
+
+import br.com.ifba.ipss.controller.MenuFerramentasController;
 
 /**
  *
@@ -10,8 +8,14 @@ package br.com.ifba.ipss.view;
  */
 public class PrototipoTela extends javax.swing.JFrame {
 
+    
+    // *************************************************//
+    // ************** { Variáveis Globais } ************//
+    // *************************************************//
+    private MenuFerramentasController menuFerramentasController = new MenuFerramentasController();
+    
     /**
-     * Creates new form PrototipoTela
+     * Cria a interface com os componentes iniciais
      */
     public PrototipoTela() {
         initComponents();
@@ -117,18 +121,12 @@ public class PrototipoTela extends javax.swing.JFrame {
     
     private void BtnFerramentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFerramentaActionPerformed
         
-        this.abrirMenuFerramentas();
+        menuFerramentasController.abrirMenuFerramentas();
         
     }//GEN-LAST:event_BtnFerramentaActionPerformed
 
-    /**
-     * Abre o menu de ferramentas quando um botão é clicado.
-     */
-    private void abrirMenuFerramentas(){
-        
-       /* TODO: Adicionar lógica para abrir menu de ferramentas */
-        
-    }
+    
+
     /**
      * @param args the command line arguments
      */

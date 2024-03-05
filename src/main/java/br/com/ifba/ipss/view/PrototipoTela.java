@@ -109,12 +109,26 @@ public class PrototipoTela extends javax.swing.JFrame {
                 .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        setSize(new java.awt.Dimension(1378, 828));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void BtnFerramentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFerramentaActionPerformed
-        // TODO add your handling code here:
+        
+        this.abrirMenuFerramentas();
+        
     }//GEN-LAST:event_BtnFerramentaActionPerformed
 
+    /**
+     * Abre o menu de ferramentas quando um botão é clicado.
+     */
+    private void abrirMenuFerramentas(){
+        
+       /* TODO: Adicionar lógica para abrir menu de ferramentas */
+        
+    }
     /**
      * @param args the command line arguments
      */

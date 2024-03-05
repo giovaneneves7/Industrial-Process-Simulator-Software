@@ -67,7 +67,7 @@ public class PrototipoTela extends javax.swing.JFrame {
         );
 
         PnlAreadeTrabalho.add(PnlMenu);
-        PnlMenu.setBounds(0, 20, 1360, 30);
+        PnlMenu.setBounds(0, 30, 1360, 30);
 
         PnlFerramentas.setBackground(new java.awt.Color(255, 255, 255));
         PnlFerramentas.setLayout(new javax.swing.BoxLayout(PnlFerramentas, javax.swing.BoxLayout.LINE_AXIS));

@@ -40,6 +40,6 @@ public class MenuFerramentasController {
     }
     
     public void conectarFerramentas(Ferramenta origem, Ferramenta destino){
-        
+        /* TODO: Adicionar lógica */
     }
 }

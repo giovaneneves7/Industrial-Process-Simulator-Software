@@ -1,6 +1,7 @@
 package br.com.ifba.ipss.view;
 
 import br.com.ifba.ipss.controller.MenuFerramentasController;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,9 +19,19 @@ public class PrototipoTela extends javax.swing.JFrame {
      * Cria a interface com os componentes iniciais
      */
     public PrototipoTela() {
+        
+        inicializadorPersonalizado();
         initComponents();
+        
     }
 
+    private void inicializadorPersonalizado(){
+        
+        ImageIcon favicon = new ImageIcon(getClass().getResource("/images/logo.jpg"));
+        
+        this.setIconImage(favicon.getImage());
+        this.setTitle("EduSimLab - Laboratório Virtual de Simulação de Processos");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

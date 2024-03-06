@@ -271,9 +271,9 @@ public class AreaDeTrabalho2 extends javax.swing.JFrame {
         pnlManômetrosLayout.setHorizontalGroup(
             pnlManômetrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlManômetrosLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(46, 46, 46)
                 .addComponent(lblManometros)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         pnlManômetrosLayout.setVerticalGroup(
             pnlManômetrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

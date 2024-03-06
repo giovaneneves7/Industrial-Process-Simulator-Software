@@ -1,4 +1,4 @@
-# Industrial Process Simulator Software ⚡
+# EduSimLab - Laboratório Virtual de Simulação de Processos ⚡
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/giovaneneves7/Industrial-Process-Simulator-Software?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/giovaneneves7/Industrial-Process-Simulator-Software?style=for-the-badge)
@@ -6,11 +6,23 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/giovaneneves7/Industrial-Process-Simulator-Software?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/giovaneneves7/Industrial-Process-Simulator-Software?style=for-the-badge)
 
-<img src="https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Exemplo imagem" width="800" height="300">
+<img src="https://github.com/giovaneneves7/Industrial-Process-Simulator-Software/blob/main/src/main/resources/images/logo.jpg" alt="Exemplo imagem" width="800" height="500">
 
-O software tem como objetivo desenvolver atividades simuladas como recurso  metodológico para o ensino de processos industriais nos cursos técnicos e  tecnológicos. A aplicação foi desenvolvida com a linguagem de programação Java e pode ser executada em qualquer ambiente com suporte ao Java ou em navegadores com a extensão Cheerpj.
 
-# Componentes ☕️
+### EduSimLab - Auxiliando o Ensino de Processos Industriais
+Bem-vindo ao EduSimLab, o Laboratório Virtual de Simulação de Processos criado para auxiliar na forma como aprendemos sobre processos industriais nos cursos técnicos e tecnológicos. Nossa missão é proporcionar uma experiência educacional agradável, incorporando atividades simuladas como um recurso metodológico essencial.
+
+### Explorando o Futuro da Educação Industrial
+O EduSimLab é mais do que apenas um software; é uma plataforma dinâmica que visa cativar os alunos, levando-os a mergulhar no universo prático dos processos industriais. Desenvolvido utilizando a robusta linguagem de programação Java, garantimos não apenas funcionalidade, mas também portabilidade para ser executado em qualquer ambiente com suporte à tecnologia.
+
+### Flexibilidade para Todos os Ambientes
+Acreditamos na acessibilidade como um pilar fundamental do aprendizado moderno. Com o EduSimLab, oferecemos a flexibilidade de escolher onde aprender. Seja em um ambiente tradicional com suporte ao Java ou diretamente em navegadores, graças à extensão Cheerpj, proporcionamos a liberdade de acesso sem limitações geográficas ou tecnológicas.
+
+Para uma experiência em navegadores, a extensão Cheerpj proporciona a integração perfeita. Desbrave o EduSimLab diretamente do seu navegador favorito.
+Junte-se a Nós na Evolução do Ensino
+Escolha o EduSimLab para explorar, aprender e se inspirar. A educação industrial nunca foi tão empolgante! 🚀
+
+# Equipe de Desenvolvimento ☕️
 
 <table>
   <tr>

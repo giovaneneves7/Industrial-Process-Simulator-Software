@@ -308,7 +308,8 @@ public class AreaDeTrabalho2 extends javax.swing.JFrame {
         getContentPane().add(pnlOutros);
         pnlOutros.setBounds(1080, 60, 180, 760);
 
-        pack();
+        setSize(new java.awt.Dimension(1380, 829));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

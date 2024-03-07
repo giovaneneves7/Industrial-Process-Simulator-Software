@@ -77,12 +77,12 @@ public class TelaSplash extends javax.swing.JFrame {
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.jpg"))); // NOI18N
         lblLogo.setText("jLabel1");
         pnlBackground.add(lblLogo);
-        lblLogo.setBounds(0, -20, 841, 600);
+        lblLogo.setBounds(0, -140, 841, 700);
 
         getContentPane().add(pnlBackground);
-        pnlBackground.setBounds(0, 20, 790, 590);
+        pnlBackground.setBounds(0, 0, 790, 650);
 
-        setSize(new java.awt.Dimension(801, 606));
+        setSize(new java.awt.Dimension(801, 566));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

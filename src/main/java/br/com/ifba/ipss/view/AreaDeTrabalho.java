@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
  *
  * @author curso
  */
-public class PrototipoTela extends javax.swing.JFrame {
+public class AreaDeTrabalho extends javax.swing.JFrame {
 
     
     // *************************************************//
@@ -18,7 +18,7 @@ public class PrototipoTela extends javax.swing.JFrame {
     /**
      * Cria a interface com os componentes iniciais
      */
-    public PrototipoTela() {
+    public AreaDeTrabalho() {
         
         inicializadorPersonalizado();
         initComponents();
@@ -46,8 +46,10 @@ public class PrototipoTela extends javax.swing.JFrame {
         LabTítulo = new javax.swing.JLabel();
         PnlMenu = new javax.swing.JPanel();
         PnlFerramentas = new javax.swing.JPanel();
-        BtnFerramenta = new javax.swing.JButton();
-        PnlExpansão = new javax.swing.JPanel();
+        btnTubulacoes = new javax.swing.JButton();
+        btnConexoes = new javax.swing.JButton();
+        btnEquipamentos = new javax.swing.JButton();
+        btnVavulas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,61 +83,59 @@ public class PrototipoTela extends javax.swing.JFrame {
         PnlMenu.setBounds(0, 30, 1360, 30);
 
         PnlFerramentas.setBackground(new java.awt.Color(255, 255, 255));
-        PnlFerramentas.setLayout(new javax.swing.BoxLayout(PnlFerramentas, javax.swing.BoxLayout.LINE_AXIS));
+        PnlFerramentas.setLayout(null);
 
-        BtnFerramenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotãoFeramenta.1.1.png"))); // NOI18N
-        BtnFerramenta.setBorderPainted(false);
-        BtnFerramenta.setContentAreaFilled(false);
-        BtnFerramenta.addActionListener(new java.awt.event.ActionListener() {
+        btnTubulacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão tubulação.png"))); // NOI18N
+        btnTubulacoes.setBorder(null);
+        PnlFerramentas.add(btnTubulacoes);
+        btnTubulacoes.setBounds(6, 469, 98, 40);
+
+        btnConexoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão conexões.png"))); // NOI18N
+        btnConexoes.setBorder(null);
+        btnConexoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnFerramentaActionPerformed(evt);
+                btnConexoesActionPerformed(evt);
             }
         });
-        PnlFerramentas.add(BtnFerramenta);
+        PnlFerramentas.add(btnConexoes);
+        btnConexoes.setBounds(6, 411, 98, 40);
+
+        btnEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão equipamentos.png"))); // NOI18N
+        btnEquipamentos.setBorder(null);
+        PnlFerramentas.add(btnEquipamentos);
+        btnEquipamentos.setBounds(6, 353, 98, 40);
+
+        btnVavulas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão vávulas.png"))); // NOI18N
+        btnVavulas.setBorder(null);
+        PnlFerramentas.add(btnVavulas);
+        btnVavulas.setBounds(6, 295, 98, 40);
 
         PnlAreadeTrabalho.add(PnlFerramentas);
-        PnlFerramentas.setBounds(1260, 0, 90, 820);
-
-        PnlExpansão.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout PnlExpansãoLayout = new javax.swing.GroupLayout(PnlExpansão);
-        PnlExpansão.setLayout(PnlExpansãoLayout);
-        PnlExpansãoLayout.setHorizontalGroup(
-            PnlExpansãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 13, Short.MAX_VALUE)
-        );
-        PnlExpansãoLayout.setVerticalGroup(
-            PnlExpansãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 820, Short.MAX_VALUE)
-        );
-
-        PnlAreadeTrabalho.add(PnlExpansão);
-        PnlExpansão.setBounds(1350, 0, 13, 820);
+        PnlFerramentas.setBounds(1240, 0, 120, 820);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 1362, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1362, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         setSize(new java.awt.Dimension(1378, 828));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    private void BtnFerramentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFerramentaActionPerformed
-        
-        menuFerramentasController.abrirMenuFerramentas();
-        
-    }//GEN-LAST:event_BtnFerramentaActionPerformed
+    private void btnConexoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConexoesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConexoesActionPerformed
 
+    
     
 
     /**
@@ -155,31 +155,34 @@ public class PrototipoTela extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PrototipoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AreaDeTrabalho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PrototipoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AreaDeTrabalho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PrototipoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AreaDeTrabalho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PrototipoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AreaDeTrabalho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PrototipoTela().setVisible(true);
+                new AreaDeTrabalho().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnFerramenta;
     private javax.swing.JLabel LabTítulo;
     private javax.swing.JPanel PnlAreadeTrabalho;
-    private javax.swing.JPanel PnlExpansão;
     private javax.swing.JPanel PnlFerramentas;
     private javax.swing.JPanel PnlFixo;
     private javax.swing.JPanel PnlMenu;
+    private javax.swing.JButton btnConexoes;
+    private javax.swing.JButton btnEquipamentos;
+    private javax.swing.JButton btnTubulacoes;
+    private javax.swing.JButton btnVavulas;
     // End of variables declaration//GEN-END:variables
 }

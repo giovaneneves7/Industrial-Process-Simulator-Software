@@ -26,4 +26,7 @@ public class Conexao extends Equipamento{
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-}
+    private double perdaDeCarga;    // A perda de carga da conexao.
+    private double diametroInterno; // O diâmetro interno da conexão.
+    
+} // class Conexao

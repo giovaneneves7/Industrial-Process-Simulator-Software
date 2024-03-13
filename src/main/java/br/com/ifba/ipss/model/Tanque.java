@@ -6,6 +6,7 @@ package br.com.ifba.ipss.model;
 // *************** { FIM - Package } ***************//
 // *************************************************//
 
+
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
@@ -20,13 +21,14 @@ package br.com.ifba.ipss.model;
  * @author Giovane Neves
  * @since V0.0.1
  */
-public class Bomba extends Equipamento{
+public class Tanque extends Equipamento{
     
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
-
-    private double _vazao;              // A Vazão da bomba.
-    private double _perdaDeCarga;       // A Perda de Carga da bomba.
     
-} // class Bomba
+    private double _volume;      // O volume do tanque. 
+    private double _temperatura; // A teperatura do tanque.
+    private double _pressao;     // A pressão do tanque.
+    
+} // class Tanque

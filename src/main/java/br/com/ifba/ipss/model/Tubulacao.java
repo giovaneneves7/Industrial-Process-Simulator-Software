@@ -20,10 +20,13 @@ package br.com.ifba.ipss.model;
  * @author Giovane Neves
  * @since V0.0.1
  */
-public class Tubulacao {
+public class Tubulacao extends Equipamento{
     
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
+    
+    private double _diametroInterno; // O diametro interno do tubo.
+    private double comprimento;      // O comprimento do tubo.
     
 } // class Tubulacao

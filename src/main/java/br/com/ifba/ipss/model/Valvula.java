@@ -26,4 +26,7 @@ public class Valvula extends Equipamento{
     // ***************** { Atributos } *****************//
     // *************************************************//
     
+    private double _perdaDeCarga;    // A perda de carga da valvula.
+    private double _diametroInterno; // O diametro interno da válvula.
+    
 } // class Valvula

@@ -29,10 +29,17 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1362, 820));
         getContentPane().setLayout(null);
 
         jPanel1.setLayout(null);
@@ -40,46 +47,104 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setLayout(null);
 
-        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Reatores");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reator1.png"))); // NOI18N
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reator.2.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(119, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(116, 116, 116))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 820, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(jLabel1)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addContainerGap(650, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel5);
-        jPanel5.setBounds(0, 0, 300, 820);
+        jPanel5.setBounds(0, 0, 280, 820);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(null);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 103, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 820, Short.MAX_VALUE)
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão vávulas.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jPanel2.add(jButton1);
+        jButton1.setBounds(6, 295, 98, 40);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão equipamentos.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jPanel2.add(jButton2);
+        jButton2.setBounds(6, 353, 98, 40);
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão conexões.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton3);
+        jButton3.setBounds(6, 411, 98, 40);
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão tubulação.png"))); // NOI18N
+        jButton4.setBorder(null);
+        jPanel2.add(jButton4);
+        jButton4.setBounds(6, 469, 98, 40);
 
         jPanel3.add(jPanel2);
-        jPanel2.setBounds(300, 0, 103, 820);
+        jPanel2.setBounds(280, 0, 120, 820);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(970, 0, 400, 830);
+
+        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1362, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel4);
+        jPanel4.setBounds(10, 0, 1362, 60);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 1370, 820);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,9 +183,17 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
 }

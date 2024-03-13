@@ -9,8 +9,9 @@ package br.com.ifba.ipss.model;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -20,6 +21,10 @@ package br.com.ifba.ipss.model;
  * @author Giovane Neves
  * @since V0.0.1
  */
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Conexao extends Equipamento{
     
     // *************************************************//

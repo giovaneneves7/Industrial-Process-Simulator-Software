@@ -4,7 +4,6 @@
 package br.com.ifba.ipss.model;
 // *************************************************//
 // *************** { FIM - Package } ***************//
-
 // *************************************************//
 
 // *************************************************//
@@ -26,7 +25,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 public class Bomba extends Equipamento{
     
     // *************************************************//

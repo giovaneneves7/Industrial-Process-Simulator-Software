@@ -6,12 +6,12 @@ package br.com.ifba.ipss.model;
 // *************** { FIM - Package } ***************//
 // *************************************************//
 
-
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -21,6 +21,9 @@ package br.com.ifba.ipss.model;
  * @author Giovane Neves
  * @since V0.0.1
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Reator extends Equipamento{
     
     // *************************************************//

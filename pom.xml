@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.ifba</groupId>
     <artifactId>IndustrialProcessSimulatorSoftware</artifactId>
-    <version>1.0</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -11,4 +11,14 @@
         <maven.compiler.target>17</maven.compiler.target>
         <exec.mainClass>br.com.ifba.ipss.IndustrialProcessSimulatorSoftware</exec.mainClass>
     </properties>
+    
+    <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.24</version>
+                <scope>provided</scope>
+            </dependency>
+
+    </dependencies>
 </project>

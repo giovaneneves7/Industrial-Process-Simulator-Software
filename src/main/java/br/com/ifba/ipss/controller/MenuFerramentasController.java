@@ -1,6 +1,6 @@
 package br.com.ifba.ipss.controller;
 
-import br.com.ifba.ipss.model.Ferramenta;
+import br.com.ifba.ipss.model.Equipamento;
 import br.com.ifba.ipss.view.AreaDeTrabalho2;
 
 /**
@@ -40,7 +40,7 @@ public class MenuFerramentasController {
         /* TODO: Adicionar lógica */
     }
     
-    public void conectarFerramentas(Ferramenta origem, Ferramenta destino){
+    public void conectarFerramentas(Equipamento origem, Equipamento destino){
         /* TODO: Adicionar lógica */
     }
 }

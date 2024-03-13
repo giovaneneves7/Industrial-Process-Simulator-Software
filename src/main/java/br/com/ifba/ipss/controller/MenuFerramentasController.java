@@ -1,7 +1,7 @@
 package br.com.ifba.ipss.controller;
 
 import br.com.ifba.ipss.model.Equipamento;
-import br.com.ifba.ipss.view.AreaDeTrabalho2;
+import br.com.ifba.ipss.view.AreaDeTrabalho;
 
 /**
  *
@@ -18,7 +18,7 @@ public class MenuFerramentasController {
      */
     public void abrirMenuFerramentas(){
         
-        new AreaDeTrabalho2().setVisible(true);
+        new AreaDeTrabalho().setVisible(true);
         
     }
     

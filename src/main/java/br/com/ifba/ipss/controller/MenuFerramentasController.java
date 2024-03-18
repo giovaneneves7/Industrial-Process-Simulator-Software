@@ -11,9 +11,6 @@ package br.com.ifba.ipss.controller;
 // *************************************************//
 import br.com.ifba.ipss.model.Equipamento;
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import lombok.Data;
 // *************************************************//
@@ -54,7 +51,7 @@ public class MenuFerramentasController {
         _ferramentasContainer.setBackground(Color.decode("#5E5E5E"));
         p.add(_ferramentasContainer);
         
-        p.setComponentZOrder(_ferramentasContainer, 1);
+        p.setComponentZOrder(_ferramentasContainer, 0);
         p.revalidate();
         p.repaint();
         
@@ -63,8 +60,6 @@ public class MenuFerramentasController {
     } // abrirMenuFerramentas
     
     public void fecharMenuFerramentas(JPanel p){
-        
-        System.out.println("OK: " + String.valueOf(p.getComponentZOrder(this._ferramentasContainer)));
         
         p.remove(this._ferramentasContainer);
         p.revalidate();

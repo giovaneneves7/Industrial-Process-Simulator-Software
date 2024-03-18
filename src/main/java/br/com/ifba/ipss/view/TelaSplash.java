@@ -43,7 +43,7 @@ public class TelaSplash extends javax.swing.JFrame {
                 prgBarCarregando.setValue(latestValue);
                 prgBarCarregando.setString(latestValue + "%");
                 if(latestValue == 100){
-                    new PrototipoTela().setVisible(true);
+                    new AreaDeTrabalho().setVisible(true);
                     dispose();
                 }
             }

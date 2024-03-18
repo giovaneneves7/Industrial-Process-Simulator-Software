@@ -13,7 +13,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     // *************************************************//
     // ************** { Variáveis Globais } ************//
     // *************************************************//
-    private MenuFerramentasController menuFerramentasController = new MenuFerramentasController();
+    private MenuFerramentasController _menuFerramentasController = new MenuFerramentasController();
     
     /**
      * Cria a interface com os componentes iniciais
@@ -50,6 +50,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         btnConexoes = new javax.swing.JButton();
         btnEquipamentos = new javax.swing.JButton();
         btnVavulas = new javax.swing.JButton();
+        pnlEspacoTrabalho = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,11 +108,32 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         btnVavulas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão vávulas.png"))); // NOI18N
         btnVavulas.setBorder(null);
+        btnVavulas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVavulasActionPerformed(evt);
+            }
+        });
         PnlFerramentas.add(btnVavulas);
         btnVavulas.setBounds(6, 295, 98, 40);
 
         PnlAreadeTrabalho.add(PnlFerramentas);
         PnlFerramentas.setBounds(1240, 0, 120, 820);
+
+        pnlEspacoTrabalho.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout pnlEspacoTrabalhoLayout = new javax.swing.GroupLayout(pnlEspacoTrabalho);
+        pnlEspacoTrabalho.setLayout(pnlEspacoTrabalhoLayout);
+        pnlEspacoTrabalhoLayout.setHorizontalGroup(
+            pnlEspacoTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1240, Short.MAX_VALUE)
+        );
+        pnlEspacoTrabalhoLayout.setVerticalGroup(
+            pnlEspacoTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+
+        PnlAreadeTrabalho.add(pnlEspacoTrabalho);
+        pnlEspacoTrabalho.setBounds(0, 60, 1240, 750);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,7 +154,21 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnConexoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConexoesActionPerformed
         // TODO add your handling code here:
+       
     }//GEN-LAST:event_btnConexoesActionPerformed
+
+    private void btnVavulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVavulasActionPerformed
+      
+        if(!this._menuFerramentasController.is_menuAberto()){
+            
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Válvula"); 
+            
+        } else {
+            
+            this._menuFerramentasController.fecharMenuFerramentas(this.pnlEspacoTrabalho);
+            
+        }
+    }//GEN-LAST:event_btnVavulasActionPerformed
 
     
     
@@ -183,5 +219,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private javax.swing.JButton btnEquipamentos;
     private javax.swing.JButton btnTubulacoes;
     private javax.swing.JButton btnVavulas;
+    private javax.swing.JPanel pnlEspacoTrabalho;
     // End of variables declaration//GEN-END:variables
 }

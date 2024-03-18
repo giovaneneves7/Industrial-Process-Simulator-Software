@@ -32,6 +32,13 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -48,40 +55,48 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         jPanel3.setLayout(null);
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Reatores");
+        jPanel5.add(jLabel1);
+        jLabel1.setBounds(120, 80, 45, 16);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reator1.png"))); // NOI18N
+        jPanel5.add(jLabel2);
+        jLabel2.setBounds(27, 120, 50, 50);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reator.2.png"))); // NOI18N
+        jPanel5.add(jLabel3);
+        jLabel3.setBounds(110, 120, 50, 50);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(119, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(116, 116, 116))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel2)
-                .addGap(33, 33, 33)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jLabel1)
-                .addGap(35, 35, 35)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addContainerGap(650, Short.MAX_VALUE))
-        );
+        jLabel4.setText("Tanques");
+        jPanel5.add(jLabel4);
+        jLabel4.setBounds(120, 320, 44, 16);
+
+        jLabel5.setText("Bombas");
+        jPanel5.add(jLabel5);
+        jLabel5.setBounds(120, 530, 60, 16);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tanque2.png"))); // NOI18N
+        jPanel5.add(jLabel6);
+        jLabel6.setBounds(30, 360, 90, 40);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tanque3.png"))); // NOI18N
+        jPanel5.add(jLabel7);
+        jLabel7.setBounds(200, 350, 40, 80);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tanque4.png"))); // NOI18N
+        jPanel5.add(jLabel8);
+        jLabel8.setBounds(30, 420, 80, 50);
+
+        jLabel9.setText("jLabel9");
+        jPanel5.add(jLabel9);
+        jLabel9.setBounds(50, 600, 37, 16);
+
+        jLabel10.setText("EQUIPAMENTOS");
+        jPanel5.add(jLabel10);
+        jLabel10.setBounds(100, 60, 100, 16);
 
         jPanel3.add(jPanel5);
         jPanel5.setBounds(0, 0, 280, 820);
@@ -188,8 +203,15 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

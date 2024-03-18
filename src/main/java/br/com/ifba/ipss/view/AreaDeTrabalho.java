@@ -161,7 +161,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
       
         if(!this._menuFerramentasController.is_menuAberto()){
             
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Válvula"); 
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Válvulas"); 
             
         } else {
             

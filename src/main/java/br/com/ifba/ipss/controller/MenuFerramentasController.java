@@ -12,6 +12,8 @@ package br.com.ifba.ipss.controller;
 import br.com.ifba.ipss.model.Equipamento;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import lombok.Data;
@@ -30,9 +32,21 @@ public class MenuFerramentasController {
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
+    
     private boolean _menuAberto = false;
     private String _nomeMenuAberto;
     private JPanel _ferramentasContainer;
+    private List<Equipamento> _equipamentos = new ArrayList<>();
+
+    
+    // *************************************************//
+    // ***************** { Construtor } *****************//
+    // *************************************************//
+    public MenuFerramentasController(List<Equipamento> equipamentos){
+        
+        this._equipamentos = equipamentos;
+        
+    }
     // *************************************************//
     // ****************** { Métodos } ******************//
     // *************************************************//
@@ -94,6 +108,9 @@ public class MenuFerramentasController {
         
     } // fecharMenuFerramentas
     
+    public void adicionarFerramentasAoMenu(JPanel p){
+        
+    }
     public void selecionarFerramenta(){
         /* TODO: Adicionar lógica */
     }

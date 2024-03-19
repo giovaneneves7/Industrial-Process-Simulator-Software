@@ -42,6 +42,9 @@ public class MenuFerramentasController {
      */
     public void abrirMenuFerramentas(JPanel p, final String nome){      
         
+        if(this.is_menuAberto())
+            this.fecharMenuFerramentas(p);
+        
         int larguraF = p.getWidth();
         int alturaF = p.getHeight();
         int x = (larguraF - 280);

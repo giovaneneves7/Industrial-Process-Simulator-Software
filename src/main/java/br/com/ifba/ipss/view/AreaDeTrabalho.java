@@ -1,6 +1,14 @@
 package br.com.ifba.ipss.view;
 
 import br.com.ifba.ipss.controller.MenuFerramentasController;
+import br.com.ifba.ipss.model.Equipamento;
+import br.com.ifba.ipss.model.Tubulacao;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 
 /**
@@ -13,24 +21,57 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     // *************************************************//
     // ************** { Variáveis Globais } ************//
     // *************************************************//
-    private MenuFerramentasController _menuFerramentasController = new MenuFerramentasController();
+    private final MenuFerramentasController _menuFerramentasController;
     
     /**
      * Cria a interface com os componentes iniciais
      */
     public AreaDeTrabalho() {
         
+        _menuFerramentasController = new MenuFerramentasController(pegarListaEquipamentos("src/main/resources/files/ferramentas.json"));
+        
         inicializadorPersonalizado();
         initComponents();
         
     }
 
+    public List<Equipamento> pegarListaEquipamentos(String caminho){
+        
+        try(FileReader leitor = new FileReader(caminho)){
+            
+            Gson gson = new Gson();
+             JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
+
+            // Obtenha o array de tubulações do JSON
+            JsonObject tubulacoesJson = jsonObject.getAsJsonArray("tubulacoes").get(0).getAsJsonObject();
+
+            // Crie um objeto Tubulacao e coloque os dados do JSON nele
+            Tubulacao tubulacao = new Tubulacao();
+            tubulacao.set_nome(tubulacoesJson.get("_nome").getAsString());
+            tubulacao.set_caminhoImagem(tubulacoesJson.get("_imagem").getAsString());
+            tubulacao.set_x(tubulacoesJson.get("_x").getAsInt());
+            tubulacao.set_y(tubulacoesJson.get("_y").getAsInt());
+            tubulacao.set_largura(tubulacoesJson.get("_largura").getAsInt());
+            tubulacao.set_altura(tubulacoesJson.get("_altura").getAsInt());
+            tubulacao.set_diametroInterno(tubulacoesJson.get("_diametroInterno").getAsInt());
+           
+            // Exiba os dados da tubulação para verificação
+            System.out.println("Nome: " + tubulacao.get_nome());
+            
+        } catch(IOException ex){
+            ex.printStackTrace();
+        }
+        
+        return new ArrayList<>();
+    }
+    
     private void inicializadorPersonalizado(){
         
         ImageIcon favicon = new ImageIcon(getClass().getResource("/images/logo.jpg"));
         
         this.setIconImage(favicon.getImage());
         this.setTitle("EduSimLab - Laboratório Virtual de Simulação de Processos");
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.

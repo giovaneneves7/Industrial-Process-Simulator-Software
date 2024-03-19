@@ -164,7 +164,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnConexoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConexoesActionPerformed
         
-        if(!this._menuFerramentasController.is_menuAberto()){
+        
+        if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Conexões")){
             
             this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Conexões"); 
             
@@ -178,7 +179,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnVavulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVavulasActionPerformed
       
-        if(!this._menuFerramentasController.is_menuAberto()){
+        if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Válvulas")){
             
             this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Válvulas"); 
             
@@ -191,7 +192,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnEquipamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipamentosActionPerformed
         
-        if(!this._menuFerramentasController.is_menuAberto()){
+        if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Equipamentos")){
             
             this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Equipamentos"); 
             
@@ -205,7 +206,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnTubulacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTubulacoesActionPerformed
         
-        if(!this._menuFerramentasController.is_menuAberto()){
+        if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Tubulações")){
             
             this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Tubulações"); 
             

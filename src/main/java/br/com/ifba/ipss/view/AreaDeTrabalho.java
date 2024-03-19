@@ -88,6 +88,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         btnTubulacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão tubulação.png"))); // NOI18N
         btnTubulacoes.setBorder(null);
+        btnTubulacoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTubulacoesActionPerformed(evt);
+            }
+        });
         PnlFerramentas.add(btnTubulacoes);
         btnTubulacoes.setBounds(6, 469, 98, 40);
 
@@ -103,6 +108,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         btnEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão equipamentos.png"))); // NOI18N
         btnEquipamentos.setBorder(null);
+        btnEquipamentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEquipamentosActionPerformed(evt);
+            }
+        });
         PnlFerramentas.add(btnEquipamentos);
         btnEquipamentos.setBounds(6, 353, 98, 40);
 
@@ -153,7 +163,16 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConexoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConexoesActionPerformed
-        // TODO add your handling code here:
+        
+        if(!this._menuFerramentasController.is_menuAberto()){
+            
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Conexões"); 
+            
+        } else {
+            
+            this._menuFerramentasController.fecharMenuFerramentas(this.pnlEspacoTrabalho);
+            
+        }
        
     }//GEN-LAST:event_btnConexoesActionPerformed
 
@@ -169,6 +188,34 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_btnVavulasActionPerformed
+
+    private void btnEquipamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipamentosActionPerformed
+        
+        if(!this._menuFerramentasController.is_menuAberto()){
+            
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Equipamentos"); 
+            
+        } else {
+            
+            this._menuFerramentasController.fecharMenuFerramentas(this.pnlEspacoTrabalho);
+            
+        }
+        
+    }//GEN-LAST:event_btnEquipamentosActionPerformed
+
+    private void btnTubulacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTubulacoesActionPerformed
+        
+        if(!this._menuFerramentasController.is_menuAberto()){
+            
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Tubulações"); 
+            
+        } else {
+            
+            this._menuFerramentasController.fecharMenuFerramentas(this.pnlEspacoTrabalho);
+            
+        }
+        
+    }//GEN-LAST:event_btnTubulacoesActionPerformed
 
     
     

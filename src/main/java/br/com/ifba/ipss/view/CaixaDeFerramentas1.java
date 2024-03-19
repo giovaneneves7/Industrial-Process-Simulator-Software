@@ -29,22 +29,28 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
+        lblTubulacoes = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        lblT8 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -57,49 +63,92 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
         jPanel5.setLayout(null);
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Reatores");
-        jPanel5.add(jLabel1);
-        jLabel1.setBounds(120, 80, 45, 16);
+        lblTubulacoes.setText("TUBULAÇÕES");
+        jPanel5.add(lblTubulacoes);
+        lblTubulacoes.setBounds(110, 60, 100, 16);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reator1.png"))); // NOI18N
-        jPanel5.add(jLabel2);
-        jLabel2.setBounds(27, 120, 50, 50);
+        jPanel10.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel10.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel10.setLayout(null);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reator.2.png"))); // NOI18N
-        jPanel5.add(jLabel3);
-        jLabel3.setBounds(110, 120, 50, 50);
+        jLabel4.setText("Tubulação 1");
+        jPanel10.add(jLabel4);
+        jLabel4.setBounds(10, 10, 70, 16);
 
-        jLabel4.setText("Tanques");
-        jPanel5.add(jLabel4);
-        jLabel4.setBounds(120, 320, 44, 16);
+        lblT8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        jPanel10.add(lblT8);
+        lblT8.setBounds(40, 40, 10, 30);
 
-        jLabel5.setText("Bombas");
-        jPanel5.add(jLabel5);
-        jLabel5.setBounds(120, 530, 60, 16);
+        jPanel5.add(jPanel10);
+        jPanel10.setBounds(30, 120, 90, 90);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tanque2.png"))); // NOI18N
-        jPanel5.add(jLabel6);
-        jLabel6.setBounds(30, 360, 90, 40);
+        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel9.setLayout(null);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tanque3.png"))); // NOI18N
-        jPanel5.add(jLabel7);
-        jLabel7.setBounds(200, 350, 40, 80);
+        jLabel1.setText("Tubulação 2");
+        jPanel9.add(jLabel1);
+        jLabel1.setBounds(10, 10, 64, 16);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tanque4.png"))); // NOI18N
-        jPanel5.add(jLabel8);
-        jLabel8.setBounds(30, 420, 80, 50);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        jPanel9.add(jLabel2);
+        jLabel2.setBounds(40, 40, 10, 30);
 
-        jLabel9.setText("jLabel9");
-        jPanel5.add(jLabel9);
-        jLabel9.setBounds(50, 600, 37, 16);
+        jPanel5.add(jPanel9);
+        jPanel9.setBounds(120, 120, 90, 90);
 
-        jLabel10.setText("EQUIPAMENTOS");
-        jPanel5.add(jLabel10);
-        jLabel10.setBounds(100, 60, 100, 16);
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(null);
+
+        jLabel3.setText("Tubulação 3");
+        jPanel4.add(jLabel3);
+        jLabel3.setBounds(10, 10, 64, 16);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        jPanel4.add(jLabel5);
+        jLabel5.setBounds(40, 40, 10, 30);
+
+        jPanel5.add(jPanel4);
+        jPanel4.setBounds(30, 210, 90, 90);
+
+        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel6.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.setLayout(null);
+
+        jLabel6.setText("Tubulação 4");
+        jPanel6.add(jLabel6);
+        jLabel6.setBounds(8, 8, 64, 16);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        jPanel6.add(jLabel7);
+        jLabel7.setBounds(40, 40, 10, 30);
+
+        jPanel5.add(jPanel6);
+        jPanel6.setBounds(120, 210, 90, 90);
+
+        jPanel7.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel7.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel7.setLayout(null);
+
+        jLabel8.setText("Tubulação 5");
+        jPanel7.add(jLabel8);
+        jLabel8.setBounds(8, 8, 64, 16);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        jPanel7.add(jLabel9);
+        jLabel9.setBounds(40, 30, 10, 40);
+
+        jPanel5.add(jPanel7);
+        jPanel7.setBounds(30, 300, 90, 90);
 
         jPanel3.add(jPanel5);
-        jPanel5.setBounds(0, 0, 280, 820);
+        jPanel5.setBounds(0, 60, 280, 470);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
@@ -133,23 +182,23 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         jPanel2.setBounds(280, 0, 120, 820);
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(970, 0, 400, 830);
+        jPanel3.setBounds(970, 0, 400, 530);
 
-        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1362, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 120, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 290, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel4);
-        jPanel4.setBounds(10, 0, 1362, 60);
+        jPanel1.add(jPanel8);
+        jPanel8.setBounds(1250, 530, 120, 290);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 1370, 820);
@@ -203,7 +252,6 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -213,9 +261,16 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel lblT8;
+    private javax.swing.JLabel lblTubulacoes;
     // End of variables declaration//GEN-END:variables
 }

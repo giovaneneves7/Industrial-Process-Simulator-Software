@@ -1,0 +1,31 @@
+{
+
+    bombas : [
+        {
+            "_nome" : "T1",
+            "_caminhoImagem" : "/images/t1.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 20,
+            "_altura" : 50
+        }
+    ],
+
+    tubulacoes : [
+
+        {
+            "_nome" : "T1",
+            "_caminhoImagem" : "/images/t1.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 20,
+            "_altura" : 50,
+            "_diametroInterno" : 15,
+            "_comprimento" : 30
+
+        }
+    ]
+
+    
+
+}

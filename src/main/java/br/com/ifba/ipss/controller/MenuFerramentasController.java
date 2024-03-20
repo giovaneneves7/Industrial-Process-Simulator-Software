@@ -100,7 +100,7 @@ public class MenuFerramentasController {
         this.set_menuAberto(true);
         this.set_nomeMenuAberto(nome);
         
-        this.adicionarFerramentasAoMenu(_ferramentasContainer);
+        this.adicionarFerramentasAoMenu(_ferramentasContainer, nome);
         
     } // abrirMenuFerramentas
     
@@ -114,10 +114,10 @@ public class MenuFerramentasController {
         
     } // fecharMenuFerramentas
     
-    public void adicionarFerramentasAoMenu(JPanel p){
+    public void adicionarFerramentasAoMenu(JPanel p, String nome){
         
-        List<?> listaEquipamentos = _equipamentos.get("Tubulações");
-        int posicaoX = (p.getWidth() / 2); 
+        List<?> listaEquipamentos = _equipamentos.get(nome);
+                
         if (listaEquipamentos != null && !listaEquipamentos.isEmpty()) {
             
             Object primeiroEquipamento = listaEquipamentos.get(0);
@@ -125,7 +125,7 @@ public class MenuFerramentasController {
             if(primeiroEquipamento instanceof Tubulacao) {
                 
                 Tubulacao tubulacao = (Tubulacao) primeiroEquipamento;
-                FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tubulacao, 100, 100, posicaoX,(p.getHeight() / 8));
+                FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tubulacao, 100, 100, (p.getWidth() / 2),(p.getHeight() / 8));
                 p.add(ferramentaContainer);
                 
             } else if (primeiroEquipamento instanceof List) {

@@ -14,7 +14,7 @@
     tubulacoes : [
 
         {
-            "_nome" : "T1",
+            "_nome" : "Tubo 01",
             "_caminhoImagem" : "/images/t1.png",
             "_x" : 0,
             "_y" : 0,

@@ -1,14 +1,16 @@
 package br.com.ifba.ipss.view;
 
 import br.com.ifba.ipss.controller.MenuFerramentasController;
-import br.com.ifba.ipss.model.Equipamento;
 import br.com.ifba.ipss.model.Tubulacao;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.ImageIcon;
 
 /**
@@ -35,34 +37,58 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
     }
 
-    public List<Equipamento> pegarListaEquipamentos(String caminho){
+    public Map<String, List<?>> pegarListaEquipamentos(String caminho){
+        
+        Map<String, List<?>> equipamentos = new HashMap<>();
         
         try(FileReader leitor = new FileReader(caminho)){
             
             Gson gson = new Gson();
-             JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
+            JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
 
-            // Obtenha o array de tubulações do JSON
             JsonObject tubulacoesJson = jsonObject.getAsJsonArray("tubulacoes").get(0).getAsJsonObject();
-
-            // Crie um objeto Tubulacao e coloque os dados do JSON nele
-            Tubulacao tubulacao = new Tubulacao();
-            tubulacao.set_nome(tubulacoesJson.get("_nome").getAsString());
-            tubulacao.set_caminhoImagem(tubulacoesJson.get("_imagem").getAsString());
-            tubulacao.set_x(tubulacoesJson.get("_x").getAsInt());
-            tubulacao.set_y(tubulacoesJson.get("_y").getAsInt());
-            tubulacao.set_largura(tubulacoesJson.get("_largura").getAsInt());
-            tubulacao.set_altura(tubulacoesJson.get("_altura").getAsInt());
-            tubulacao.set_diametroInterno(tubulacoesJson.get("_diametroInterno").getAsInt());
-           
-            // Exiba os dados da tubulação para verificação
-            System.out.println("Nome: " + tubulacao.get_nome());
+            JsonObject bombasJson = jsonObject.getAsJsonArray("bombas").get(0).getAsJsonObject();
+            JsonObject valvulasJson = jsonObject.getAsJsonArray("valvulas").get(0).getAsJsonObject();
+            JsonObject tanquesJson = jsonObject.getAsJsonArray("tanques").get(0).getAsJsonObject();
+            JsonObject reatoresJson = jsonObject.getAsJsonArray("reatores").get(0).getAsJsonObject();
+            JsonObject conexoesJson = jsonObject.getAsJsonArray("conexoes").get(0).getAsJsonObject();
+            
+            equipamentos.put("Tubulações", pegarTubulacoes(tubulacoesJson));
             
         } catch(IOException ex){
             ex.printStackTrace();
         }
         
-        return new ArrayList<>();
+        return equipamentos;
+    }
+    
+    public List<Tubulacao> pegarTubulacoes(JsonObject tubulacoesJson){
+        
+        List<Tubulacao> tubulacoes = new ArrayList<>();
+        
+        Tubulacao tubulacao = new Tubulacao();
+          
+        for (Map.Entry<String, JsonElement> entry : tubulacoesJson.entrySet()) {
+            
+            String chave = entry.getKey();
+            JsonElement valor = entry.getValue();
+
+            switch (chave) {
+                case "_nome" -> tubulacao.set_nome(valor.getAsString());
+                case "_caminhoImagem" -> tubulacao.set_caminhoImagem(valor.getAsString());
+                case "_x" -> tubulacao.set_x(valor.getAsInt());
+                case "_y" -> tubulacao.set_y(valor.getAsInt());
+                case "_largura" -> tubulacao.set_largura(valor.getAsInt());
+                case "_altura" -> tubulacao.set_altura(valor.getAsInt());
+                case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsInt());
+                default -> {}
+            }
+    
+                    }
+        
+        tubulacoes.add(tubulacao);
+        
+        return tubulacoes;
     }
     
     private void inicializadorPersonalizado(){

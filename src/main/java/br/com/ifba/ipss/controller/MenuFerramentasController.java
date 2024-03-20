@@ -9,9 +9,14 @@ package br.com.ifba.ipss.controller;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-import br.com.ifba.ipss.model.Equipamento;
+import br.com.ifba.ipss.model.entity.Equipamento;
+import br.com.ifba.ipss.model.entity.Tubulacao;
+import br.com.ifba.ipss.model.widget.FerramentaContainer;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import lombok.Data;
@@ -30,9 +35,21 @@ public class MenuFerramentasController {
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
+    
     private boolean _menuAberto = false;
     private String _nomeMenuAberto;
     private JPanel _ferramentasContainer;
+    private Map<String, List<?>> _equipamentos = new HashMap<>();
+
+    
+    // *************************************************//
+    // ***************** { Construtor } ****************//
+    // *************************************************//
+    public MenuFerramentasController(Map<String, List<?>> equipamentos){
+        
+        this._equipamentos = equipamentos;
+        
+    }
     // *************************************************//
     // ****************** { Métodos } ******************//
     // *************************************************//
@@ -82,6 +99,9 @@ public class MenuFerramentasController {
         
         this.set_menuAberto(true);
         this.set_nomeMenuAberto(nome);
+        
+        this.adicionarFerramentasAoMenu(_ferramentasContainer, nome);
+        
     } // abrirMenuFerramentas
     
     public void fecharMenuFerramentas(JPanel p){
@@ -94,6 +114,37 @@ public class MenuFerramentasController {
         
     } // fecharMenuFerramentas
     
+    public void adicionarFerramentasAoMenu(JPanel p, String nome){
+        
+        List<?> listaEquipamentos = _equipamentos.get(nome);
+                
+        if (listaEquipamentos != null && !listaEquipamentos.isEmpty()) {
+            
+            Object primeiroEquipamento = listaEquipamentos.get(0);
+
+            if(primeiroEquipamento instanceof Tubulacao) {
+                
+                Tubulacao tubulacao = (Tubulacao) primeiroEquipamento;
+                FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tubulacao, 100, 100, (p.getWidth() / 2),(p.getHeight() / 8));
+                p.add(ferramentaContainer);
+                
+            } else if (primeiroEquipamento instanceof List) {
+                List<?> listaTubulacoes = (List<?>) primeiroEquipamento;
+                
+                if (!listaTubulacoes.isEmpty() && listaTubulacoes.get(0) instanceof Tubulacao) {
+                    Tubulacao tubulacao = (Tubulacao) listaTubulacoes.get(0);
+                    
+                    FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tubulacao, 280, 350, 0, 0);
+                    p.add(ferramentaContainer);
+                }
+                
+            }
+        }   
+    
+        
+        p.revalidate();
+        p.repaint();
+    }
     public void selecionarFerramenta(){
         /* TODO: Adicionar lógica */
     }

@@ -1,22 +1,41 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package br.com.ifba.ipss.model.widget;
+
+import br.com.ifba.ipss.model.entity.Equipamento;
+import java.awt.Color;
+import javax.swing.JLabel;
 
 /**
  *
- * @author curso
+ * @author Giovane Neves
  */
-public class FerramentaContainer extends javax.swing.JPanel {
+public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPanel {
 
     /**
      * Creates new form FerramentaContainer
      */
-    public FerramentaContainer() {
+    public FerramentaContainer(E equipamento) {
         initComponents();
+        inicializadorPersonalizado(equipamento);
+        
     }
 
+    public void inicializadorPersonalizado(E equipamento){
+        
+        this.setBackground(Color.decode("#5E5E5E"));
+        this.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        this.setForeground(new java.awt.Color(255, 255, 255));
+        this.setBounds(0, 0, 280, 350);
+        this.setLayout(null);
+        
+        JLabel titulo = new JLabel(equipamento.get_nome());
+        titulo.setBounds(10, 10, 64, 16);
+        
+        JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
+        imagem.setBounds(40, 40, 10, 30);
+        
+        this.add(titulo);
+        this.add(imagem);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,7 +53,7 @@ public class FerramentaContainer extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 297, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

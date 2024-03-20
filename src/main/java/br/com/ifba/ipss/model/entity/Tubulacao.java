@@ -1,7 +1,7 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.model;
+package br.com.ifba.ipss.model.entity;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -24,14 +24,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Reator extends Equipamento{
+public class Tubulacao extends Equipamento{
     
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-    private double _agitacao;    // A agitação do reator.
-    private double _temperatura; // A temperatura do reator.
-    private double _pressao;     // A pressão do reator.
+    private double _diametroInterno; // O diametro interno do tubo.
+    private double comprimento;      // O comprimento do tubo.
     
-} // class Reator
+} // class Tubulacao

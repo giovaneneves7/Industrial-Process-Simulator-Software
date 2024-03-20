@@ -1,7 +1,7 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.model;
+package br.com.ifba.ipss.model.entity;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -21,16 +21,17 @@ import lombok.NoArgsConstructor;
  * @author Giovane Neves
  * @since V0.0.1
  */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Tubulacao extends Equipamento{
+public class Conexao extends Equipamento{
     
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-    private double _diametroInterno; // O diametro interno do tubo.
-    private double comprimento;      // O comprimento do tubo.
+    private double perdaDeCarga;    // A perda de carga da conexao.
+    private double diametroInterno; // O diâmetro interno da conexão.
     
-} // class Tubulacao
+} // class Conexao

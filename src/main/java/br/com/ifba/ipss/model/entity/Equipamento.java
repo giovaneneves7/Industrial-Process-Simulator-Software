@@ -1,11 +1,10 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.model;
+package br.com.ifba.ipss.model.entity;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
-
 
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
@@ -22,18 +21,22 @@ import lombok.NoArgsConstructor;
  * @author Giovane Neves
  * @since V0.0.1
  */
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Tanque extends Equipamento{
-    
+public class Equipamento {
+   
+    /* TODO: Adicionar dependência do lomnok quando a internet voltar. */
+
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-    private double _volume;      // O volume do tanque. 
-    private double _temperatura; // A teperatura do tanque.
-    private double _pressao;     // A pressão do tanque.
+    private String _nome;          // O nome do equipamento.
+    private String _caminhoImagem; // O caminho para a imagem do equipamento.
+    private double _x;             // A posição 'X' do equipamento.
+    private double _y;             // A posição 'Y' do equipamento.
+    private double _largura;       // A largura do equipamento.
+    private double _altura;        // A altura do equipamento.
     
-} // class Tanque
+} // class Equipamento

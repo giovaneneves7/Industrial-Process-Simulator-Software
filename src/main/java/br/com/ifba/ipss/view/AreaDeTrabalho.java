@@ -1,11 +1,21 @@
 package br.com.ifba.ipss.view;
 
 import br.com.ifba.ipss.controller.MenuFerramentasController;
+import br.com.ifba.ipss.model.entity.Tubulacao;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.swing.ImageIcon;
 
 /**
  *
- * @author curso
+ * @author Giovane Neves
  */
 public class AreaDeTrabalho extends javax.swing.JFrame {
 
@@ -13,24 +23,81 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     // *************************************************//
     // ************** { Variáveis Globais } ************//
     // *************************************************//
-    private MenuFerramentasController _menuFerramentasController = new MenuFerramentasController();
+    private final MenuFerramentasController _menuFerramentasController;
     
     /**
      * Cria a interface com os componentes iniciais
      */
     public AreaDeTrabalho() {
         
+        _menuFerramentasController = new MenuFerramentasController(pegarListaEquipamentos("src/main/resources/files/ferramentas.json"));
+        
         inicializadorPersonalizado();
         initComponents();
-        
+         
     }
 
+    public Map<String, List<?>> pegarListaEquipamentos(String caminho){
+        
+        Map<String, List<?>> equipamentos = new HashMap<>();
+        
+        try(FileReader leitor = new FileReader(caminho)){
+            
+            Gson gson = new Gson();
+            JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
+
+            JsonObject tubulacoesJson = jsonObject.getAsJsonArray("tubulacoes").get(0).getAsJsonObject();
+            //JsonObject bombasJson = jsonObject.getAsJsonArray("bombas").get(0).getAsJsonObject();
+            //JsonObject valvulasJson = jsonObject.getAsJsonArray("valvulas").get(0).getAsJsonObject();
+            //JsonObject tanquesJson = jsonObject.getAsJsonArray("tanques").get(0).getAsJsonObject();
+            //JsonObject reatoresJson = jsonObject.getAsJsonArray("reatores").get(0).getAsJsonObject();
+            //JsonObject conexoesJson = jsonObject.getAsJsonArray("conexoes").get(0).getAsJsonObject();
+            
+            equipamentos.put("Tubulações", pegarTubulacoes(tubulacoesJson));
+            
+        } catch(IOException ex){
+            ex.printStackTrace();
+        }
+        
+        return equipamentos;
+    }
+    
+    public List<Tubulacao> pegarTubulacoes(JsonObject tubulacoesJson){
+        
+        List<Tubulacao> tubulacoes = new ArrayList<>();
+        
+        Tubulacao tubulacao = new Tubulacao();
+          
+        for (Map.Entry<String, JsonElement> entry : tubulacoesJson.entrySet()) {
+            
+            String chave = entry.getKey();
+            JsonElement valor = entry.getValue();
+
+            switch (chave) {
+                case "_nome" -> tubulacao.set_nome(valor.getAsString());
+                case "_caminhoImagem" -> tubulacao.set_caminhoImagem(valor.getAsString());
+                case "_x" -> tubulacao.set_x(valor.getAsInt());
+                case "_y" -> tubulacao.set_y(valor.getAsInt());
+                case "_largura" -> tubulacao.set_largura(valor.getAsInt());
+                case "_altura" -> tubulacao.set_altura(valor.getAsInt());
+                case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsInt());
+                default -> {}
+            }
+    
+                    }
+        
+        tubulacoes.add(tubulacao);
+        
+        return tubulacoes;
+    }
+    
     private void inicializadorPersonalizado(){
         
         ImageIcon favicon = new ImageIcon(getClass().getResource("/images/logo.jpg"));
         
         this.setIconImage(favicon.getImage());
         this.setTitle("EduSimLab - Laboratório Virtual de Simulação de Processos");
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.

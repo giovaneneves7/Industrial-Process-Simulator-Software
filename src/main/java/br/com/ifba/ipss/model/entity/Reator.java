@@ -1,7 +1,7 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.model;
+package br.com.ifba.ipss.model.entity;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -21,17 +21,17 @@ import lombok.NoArgsConstructor;
  * @author Giovane Neves
  * @since V0.0.1
  */
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Conexao extends Equipamento{
+public class Reator extends Equipamento{
     
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-    private double perdaDeCarga;    // A perda de carga da conexao.
-    private double diametroInterno; // O diâmetro interno da conexão.
+    private double _agitacao;    // A agitação do reator.
+    private double _temperatura; // A temperatura do reator.
+    private double _pressao;     // A pressão do reator.
     
-} // class Conexao
+} // class Reator

@@ -396,7 +396,7 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         jLabel4.setBounds(770, 370, 0, 0);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1370, 820);
+        jPanel1.setBounds(0, 10, 1370, 820);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

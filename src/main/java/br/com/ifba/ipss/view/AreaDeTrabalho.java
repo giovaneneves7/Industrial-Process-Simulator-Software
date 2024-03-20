@@ -1,7 +1,7 @@
 package br.com.ifba.ipss.view;
 
 import br.com.ifba.ipss.controller.MenuFerramentasController;
-import br.com.ifba.ipss.model.Tubulacao;
+import br.com.ifba.ipss.model.entity.Tubulacao;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -15,7 +15,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author curso
+ * @author Giovane Neves
  */
 public class AreaDeTrabalho extends javax.swing.JFrame {
 
@@ -34,7 +34,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         inicializadorPersonalizado();
         initComponents();
-        
+         
     }
 
     public Map<String, List<?>> pegarListaEquipamentos(String caminho){
@@ -47,11 +47,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
 
             JsonObject tubulacoesJson = jsonObject.getAsJsonArray("tubulacoes").get(0).getAsJsonObject();
-            JsonObject bombasJson = jsonObject.getAsJsonArray("bombas").get(0).getAsJsonObject();
-            JsonObject valvulasJson = jsonObject.getAsJsonArray("valvulas").get(0).getAsJsonObject();
-            JsonObject tanquesJson = jsonObject.getAsJsonArray("tanques").get(0).getAsJsonObject();
-            JsonObject reatoresJson = jsonObject.getAsJsonArray("reatores").get(0).getAsJsonObject();
-            JsonObject conexoesJson = jsonObject.getAsJsonArray("conexoes").get(0).getAsJsonObject();
+            //JsonObject bombasJson = jsonObject.getAsJsonArray("bombas").get(0).getAsJsonObject();
+            //JsonObject valvulasJson = jsonObject.getAsJsonArray("valvulas").get(0).getAsJsonObject();
+            //JsonObject tanquesJson = jsonObject.getAsJsonArray("tanques").get(0).getAsJsonObject();
+            //JsonObject reatoresJson = jsonObject.getAsJsonArray("reatores").get(0).getAsJsonObject();
+            //JsonObject conexoesJson = jsonObject.getAsJsonArray("conexoes").get(0).getAsJsonObject();
             
             equipamentos.put("Tubulações", pegarTubulacoes(tubulacoesJson));
             

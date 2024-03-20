@@ -2,12 +2,12 @@
 
     bombas : [
         {
-            "_nome" : "T1",
-            "_caminhoImagem" : "/images/t1.png",
+            "_nome" : "",
+            "_caminhoImagem" : "/images/*.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 20,
-            "_altura" : 50
+            "_largura" : 0,
+            "_altura" : 0
         }
     ],
 
@@ -18,12 +18,25 @@
             "_caminhoImagem" : "/images/t1.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 20,
+            "_largura" : 10,
+            "_altura" : 30,
+            "_diametroInterno" : 10,
+            "_comprimento" : 30
+
+        },
+
+        {
+            "_nome" : "T2",
+            "_caminhoImagem" : "/images/t2.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 10,
             "_altura" : 50,
-            "_diametroInterno" : 15,
+            "_diametroInterno" : 10,
             "_comprimento" : 30
 
         }
+
     ]
 
     

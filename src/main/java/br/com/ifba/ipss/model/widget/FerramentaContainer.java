@@ -1,19 +1,33 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+// *************************************************//
 package br.com.ifba.ipss.model.widget;
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
 
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
 import br.com.ifba.ipss.model.entity.Equipamento;
 import java.awt.Color;
 import javax.swing.JLabel;
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
+
 
 /**
  *
  * @author Giovane Neves
+ * @since V0.0.1
  */
 public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPanel {
 
     /**
      * Creates new form FerramentaContainer
      */
-    public FerramentaContainer(E equipamento, int altura, int largura, int x, int y) {
+    public FerramentaContainer(E equipamento, final int altura, final int largura, final int x, final int y) {
         initComponents();
         inicializadorPersonalizado(equipamento, altura, largura, x, y);
         
@@ -32,7 +46,7 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
         JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
         imagem.setBounds(40, 40, 10, 30);
         
-        int tituloX = (largura - titulo.getWidth()) / 2;
+        int tituloX = (largura - 50) / 2;
         titulo.setBounds(tituloX, 10, 64, 16);
         titulo.setForeground(Color.white);
         

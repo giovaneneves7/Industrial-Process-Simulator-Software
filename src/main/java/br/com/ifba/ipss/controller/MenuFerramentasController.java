@@ -12,8 +12,9 @@ package br.com.ifba.ipss.controller;
 import br.com.ifba.ipss.model.Equipamento;
 import java.awt.Color;
 import java.awt.Font;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import lombok.Data;
@@ -36,13 +37,13 @@ public class MenuFerramentasController {
     private boolean _menuAberto = false;
     private String _nomeMenuAberto;
     private JPanel _ferramentasContainer;
-    private List<Equipamento> _equipamentos = new ArrayList<>();
+    private Map<String, List<?>> _equipamentos = new HashMap<>();
 
     
     // *************************************************//
-    // ***************** { Construtor } *****************//
+    // ***************** { Construtor } ****************//
     // *************************************************//
-    public MenuFerramentasController(List<Equipamento> equipamentos){
+    public MenuFerramentasController(Map<String, List<?>> equipamentos){
         
         this._equipamentos = equipamentos;
         

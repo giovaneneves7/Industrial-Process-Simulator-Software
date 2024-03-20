@@ -14,6 +14,7 @@ public class TelaSplash extends javax.swing.JFrame {
      */
     public TelaSplash() {
         initComponents();
+        this.setUndecorated(true);
         this.gerenciarTelaSplash();
         
     }
@@ -75,14 +76,13 @@ public class TelaSplash extends javax.swing.JFrame {
         prgBarCarregando.setBounds(270, 450, 270, 10);
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.jpg"))); // NOI18N
-        lblLogo.setText("jLabel1");
         pnlBackground.add(lblLogo);
-        lblLogo.setBounds(0, -140, 841, 700);
+        lblLogo.setBounds(0, -140, 840, 700);
 
         getContentPane().add(pnlBackground);
         pnlBackground.setBounds(0, 0, 790, 650);
 
-        setSize(new java.awt.Dimension(801, 566));
+        setSize(new java.awt.Dimension(802, 566));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

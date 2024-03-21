@@ -1,6 +1,7 @@
 package br.com.ifba.ipss.view;
 
 import br.com.ifba.ipss.controller.MenuFerramentasController;
+import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.model.entity.Tubulacao;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -30,7 +31,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
      */
     public AreaDeTrabalho() {
         
-        _menuFerramentasController = new MenuFerramentasController(pegarListaEquipamentos("src/main/resources/files/ferramentas.json"));
+        _menuFerramentasController = new MenuFerramentasController(pegarListaEquipamentos(PathHelper.FERRAMENTAS_JSON));
         
         inicializadorPersonalizado();
         initComponents();
@@ -78,9 +79,9 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 case "_caminhoImagem" -> tubulacao.set_caminhoImagem(valor.getAsString());
                 case "_x" -> tubulacao.set_x(valor.getAsInt());
                 case "_y" -> tubulacao.set_y(valor.getAsInt());
-                case "_largura" -> tubulacao.set_largura(valor.getAsInt());
-                case "_altura" -> tubulacao.set_altura(valor.getAsInt());
-                case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsInt());
+                case "_largura" -> tubulacao.set_larguraPx(valor.getAsInt());
+                case "_altura" -> tubulacao.set_alturaPx(valor.getAsInt());
+                case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsString());
                 default -> {}
             }
     

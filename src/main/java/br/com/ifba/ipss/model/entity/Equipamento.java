@@ -26,8 +26,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Equipamento {
    
-    /* TODO: Adicionar dependência do lomnok quando a internet voltar. */
-
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
@@ -36,7 +34,8 @@ public class Equipamento {
     private String _caminhoImagem; // O caminho para a imagem do equipamento.
     private double _x;             // A posição 'X' do equipamento.
     private double _y;             // A posição 'Y' do equipamento.
-    private double _largura;       // A largura do equipamento.
-    private double _altura;        // A altura do equipamento.
+    private double _larguraPx;     // A largura do equipamento em pixels.
+    private double _alturaPx;      // A altura do equipamento em pixels.
+    private double _comprimentoM;  // O comprimento do equipamento em metros.
     
 } // class Equipamento

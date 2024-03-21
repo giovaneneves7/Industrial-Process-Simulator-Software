@@ -1,5 +1,5 @@
 // *************************************************//
-// *************** { COMEÃ‡O - Package } ************//
+// *************** { COMEÇO - Package } ************//
 // *************************************************//
 package br.com.ifba.ipss.controller;
 // *************************************************//
@@ -7,7 +7,7 @@ package br.com.ifba.ipss.controller;
 // *************************************************//
 
 // *************************************************//
-// ************ { COMEÃ‡O - Imports } ***************//
+// ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 import br.com.ifba.ipss.builder.LabelBuilder;
 import br.com.ifba.ipss.helper.SizeHelper;
@@ -42,7 +42,7 @@ public class MenuFerramentasController {
     private String _nomeMenuAberto;
     private JPanel _ferramentasContainer;
     private Map<String, List<?>> _equipamentos = new HashMap<>();
-
+    
     
     // *************************************************//
     // ***************** { Construtor } ****************//
@@ -53,15 +53,15 @@ public class MenuFerramentasController {
         
     }
     // *************************************************//
-    // ****************** { MÃ©todos } ******************//
+    // ****************** { Métodos } ******************//
     // *************************************************//
     
     /**
-     * Abre o menu de ferramentas quando um botÃ£o Ã© clicado.
+     * Abre o menu de ferramentas quando um botão é clicado.
      */
     public void abrirMenuFerramentas(JPanel p, final String nome){      
         
-        if(this.is_menuAberto())
+        if(this._menuAberto)
             this.fecharMenuFerramentas(p);
         
         int larguraF = p.getWidth();
@@ -70,15 +70,15 @@ public class MenuFerramentasController {
         int y = (alturaF - 820) / 2;
         
         
-        // InstÃ¢ncia do painel
+        // Instância do painel
         this._ferramentasContainer = new JPanel();        
         this._ferramentasContainer.setLayout(null);
         
-        // CustomizaÃ§Ã£o do painel
+        // Customização do painel
         _ferramentasContainer.setBounds(x, y, 280, 820);
         _ferramentasContainer.setBackground(Color.decode("#5E5E5E"));
         
-        // TÃ­tulo do painel 
+        // Título do painel 
         JLabel tituloMenu = new LabelBuilder()
                 .setTitulo(nome)
                 .setForeground(Color.white)
@@ -101,8 +101,8 @@ public class MenuFerramentasController {
         p.revalidate();
         p.repaint();
         
-        this.set_menuAberto(true);
-        this.set_nomeMenuAberto(nome);
+        this._menuAberto = true;
+        this._nomeMenuAberto = nome;
         
         this.adicionarFerramentasAoMenu(_ferramentasContainer, nome);
         
@@ -113,8 +113,8 @@ public class MenuFerramentasController {
         p.remove(this._ferramentasContainer);
         p.revalidate();
         p.repaint();
-        this.set_menuAberto(false);
-        this.set_nomeMenuAberto(null);
+        this._menuAberto = false;
+        this._nomeMenuAberto = null;
         
     } // fecharMenuFerramentas
     
@@ -155,18 +155,18 @@ public class MenuFerramentasController {
     
     
     public void selecionarFerramenta(){
-        /* TODO: Adicionar lÃ³gica */
+        /* TODO: Adicionar lógica */
     }
     
     public void adicionarFerramentaAAAreaDeTrabalho(){
-        /* TODO: Adicionar lÃ³gica */
+        /* TODO: Adicionar lógica */
     }
     
     public void removerFerramentaDaAreaDeTrabalho(){
-        /* TODO: Adicionar lÃ³gica */
+        /* TODO: Adicionar lógica */
     }
     
     public void conectarFerramentas(Equipamento origem, Equipamento destino){
-        /* TODO: Adicionar lÃ³gica */
+        /* TODO: Adicionar lógica */
     }
 } // class MenuFerramentasController

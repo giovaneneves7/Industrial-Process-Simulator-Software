@@ -9,6 +9,8 @@ package br.com.ifba.ipss.controller;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.builder.LabelBuilder;
+import br.com.ifba.ipss.helper.SizeHelper;
 import br.com.ifba.ipss.model.entity.Equipamento;
 import br.com.ifba.ipss.model.entity.Tubulacao;
 import br.com.ifba.ipss.model.widget.FerramentaContainer;
@@ -77,11 +79,13 @@ public class MenuFerramentasController {
         _ferramentasContainer.setBackground(Color.decode("#5E5E5E"));
         
         // Título do painel 
-        JLabel tituloMenu = new JLabel();
-        tituloMenu.setText(nome);
+        JLabel tituloMenu = new LabelBuilder()
+                .setTitulo(nome)
+                .setForeground(Color.white)
+                .build();
+        
         Font fonteNegrito = new Font(tituloMenu.getFont().getName(), Font.BOLD, tituloMenu.getFont().getSize());
         tituloMenu.setFont(fonteNegrito);
-        tituloMenu.setForeground(Color.white);
         
         int larguraC = _ferramentasContainer.getWidth();
         int alturaC = _ferramentasContainer.getHeight(); 
@@ -124,27 +128,32 @@ public class MenuFerramentasController {
 
             if(primeiroEquipamento instanceof Tubulacao) {
                 
-                Tubulacao tubulacao = (Tubulacao) primeiroEquipamento;
-                FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tubulacao, 100, 100, (p.getWidth() / 2),(p.getHeight() / 8));
-                p.add(ferramentaContainer);
-                
-            } else if (primeiroEquipamento instanceof List) {
-                List<?> listaTubulacoes = (List<?>) primeiroEquipamento;
-                
-                if (!listaTubulacoes.isEmpty() && listaTubulacoes.get(0) instanceof Tubulacao) {
-                    Tubulacao tubulacao = (Tubulacao) listaTubulacoes.get(0);
-                    
-                    FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tubulacao, 280, 350, 0, 0);
-                    p.add(ferramentaContainer);
+                int cont = 0;
+                                
+                for(int i = 0; i < listaEquipamentos.size(); i+=2){
+
+                        boolean segundaIteracao = listaEquipamentos.size() < (i + 1);
+                                                
+                        for(int j = 0; j < ((segundaIteracao) ? 2 : 1); j++){
+                            
+                            Tubulacao tub = (Tubulacao) listaEquipamentos.get(cont);
+                            FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tub,SizeHelper.ALTURA_FERRAMENTA_CONTAINER, SizeHelper.LARGURA_FERRAMENTA_CONTAINER, (p.getWidth() / 2), (p.getHeight() / 8));
+                            p.add(ferramentaContainer);
+                            cont++;
+                            
+                        } 
+  
                 }
-                
-            }
+                 
+              
+            } 
         }   
-    
-        
+
         p.revalidate();
         p.repaint();
     }
+    
+    
     public void selecionarFerramenta(){
         /* TODO: Adicionar lógica */
     }

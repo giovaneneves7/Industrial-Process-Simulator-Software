@@ -34,21 +34,57 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         lblTubulacoes = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        pnlT1 = new javax.swing.JPanel();
+        lblT1 = new javax.swing.JLabel();
         lblT8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -86,28 +122,39 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(1250, 0, 120, 820);
 
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setBackground(new java.awt.Color(102, 102, 102));
         jPanel5.setLayout(null);
 
+        lblTubulacoes.setForeground(new java.awt.Color(255, 255, 255));
         lblTubulacoes.setText("TUBULAÇÕES");
         jPanel5.add(lblTubulacoes);
-        lblTubulacoes.setBounds(100, 10, 100, 16);
+        lblTubulacoes.setBounds(100, 110, 90, 16);
 
-        jPanel10.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel10.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel10.setLayout(null);
+        pnlT1.setBackground(new java.awt.Color(204, 204, 204));
+        pnlT1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlT1.setForeground(new java.awt.Color(255, 255, 255));
+        pnlT1.setLayout(null);
 
-        jLabel4.setText("Tubulação 1");
-        jPanel10.add(jLabel4);
-        jLabel4.setBounds(10, 10, 70, 16);
+        lblT1.setText("Tubulação 1");
+        pnlT1.add(lblT1);
+        lblT1.setBounds(10, 10, 70, 16);
 
         lblT8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        jPanel10.add(lblT8);
-        lblT8.setBounds(40, 40, 10, 30);
+        pnlT1.add(lblT8);
+        lblT8.setBounds(60, 40, 10, 30);
 
-        jPanel5.add(jPanel10);
-        jPanel10.setBounds(50, 70, 90, 90);
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel10.setText("Di=1in");
+        pnlT1.add(jLabel10);
+        jLabel10.setBounds(20, 40, 40, 16);
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel11.setText("L=2m");
+        pnlT1.add(jLabel11);
+        jLabel11.setBounds(20, 60, 26, 14);
+
+        jPanel5.add(pnlT1);
+        pnlT1.setBounds(50, 180, 90, 90);
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
         jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -120,10 +167,20 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
         jPanel9.add(jLabel2);
-        jLabel2.setBounds(40, 40, 10, 30);
+        jLabel2.setBounds(60, 40, 10, 30);
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel22.setText("Di=1in");
+        jPanel9.add(jLabel22);
+        jLabel22.setBounds(20, 40, 40, 16);
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel23.setText("L=4m");
+        jPanel9.add(jLabel23);
+        jLabel23.setBounds(20, 60, 26, 14);
 
         jPanel5.add(jPanel9);
-        jPanel9.setBounds(140, 70, 90, 90);
+        jPanel9.setBounds(140, 180, 90, 90);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -136,10 +193,20 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(40, 40, 10, 30);
+        jLabel5.setBounds(60, 40, 10, 30);
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel24.setText("L=6m");
+        jPanel4.add(jLabel24);
+        jLabel24.setBounds(20, 60, 26, 14);
+
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel32.setText("Di=1in");
+        jPanel4.add(jLabel32);
+        jLabel32.setBounds(20, 40, 40, 16);
 
         jPanel5.add(jPanel4);
-        jPanel4.setBounds(50, 160, 90, 90);
+        jPanel4.setBounds(50, 270, 90, 90);
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -152,10 +219,20 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
         jPanel6.add(jLabel7);
-        jLabel7.setBounds(40, 40, 10, 30);
+        jLabel7.setBounds(60, 40, 10, 30);
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel25.setText("L=8m");
+        jPanel6.add(jLabel25);
+        jLabel25.setBounds(20, 60, 26, 14);
+
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel33.setText("Di=1in");
+        jPanel6.add(jLabel33);
+        jLabel33.setBounds(20, 40, 40, 16);
 
         jPanel5.add(jPanel6);
-        jPanel6.setBounds(140, 160, 90, 90);
+        jPanel6.setBounds(140, 270, 90, 90);
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -168,16 +245,158 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
         jPanel7.add(jLabel9);
-        jLabel9.setBounds(40, 30, 10, 40);
+        jLabel9.setBounds(60, 40, 10, 40);
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel26.setText("L=10m");
+        jPanel7.add(jLabel26);
+        jLabel26.setBounds(20, 60, 31, 14);
+
+        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel34.setText("Di=1in");
+        jPanel7.add(jLabel34);
+        jLabel34.setBounds(20, 40, 40, 16);
 
         jPanel5.add(jPanel7);
-        jPanel7.setBounds(50, 250, 90, 90);
+        jPanel7.setBounds(50, 360, 90, 90);
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(null);
+
+        jLabel13.setText("Tubulaçaõ 7");
+        jPanel3.add(jLabel13);
+        jLabel13.setBounds(10, 10, 70, 16);
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        jPanel3.add(jLabel18);
+        jLabel18.setBounds(60, 40, 10, 40);
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel28.setText("L=4m");
+        jPanel3.add(jLabel28);
+        jLabel28.setBounds(20, 60, 26, 14);
+
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel36.setText("Di=1½in");
+        jPanel3.add(jLabel36);
+        jLabel36.setBounds(20, 40, 40, 16);
+
+        jPanel5.add(jPanel3);
+        jPanel3.setBounds(50, 450, 90, 90);
+
+        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel8.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel8.setLayout(null);
+
+        jLabel12.setText("Tubulação 6");
+        jPanel8.add(jLabel12);
+        jLabel12.setBounds(10, 10, 80, 16);
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        jPanel8.add(jLabel17);
+        jLabel17.setBounds(60, 40, 10, 40);
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel27.setText("L=2m");
+        jPanel8.add(jLabel27);
+        jLabel27.setBounds(20, 60, 26, 14);
+
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel35.setText("Di=1½in");
+        jPanel8.add(jLabel35);
+        jLabel35.setBounds(20, 40, 40, 16);
+
+        jPanel5.add(jPanel8);
+        jPanel8.setBounds(140, 360, 90, 90);
+
+        jPanel11.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel11.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel11.setLayout(null);
+
+        jLabel14.setText("Tubulação 8");
+        jPanel11.add(jLabel14);
+        jLabel14.setBounds(10, 10, 70, 16);
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        jPanel11.add(jLabel19);
+        jLabel19.setBounds(60, 30, 10, 40);
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel29.setText("L=6m");
+        jPanel11.add(jLabel29);
+        jLabel29.setBounds(20, 60, 26, 14);
+
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel37.setText("Di=1½in");
+        jPanel11.add(jLabel37);
+        jLabel37.setBounds(20, 40, 40, 16);
+
+        jPanel5.add(jPanel11);
+        jPanel11.setBounds(140, 450, 90, 90);
+
+        jPanel12.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel12.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel12.setLayout(null);
+
+        jLabel15.setText("Tubulação 9");
+        jPanel12.add(jLabel15);
+        jLabel15.setBounds(10, 10, 64, 16);
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        jPanel12.add(jLabel20);
+        jLabel20.setBounds(60, 40, 10, 40);
+
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel30.setText("L=8m");
+        jPanel12.add(jLabel30);
+        jLabel30.setBounds(20, 60, 26, 14);
+
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel38.setText("Di=1½in");
+        jPanel12.add(jLabel38);
+        jLabel38.setBounds(20, 40, 40, 16);
+
+        jPanel5.add(jPanel12);
+        jPanel12.setBounds(50, 540, 90, 90);
+
+        jPanel13.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel13.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel13.setLayout(null);
+
+        jLabel16.setText("Tubulação 10");
+        jPanel13.add(jLabel16);
+        jLabel16.setBounds(10, 10, 70, 16);
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        jPanel13.add(jLabel21);
+        jLabel21.setBounds(60, 40, 10, 40);
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel31.setText("L=10m");
+        jPanel13.add(jLabel31);
+        jLabel31.setBounds(20, 60, 40, 14);
+
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel39.setText("Di=1½in");
+        jPanel13.add(jLabel39);
+        jLabel39.setBounds(20, 40, 40, 16);
+
+        jPanel5.add(jPanel13);
+        jPanel13.setBounds(140, 540, 90, 90);
 
         jPanel1.add(jPanel5);
-        jPanel5.setBounds(970, 220, 280, 350);
+        jPanel5.setBounds(970, 0, 280, 820);
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(770, 370, 0, 0);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1370, 820);
+        jPanel1.setBounds(0, 10, 1370, 820);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -228,8 +447,38 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -237,14 +486,20 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel lblT1;
     private javax.swing.JLabel lblT8;
     private javax.swing.JLabel lblTubulacoes;
+    private javax.swing.JPanel pnlT1;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,7 +30,7 @@ public class Tubulacao extends Equipamento{
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-    private double _diametroInterno; // O diametro interno do tubo.
+    private String _diametroInterno; // O diametro interno do tubo.
     private double comprimento;      // O comprimento do tubo.
     
 } // class Tubulacao

@@ -1,7 +1,20 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+// *************************************************//
 package br.com.ifba.ipss.builder;
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
 
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JLabel;
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
 
 /**
  *
@@ -14,7 +27,7 @@ public class LabelBuilder {
     private javax.swing.ImageIcon _imagem;
     private Color _background;
     private Color _foreground;
-    
+    private Font _fonte;
     
     
     public LabelBuilder setTitulo(String titulo){
@@ -44,6 +57,13 @@ public class LabelBuilder {
         
         return this;
     }
+    
+    public LabelBuilder setFonte(Font fonte){
+        
+        this._fonte = fonte;
+        
+        return this;
+    }
             
     public JLabel build(){
         
@@ -53,6 +73,7 @@ public class LabelBuilder {
         label.setForeground(_foreground);
         label.setBackground(_background);
         label.setIcon(_imagem);
+        label.setFont(_fonte);
         
         return label;
     }

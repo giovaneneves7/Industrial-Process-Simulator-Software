@@ -1,57 +1,84 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+// *************************************************//
 package br.com.ifba.ipss.view;
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
 
-import java.awt.Dimension;
-import javax.swing.SwingWorker;
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
+import br.com.ifba.ipss.controller.SplashController;
+import br.com.ifba.ipss.feature.splash.model.Splash;
+import br.com.ifba.ipss.helper.PathHelper;
+import javax.swing.ImageIcon;
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
 
 /**
  *
  * @author Giovane Neves
+ * @since V0.0.1
  */
 public class TelaSplash extends javax.swing.JFrame {
 
+    // *************************************************//
+    // ****************** { Atributos } ****************//
+    // *************************************************//
+    
+    private SplashController splashController;
+    
+    // *************************************************//
+    // ****************** { Construtor } ***************//
+    // *************************************************//
+    
     /**
-     * Creates new form TelaSplash
+     * Construtor de TelaSplash
      */
     public TelaSplash() {
+        
         initComponents();
-        this.setUndecorated(true);
-        this.gerenciarTelaSplash();
+        inicializadorPersonalizado();
         
-    }
+        Splash s = criarSplash();
+        splashController = new SplashController(s);
+        
+        splashController.criarTelaSplash(
+                this.pnlBackground
+        );
+        
+        splashController.carregar(
+                this, 
+                new AreaDeTrabalho()
+        );
+        
+    } // TelaSplash
     
-    public void gerenciarTelaSplash(){
-        prgBarCarregando.setStringPainted(true);
-        prgBarCarregando.setValue(0);
-        prgBarCarregando.setSize(new Dimension(300, 23));
+    // *************************************************//
+    // ******************* { Métodos } *****************//
+    // *************************************************//
+    public void inicializadorPersonalizado(){
         
-        SwingWorker<Void, Integer> worker = new SwingWorker<Void, Integer>() {
-            @Override
-            protected Void doInBackground() throws Exception {
-                for (int i = 0; i <= 100; i++) {
-                    try {
-                        Thread.sleep(20);
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                    }
-                    publish(i); // Atualiza a barra de progresso
-                }
-                return null;
-            }
-
-            @Override
-            protected void process(java.util.List<Integer> chunks) {
-                int latestValue = chunks.get(chunks.size() - 1);
-                prgBarCarregando.setValue(latestValue);
-                prgBarCarregando.setString(latestValue + "%");
-                if(latestValue == 100){
-                    new AreaDeTrabalho().setVisible(true);
-                    dispose();
-                }
-            }
-        };
-
-        worker.execute(); 
-    }
+        this.setUndecorated(true);
+        this.setIconImage(
+                new ImageIcon(this.getClass().getResource(PathHelper.LOGO)).getImage()
+        );
+        pnlBackground.setSize(new java.awt.Dimension(802, 566));
+        
+    } // inicializadorPersonalizado
+    
+    public Splash criarSplash(){
+        
+        Splash s = new Splash();
+        s.setImagem(new ImageIcon(getClass().getResource(PathHelper.LOGO)));
+        s.setBarraProgresso(prgBarCarregando);
+        
+        return s;
+        
+    } // criarSplash
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -64,7 +91,6 @@ public class TelaSplash extends javax.swing.JFrame {
 
         pnlBackground = new javax.swing.JPanel();
         prgBarCarregando = new javax.swing.JProgressBar();
-        lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -74,10 +100,6 @@ public class TelaSplash extends javax.swing.JFrame {
         prgBarCarregando.setForeground(new java.awt.Color(255, 255, 255));
         pnlBackground.add(prgBarCarregando);
         prgBarCarregando.setBounds(270, 450, 270, 10);
-
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.jpg"))); // NOI18N
-        pnlBackground.add(lblLogo);
-        lblLogo.setBounds(0, -140, 840, 700);
 
         getContentPane().add(pnlBackground);
         pnlBackground.setBounds(0, 0, 790, 650);
@@ -119,11 +141,10 @@ public class TelaSplash extends javax.swing.JFrame {
                 new TelaSplash().setVisible(true);
             }
         });
-    }
+    } // main
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lblLogo;
     private javax.swing.JPanel pnlBackground;
     private javax.swing.JProgressBar prgBarCarregando;
     // End of variables declaration//GEN-END:variables
-}
+} // class TelaSplash

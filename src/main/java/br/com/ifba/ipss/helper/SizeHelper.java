@@ -18,7 +18,8 @@ public class SizeHelper {
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-    public static final int ALTURA_FERRAMENTA_CONTAINER = 100;
     public static final int LARGURA_FERRAMENTA_CONTAINER = 100;
-    
+    public static final int ALTURA_FERRAMENTA_CONTAINER = 100;
+    public static final int LARGURA_TELA_SPLASH = 840;
+    public static final int ALTURA_TELA_SPLASH = 700;
 }

@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>br.com.ifba.ipss.IndustrialProcessSimulatorSoftware</exec.mainClass>
+        <exec.mainClass>br.com.ifba.ipss.view.TelaSplash</exec.mainClass>
     </properties>
     
     <dependencies>
@@ -28,7 +28,5 @@
             <type>jar</type>
         </dependency> 
 
-
->>>>>>> 0d766686fd9da2a9358a8573a94290edb7f3ea0b
     </dependencies>
 </project>

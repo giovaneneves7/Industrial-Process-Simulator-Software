@@ -1,5 +1,5 @@
 // *************************************************//
-// *************** { COMEÇO - Package } ************//
+// *************** { COMEï¿½O - Package } ************//
 // *************************************************//
 package br.com.ifba.ipss.builder;
 // *************************************************//
@@ -7,7 +7,7 @@ package br.com.ifba.ipss.builder;
 // *************************************************//
 
 // *************************************************//
-// ************ { COMEÇO - Imports } ***************//
+// ************ { COMEï¿½O - Imports } ***************//
 // *************************************************//
 import java.awt.Color;
 import java.awt.Font;
@@ -28,6 +28,8 @@ public class LabelBuilder {
     private Color _background;
     private Color _foreground;
     private Font _fonte;
+    private int largura;
+    private int altura;
     
     
     public LabelBuilder setTitulo(String titulo){
@@ -64,6 +66,18 @@ public class LabelBuilder {
         
         return this;
     }
+    
+    public LabelBuilder setLargura(int largura){
+        
+        this.largura = largura;
+        return this;
+    }
+    
+    public LabelBuilder setAltura(int altura){
+        
+        this.altura = altura;
+        return this;
+    }
             
     public JLabel build(){
         
@@ -73,7 +87,9 @@ public class LabelBuilder {
         label.setForeground(_foreground);
         label.setBackground(_background);
         label.setIcon(_imagem);
-        label.setFont(_fonte);
+        label.setBounds(0, 0, largura, altura);
+       
+        //label.setFont(_fonte);
         
         return label;
     }

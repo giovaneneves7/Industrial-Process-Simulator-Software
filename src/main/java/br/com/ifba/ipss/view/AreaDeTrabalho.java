@@ -6,6 +6,8 @@ import br.com.ifba.ipss.model.entity.Tubulacao;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,7 +37,21 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         inicializadorPersonalizado();
         initComponents();
-         
+        
+        /*Toolkit tk = Toolkit.getDefaultToolkit();
+        Dimension tamanhoTela = tk.getScreenSize();
+        
+        int larg = (int) (tamanhoTela.width * 0.8);
+        int alt = (int) (tamanhoTela.height * 0.8);
+        
+        //this.PnlFixo.setSize(larg, 30);
+        this.PnlAreadeTrabalho.setSize(larg, alt);
+        int tamMenu = (larg - this.PnlFerramentas.getWidth());
+        this.pnlEspacoTrabalho.setSize(tamMenu, 750);
+        this.setSize(larg, alt);
+        this.setLocationRelativeTo(null);
+        this.revalidate();
+        this.repaint();*/
     }
 
     public Map<String, List<?>> pegarListaEquipamentos(String caminho){
@@ -121,8 +137,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         pnlEspacoTrabalho = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1300, 826));
 
         PnlAreadeTrabalho.setBackground(new java.awt.Color(204, 204, 204));
+        PnlAreadeTrabalho.setPreferredSize(new java.awt.Dimension(1300, 820));
         PnlAreadeTrabalho.setLayout(null);
 
         PnlFixo.setBackground(new java.awt.Color(0, 102, 51));
@@ -133,7 +151,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         PnlFixo.add(LabTítulo);
 
         PnlAreadeTrabalho.add(PnlFixo);
-        PnlFixo.setBounds(0, 0, 1360, 30);
+        PnlFixo.setBounds(0, 0, 1300, 30);
 
         PnlMenu.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -141,7 +159,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         PnlMenu.setLayout(PnlMenuLayout);
         PnlMenuLayout.setHorizontalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1360, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         PnlMenuLayout.setVerticalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,10 +167,9 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         );
 
         PnlAreadeTrabalho.add(PnlMenu);
-        PnlMenu.setBounds(0, 30, 1360, 30);
+        PnlMenu.setBounds(0, 30, 1190, 30);
 
         PnlFerramentas.setBackground(new java.awt.Color(255, 255, 255));
-        PnlFerramentas.setLayout(null);
 
         btnTubulacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão tubulação.png"))); // NOI18N
         btnTubulacoes.setBorder(null);
@@ -161,8 +178,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 btnTubulacoesActionPerformed(evt);
             }
         });
-        PnlFerramentas.add(btnTubulacoes);
-        btnTubulacoes.setBounds(6, 469, 98, 40);
 
         btnConexoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão conexões.png"))); // NOI18N
         btnConexoes.setBorder(null);
@@ -171,8 +186,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 btnConexoesActionPerformed(evt);
             }
         });
-        PnlFerramentas.add(btnConexoes);
-        btnConexoes.setBounds(6, 411, 98, 40);
 
         btnEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão equipamentos.png"))); // NOI18N
         btnEquipamentos.setBorder(null);
@@ -181,8 +194,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 btnEquipamentosActionPerformed(evt);
             }
         });
-        PnlFerramentas.add(btnEquipamentos);
-        btnEquipamentos.setBounds(6, 353, 98, 40);
 
         btnVavulas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão vávulas.png"))); // NOI18N
         btnVavulas.setBorder(null);
@@ -191,42 +202,58 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 btnVavulasActionPerformed(evt);
             }
         });
-        PnlFerramentas.add(btnVavulas);
-        btnVavulas.setBounds(6, 295, 98, 40);
+
+        javax.swing.GroupLayout PnlFerramentasLayout = new javax.swing.GroupLayout(PnlFerramentas);
+        PnlFerramentas.setLayout(PnlFerramentasLayout);
+        PnlFerramentasLayout.setHorizontalGroup(
+            PnlFerramentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlFerramentasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PnlFerramentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnTubulacoes)
+                    .addComponent(btnConexoes)
+                    .addComponent(btnEquipamentos)
+                    .addComponent(btnVavulas))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        PnlFerramentasLayout.setVerticalGroup(
+            PnlFerramentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlFerramentasLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(btnTubulacoes)
+                .addGap(5, 5, 5)
+                .addComponent(btnConexoes)
+                .addGap(5, 5, 5)
+                .addComponent(btnEquipamentos)
+                .addGap(5, 5, 5)
+                .addComponent(btnVavulas)
+                .addContainerGap(541, Short.MAX_VALUE))
+        );
 
         PnlAreadeTrabalho.add(PnlFerramentas);
-        PnlFerramentas.setBounds(1240, 0, 120, 820);
+        PnlFerramentas.setBounds(1190, 30, 120, 780);
 
         pnlEspacoTrabalho.setBackground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout pnlEspacoTrabalhoLayout = new javax.swing.GroupLayout(pnlEspacoTrabalho);
-        pnlEspacoTrabalho.setLayout(pnlEspacoTrabalhoLayout);
-        pnlEspacoTrabalhoLayout.setHorizontalGroup(
-            pnlEspacoTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1240, Short.MAX_VALUE)
-        );
-        pnlEspacoTrabalhoLayout.setVerticalGroup(
-            pnlEspacoTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
-        );
-
+        pnlEspacoTrabalho.setLayout(null);
         PnlAreadeTrabalho.add(pnlEspacoTrabalho);
-        pnlEspacoTrabalho.setBounds(0, 60, 1240, 750);
+        pnlEspacoTrabalho.setBounds(0, 60, 1190, 750);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1362, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
+                .addComponent(PnlAreadeTrabalho, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(1378, 828));
+        setSize(new java.awt.Dimension(1316, 828));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

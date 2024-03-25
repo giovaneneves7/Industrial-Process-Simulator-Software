@@ -137,7 +137,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         pnlEspacoTrabalho = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1300, 826));
         getContentPane().setLayout(null);
 
         PnlAreadeTrabalho.setBackground(new java.awt.Color(204, 204, 204));
@@ -152,7 +151,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         PnlFixo.add(LabTítulo);
 
         PnlAreadeTrabalho.add(PnlFixo);
-        PnlFixo.setBounds(0, 0, 1370, 30);
+        PnlFixo.setBounds(0, 0, 1380, 30);
 
         PnlMenu.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -215,7 +214,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                     .addComponent(btnConexoes)
                     .addComponent(btnEquipamentos)
                     .addComponent(btnVavulas))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PnlFerramentasLayout.setVerticalGroup(
             PnlFerramentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,10 +236,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         pnlEspacoTrabalho.setBackground(new java.awt.Color(204, 204, 204));
         pnlEspacoTrabalho.setLayout(null);
         PnlAreadeTrabalho.add(pnlEspacoTrabalho);
-        pnlEspacoTrabalho.setBounds(-70, 0, 1370, 880);
+        pnlEspacoTrabalho.setBounds(-60, 50, 1320, 820);
 
         getContentPane().add(PnlAreadeTrabalho);
-        PnlAreadeTrabalho.setBounds(0, 0, 1370, 880);
+        PnlAreadeTrabalho.setBounds(0, 0, 1350, 880);
 
         setSize(new java.awt.Dimension(1386, 889));
         setLocationRelativeTo(null);

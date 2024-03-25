@@ -9,13 +9,16 @@ import java.awt.Color;
  */
 public class Constantes {
     
+    public static final String NOME_APLICACAO = "EduSimLab - Laboratório Virtual de Simulação de Processos";
+    
     public static final String FONTE = "Times New Roman";
     
-    public static Color COR_PRIMARIA = new Color(0, 102, 51);
-    public static Color COR_SEGUNDARIA = Color.white;
-    public static Color COR_BACKGROUND = Color.decode("#CCCCCC");
-    public static Color COR_TEXTO = Color.black;
+    public static final Color COR_PRIMARIA = new Color(0, 102, 51);
+    public static final Color COR_SEGUNDARIA = Color.white;
+    public static final Color COR_BACKGROUND = Color.decode("#CCCCCC");
+    public static final Color COR_TEXTO = Color.black;
     
     public static final int DELAY_CARREGAMENTO = 20;
+    
     
 }

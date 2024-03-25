@@ -27,77 +27,69 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        pnlBotoes = new javax.swing.JPanel();
         btnTubulacoes = new javax.swing.JButton();
         btnVavulas = new javax.swing.JButton();
         btnEquipamentos = new javax.swing.JButton();
         btnConexoes = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
+        pnlFerramentas = new javax.swing.JPanel();
         lblTubulacoes = new javax.swing.JLabel();
         pnlT1 = new javax.swing.JPanel();
         lblT1 = new javax.swing.JLabel();
+        lblImagemT1 = new javax.swing.JLabel();
+        lblDiT1 = new javax.swing.JLabel();
+        lblLT1 = new javax.swing.JLabel();
+        pnlT2 = new javax.swing.JPanel();
+        lblT2 = new javax.swing.JLabel();
+        lblDiT2 = new javax.swing.JLabel();
+        lblLT2 = new javax.swing.JLabel();
+        lblImagemT2 = new javax.swing.JLabel();
+        pnlT3 = new javax.swing.JPanel();
+        lblT3 = new javax.swing.JLabel();
+        lblLT3 = new javax.swing.JLabel();
+        lblDiT3 = new javax.swing.JLabel();
+        lblImagemT3 = new javax.swing.JLabel();
+        pnlT4 = new javax.swing.JPanel();
+        lblT4 = new javax.swing.JLabel();
+        lblLT4 = new javax.swing.JLabel();
+        lblDiT4 = new javax.swing.JLabel();
+        lblImagemT4 = new javax.swing.JLabel();
+        pnlT5 = new javax.swing.JPanel();
+        lblT5 = new javax.swing.JLabel();
+        lblLT5 = new javax.swing.JLabel();
+        lblDiT5 = new javax.swing.JLabel();
+        lblImagemT5 = new javax.swing.JLabel();
+        pnlT7 = new javax.swing.JPanel();
+        lblT7 = new javax.swing.JLabel();
+        lblLT7 = new javax.swing.JLabel();
+        lblDiT7 = new javax.swing.JLabel();
+        lblImagemT7 = new javax.swing.JLabel();
+        pnlT6 = new javax.swing.JPanel();
+        lblT6 = new javax.swing.JLabel();
+        lblLT6 = new javax.swing.JLabel();
+        lblDiT6 = new javax.swing.JLabel();
+        lblImagemT6 = new javax.swing.JLabel();
+        pnlT8 = new javax.swing.JPanel();
         lblT8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
+        lblLT8 = new javax.swing.JLabel();
+        lblDiT8 = new javax.swing.JLabel();
+        lblImagemT8 = new javax.swing.JLabel();
+        pnnlT9 = new javax.swing.JPanel();
         lblT9 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
+        lblLT9 = new javax.swing.JLabel();
+        lblDiT9 = new javax.swing.JLabel();
+        lblImagemT9 = new javax.swing.JLabel();
+        pnlT10 = new javax.swing.JPanel();
         lblT10 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        lblT11 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        lblT13 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        lblT12 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        lblT14 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        lblT15 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        lblT16 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        lblLT10 = new javax.swing.JLabel();
+        lblDiT10 = new javax.swing.JLabel();
+        lblImagemT10 = new javax.swing.JLabel();
+        pnlBackground = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBotoes.setBackground(new java.awt.Color(255, 255, 255));
 
         btnTubulacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão tubulação.png"))); // NOI18N
         btnTubulacoes.setBorder(null);
@@ -131,22 +123,22 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlBotoesLayout = new javax.swing.GroupLayout(pnlBotoes);
+        pnlBotoes.setLayout(pnlBotoesLayout);
+        pnlBotoesLayout.setHorizontalGroup(
+            pnlBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBotoesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEquipamentos)
                     .addComponent(btnTubulacoes)
                     .addComponent(btnConexoes)
                     .addComponent(btnVavulas))
                 .addGap(16, 16, 16))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        pnlBotoesLayout.setVerticalGroup(
+            pnlBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBotoesLayout.createSequentialGroup()
                 .addGap(413, 413, 413)
                 .addComponent(btnTubulacoes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -158,15 +150,15 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(1250, 0, 120, 820);
+        getContentPane().add(pnlBotoes);
+        pnlBotoes.setBounds(1250, 0, 120, 820);
 
-        jPanel5.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel5.setLayout(null);
+        pnlFerramentas.setBackground(new java.awt.Color(102, 102, 102));
+        pnlFerramentas.setLayout(null);
 
         lblTubulacoes.setForeground(new java.awt.Color(255, 255, 255));
         lblTubulacoes.setText("TUBULAÇÕES");
-        jPanel5.add(lblTubulacoes);
+        pnlFerramentas.add(lblTubulacoes);
         lblTubulacoes.setBounds(100, 110, 90, 16);
 
         pnlT1.setBackground(new java.awt.Color(204, 204, 204));
@@ -178,288 +170,272 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
         pnlT1.add(lblT1);
         lblT1.setBounds(10, 10, 70, 16);
 
-        lblT8.setBackground(new java.awt.Color(153, 153, 153));
-        lblT8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        pnlT1.add(lblT8);
-        lblT8.setBounds(60, 40, 10, 30);
+        lblImagemT1.setBackground(new java.awt.Color(153, 153, 153));
+        lblImagemT1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        pnlT1.add(lblImagemT1);
+        lblImagemT1.setBounds(60, 40, 10, 30);
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel10.setText("Di=1in");
-        pnlT1.add(jLabel10);
-        jLabel10.setBounds(20, 40, 40, 16);
+        lblDiT1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblDiT1.setText("Di=1in");
+        pnlT1.add(lblDiT1);
+        lblDiT1.setBounds(20, 40, 40, 16);
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel11.setText("L=2m");
-        pnlT1.add(jLabel11);
-        jLabel11.setBounds(20, 60, 26, 14);
+        lblLT1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblLT1.setText("L=2m");
+        pnlT1.add(lblLT1);
+        lblLT1.setBounds(20, 60, 26, 14);
 
-        jPanel5.add(pnlT1);
+        pnlFerramentas.add(pnlT1);
         pnlT1.setBounds(50, 180, 90, 90);
 
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel9.setLayout(null);
+        pnlT2.setBackground(new java.awt.Color(204, 204, 204));
+        pnlT2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlT2.setForeground(new java.awt.Color(255, 255, 255));
+        pnlT2.setLayout(null);
 
-        jLabel1.setText("Tubulação 2");
-        jPanel9.add(jLabel1);
-        jLabel1.setBounds(10, 10, 64, 16);
-        jPanel9.add(jLabel2);
-        jLabel2.setBounds(60, 40, 0, 30);
+        lblT2.setText("Tubulação 2");
+        pnlT2.add(lblT2);
+        lblT2.setBounds(10, 10, 64, 16);
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel22.setText("Di=1in");
-        jPanel9.add(jLabel22);
-        jLabel22.setBounds(20, 40, 40, 16);
+        lblDiT2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblDiT2.setText("Di=1in");
+        pnlT2.add(lblDiT2);
+        lblDiT2.setBounds(20, 40, 40, 16);
 
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel23.setText("L=4m");
-        jPanel9.add(jLabel23);
-        jLabel23.setBounds(20, 60, 26, 14);
+        lblLT2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblLT2.setText("L=4m");
+        pnlT2.add(lblLT2);
+        lblLT2.setBounds(20, 60, 26, 14);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        jPanel9.add(jLabel4);
-        jLabel4.setBounds(60, 40, 10, 30);
+        lblImagemT2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        pnlT2.add(lblImagemT2);
+        lblImagemT2.setBounds(60, 40, 10, 30);
 
-        jPanel5.add(jPanel9);
-        jPanel9.setBounds(140, 180, 90, 90);
+        pnlFerramentas.add(pnlT2);
+        pnlT2.setBounds(140, 180, 90, 90);
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(null);
+        pnlT3.setBackground(new java.awt.Color(204, 204, 204));
+        pnlT3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlT3.setForeground(new java.awt.Color(255, 255, 255));
+        pnlT3.setLayout(null);
 
-        jLabel3.setText("Tubulação 3");
-        jPanel4.add(jLabel3);
-        jLabel3.setBounds(10, 10, 64, 16);
-        jPanel4.add(jLabel5);
-        jLabel5.setBounds(60, 40, 0, 30);
+        lblT3.setText("Tubulação 3");
+        pnlT3.add(lblT3);
+        lblT3.setBounds(10, 10, 64, 16);
 
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel24.setText("L=6m");
-        jPanel4.add(jLabel24);
-        jLabel24.setBounds(20, 60, 26, 14);
+        lblLT3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblLT3.setText("L=6m");
+        pnlT3.add(lblLT3);
+        lblLT3.setBounds(20, 60, 26, 14);
 
-        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel32.setText("Di=1in");
-        jPanel4.add(jLabel32);
-        jLabel32.setBounds(20, 40, 40, 16);
+        lblDiT3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblDiT3.setText("Di=1in");
+        pnlT3.add(lblDiT3);
+        lblDiT3.setBounds(20, 40, 40, 16);
 
-        lblT9.setBackground(new java.awt.Color(153, 153, 153));
-        lblT9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        jPanel4.add(lblT9);
-        lblT9.setBounds(60, 40, 10, 30);
+        lblImagemT3.setBackground(new java.awt.Color(153, 153, 153));
+        lblImagemT3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        pnlT3.add(lblImagemT3);
+        lblImagemT3.setBounds(60, 40, 10, 30);
 
-        jPanel5.add(jPanel4);
-        jPanel4.setBounds(50, 270, 90, 90);
+        pnlFerramentas.add(pnlT3);
+        pnlT3.setBounds(50, 270, 90, 90);
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel6.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel6.setLayout(null);
+        pnlT4.setBackground(new java.awt.Color(204, 204, 204));
+        pnlT4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlT4.setForeground(new java.awt.Color(255, 255, 255));
+        pnlT4.setLayout(null);
 
-        jLabel6.setText("Tubulação 4");
-        jPanel6.add(jLabel6);
-        jLabel6.setBounds(8, 8, 64, 16);
-        jPanel6.add(jLabel7);
-        jLabel7.setBounds(60, 40, 0, 30);
+        lblT4.setText("Tubulação 4");
+        pnlT4.add(lblT4);
+        lblT4.setBounds(8, 8, 64, 16);
 
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel25.setText("L=8m");
-        jPanel6.add(jLabel25);
-        jLabel25.setBounds(20, 60, 26, 14);
+        lblLT4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblLT4.setText("L=8m");
+        pnlT4.add(lblLT4);
+        lblLT4.setBounds(20, 60, 26, 14);
 
-        jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel33.setText("Di=1in");
-        jPanel6.add(jLabel33);
-        jLabel33.setBounds(20, 40, 40, 16);
+        lblDiT4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblDiT4.setText("Di=1in");
+        pnlT4.add(lblDiT4);
+        lblDiT4.setBounds(20, 40, 40, 16);
 
-        lblT10.setBackground(new java.awt.Color(153, 153, 153));
-        lblT10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        jPanel6.add(lblT10);
-        lblT10.setBounds(60, 40, 10, 30);
+        lblImagemT4.setBackground(new java.awt.Color(153, 153, 153));
+        lblImagemT4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        pnlT4.add(lblImagemT4);
+        lblImagemT4.setBounds(60, 40, 10, 30);
 
-        jPanel5.add(jPanel6);
-        jPanel6.setBounds(140, 270, 90, 90);
+        pnlFerramentas.add(pnlT4);
+        pnlT4.setBounds(140, 270, 90, 90);
 
-        jPanel7.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel7.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel7.setLayout(null);
+        pnlT5.setBackground(new java.awt.Color(204, 204, 204));
+        pnlT5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlT5.setForeground(new java.awt.Color(255, 255, 255));
+        pnlT5.setLayout(null);
 
-        jLabel8.setText("Tubulação 5");
-        jPanel7.add(jLabel8);
-        jLabel8.setBounds(8, 8, 64, 16);
-        jPanel7.add(jLabel9);
-        jLabel9.setBounds(60, 40, 0, 40);
+        lblT5.setText("Tubulação 5");
+        pnlT5.add(lblT5);
+        lblT5.setBounds(8, 8, 64, 16);
 
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel26.setText("L=10m");
-        jPanel7.add(jLabel26);
-        jLabel26.setBounds(20, 60, 31, 14);
+        lblLT5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblLT5.setText("L=10m");
+        pnlT5.add(lblLT5);
+        lblLT5.setBounds(20, 60, 31, 14);
 
-        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel34.setText("Di=1in");
-        jPanel7.add(jLabel34);
-        jLabel34.setBounds(20, 40, 40, 16);
+        lblDiT5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblDiT5.setText("Di=1in");
+        pnlT5.add(lblDiT5);
+        lblDiT5.setBounds(20, 40, 40, 16);
 
-        lblT11.setBackground(new java.awt.Color(153, 153, 153));
-        lblT11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        jPanel7.add(lblT11);
-        lblT11.setBounds(60, 40, 10, 30);
+        lblImagemT5.setBackground(new java.awt.Color(153, 153, 153));
+        lblImagemT5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        pnlT5.add(lblImagemT5);
+        lblImagemT5.setBounds(60, 40, 10, 30);
 
-        jPanel5.add(jPanel7);
-        jPanel7.setBounds(50, 360, 90, 90);
+        pnlFerramentas.add(pnlT5);
+        pnlT5.setBounds(50, 360, 90, 90);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(null);
+        pnlT7.setBackground(new java.awt.Color(204, 204, 204));
+        pnlT7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlT7.setForeground(new java.awt.Color(255, 255, 255));
+        pnlT7.setLayout(null);
 
-        jLabel13.setText("Tubulaçaõ 7");
-        jPanel3.add(jLabel13);
-        jLabel13.setBounds(10, 10, 70, 16);
-        jPanel3.add(jLabel18);
-        jLabel18.setBounds(60, 40, 0, 40);
+        lblT7.setText("Tubulaçaõ 7");
+        pnlT7.add(lblT7);
+        lblT7.setBounds(10, 10, 70, 16);
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel28.setText("L=4m");
-        jPanel3.add(jLabel28);
-        jLabel28.setBounds(20, 60, 26, 14);
+        lblLT7.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblLT7.setText("L=4m");
+        pnlT7.add(lblLT7);
+        lblLT7.setBounds(20, 60, 26, 14);
 
-        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel36.setText("Di=1½in");
-        jPanel3.add(jLabel36);
-        jLabel36.setBounds(20, 40, 40, 16);
+        lblDiT7.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblDiT7.setText("Di=1½in");
+        pnlT7.add(lblDiT7);
+        lblDiT7.setBounds(20, 40, 40, 16);
 
-        lblT13.setBackground(new java.awt.Color(153, 153, 153));
-        lblT13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        jPanel3.add(lblT13);
-        lblT13.setBounds(60, 40, 10, 30);
+        lblImagemT7.setBackground(new java.awt.Color(153, 153, 153));
+        lblImagemT7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        pnlT7.add(lblImagemT7);
+        lblImagemT7.setBounds(60, 40, 10, 30);
 
-        jPanel5.add(jPanel3);
-        jPanel3.setBounds(50, 450, 90, 90);
+        pnlFerramentas.add(pnlT7);
+        pnlT7.setBounds(50, 450, 90, 90);
 
-        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel8.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel8.setLayout(null);
+        pnlT6.setBackground(new java.awt.Color(204, 204, 204));
+        pnlT6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlT6.setForeground(new java.awt.Color(255, 255, 255));
+        pnlT6.setLayout(null);
 
-        jLabel12.setText("Tubulação 6");
-        jPanel8.add(jLabel12);
-        jLabel12.setBounds(10, 10, 80, 16);
+        lblT6.setText("Tubulação 6");
+        pnlT6.add(lblT6);
+        lblT6.setBounds(10, 10, 80, 16);
 
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel27.setText("L=2m");
-        jPanel8.add(jLabel27);
-        jLabel27.setBounds(20, 60, 26, 14);
+        lblLT6.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblLT6.setText("L=2m");
+        pnlT6.add(lblLT6);
+        lblLT6.setBounds(20, 60, 26, 14);
 
-        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel35.setText("Di=1½in");
-        jPanel8.add(jLabel35);
-        jLabel35.setBounds(20, 40, 40, 16);
+        lblDiT6.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblDiT6.setText("Di=1½in");
+        pnlT6.add(lblDiT6);
+        lblDiT6.setBounds(20, 40, 40, 16);
 
-        lblT12.setBackground(new java.awt.Color(153, 153, 153));
-        lblT12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        jPanel8.add(lblT12);
-        lblT12.setBounds(60, 40, 10, 30);
+        lblImagemT6.setBackground(new java.awt.Color(153, 153, 153));
+        lblImagemT6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        pnlT6.add(lblImagemT6);
+        lblImagemT6.setBounds(60, 40, 10, 30);
 
-        jPanel5.add(jPanel8);
-        jPanel8.setBounds(140, 360, 90, 90);
+        pnlFerramentas.add(pnlT6);
+        pnlT6.setBounds(140, 360, 90, 90);
 
-        jPanel11.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel11.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel11.setLayout(null);
+        pnlT8.setBackground(new java.awt.Color(204, 204, 204));
+        pnlT8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlT8.setForeground(new java.awt.Color(255, 255, 255));
+        pnlT8.setLayout(null);
 
-        jLabel14.setText("Tubulação 8");
-        jPanel11.add(jLabel14);
-        jLabel14.setBounds(10, 10, 70, 16);
-        jPanel11.add(jLabel19);
-        jLabel19.setBounds(60, 30, 0, 40);
+        lblT8.setText("Tubulação 8");
+        pnlT8.add(lblT8);
+        lblT8.setBounds(10, 10, 70, 16);
 
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel29.setText("L=6m");
-        jPanel11.add(jLabel29);
-        jLabel29.setBounds(20, 60, 26, 14);
+        lblLT8.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblLT8.setText("L=6m");
+        pnlT8.add(lblLT8);
+        lblLT8.setBounds(20, 60, 26, 14);
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel37.setText("Di=1½in");
-        jPanel11.add(jLabel37);
-        jLabel37.setBounds(20, 40, 40, 16);
+        lblDiT8.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblDiT8.setText("Di=1½in");
+        pnlT8.add(lblDiT8);
+        lblDiT8.setBounds(20, 40, 40, 16);
 
-        lblT14.setBackground(new java.awt.Color(153, 153, 153));
-        lblT14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        jPanel11.add(lblT14);
-        lblT14.setBounds(60, 40, 10, 30);
+        lblImagemT8.setBackground(new java.awt.Color(153, 153, 153));
+        lblImagemT8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        pnlT8.add(lblImagemT8);
+        lblImagemT8.setBounds(60, 40, 10, 30);
 
-        jPanel5.add(jPanel11);
-        jPanel11.setBounds(140, 450, 90, 90);
+        pnlFerramentas.add(pnlT8);
+        pnlT8.setBounds(140, 450, 90, 90);
 
-        jPanel12.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel12.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel12.setLayout(null);
+        pnnlT9.setBackground(new java.awt.Color(204, 204, 204));
+        pnnlT9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnnlT9.setForeground(new java.awt.Color(255, 255, 255));
+        pnnlT9.setLayout(null);
 
-        jLabel15.setText("Tubulação 9");
-        jPanel12.add(jLabel15);
-        jLabel15.setBounds(10, 10, 64, 16);
-        jPanel12.add(jLabel20);
-        jLabel20.setBounds(60, 40, 0, 40);
+        lblT9.setText("Tubulação 9");
+        pnnlT9.add(lblT9);
+        lblT9.setBounds(10, 10, 64, 16);
 
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel30.setText("L=8m");
-        jPanel12.add(jLabel30);
-        jLabel30.setBounds(20, 60, 26, 14);
+        lblLT9.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblLT9.setText("L=8m");
+        pnnlT9.add(lblLT9);
+        lblLT9.setBounds(20, 60, 26, 14);
 
-        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel38.setText("Di=1½in");
-        jPanel12.add(jLabel38);
-        jLabel38.setBounds(20, 40, 40, 16);
+        lblDiT9.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblDiT9.setText("Di=1½in");
+        pnnlT9.add(lblDiT9);
+        lblDiT9.setBounds(20, 40, 40, 16);
 
-        lblT15.setBackground(new java.awt.Color(153, 153, 153));
-        lblT15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        jPanel12.add(lblT15);
-        lblT15.setBounds(60, 40, 10, 30);
+        lblImagemT9.setBackground(new java.awt.Color(153, 153, 153));
+        lblImagemT9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        pnnlT9.add(lblImagemT9);
+        lblImagemT9.setBounds(60, 40, 10, 30);
 
-        jPanel5.add(jPanel12);
-        jPanel12.setBounds(50, 540, 90, 90);
+        pnlFerramentas.add(pnnlT9);
+        pnnlT9.setBounds(50, 540, 90, 90);
 
-        jPanel13.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel13.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel13.setLayout(null);
+        pnlT10.setBackground(new java.awt.Color(204, 204, 204));
+        pnlT10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlT10.setForeground(new java.awt.Color(255, 255, 255));
+        pnlT10.setLayout(null);
 
-        jLabel16.setText("Tubulação 10");
-        jPanel13.add(jLabel16);
-        jLabel16.setBounds(10, 10, 70, 16);
-        jPanel13.add(jLabel21);
-        jLabel21.setBounds(60, 40, 0, 40);
+        lblT10.setText("Tubulação 10");
+        pnlT10.add(lblT10);
+        lblT10.setBounds(10, 10, 70, 16);
 
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel31.setText("L=10m");
-        jPanel13.add(jLabel31);
-        jLabel31.setBounds(20, 60, 40, 14);
+        lblLT10.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblLT10.setText("L=10m");
+        pnlT10.add(lblLT10);
+        lblLT10.setBounds(20, 60, 40, 14);
 
-        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel39.setText("Di=1½in");
-        jPanel13.add(jLabel39);
-        jLabel39.setBounds(20, 40, 40, 16);
+        lblDiT10.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblDiT10.setText("Di=1½in");
+        pnlT10.add(lblDiT10);
+        lblDiT10.setBounds(20, 40, 40, 16);
 
-        lblT16.setBackground(new java.awt.Color(153, 153, 153));
-        lblT16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
-        jPanel13.add(lblT16);
-        lblT16.setBounds(60, 40, 10, 30);
+        lblImagemT10.setBackground(new java.awt.Color(153, 153, 153));
+        lblImagemT10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T1.png"))); // NOI18N
+        pnlT10.add(lblImagemT10);
+        lblImagemT10.setBounds(60, 40, 10, 30);
 
-        jPanel5.add(jPanel13);
-        jPanel13.setBounds(140, 540, 90, 90);
+        pnlFerramentas.add(pnlT10);
+        pnlT10.setBounds(140, 540, 90, 90);
 
-        getContentPane().add(jPanel5);
-        jPanel5.setBounds(970, 0, 280, 820);
+        getContentPane().add(pnlFerramentas);
+        pnlFerramentas.setBounds(970, 0, 280, 820);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1370, 820);
+        pnlBackground.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(pnlBackground);
+        pnlBackground.setBounds(0, 0, 1370, 820);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -527,67 +503,59 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
     private javax.swing.JButton btnEquipamentos;
     private javax.swing.JButton btnTubulacoes;
     private javax.swing.JButton btnVavulas;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel lblDiT1;
+    private javax.swing.JLabel lblDiT10;
+    private javax.swing.JLabel lblDiT2;
+    private javax.swing.JLabel lblDiT3;
+    private javax.swing.JLabel lblDiT4;
+    private javax.swing.JLabel lblDiT5;
+    private javax.swing.JLabel lblDiT6;
+    private javax.swing.JLabel lblDiT7;
+    private javax.swing.JLabel lblDiT8;
+    private javax.swing.JLabel lblDiT9;
+    private javax.swing.JLabel lblImagemT1;
+    private javax.swing.JLabel lblImagemT10;
+    private javax.swing.JLabel lblImagemT2;
+    private javax.swing.JLabel lblImagemT3;
+    private javax.swing.JLabel lblImagemT4;
+    private javax.swing.JLabel lblImagemT5;
+    private javax.swing.JLabel lblImagemT6;
+    private javax.swing.JLabel lblImagemT7;
+    private javax.swing.JLabel lblImagemT8;
+    private javax.swing.JLabel lblImagemT9;
+    private javax.swing.JLabel lblLT1;
+    private javax.swing.JLabel lblLT10;
+    private javax.swing.JLabel lblLT2;
+    private javax.swing.JLabel lblLT3;
+    private javax.swing.JLabel lblLT4;
+    private javax.swing.JLabel lblLT5;
+    private javax.swing.JLabel lblLT6;
+    private javax.swing.JLabel lblLT7;
+    private javax.swing.JLabel lblLT8;
+    private javax.swing.JLabel lblLT9;
     private javax.swing.JLabel lblT1;
     private javax.swing.JLabel lblT10;
-    private javax.swing.JLabel lblT11;
-    private javax.swing.JLabel lblT12;
-    private javax.swing.JLabel lblT13;
-    private javax.swing.JLabel lblT14;
-    private javax.swing.JLabel lblT15;
-    private javax.swing.JLabel lblT16;
+    private javax.swing.JLabel lblT2;
+    private javax.swing.JLabel lblT3;
+    private javax.swing.JLabel lblT4;
+    private javax.swing.JLabel lblT5;
+    private javax.swing.JLabel lblT6;
+    private javax.swing.JLabel lblT7;
     private javax.swing.JLabel lblT8;
     private javax.swing.JLabel lblT9;
     private javax.swing.JLabel lblTubulacoes;
+    private javax.swing.JPanel pnlBackground;
+    private javax.swing.JPanel pnlBotoes;
+    private javax.swing.JPanel pnlFerramentas;
     private javax.swing.JPanel pnlT1;
+    private javax.swing.JPanel pnlT10;
+    private javax.swing.JPanel pnlT2;
+    private javax.swing.JPanel pnlT3;
+    private javax.swing.JPanel pnlT4;
+    private javax.swing.JPanel pnlT5;
+    private javax.swing.JPanel pnlT6;
+    private javax.swing.JPanel pnlT7;
+    private javax.swing.JPanel pnlT8;
+    private javax.swing.JPanel pnnlT9;
     // End of variables declaration//GEN-END:variables
 }

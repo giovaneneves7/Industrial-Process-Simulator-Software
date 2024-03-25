@@ -30,6 +30,6 @@ public class SizeHelper {
     public static final int ALTURA_TELA_SPLASH = 700;
     
     
-    public static final int LARGURA_FERRAMENTA_CONTAINER = (LARGURA_TELA > 1300) ? 200 : 100;
+    public static final int LARGURA_FERRAMENTA_CONTAINER = 100;
     public static final int ALTURA_FERRAMENTA_CONTAINER = 100;
 }

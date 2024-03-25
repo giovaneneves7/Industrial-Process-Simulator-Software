@@ -12,6 +12,7 @@ package br.com.ifba.ipss.feature.widget.model;
 import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.equipamento.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.model.Tubulacao;
+import br.com.ifba.ipss.util.Constantes;
 import java.awt.Color;
 import javax.swing.JLabel;
 // *************************************************//
@@ -37,29 +38,29 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
 
     public void inicializadorPersonalizado(E equipamento, int altura, int largura, int x, int y, int qtdInserida){
         
-        System.out.println("Equipamento: " + equipamento.toString());
-        this.setBackground(Color.decode("#CCCCCC"/*"#5E5E5E"*/));
+        this.setBackground(Constantes.COR_BACKGROUND);
         this.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        this.setForeground(new java.awt.Color(255, 255, 255));
+        this.setForeground(Constantes.COR_BACKGROUND);
+        
         this.setBounds(
-                (qtdInserida == 0) ? x : 
-                (qtdInserida % 2 != 0) ? x * 2 : x, 
-                (qtdInserida == 0) ? y :
-                (qtdInserida % 2 == 0) ? y * 2 : y, altura, largura
+                (qtdInserida == 0) ? x : (qtdInserida % 2 != 0) ? x * 2 : x, 
+                (qtdInserida == 0) ? y : (qtdInserida % 2 == 0) ? y * 2 : y, 
+                altura, 
+                largura
         );
         this.setLayout(null);
         
         JLabel titulo = new LabelBuilder()
                 .setTitulo(equipamento.get_nome())
-                .setForeground(Color.white)
+                .setForeground(Constantes.COR_TEXTO)
                 .build();
         
 
-        if(equipamento instanceof Tubulacao){
+        if(equipamento instanceof Tubulacao tubulacao){
             
-            JLabel lblDi = pegarDi((Tubulacao) equipamento);
+            JLabel lblDi = pegarDi(tubulacao);
         
-            JLabel lblM = pegarM((Tubulacao) equipamento);
+            JLabel lblM = pegarM(tubulacao);
             
             JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
             imagem.setBounds(60, 40, 10, 30);
@@ -69,7 +70,6 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
             lblDi.setBounds(5, ((this.getHeight() / 2) - 14), 60, 20);
             lblM.setBounds(5, ((this.getHeight() / 2) - 14) + lblDi.getHeight(), 60, 20);
  
-            titulo.setForeground(Color.white);
             this.add(titulo);
             this.add(lblDi);
             this.add(lblM);
@@ -85,7 +85,7 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
         
         return new LabelBuilder()
                 .setTitulo("Di=".concat(tub.get_diametroInterno().concat("in")))
-                .setForeground(Color.white)
+                .setForeground(Constantes.COR_TEXTO)
                 .build();
         
     }
@@ -94,7 +94,7 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
         
         return new LabelBuilder()
                     .setTitulo("L=".concat(String.valueOf(tub.getComprimento()).concat("m")))
-                    .setForeground(Color.white)
+                    .setForeground(Constantes.COR_TEXTO)
                     .build();
         
     }

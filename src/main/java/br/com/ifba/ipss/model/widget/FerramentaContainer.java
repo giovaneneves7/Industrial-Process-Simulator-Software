@@ -10,7 +10,7 @@ package br.com.ifba.ipss.model.widget;
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
-import br.com.ifba.ipss.model.entity.Equipamento;
+import br.com.ifba.ipss.feature.equipamento.model.Equipamento;
 import java.awt.Color;
 import javax.swing.JLabel;
 // *************************************************//

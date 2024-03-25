@@ -11,11 +11,11 @@ package br.com.ifba.ipss.controller;
 // *************************************************//
 import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
 import br.com.ifba.ipss.helper.SizeHelper;
-import br.com.ifba.ipss.model.entity.Bomba;
-import br.com.ifba.ipss.model.entity.Conexao;
-import br.com.ifba.ipss.model.entity.Equipamento;
-import br.com.ifba.ipss.model.entity.Reator;
-import br.com.ifba.ipss.model.entity.Tubulacao;
+import br.com.ifba.ipss.feature.equipamento.model.Bomba;
+import br.com.ifba.ipss.feature.equipamento.model.Conexao;
+import br.com.ifba.ipss.feature.equipamento.model.Equipamento;
+import br.com.ifba.ipss.feature.equipamento.model.Reator;
+import br.com.ifba.ipss.feature.equipamento.model.Tubulacao;
 import br.com.ifba.ipss.model.widget.FerramentaContainer;
 import java.awt.Color;
 import java.awt.Font;

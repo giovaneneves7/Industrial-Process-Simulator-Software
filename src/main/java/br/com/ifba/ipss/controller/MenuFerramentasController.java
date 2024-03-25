@@ -9,7 +9,7 @@ package br.com.ifba.ipss.controller;
 // *************************************************//
 // ************ { COME�O - Imports } ***************//
 // *************************************************//
-import br.com.ifba.ipss.builder.LabelBuilder;
+import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
 import br.com.ifba.ipss.helper.SizeHelper;
 import br.com.ifba.ipss.model.entity.Bomba;
 import br.com.ifba.ipss.model.entity.Conexao;

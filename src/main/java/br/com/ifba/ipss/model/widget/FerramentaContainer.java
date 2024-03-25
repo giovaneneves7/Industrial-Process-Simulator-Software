@@ -9,7 +9,7 @@ package br.com.ifba.ipss.model.widget;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-import br.com.ifba.ipss.builder.LabelBuilder;
+import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
 import br.com.ifba.ipss.model.entity.Equipamento;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -44,7 +44,6 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
         
         JLabel titulo = new LabelBuilder()
                 .setTitulo(equipamento.get_nome())
-                .setForeground(Color.white)
                 .setForeground(Color.white)
                 .build();
         

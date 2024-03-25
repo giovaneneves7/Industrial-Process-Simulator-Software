@@ -4,6 +4,10 @@
 package br.com.ifba.ipss.helper;
 // *************************************************//
 // *************** { FIM - Package } ***************//
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 // *************************************************//
 
 /**
@@ -18,8 +22,14 @@ public class SizeHelper {
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-    public static final int LARGURA_FERRAMENTA_CONTAINER = 100;
-    public static final int ALTURA_FERRAMENTA_CONTAINER = 100;
+    public static final Dimension TAMANHO_TELA = Toolkit.getDefaultToolkit().getScreenSize();
+    public static final int LARGURA_TELA = TAMANHO_TELA.width;
+    public static final int ALTURA_TELA = TAMANHO_TELA.height;
+        
     public static final int LARGURA_TELA_SPLASH = 840;
     public static final int ALTURA_TELA_SPLASH = 700;
+    
+    
+    public static final int LARGURA_FERRAMENTA_CONTAINER = (LARGURA_TELA > 1300) ? 200 : 100;
+    public static final int ALTURA_FERRAMENTA_CONTAINER = 100;
 }

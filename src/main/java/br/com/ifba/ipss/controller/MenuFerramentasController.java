@@ -114,7 +114,7 @@ public class MenuFerramentasController {
         this._menuAberto = true;
         this._nomeMenuAberto = nome;
         
-        //this.adicionarFerramentasAoMenu(_ferramentasContainer,f, nome);
+        this.adicionarFerramentasAoMenu(_ferramentasContainer,f, nome);
         
     } // abrirMenuFerramentas
     

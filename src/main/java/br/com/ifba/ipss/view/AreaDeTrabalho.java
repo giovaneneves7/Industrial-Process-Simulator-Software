@@ -131,7 +131,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         PnlFixo.add(LabTítulo);
 
         PnlAreadeTrabalho.add(PnlFixo);
-        PnlFixo.setBounds(0, 0, 1380, 30);
+        PnlFixo.setBounds(0, 0, 1410, 30);
 
         PnlMenu.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -139,7 +139,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         PnlMenu.setLayout(PnlMenuLayout);
         PnlMenuLayout.setHorizontalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1370, Short.MAX_VALUE)
         );
         PnlMenuLayout.setVerticalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,6 +151,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         pnlEspacoTrabalho.setBackground(new java.awt.Color(204, 204, 204));
         pnlEspacoTrabalho.setLayout(null);
+        PnlAreadeTrabalho.add(pnlEspacoTrabalho);
+        pnlEspacoTrabalho.setBounds(0, 60, 1300, 810);
 
         PnlFerramentas.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -197,7 +199,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                     .addComponent(btnConexoes)
                     .addComponent(btnEquipamentos)
                     .addComponent(btnVavulas))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         PnlFerramentasLayout.setVerticalGroup(
             PnlFerramentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,16 +215,13 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 .addGap(288, 288, 288))
         );
 
-        pnlEspacoTrabalho.add(PnlFerramentas);
-        PnlFerramentas.setBounds(1250, 0, 120, 820);
-
-        PnlAreadeTrabalho.add(pnlEspacoTrabalho);
-        pnlEspacoTrabalho.setBounds(0, 60, 1370, 820);
+        PnlAreadeTrabalho.add(PnlFerramentas);
+        PnlFerramentas.setBounds(1300, 20, 120, 820);
 
         getContentPane().add(PnlAreadeTrabalho);
-        PnlAreadeTrabalho.setBounds(0, 0, 1370, 880);
+        PnlAreadeTrabalho.setBounds(0, 0, 1420, 880);
 
-        setSize(new java.awt.Dimension(1386, 889));
+        setSize(new java.awt.Dimension(1429, 889));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

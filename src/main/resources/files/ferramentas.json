@@ -2,12 +2,31 @@
 
     bombas : [
         {
-            "_nome" : "",
+            "_nome" : "Bomba centrifuga",
             "_caminhoImagem" : "/images/*.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 0,
-            "_altura" : 0
+            "_largura" : 30,
+            "_altura" : 30
+        },
+   
+        {
+            "_nome" : "Bomba helicoidal",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" : 30
+
+        },
+  
+        {
+            "_nome" : "Bomba",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" : 30
         }
     ],
 
@@ -18,10 +37,10 @@
             "_caminhoImagem" : "/images/t1.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 10,
-            "_altura" : 30,
-            "_diametroInterno" : 10,
-            "_comprimento" : 30
+            "_larguraPx" : 30,
+            "_alturaPx" : 10,
+            "_diametroInterno" : 1,
+            "_comprimento" : 2
 
         },
 
@@ -30,14 +49,253 @@
             "_caminhoImagem" : "/images/t2.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 10,
-            "_altura" : 50,
-            "_diametroInterno" : 10,
-            "_comprimento" : 30
+            "_larguraPx" : 50,
+            "_alturaPx" : 10,
+            "_diametroInterno" : 1,
+            "_comprimento" : 4
 
+        },
+ 
+        {    "_nome" : "T3",
+            "_caminhoImagem" : "/images/t3.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 70,
+            "_alturaPx" : 10,
+            "_diametroInterno" : 1,
+            "_comprimento" : 6
+
+        },
+
+        {
+            "_nome" : "T4",
+            "_caminhoImagem" : "/images/t4.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 90,
+            "_alturaPx" : 10,
+            "_diametroInterno" : 1,
+            "_comprimento" : 8
+
+       },
+
+       {    "_nome" : "T5",
+            "_caminhoImagem" : "/images/t5.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 100,
+            "_alturaPx" : 10,
+            "_diametroInterno" : 1,
+            "_comprimento" : 10 
+
+       },
+
+       {    "_nome" : "T6",
+            "_caminhoImagem" : "/images/t6.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 30,
+            "_alturaPx" : 10,
+            "_diametroInterno" : "1¹/²",
+            "_comprimento" : 2
+       },
+
+       {    "_nome" : "T7",
+            "_caminhoImagem" : "/images/t7.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 50,
+            "_alturaPx" : 10,
+            "_diametroInterno" : "1¹/²",
+            "_comprimento" : 4
+
+        },
+
+        {   "_nome" : "T8",
+            "_caminhoImagem" : "/images/t8.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 70,
+            "_alturaPx" : 10,
+            "_diametroInterno" : "1¹/²",
+            "_comprimento" : 6
+         
+        },
+
+        {   "_nome" : "T9",
+            "_caminhoImagem" : "/images/t9.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 90,
+            "_alturaPx" : 10,
+            "_diametroInterno" : "1¹/²",
+            "_comprimento" : 8
+
+        },
+
+        {   "_nome" : "T10",
+            "_caminhoImagem" : "/images/t10.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 100,
+            "_alturaPx" : 10,
+            "_diametroInterno" : "1¹/²",
+            "_comprimento" : 10
         }
+    ],
+    reatores: [
+        {
+            "_nome" : "Reator",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 50,
+            "_altura" : 50
+        }
+   ],
+   tanques: [
+        {
+            "_nome" : "Tanque",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 80,
+            "_altura" : 40
+        }   
+   ],
+   trocadoresdecalor: [
+        {
+            "_nome" : "Trocador de calor",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 80,
+            "_altura" : 40
+        }
+  ],
+   torresdedestilacao: [
+        {
+            "_nome" : "Torres de destilação",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 80,
+            "_altura" : 40
+        }
+  ],
+   torresderesfriamento: [
+        {
+            "_nome" : "Torres de resfriamento",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 80,
+            "_altura" : 40
+        }
+  ],
+   vavulas: [
+        {
+            "_nome" : "Vavula1",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" :30
 
-    ]
+        },
+
+        {
+            "_nome" : "Vavula2",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" :30
+
+        },
+
+        {
+            "_nome" : "Vavula3",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" :30
+
+       },
+
+       {
+            "_nome" : "Vavula4",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" :30
+
+      },
+
+      {
+            "_nome" : "Vavula5",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" :30
+      }
+        
+    ],
+   conexoes: [
+        {
+            "_nome" : "Conexao1",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" :30
+        },
+   
+
+       {
+            "_nome" : "Conexao2",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" :30
+
+        },
+
+        {
+            "_nome" : "Conexao3",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" :30
+
+        },
+
+        {
+            "_nome" : "Conexao4",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" :30
+
+        },
+
+        {
+            "_nome" : "Conexao5",
+            "_caminhoImagem" : "/images/*.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 30,
+            "_altura" :30
+        }
+   
+   ]
+        
 
     
 

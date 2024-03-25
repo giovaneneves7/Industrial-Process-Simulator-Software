@@ -262,7 +262,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Conexões")){
             
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Conexões"); 
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, this, "Conexões"); 
             
         } else {
             
@@ -276,7 +276,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
       
         if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Válvulas")){
             
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Válvulas"); 
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho,this, "Válvulas"); 
             
         } else {
             
@@ -289,7 +289,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Equipamentos")){
             
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Equipamentos"); 
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho,this, "Equipamentos"); 
             
         } else {
             
@@ -303,7 +303,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Tubulações")){
             
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, "Tubulações"); 
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho,this, "Tubulações"); 
             
         } else {
             

@@ -29,19 +29,24 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
     /**
      * Creates new form FerramentaContainer
      */
-    public FerramentaContainer(E equipamento, final int altura, final int largura, final int x, final int y) {
+    public FerramentaContainer(E equipamento, final int altura, final int largura, final int x, final int y, int qtdInserida) {
         initComponents();
-        inicializadorPersonalizado(equipamento, altura, largura, x, y);
+        inicializadorPersonalizado(equipamento, altura, largura, x, y, qtdInserida);
         
     }
 
-    public void inicializadorPersonalizado(E equipamento, int altura, int largura, int x, int y){
+    public void inicializadorPersonalizado(E equipamento, int altura, int largura, int x, int y, int qtdInserida){
         
         System.out.println("Equipamento: " + equipamento.toString());
-        this.setBackground(Color.decode("#5E5E5E"));
+        this.setBackground(Color.decode("#CCCCCC"/*"#5E5E5E"*/));
         this.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         this.setForeground(new java.awt.Color(255, 255, 255));
-        this.setBounds(x, y, altura, largura);
+        this.setBounds(
+                (qtdInserida == 0) ? x : 
+                (qtdInserida % 2 != 0) ? x * 2 : x, 
+                (qtdInserida == 0) ? y :
+                (qtdInserida % 2 == 0) ? y * 2 : y, altura, largura
+        );
         this.setLayout(null);
         
         JLabel titulo = new LabelBuilder()

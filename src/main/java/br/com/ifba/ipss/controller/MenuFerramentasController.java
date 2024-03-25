@@ -1,5 +1,5 @@
 // *************************************************//
-// *************** { COMEÇO - Package } ************//
+// *************** { COMEï¿½O - Package } ************//
 // *************************************************//
 package br.com.ifba.ipss.controller;
 // *************************************************//
@@ -7,18 +7,28 @@ package br.com.ifba.ipss.controller;
 // *************************************************//
 
 // *************************************************//
-// ************ { COMEÇO - Imports } ***************//
+// ************ { COMEï¿½O - Imports } ***************//
 // *************************************************//
 import br.com.ifba.ipss.builder.LabelBuilder;
 import br.com.ifba.ipss.helper.SizeHelper;
+import br.com.ifba.ipss.model.entity.Bomba;
+import br.com.ifba.ipss.model.entity.Conexao;
 import br.com.ifba.ipss.model.entity.Equipamento;
+import br.com.ifba.ipss.model.entity.Reator;
 import br.com.ifba.ipss.model.entity.Tubulacao;
 import br.com.ifba.ipss.model.widget.FerramentaContainer;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import lombok.Data;
@@ -41,7 +51,7 @@ public class MenuFerramentasController {
     private boolean _menuAberto = false;
     private String _nomeMenuAberto;
     private JPanel _ferramentasContainer;
-    private Map<String, List<?>> _equipamentos = new HashMap<>();
+    private Map<String, List<?>> equipamentos = new HashMap<>();
     
     
     // *************************************************//
@@ -49,17 +59,17 @@ public class MenuFerramentasController {
     // *************************************************//
     public MenuFerramentasController(Map<String, List<?>> equipamentos){
         
-        this._equipamentos = equipamentos;
+        this.equipamentos = equipamentos;
         
     }
     // *************************************************//
-    // ****************** { Métodos } ******************//
+    // ****************** { Mï¿½todos } ******************//
     // *************************************************//
     
     /**
-     * Abre o menu de ferramentas quando um botão é clicado.
+     * Abre o menu de ferramentas quando um botï¿½o ï¿½ clicado.
      */
-    public void abrirMenuFerramentas(JPanel p, final String nome){      
+    public void abrirMenuFerramentas(JPanel p, JFrame f, final String nome){      
         
         if(this._menuAberto)
             this.fecharMenuFerramentas(p);
@@ -70,15 +80,15 @@ public class MenuFerramentasController {
         int y = (alturaF - 820) / 2;
         
         
-        // Instância do painel
+        // Instï¿½ncia do painel
         this._ferramentasContainer = new JPanel();        
         this._ferramentasContainer.setLayout(null);
         
-        // Customização do painel
+        // Customizaï¿½ï¿½o do painel
         _ferramentasContainer.setBounds(x, y, 280, 820);
         _ferramentasContainer.setBackground(Color.decode("#5E5E5E"));
         
-        // Título do painel 
+        // Tï¿½tulo do painel 
         JLabel tituloMenu = new LabelBuilder()
                 .setTitulo(nome)
                 .setForeground(Color.white)
@@ -104,7 +114,7 @@ public class MenuFerramentasController {
         this._menuAberto = true;
         this._nomeMenuAberto = nome;
         
-        this.adicionarFerramentasAoMenu(_ferramentasContainer, nome);
+        this.adicionarFerramentasAoMenu(_ferramentasContainer,f, nome);
         
     } // abrirMenuFerramentas
     
@@ -118,9 +128,9 @@ public class MenuFerramentasController {
         
     } // fecharMenuFerramentas
     
-    public void adicionarFerramentasAoMenu(JPanel p, String nome){
+    public void adicionarFerramentasAoMenu(JPanel p, JFrame f, String nome){
         
-        List<?> listaEquipamentos = _equipamentos.get(nome);
+        List<?> listaEquipamentos = equipamentos.get(nome);
                 
         if (listaEquipamentos != null && !listaEquipamentos.isEmpty()) {
             
@@ -138,6 +148,17 @@ public class MenuFerramentasController {
                             
                             Tubulacao tub = (Tubulacao) listaEquipamentos.get(cont);
                             FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tub,SizeHelper.ALTURA_FERRAMENTA_CONTAINER, SizeHelper.LARGURA_FERRAMENTA_CONTAINER, (p.getWidth() / 2), (p.getHeight() / 8));
+                      
+                            ferramentaContainer.addMouseListener(new MouseAdapter(){
+                            
+                                @Override
+                                public void mouseClicked(MouseEvent me){
+                                
+                                    selecionarFerramenta(nome, tub.get_nome(),f, me);
+                                    
+                                } 
+                                
+                            });
                             p.add(ferramentaContainer);
                             cont++;
                             
@@ -154,19 +175,51 @@ public class MenuFerramentasController {
     }
     
     
-    public void selecionarFerramenta(){
-        /* TODO: Adicionar lógica */
+    public void selecionarFerramenta(String tipo, String nome, JFrame f,MouseEvent me){
+        
+        Equipamento eq = pegarEquipamentoSelecionado(tipo, nome);
+        
+        if(eq instanceof Tubulacao){
+            Tubulacao tub = (Tubulacao) eq;
+            
+            ImageIcon imgTub = new ImageIcon(tub.get_caminhoImagem());
+            JLabel lblTub = new JLabel();
+            lblTub.setIcon(imgTub);
+            
+            f.repaint();
+            f.revalidate();
+        }
+    }
+    
+    public <T extends Equipamento>T pegarEquipamentoSelecionado(String tipo, String nome){
+
+            
+        try {
+            
+            return equipamentos.get(tipo)
+                    .stream()
+                    .map(obj -> (T) obj)
+                    .filter(tub -> tub.get_nome().equals(nome))
+                    .findFirst().orElseThrow(() -> new FileNotFoundException("erro"));
+            
+        } catch (FileNotFoundException ex) {
+            
+           ex.printStackTrace();
+           return null;
+           
+        }
+               
     }
     
     public void adicionarFerramentaAAAreaDeTrabalho(){
-        /* TODO: Adicionar lógica */
+        /* TODO: Adicionar lï¿½gica */
     }
     
     public void removerFerramentaDaAreaDeTrabalho(){
-        /* TODO: Adicionar lógica */
+        /* TODO: Adicionar lï¿½gica */
     }
     
     public void conectarFerramentas(Equipamento origem, Equipamento destino){
-        /* TODO: Adicionar lógica */
+        /* TODO: Adicionar lï¿½gica */
     }
 } // class MenuFerramentasController

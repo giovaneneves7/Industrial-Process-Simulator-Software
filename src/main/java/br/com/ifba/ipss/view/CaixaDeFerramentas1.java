@@ -14,6 +14,7 @@ public class CaixaDeFerramentas1 extends javax.swing.JFrame {
      * Creates new form Caixa
      */
     public CaixaDeFerramentas1() {
+     
         initComponents();
     }
 

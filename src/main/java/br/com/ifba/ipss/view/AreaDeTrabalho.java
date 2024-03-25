@@ -231,7 +231,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         );
 
         PnlAreadeTrabalho.add(PnlFerramentas);
-        PnlFerramentas.setBounds(1250, 30, 120, 850);
+        PnlFerramentas.setBounds(1220, 60, 150, 850);
 
         pnlEspacoTrabalho.setBackground(new java.awt.Color(204, 204, 204));
         pnlEspacoTrabalho.setLayout(null);
@@ -239,7 +239,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         pnlEspacoTrabalho.setBounds(-60, 50, 1320, 820);
 
         getContentPane().add(PnlAreadeTrabalho);
-        PnlAreadeTrabalho.setBounds(0, 0, 1350, 880);
+        PnlAreadeTrabalho.setBounds(0, 0, 1370, 880);
 
         setSize(new java.awt.Dimension(1386, 889));
         setLocationRelativeTo(null);

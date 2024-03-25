@@ -11,6 +11,7 @@ package br.com.ifba.ipss.feature.widget.model;
 // *************************************************//
 import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.equipamento.model.Equipamento;
+import br.com.ifba.ipss.feature.equipamento.model.Tubulacao;
 import java.awt.Color;
 import javax.swing.JLabel;
 // *************************************************//
@@ -47,15 +48,49 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
                 .setForeground(Color.white)
                 .build();
         
-        JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
-        imagem.setBounds(40, 40, 10, 30);
+
+        if(equipamento instanceof Tubulacao){
         
-        int tituloX = (largura - 50) / 2;
-        titulo.setBounds(tituloX, 10, 64, 16);
-        titulo.setForeground(Color.white);
+            JLabel lblDi = pegarDi((Tubulacao) equipamento);
         
-        this.add(titulo);
-        this.add(imagem);
+            JLabel lblM = pegarM((Tubulacao) equipamento);
+
+            JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
+            imagem.setBounds(60, 40, 10, 30);
+
+            int tituloX = (largura - 50) / 2;
+            titulo.setBounds(tituloX, 10, 84, 16);
+            lblDi.setBounds(5, ((this.getHeight() / 2) - 14), 60, 20);
+            lblM.setBounds(5, ((this.getHeight() / 2) - 14) + lblDi.getHeight(), 60, 20);
+ 
+            titulo.setForeground(Color.white);
+            this.add(titulo);
+            this.add(lblDi);
+            this.add(lblM);
+            this.add(imagem);
+        
+        }        
+        
+        
+    }
+    
+    
+    public JLabel pegarDi(Tubulacao tub){
+        
+        return new LabelBuilder()
+                .setTitulo("Di=".concat(tub.get_diametroInterno().concat("in")))
+                .setForeground(Color.white)
+                .build();
+        
+    }
+    
+    public JLabel pegarM(Tubulacao tub){
+        
+        return new LabelBuilder()
+                    .setTitulo("L=".concat(String.valueOf(tub.getComprimento()).concat("m")))
+                    .setForeground(Color.white)
+                    .build();
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.

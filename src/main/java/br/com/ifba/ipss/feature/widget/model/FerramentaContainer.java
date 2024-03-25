@@ -37,6 +37,7 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
 
     public void inicializadorPersonalizado(E equipamento, int altura, int largura, int x, int y){
         
+        System.out.println("Equipamento: " + equipamento.toString());
         this.setBackground(Color.decode("#5E5E5E"));
         this.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         this.setForeground(new java.awt.Color(255, 255, 255));
@@ -50,11 +51,11 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
         
 
         if(equipamento instanceof Tubulacao){
-        
+            
             JLabel lblDi = pegarDi((Tubulacao) equipamento);
         
             JLabel lblM = pegarM((Tubulacao) equipamento);
-
+            
             JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
             imagem.setBounds(60, 40, 10, 30);
 

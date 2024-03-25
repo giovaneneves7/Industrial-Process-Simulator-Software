@@ -131,7 +131,7 @@ public class MenuFerramentasController {
     public void adicionarFerramentasAoMenu(JPanel p, JFrame f, String nome){
         
         List<?> listaEquipamentos = equipamentos.get(nome);
-                
+        
         if (listaEquipamentos != null && !listaEquipamentos.isEmpty()) {
             
             Object primeiroEquipamento = listaEquipamentos.get(0);
@@ -142,7 +142,7 @@ public class MenuFerramentasController {
                                 
                 for(int i = 0; i < listaEquipamentos.size(); i+=2){
 
-                        boolean segundaIteracao = listaEquipamentos.size() < (i + 1);
+                        boolean segundaIteracao = listaEquipamentos.size() > (i + 1);
                                                 
                         for(int j = 0; j < ((segundaIteracao) ? 2 : 1); j++){
                             

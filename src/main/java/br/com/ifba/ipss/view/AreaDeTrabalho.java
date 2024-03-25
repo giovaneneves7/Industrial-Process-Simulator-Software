@@ -1,14 +1,14 @@
 package br.com.ifba.ipss.view;
 
 import br.com.ifba.ipss.controller.MenuFerramentasController;
+import br.com.ifba.ipss.controller.ViewController;
 import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.feature.equipamento.model.Tubulacao;
+import br.com.ifba.ipss.util.Constantes;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,6 +20,7 @@ import javax.swing.ImageIcon;
 /**
  *
  * @author Giovane Neves
+ * @since V0.0.1
  */
 public class AreaDeTrabalho extends javax.swing.JFrame {
 
@@ -101,10 +102,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     
     private void inicializadorPersonalizado(){
         
-        ImageIcon favicon = new ImageIcon(getClass().getResource("/images/logo.jpg"));
+        ViewController.definirTituloAplicacao(this);
+        ImageIcon favicon = new ImageIcon(getClass().getResource(PathHelper.LOGO));
+        ViewController.definirLogoAplicacao(this, favicon.getImage());
         
-        this.setIconImage(favicon.getImage());
-        this.setTitle("EduSimLab - Laboratório Virtual de Simulação de Processos");
         
     }
     /**

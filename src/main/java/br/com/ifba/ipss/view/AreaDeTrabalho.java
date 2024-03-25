@@ -2,7 +2,7 @@ package br.com.ifba.ipss.view;
 
 import br.com.ifba.ipss.controller.MenuFerramentasController;
 import br.com.ifba.ipss.helper.PathHelper;
-import br.com.ifba.ipss.model.entity.Tubulacao;
+import br.com.ifba.ipss.feature.equipamento.model.Tubulacao;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

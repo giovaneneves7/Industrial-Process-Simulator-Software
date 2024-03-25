@@ -4,6 +4,7 @@ import br.com.ifba.ipss.controller.MenuFerramentasController;
 import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.feature.equipamento.model.Tubulacao;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.awt.Dimension;
@@ -48,9 +49,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             Gson gson = new Gson();
             JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
 
-            JsonObject tubulacoesJson = jsonObject.getAsJsonArray("tubulacoes").get(0).getAsJsonObject();
+            //JsonObject tubulacoesJson = jsonObject.getAsJsonArray("tubulacoes").get(1).getAsJsonObject();
+            JsonArray tubulacoesArray = jsonObject.getAsJsonArray("tubulacoes");
             
-            equipamentos.put("Tubulações", pegarTubulacoes(tubulacoesJson));
+            
+            equipamentos.put("Tubulações", pegarTubulacoes(tubulacoesArray));
             
         } catch(IOException ex){
             ex.printStackTrace();
@@ -59,31 +62,39 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         return equipamentos;
     }
     
-    public List<Tubulacao> pegarTubulacoes(JsonObject tubulacoesJson){
+    public List<Tubulacao> pegarTubulacoes(JsonArray tubulacoesJson){
         
-        List<Tubulacao> tubulacoes = new ArrayList<>();
-        
-        Tubulacao tubulacao = new Tubulacao();
+        List<Tubulacao> tubulacoes = new ArrayList<>();        
           
-        for (Map.Entry<String, JsonElement> entry : tubulacoesJson.entrySet()) {
+        for (JsonElement je : tubulacoesJson) {
             
-            String chave = entry.getKey();
-            JsonElement valor = entry.getValue();
+            JsonObject obj = je.getAsJsonObject();
+            Tubulacao tubulacao = new Tubulacao();
 
-            switch (chave) {
-                case "_nome" -> tubulacao.set_nome(valor.getAsString());
-                case "_caminhoImagem" -> tubulacao.set_caminhoImagem(valor.getAsString());
-                case "_x" -> tubulacao.set_x(valor.getAsInt());
-                case "_y" -> tubulacao.set_y(valor.getAsInt());
-                case "_largura" -> tubulacao.set_larguraPx(valor.getAsInt());
-                case "_altura" -> tubulacao.set_alturaPx(valor.getAsInt());
-                case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsString());
-                default -> {}
+            for(Map.Entry<String, JsonElement> entry : obj.entrySet()){
+                
+                String chave = entry.getKey();
+                JsonElement valor = entry.getValue();
+            
+                switch (chave) {
+                    case "_nome" -> tubulacao.set_nome(valor.getAsString());
+                    case "_caminhoImagem" -> tubulacao.set_caminhoImagem(String.valueOf(valor.getAsString()));
+                    case "_x" -> tubulacao.set_x(valor.getAsInt());
+                    case "_y" -> tubulacao.set_y(valor.getAsInt());
+                    case "_largura" -> tubulacao.set_larguraPx(valor.getAsInt());
+                    case "_altura" -> tubulacao.set_alturaPx(valor.getAsInt());
+                    case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsString());
+                    default -> {}
+                }
+                
+
             }
+            tubulacoes.add(tubulacao);
+
+            
     
-                    }
+        }
         
-        tubulacoes.add(tubulacao);
         
         return tubulacoes;
     }

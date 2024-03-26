@@ -43,8 +43,8 @@ public class FerramentaContainer<E extends Equipamento> extends javax.swing.JPan
         this.setForeground(Constantes.COR_BACKGROUND);
         
         this.setBounds(
-                (qtdInserida == 0) ? x : (qtdInserida % 2 != 0) ? x * 2 : x, 
-                (qtdInserida == 0) ? y : (qtdInserida % 2 == 0) ? y * 2 : y, 
+                (qtdInserida == 0) ? x : (qtdInserida % 2 == 0) ? x * 2 + largura : x, 
+                (qtdInserida == 0) ? y : (qtdInserida % 2 != 0) ? y * 2 + altura : y, 
                 altura, 
                 largura
         );

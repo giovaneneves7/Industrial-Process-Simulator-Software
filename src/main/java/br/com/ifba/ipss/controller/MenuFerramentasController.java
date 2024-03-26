@@ -147,7 +147,7 @@ public class MenuFerramentasController {
                         for(int j = 0; j < ((segundaIteracao) ? 2 : 1); j++){
                             
                             Tubulacao tub = (Tubulacao) listaEquipamentos.get(cont);
-                            FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tub,SizeHelper.ALTURA_FERRAMENTA_CONTAINER, SizeHelper.LARGURA_FERRAMENTA_CONTAINER, (p.getWidth() / 2), (p.getHeight() / 8), i);
+                            FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tub,SizeHelper.ALTURA_FERRAMENTA_CONTAINER, SizeHelper.LARGURA_FERRAMENTA_CONTAINER, 5, (p.getHeight() / 8), i);
                       
                             ferramentaContainer.addMouseListener(new MouseAdapter(){
                             

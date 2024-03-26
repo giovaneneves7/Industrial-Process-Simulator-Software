@@ -40,7 +40,7 @@
             "_larguraPx" : 30,
             "_alturaPx" : 10,
             "_diametroInterno" : 1,
-            "_comprimento" : 2
+            "comprimento" : 2
 
         },
 
@@ -52,7 +52,7 @@
             "_larguraPx" : 50,
             "_alturaPx" : 10,
             "_diametroInterno" : 1,
-            "_comprimento" : 4
+            "comprimento" : 4
 
         },
  
@@ -63,7 +63,7 @@
             "_larguraPx" : 70,
             "_alturaPx" : 10,
             "_diametroInterno" : 1,
-            "_comprimento" : 6
+            "comprimento" : 6
 
         },
 
@@ -75,7 +75,7 @@
             "_larguraPx" : 90,
             "_alturaPx" : 10,
             "_diametroInterno" : 1,
-            "_comprimento" : 8
+            "comprimento" : 8
 
        },
 
@@ -86,7 +86,7 @@
             "_larguraPx" : 100,
             "_alturaPx" : 10,
             "_diametroInterno" : 1,
-            "_comprimento" : 10 
+            "comprimento" : 10 
 
        }
 

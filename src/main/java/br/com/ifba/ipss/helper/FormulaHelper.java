@@ -1,5 +1,7 @@
 package br.com.ifba.ipss.helper;
 
+import br.com.ifba.ipss.util.Escoamento;
+
 /**
  *
  * @author Giovane Neves
@@ -36,12 +38,11 @@ public class FormulaHelper {
     
     public static String VERIFICAR_ESCOAMENTO(double re){
         
-      if(re < 2000f)
-          return "escoamento laminar";
-      else if(re > 2000 && re < 2400)
-          return "escoamento transitorio";
-      else
-          return "escoamento turbulento";
+      return (re < 2000f) ?
+            Escoamento.ESCOAMENTO_LAMINAR.getString() :
+            (re > 2000 && re < 2400) ?
+            Escoamento.ESCOAMENTO_TRANSITORIO.getString() :
+            Escoamento.ESCOAMENTO_TURBULENTO.getString();
     }  
 }
     

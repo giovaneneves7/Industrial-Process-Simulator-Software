@@ -85,6 +85,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                     case "_largura" -> tubulacao.set_larguraPx(valor.getAsInt());
                     case "_altura" -> tubulacao.set_alturaPx(valor.getAsInt());
                     case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsString());
+                    case "comprimento" -> tubulacao.setComprimento(valor.getAsDouble());
                     default -> {}
                 }
                 

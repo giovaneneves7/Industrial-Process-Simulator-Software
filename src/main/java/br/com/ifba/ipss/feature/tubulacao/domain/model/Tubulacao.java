@@ -1,7 +1,7 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.feature.equipamento.model;
+package br.com.ifba.ipss.feature.tubulacao.domain.model;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -9,6 +9,7 @@ package br.com.ifba.ipss.feature.equipamento.model;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.feature.equipamento.model.Equipamento;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -12,6 +12,7 @@ package br.com.ifba.ipss.controller;
 import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.splash.model.Splash;
 import br.com.ifba.ipss.helper.SizeHelper;
+import br.com.ifba.ipss.util.Constantes;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -76,7 +77,7 @@ public class SplashController {
             protected Void doInBackground() throws Exception {
                 for (int i = 0; i <= 100; i++) {
                     try {
-                        Thread.sleep(20);
+                        Thread.sleep(Constantes.DELAY_CARREGAMENTO);
                     } catch (InterruptedException ex) {
                         ex.printStackTrace();
                     }

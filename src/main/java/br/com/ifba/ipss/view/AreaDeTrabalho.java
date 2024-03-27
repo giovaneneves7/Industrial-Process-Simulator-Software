@@ -3,15 +3,8 @@ package br.com.ifba.ipss.view;
 import br.com.ifba.ipss.controller.MenuFerramentasController;
 import br.com.ifba.ipss.controller.ViewController;
 import br.com.ifba.ipss.helper.PathHelper;
-import br.com.ifba.ipss.feature.equipamento.model.Tubulacao;
-import br.com.ifba.ipss.util.Constantes;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
+import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +22,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     // ************** { Variáveis Globais } ************//
     // *************************************************//
     private final MenuFerramentasController _menuFerramentasController;
-    
+    private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
+   
     /**
      * Cria a interface com os componentes iniciais
      */
@@ -45,60 +39,9 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         Map<String, List<?>> equipamentos = new HashMap<>();
         
-        try(FileReader leitor = new FileReader(caminho)){
+        equipamentos.put("Tubulações", tubulacaoService.pegarTubulacoes());
             
-            Gson gson = new Gson();
-            JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
-
-            //JsonObject tubulacoesJson = jsonObject.getAsJsonArray("tubulacoes").get(1).getAsJsonObject();
-            JsonArray tubulacoesArray = jsonObject.getAsJsonArray("tubulacoes");
-            
-            
-            equipamentos.put("Tubulações", pegarTubulacoes(tubulacoesArray));
-            
-        } catch(IOException ex){
-            ex.printStackTrace();
-        }
-        
         return equipamentos;
-    }
-    
-    public List<Tubulacao> pegarTubulacoes(JsonArray tubulacoesJson){
-        
-        List<Tubulacao> tubulacoes = new ArrayList<>();        
-          
-        for (JsonElement je : tubulacoesJson) {
-            
-            JsonObject obj = je.getAsJsonObject();
-            Tubulacao tubulacao = new Tubulacao();
-
-            for(Map.Entry<String, JsonElement> entry : obj.entrySet()){
-                
-                String chave = entry.getKey();
-                JsonElement valor = entry.getValue();
-            
-                switch (chave) {
-                    case "_nome" -> tubulacao.set_nome(valor.getAsString());
-                    case "_caminhoImagem" -> tubulacao.set_caminhoImagem(String.valueOf(valor.getAsString()));
-                    case "_x" -> tubulacao.set_x(valor.getAsInt());
-                    case "_y" -> tubulacao.set_y(valor.getAsInt());
-                    case "_largura" -> tubulacao.set_larguraPx(valor.getAsInt());
-                    case "_altura" -> tubulacao.set_alturaPx(valor.getAsInt());
-                    case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsString());
-                    case "comprimento" -> tubulacao.setComprimento(valor.getAsDouble());
-                    default -> {}
-                }
-                
-
-            }
-            tubulacoes.add(tubulacao);
-
-            
-    
-        }
-        
-        
-        return tubulacoes;
     }
     
     private void inicializadorPersonalizado(){

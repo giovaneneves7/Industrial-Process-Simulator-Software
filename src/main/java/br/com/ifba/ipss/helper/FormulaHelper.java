@@ -13,7 +13,7 @@ public class FormulaHelper {
 
     public static double EQUACAO_DE_REYNOLD(double vel, double di, double rho, double vd){
         
-        double re = rho*vel*di/vd;
+        double re = rho * vel * di / vd;
         
         return re;
         
@@ -21,14 +21,14 @@ public class FormulaHelper {
     
     public static double EQUACAO_DE_POISEULLE(double l, double vel, double vc, double g, double d){
         
-        double j = 32*l*vel*vc/g*(d*d);
+        double j = 32 * l * vel * vc / g * (d*d);
         
         return j;
         
     }
     public static double EQUACAO_DE_DARCY_WEISBACH(double f, double l, double d, double vel, double g){
         
-        double j = f*l/d*vel*vel/2*g;
+        double j = f * l / d * vel * vel / 2 * g;
         
         return j;
     
@@ -40,7 +40,7 @@ public class FormulaHelper {
         
       return (re < 2000f) ?
             Escoamento.ESCOAMENTO_LAMINAR.getString() :
-            (re > 2000 && re < 2400) ?
+            (re > 2000f && re < 2400f) ?
             Escoamento.ESCOAMENTO_TRANSITORIO.getString() :
             Escoamento.ESCOAMENTO_TURBULENTO.getString();
     }  

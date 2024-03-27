@@ -15,7 +15,7 @@ import br.com.ifba.ipss.feature.equipamento.model.Bomba;
 import br.com.ifba.ipss.feature.equipamento.model.Conexao;
 import br.com.ifba.ipss.feature.equipamento.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.model.Reator;
-import br.com.ifba.ipss.feature.equipamento.model.Tubulacao;
+import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.widget.model.FerramentaContainer;
 import java.awt.Color;
 import java.awt.Font;

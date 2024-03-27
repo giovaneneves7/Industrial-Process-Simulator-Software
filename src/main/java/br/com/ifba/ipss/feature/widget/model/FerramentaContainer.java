@@ -11,7 +11,7 @@ package br.com.ifba.ipss.feature.widget.model;
 // *************************************************//
 import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.equipamento.model.Equipamento;
-import br.com.ifba.ipss.feature.equipamento.model.Tubulacao;
+import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.util.Constantes;
 import java.awt.Color;
 import javax.swing.JLabel;

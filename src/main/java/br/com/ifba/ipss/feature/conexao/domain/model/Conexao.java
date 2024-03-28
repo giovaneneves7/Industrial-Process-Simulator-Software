@@ -1,15 +1,15 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.feature.equipamento.model;
+package br.com.ifba.ipss.feature.conexao.domain.model;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
 
-
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,14 +26,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Tanque extends Equipamento{
+public class Conexao extends Equipamento{
     
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-    private double _volume;      // O volume do tanque. 
-    private double _temperatura; // A teperatura do tanque.
-    private double _pressao;     // A pressão do tanque.
+    private double perdaDeCarga;    // A perda de carga da conexao.
+    private double diametroInterno; // O diâmetro interno da conexão.
     
-} // class Tanque
+} // class Conexao

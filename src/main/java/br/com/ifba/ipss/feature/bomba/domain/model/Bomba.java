@@ -1,7 +1,7 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.feature.equipamento.model;
+package br.com.ifba.ipss.feature.bomba.domain.model;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -9,8 +9,10 @@ package br.com.ifba.ipss.feature.equipamento.model;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -24,14 +26,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Reator extends Equipamento{
+public class Bomba extends Equipamento{
     
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
+
+    private double _vazao;              // A Vazão da bomba.
+    private double _perdaDeCarga;       // A Perda de Carga da bomba.
     
-    private double _agitacao;    // A agitação do reator.
-    private double _temperatura; // A temperatura do reator.
-    private double _pressao;     // A pressão do reator.
-    
-} // class Reator
+} // class Bomba

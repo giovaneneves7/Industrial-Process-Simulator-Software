@@ -1,4 +1,4 @@
-package br.com.ifba.ipss.feature.tela.model;
+package br.com.ifba.ipss.feature.tela.domain.model;
 
 /**
  *

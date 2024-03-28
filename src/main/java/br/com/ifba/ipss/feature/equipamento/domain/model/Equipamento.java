@@ -1,7 +1,7 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.feature.equipamento.model;
+package br.com.ifba.ipss.feature.equipamento.domain.model;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -9,8 +9,9 @@ package br.com.ifba.ipss.feature.equipamento.model;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -20,12 +21,21 @@ package br.com.ifba.ipss.feature.equipamento.model;
  * @author Giovane Neves
  * @since V0.0.1
  */
-public class BombaCentrifuga extends Bomba{
-    
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Equipamento {
+   
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-   
-} // class BombaCentrifuga
-
+    private String _nome;          // O nome do equipamento.
+    private String _caminhoImagem; // O caminho para a imagem do equipamento.
+    private double _x;             // A posição 'X' do equipamento.
+    private double _y;             // A posição 'Y' do equipamento.
+    private double _larguraPx;     // A largura do equipamento em pixels.
+    private double _alturaPx;      // A altura do equipamento em pixels.
+    private double _comprimentoM;  // O comprimento do equipamento em metros.
+    
+} // class Equipamento

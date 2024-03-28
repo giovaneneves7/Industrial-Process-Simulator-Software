@@ -1,6 +1,6 @@
-package br.com.ifba.ipss.feature.painel.builder;
+package br.com.ifba.ipss.feature.painel.domain.builder;
 
-import br.com.ifba.ipss.feature.painel.model.Painel;
+import br.com.ifba.ipss.feature.painel.domain.model.Painel;
 import java.awt.LayoutManager;
 
 /**

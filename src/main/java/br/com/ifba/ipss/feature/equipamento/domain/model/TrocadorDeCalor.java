@@ -1,4 +1,4 @@
-package br.com.ifba.ipss.feature.equipamento.model;
+package br.com.ifba.ipss.feature.equipamento.domain.model;
 
 /**
  *

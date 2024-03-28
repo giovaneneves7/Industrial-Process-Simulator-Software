@@ -1,7 +1,7 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.feature.equipamento.model;
+package br.com.ifba.ipss.feature.reator.domain.model;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -9,6 +9,7 @@ package br.com.ifba.ipss.feature.equipamento.model;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,13 +25,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Valvula extends Equipamento{
+public class Reator extends Equipamento{
     
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-    private double _perdaDeCarga;    // A perda de carga da valvula.
-    private double _diametroInterno; // O diametro interno da válvula.
+    private double _agitacao;    // A agitação do reator.
+    private double _temperatura; // A temperatura do reator.
+    private double _pressao;     // A pressão do reator.
     
-} // class Valvula
+} // class Reator

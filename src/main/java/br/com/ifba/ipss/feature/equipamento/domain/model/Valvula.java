@@ -1,7 +1,7 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.feature.equipamento.model;
+package br.com.ifba.ipss.feature.equipamento.domain.model;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -11,7 +11,6 @@ package br.com.ifba.ipss.feature.equipamento.model;
 // *************************************************//
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -25,13 +24,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Bomba extends Equipamento{
+public class Valvula extends Equipamento{
     
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
-
-    private double _vazao;              // A Vazão da bomba.
-    private double _perdaDeCarga;       // A Perda de Carga da bomba.
     
-} // class Bomba
+    private double _perdaDeCarga;    // A perda de carga da valvula.
+    private double _diametroInterno; // O diametro interno da válvula.
+    
+} // class Valvula

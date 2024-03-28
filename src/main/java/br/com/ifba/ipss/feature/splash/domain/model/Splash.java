@@ -1,6 +1,6 @@
-package br.com.ifba.ipss.feature.splash.model;
+package br.com.ifba.ipss.feature.splash.domain.model;
 
-import br.com.ifba.ipss.feature.tela.model.Tela;
+import br.com.ifba.ipss.feature.tela.domain.model.Tela;
 import lombok.Data;
 
 /**

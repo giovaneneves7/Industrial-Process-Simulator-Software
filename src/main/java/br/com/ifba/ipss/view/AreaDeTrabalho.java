@@ -99,16 +99,16 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         );
         PnlMenuLayout.setVerticalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
         pnlBackgruond.add(PnlMenu);
-        PnlMenu.setBounds(0, 30, 1370, 30);
+        PnlMenu.setBounds(0, 30, 1370, 50);
 
         pnlEspacoTrabalho.setBackground(new java.awt.Color(204, 204, 204));
         pnlEspacoTrabalho.setLayout(null);
         pnlBackgruond.add(pnlEspacoTrabalho);
-        pnlEspacoTrabalho.setBounds(0, 60, 1300, 0);
+        pnlEspacoTrabalho.setBounds(0, 80, 1250, 710);
 
         PnlBotoes.setBackground(new java.awt.Color(255, 255, 255));
 

@@ -1,4 +1,4 @@
-package br.com.ifba.ipss.controller;
+package br.com.ifba.ipss.common.controller;
 
 import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.util.Constantes;

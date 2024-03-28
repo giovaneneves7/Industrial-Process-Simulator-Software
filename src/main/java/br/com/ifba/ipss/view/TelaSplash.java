@@ -10,7 +10,7 @@ package br.com.ifba.ipss.view;
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 import br.com.ifba.ipss.common.controller.SplashController;
-import br.com.ifba.ipss.feature.splash.model.Splash;
+import br.com.ifba.ipss.feature.splash.domain.model.Splash;
 import br.com.ifba.ipss.helper.PathHelper;
 import javax.swing.ImageIcon;
 // *************************************************//

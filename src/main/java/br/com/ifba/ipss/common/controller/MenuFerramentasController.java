@@ -9,12 +9,12 @@ package br.com.ifba.ipss.common.controller;
 // *************************************************//
 // ************ { COME�O - Imports } ***************//
 // *************************************************//
-import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
+import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.helper.SizeHelper;
-import br.com.ifba.ipss.feature.equipamento.model.Bomba;
-import br.com.ifba.ipss.feature.equipamento.model.Conexao;
-import br.com.ifba.ipss.feature.equipamento.model.Equipamento;
-import br.com.ifba.ipss.feature.equipamento.model.Reator;
+import br.com.ifba.ipss.feature.bomba.domain.model.Bomba;
+import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
+import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
+import br.com.ifba.ipss.feature.reator.domain.model.Reator;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;

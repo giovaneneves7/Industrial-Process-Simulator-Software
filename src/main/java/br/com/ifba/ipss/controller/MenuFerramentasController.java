@@ -100,7 +100,7 @@ public class MenuFerramentasController {
         int larguraC = _ferramentasContainer.getWidth();
         int alturaC = _ferramentasContainer.getHeight(); 
         int tituloX = (larguraC - 60) / 2;
-        int tituloY = alturaC - 780;
+        int tituloY = alturaC - 740;
        
         tituloMenu.setBounds(tituloX, tituloY, 120, 20);
         _ferramentasContainer.add(tituloMenu);

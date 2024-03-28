@@ -1,7 +1,7 @@
 // *************************************************//
 // *************** { COME�O - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.controller;
+package br.com.ifba.ipss.common.controller;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -16,11 +16,15 @@ import br.com.ifba.ipss.feature.equipamento.model.Conexao;
 import br.com.ifba.ipss.feature.equipamento.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.model.Reator;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
+import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
+import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import br.com.ifba.ipss.feature.widget.model.FerramentaContainer;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.List;
@@ -31,6 +35,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import lombok.Data;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -48,11 +53,15 @@ public class MenuFerramentasController {
     // ***************** { Atributos } *****************//
     // *************************************************//
     
+    private ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
+    
     private boolean _menuAberto = false;
     private String _nomeMenuAberto;
     private JPanel _ferramentasContainer;
     private Map<String, List<?>> equipamentos = new HashMap<>();
     
+    private JLabel lblFerramentaSelecionada;
+    private boolean ferramentaEstaSelecionada = false;
     
     // *************************************************//
     // ***************** { Construtor } ****************//
@@ -114,7 +123,7 @@ public class MenuFerramentasController {
         this._menuAberto = true;
         this._nomeMenuAberto = nome;
         
-        this.adicionarFerramentasAoMenu(_ferramentasContainer,f, nome);
+        this.adicionarFerramentasAoMenu(_ferramentasContainer, p, f, nome);
         
     } // abrirMenuFerramentas
     
@@ -128,66 +137,66 @@ public class MenuFerramentasController {
         
     } // fecharMenuFerramentas
     
-    public void adicionarFerramentasAoMenu(JPanel p, JFrame f, String nome){
+    public void adicionarFerramentasAoMenu(JPanel p, JPanel pnlEspacoTrabalho, JFrame f, String nome){
         
-        List<?> listaEquipamentos = equipamentos.get(nome);
+        if(nome.equals("Tubulações")){
         
-        if (listaEquipamentos != null && !listaEquipamentos.isEmpty()) {
+            List<Tubulacao> tubulacoes = tubulacaoService.pegarTubulacoes();
             
-            Object primeiroEquipamento = listaEquipamentos.get(0);
-
-            if(primeiroEquipamento instanceof Tubulacao) {
+            int cont = 0;
+            
+            for(int i = 0; i < tubulacoes.size();i+=2){
+            
+                boolean segundaIteracao = tubulacoes.size() > (i + 1);
                 
-                int cont = 0;
-                                
-                for(int i = 0; i < listaEquipamentos.size(); i+=2){
-
-                        boolean segundaIteracao = listaEquipamentos.size() > (i + 1);
-                                                
-                        for(int j = 0; j < ((segundaIteracao) ? 2 : 1); j++){
-                            
-                            Tubulacao tub = (Tubulacao) listaEquipamentos.get(cont);
-                            FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tub,SizeHelper.ALTURA_FERRAMENTA_CONTAINER, SizeHelper.LARGURA_FERRAMENTA_CONTAINER, 5, (p.getHeight() / 8), i);
+                for(int j = 0; j < ((segundaIteracao) ? 2 : 1); j++){
+                    
+                    Tubulacao tub = tubulacoes.get(i);
+                    FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tub,SizeHelper.ALTURA_FERRAMENTA_CONTAINER, SizeHelper.LARGURA_FERRAMENTA_CONTAINER, 5, (p.getHeight() / 8), i);
                       
                             ferramentaContainer.addMouseListener(new MouseAdapter(){
                             
                                 @Override
                                 public void mouseClicked(MouseEvent me){
                                 
-                                    selecionarFerramenta(nome, tub.get_nome(),f, me);
+                                    selecionarFerramenta(pnlEspacoTrabalho, nome, tub.get_nome(),f, me);
                                     
                                 } 
                                 
                             });
                             p.add(ferramentaContainer);
                             cont++;
-                            
-                        } 
-  
+                    
                 }
-                 
-              
-            } 
-        }   
+                
+                
+            }
+            
+        }
+        
 
         p.revalidate();
         p.repaint();
     }
     
     
-    public void selecionarFerramenta(String tipo, String nome, JFrame f,MouseEvent me){
+    public void selecionarFerramenta(JPanel pnlEspacoTrabalho, String tipo, String nome, JFrame f,MouseEvent me){
         
         Equipamento eq = pegarEquipamentoSelecionado(tipo, nome);
         
-        if(eq instanceof Tubulacao){
-            Tubulacao tub = (Tubulacao) eq;
+        if(eq instanceof Tubulacao tub){
             
-            ImageIcon imgTub = new ImageIcon(tub.get_caminhoImagem());
-            JLabel lblTub = new JLabel();
-            lblTub.setIcon(imgTub);
-            
-            f.repaint();
-            f.revalidate();
+            ImageIcon imgTub = new ImageIcon(this.getClass().getResource(eq.get_caminhoImagem()));
+            JLabel lblTub = new LabelBuilder()
+                    .setImagem(imgTub)
+                    .setTitulo("")
+                    .build();
+           lblTub.setBounds((pnlEspacoTrabalho.getWidth() / 2), 0, 150, 150);
+           pnlEspacoTrabalho.add(lblTub);
+           adicionarListenerDeCliqueAAFerramenta(lblTub);
+            adicionarListenerDeMovimentoAAFerramenta(lblTub);
+           f.revalidate();
+           f.repaint();
         }
     }
     
@@ -211,6 +220,49 @@ public class MenuFerramentasController {
                
     }
     
+    public void adicionarListenerDeCliqueAAFerramenta(JLabel lbl){
+        
+        lbl.addMouseListener(new MouseAdapter(){
+            
+            @Override
+            public void mouseClicked(MouseEvent me){
+            
+                if(lblFerramentaSelecionada == lbl){
+                    
+                    ferramentaEstaSelecionada = false;
+                    return;
+
+                }
+                
+                lblFerramentaSelecionada = lbl;
+                ferramentaEstaSelecionada = true;
+            }
+        });
+        
+    }
+    
+    public void adicionarListenerDeMovimentoAAFerramenta(JLabel lbl){
+        
+        
+        lbl.addMouseMotionListener(new MouseMotionAdapter(){
+            
+            @Override
+            public void mouseMoved(MouseEvent me){
+            
+                if(!ferramentaEstaSelecionada || lblFerramentaSelecionada != lbl)
+                    return;
+                
+                int x = lbl.getLocation().x + me.getX();
+                int y = lbl.getLocation().y + me.getY();
+                
+                lbl.setLocation(x, y);
+                
+                System.out.println("Movendo");
+            }
+        });
+    }
+    
+        
     public void adicionarFerramentaAAAreaDeTrabalho(){
         /* TODO: Adicionar l�gica */
     }

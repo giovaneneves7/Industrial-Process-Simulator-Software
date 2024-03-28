@@ -1,7 +1,7 @@
 package br.com.ifba.ipss.view;
 
-import br.com.ifba.ipss.controller.MenuFerramentasController;
-import br.com.ifba.ipss.controller.ViewController;
+import br.com.ifba.ipss.common.controller.MenuFerramentasController;
+import br.com.ifba.ipss.common.controller.ViewController;
 import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;

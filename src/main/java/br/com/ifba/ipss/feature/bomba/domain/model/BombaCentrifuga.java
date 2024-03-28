@@ -1,17 +1,19 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.feature.equipamento.model;
+package br.com.ifba.ipss.feature.bomba.domain.model;
 // *************************************************//
 // *************** { FIM - Package } ***************//
+
+import br.com.ifba.ipss.feature.bomba.domain.model.Bomba;
+
 // *************************************************//
 
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
+
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -21,17 +23,12 @@ import lombok.NoArgsConstructor;
  * @author Giovane Neves
  * @since V0.0.1
  */
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Conexao extends Equipamento{
+public class BombaCentrifuga extends Bomba{
     
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
     
-    private double perdaDeCarga;    // A perda de carga da conexao.
-    private double diametroInterno; // O diâmetro interno da conexão.
-    
-} // class Conexao
+   
+} // class BombaCentrifuga
+

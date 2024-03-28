@@ -1,4 +1,4 @@
-package br.com.ifba.ipss.feature.painel.model;
+package br.com.ifba.ipss.feature.painel.domain.model;
 
 import javax.swing.JPanel;
 

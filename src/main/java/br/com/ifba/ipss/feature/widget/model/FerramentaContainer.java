@@ -9,8 +9,8 @@ package br.com.ifba.ipss.feature.widget.model;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
-import br.com.ifba.ipss.feature.equipamento.model.Equipamento;
+import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
+import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.util.Constantes;
 import java.awt.Color;

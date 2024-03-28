@@ -1,4 +1,4 @@
-package br.com.ifba.ipss.feature.equipamento.repository;
+package br.com.ifba.ipss.feature.equipamento.domain.repository;
 
 /**
  *

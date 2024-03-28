@@ -9,8 +9,8 @@ package br.com.ifba.ipss.common.controller;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-import br.com.ifba.ipss.feature.label.builder.LabelBuilder;
-import br.com.ifba.ipss.feature.splash.model.Splash;
+import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
+import br.com.ifba.ipss.feature.splash.domain.model.Splash;
 import br.com.ifba.ipss.helper.SizeHelper;
 import br.com.ifba.ipss.util.Constantes;
 import java.awt.Dimension;

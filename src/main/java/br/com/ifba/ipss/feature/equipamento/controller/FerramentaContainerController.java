@@ -9,12 +9,13 @@ package br.com.ifba.ipss.feature.equipamento.controller;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
-import br.com.ifba.ipss.feature.widget.model.FerramentaContainer;
+import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.util.Constantes;
 import java.awt.Font;
 import javax.swing.JLabel;
@@ -81,7 +82,21 @@ public class FerramentaContainerController<E extends Equipamento> {
             container.add(lblM);
             container.add(imagem);
         
-        }        
+        }
+
+        if(equipamento instanceof Conexao conexao){
+            
+            
+            JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
+            imagem.setBounds(60, 40, 10, 30);
+
+            int tituloX = (largura - 50) / 2;
+            titulo.setBounds(tituloX, 10, 84, 30);
+            
+            container.add(titulo);
+            container.add(imagem);
+        
+        }
         
         return container;
         

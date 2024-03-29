@@ -9,21 +9,23 @@ package br.com.ifba.ipss.common.controller;
 // *************************************************//
 // ************ { COME�O - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.common.infrastructure.interfaces.Ferramenta;
+import br.com.ifba.ipss.common.infrastructure.interfaces.IEquipamentoService;
+import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
+import br.com.ifba.ipss.feature.conexao.domain.service.ConexaoServiceImpl;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.helper.SizeHelper;
-import br.com.ifba.ipss.feature.bomba.domain.model.Bomba;
-import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
 import br.com.ifba.ipss.feature.equipamento.controller.FerramentaContainerController;
+import br.com.ifba.ipss.feature.equipamento.domain.factory.EquipamentoFactory;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
-import br.com.ifba.ipss.feature.reator.domain.model.Reator;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
-import br.com.ifba.ipss.feature.widget.model.FerramentaContainer;
+import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.util.Constantes;
+import br.com.ifba.ipss.util.NomeEquipamento;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -31,13 +33,10 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import lombok.Data;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -54,6 +53,8 @@ public class MenuFerramentasController {
     // *************************************************//
     // ***************** { Atributos } *****************//
     // *************************************************//
+    
+    private Map<String, IEquipamentoService> equipamentoServiceMap = new HashMap<>();
     
     private ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
     private FerramentaContainerController ferramentaContainerController = new FerramentaContainerController<>();
@@ -72,6 +73,9 @@ public class MenuFerramentasController {
     public MenuFerramentasController(Map<String, List<?>> equipamentos){
         
         this.equipamentos = equipamentos;
+        
+        equipamentoServiceMap.put(NomeEquipamento.TUBULACAO.getString(), new TubulacaoServiceImpl());
+        equipamentoServiceMap.put(NomeEquipamento.CONEXAO.getString(), new ConexaoServiceImpl());
         
     }
     // *************************************************//
@@ -143,50 +147,49 @@ public class MenuFerramentasController {
     
     public void adicionarFerramentasAoMenu(JPanel p, JPanel pnlEspacoTrabalho, JFrame f, String nome){
         
-        if(nome.equals("Tubulações")){
+        //if(nome.equals("Tubulações")){
         
-            List<Tubulacao> tubulacoes = tubulacaoService.pegarTubulacoes();
+            EquipamentoFactory equipamentoFactory = new EquipamentoFactory(equipamentoServiceMap);
+            List<? extends Equipamento> equipamentosList = equipamentoFactory.pegarFerramentas(nome);
             
-        int x = 5;
-        int y = p.getHeight() / 8;
-        int cont = 0; 
-        
-        for(int i = 0; i < tubulacoes.size(); i++) {
-            Tubulacao tub = tubulacoes.get(i);
-            
-            FerramentaContainer ferramentaContainer = ferramentaContainerController.criarContainer(
-                tub,
-                SizeHelper.ALTURA_FERRAMENTA_CONTAINER,
-                SizeHelper.LARGURA_FERRAMENTA_CONTAINER,
-                x,
-                y,
-                i,
-                false 
-            );
-            
-            ferramentaContainer.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent me) {
-                    selecionarFerramenta(pnlEspacoTrabalho, nome, tub.get_nome(), f, me);
-                } 
-            });
-            
-            p.add(ferramentaContainer);
-            
-            // Incrementa o contador de contêineres na linha atual
-            cont++;
-            
-            // Se já adicionou dois contêineres na linha atual, avança para a próxima linha
-            if(cont == 2) {
-                x = 5; // Volta para a posição inicial
-                y += SizeHelper.ALTURA_FERRAMENTA_CONTAINER + 10; // Avança para a próxima linha
-                cont = 0; // Reseta o contador
-            } else {
-                x += SizeHelper.LARGURA_FERRAMENTA_CONTAINER + 10;
+            int x = 20;
+            int y = p.getHeight() / 8;
+            int cont = 0; 
+
+            for(int i = 0; i < equipamentosList.size(); i++) {
+                Equipamento eq = equipamentosList.get(i);
+
+                FerramentaContainer ferramentaContainer = ferramentaContainerController.criarContainer(
+                    eq,
+                    SizeHelper.ALTURA_FERRAMENTA_CONTAINER,
+                    SizeHelper.LARGURA_FERRAMENTA_CONTAINER,
+                    x,
+                    y,
+                    i,
+                    false 
+                );
+
+                ferramentaContainer.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent me) {
+                        selecionarFerramenta(pnlEspacoTrabalho, nome, eq.get_nome(), f, me);
+                    } 
+                });
+
+                p.add(ferramentaContainer);
+
+                cont++;
+
+                if(cont == 2) {
+                    x = 20; 
+                    y += SizeHelper.ALTURA_FERRAMENTA_CONTAINER + 10; // Avança para a próxima linha
+                    cont = 0; // Reseta o contador
+                } else {
+                    x += SizeHelper.LARGURA_FERRAMENTA_CONTAINER + 10;
+                }
             }
-        }
             
-        }
+        //}
         
 
         p.revalidate();
@@ -208,10 +211,26 @@ public class MenuFerramentasController {
            lblTub.setBounds((pnlEspacoTrabalho.getWidth() / 2), 0, 150, 150);
            pnlEspacoTrabalho.add(lblTub);
            adicionarListenerDeCliqueAAFerramenta(lblTub);
-            adicionarListenerDeMovimentoAAFerramenta(lblTub);
+           adicionarListenerDeMovimentoAAFerramenta(lblTub);
            f.revalidate();
            f.repaint();
         }
+        
+        if(eq instanceof Conexao con){
+            
+            ImageIcon imgTub = new ImageIcon(this.getClass().getResource(eq.get_caminhoImagem()));
+            JLabel lblTub = new LabelBuilder()
+                    .setImagem(imgTub)
+                    .setTitulo("")
+                    .build();
+           lblTub.setBounds((pnlEspacoTrabalho.getWidth() / 2), 0, 150, 150);
+           pnlEspacoTrabalho.add(lblTub);
+           adicionarListenerDeCliqueAAFerramenta(lblTub);
+           adicionarListenerDeMovimentoAAFerramenta(lblTub);
+           f.revalidate();
+           f.repaint();
+        }
+        
     } // selecionarFerramenta
     
     public <T extends Equipamento>T pegarEquipamentoSelecionado(String tipo, String nome){

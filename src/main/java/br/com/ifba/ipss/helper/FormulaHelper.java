@@ -11,6 +11,9 @@ public class FormulaHelper {
     
     private static final double PI = 3.14f;
 
+    public static final String PES = "in";
+    public static final String METRO = "m";
+    
     public static double EQUACAO_DE_REYNOLD(double vel, double di, double rho, double vd){
         
         double re = rho * vel * di / vd;

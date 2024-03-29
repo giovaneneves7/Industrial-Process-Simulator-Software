@@ -3,6 +3,7 @@ package br.com.ifba.ipss.feature.tubulacao.domain.service;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.repository.ITubulacaoRepository;
 import br.com.ifba.ipss.feature.tubulacao.domain.repository.TubulacaoRepositoryImpl;
+import br.com.ifba.ipss.helper.FormulaHelper;
 import java.util.List;
 
 /**
@@ -20,5 +21,21 @@ public class TubulacaoServiceImpl implements ITubulacaoService{
         return tubulacaoRepository.pegarTubulacoes();
 
     }
+
+    @Override
+    public String pegarDiametroInterno(String nomeTubulacao) {
+        
+        return "Di=".concat(tubulacaoRepository.pegarDiametroInterno(nomeTubulacao).concat(FormulaHelper.PES));
+        
+    }
+
+    @Override
+    public String pegarComprimento(String nomeTubulacao) {
+        
+        return "L=".concat(String.valueOf(tubulacaoRepository.pegarComprimento(nomeTubulacao)).concat(FormulaHelper.METRO));
+        
+    }
+    
+    
     
 }

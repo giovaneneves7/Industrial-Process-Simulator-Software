@@ -10,5 +10,6 @@ import java.util.List;
 public interface ITubulacaoService {
     
     List<Tubulacao> pegarTubulacoes();
-    
+    String pegarDiametroInterno(String nomeTubulacao);
+    String pegarComprimento(String nomeTubulacao);
 }

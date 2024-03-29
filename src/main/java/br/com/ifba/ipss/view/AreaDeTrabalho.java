@@ -1,14 +1,29 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+// *************************************************//
 package br.com.ifba.ipss.view;
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
 
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
 import br.com.ifba.ipss.common.controller.MenuFerramentasController;
 import br.com.ifba.ipss.common.controller.ViewController;
+import br.com.ifba.ipss.feature.conexao.domain.service.ConexaoServiceImpl;
+import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
 import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
+import br.com.ifba.ipss.util.NomeEquipamento;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.swing.ImageIcon;
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
 
 /**
  *
@@ -19,11 +34,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     
     // *************************************************//
-    // ************** { Variáveis Globais } ************//
+    // ****************** { Atributos } ****************//
     // *************************************************//
     private final MenuFerramentasController _menuFerramentasController;
     private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
-   
+    private final IConexaoService conexaoService = new ConexaoServiceImpl();
     /**
      * Cria a interface com os componentes iniciais
      */
@@ -33,25 +48,28 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         inicializadorPersonalizado();
         initComponents();
-    }
+        
+    } // AreaDeTrabalho
 
     public Map<String, List<?>> pegarListaEquipamentos(String caminho){
         
         Map<String, List<?>> equipamentos = new HashMap<>();
         
-        equipamentos.put("Tubulações", tubulacaoService.pegarTubulacoes());
-            
+        equipamentos.put("Tubulações", tubulacaoService.pegarEquipamentos());
+        equipamentos.put("Conexões", conexaoService.pegarEquipamentos());
+        
         return equipamentos;
-    }
+        
+    } // pegarListEquipamentos
     
     private void inicializadorPersonalizado(){
         
         ViewController.definirTituloAplicacao(this);
         ImageIcon favicon = new ImageIcon(getClass().getResource(PathHelper.LOGO));
         ViewController.definirLogoAplicacao(this, favicon.getImage());
-        
-        
-    }
+    
+    } // inicializadorPersonalizado
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -200,7 +218,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
       
         if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Válvulas")){
             
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho,this, "Válvulas"); 
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho,this, NomeEquipamento.VALVULA.getString()); 
             
         } else {
             
@@ -227,7 +245,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Tubulações")){
             
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho,this, "Tubulações"); 
+            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, this, NomeEquipamento.TUBULACAO.getString()); 
             
         } else {
             

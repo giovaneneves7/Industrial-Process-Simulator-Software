@@ -37,6 +37,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 import lombok.Data;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -133,6 +134,7 @@ public class MenuFerramentasController {
         
         this.adicionarFerramentasAoMenu(_ferramentasContainer, p, f, nome);
         
+        
     } // abrirMenuFerramentas
     
     public void fecharMenuFerramentas(JPanel p){
@@ -175,7 +177,7 @@ public class MenuFerramentasController {
                         selecionarFerramenta(pnlEspacoTrabalho, nome, eq.get_nome(), f, me);
                     } 
                 });
-
+                
                 p.add(ferramentaContainer);
 
                 cont++;
@@ -208,7 +210,8 @@ public class MenuFerramentasController {
                     .setImagem(imgTub)
                     .setTitulo("")
                     .build();
-           lblTub.setBounds((pnlEspacoTrabalho.getWidth() / 2), 0, 150, 150);
+            
+           lblTub.setBounds((pnlEspacoTrabalho.getWidth() / 2), 0, (int ) tub.get_alturaPx(), (int) tub.get_larguraPx());
            pnlEspacoTrabalho.add(lblTub);
            adicionarListenerDeCliqueAAFerramenta(lblTub);
            adicionarListenerDeMovimentoAAFerramenta(lblTub);
@@ -272,27 +275,43 @@ public class MenuFerramentasController {
             }
         });
         
+        
     } // adicionarListenerDeCliqueAAFerramenta
     
-    public void adicionarListenerDeMovimentoAAFerramenta(JLabel lbl){
-        
-        
-        lbl.addMouseMotionListener(new MouseMotionAdapter(){
-            
-            @Override
-            public void mouseMoved(MouseEvent me){
-            
-                if(!ferramentaEstaSelecionada || lblFerramentaSelecionada != lbl)
-                    return;
-                
-                int x = lbl.getLocation().x + me.getX();
-                int y = lbl.getLocation().y + me.getY();
-                
-                lbl.setLocation(x, y);
-                
+    int mouseX, mouseY;
+    double suavizacao = 1.01;
+    
+    public void adicionarListenerDeMovimentoAAFerramenta(JLabel lbl) {
+    Timer timer = new Timer(100, e -> {
+        int deltaX = lbl.getX() + mouseX;
+        int deltaY = lbl.getY() + mouseY;
+        lbl.setLocation(deltaX, deltaY);
+    });
+
+    lbl.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mousePressed(MouseEvent me) {
+            mouseX = me.getX();
+            mouseY = me.getY();
+            if (!timer.isRunning()) {
+                timer.start();
             }
-        });
-    } // adicionarListenerDeMovimentoAAFerramenta
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent me) {
+            timer.stop();
+        }
+    });
+
+    lbl.addMouseMotionListener(new MouseAdapter() {
+        @Override
+        public void mouseDragged(MouseEvent e) {
+            mouseX = e.getX();
+            mouseY = e.getY();
+        }
+    });
+} // adicionarListenerDeMovimentoAAFerramenta
     
         
     public void adicionarFerramentaAAAreaDeTrabalho(){

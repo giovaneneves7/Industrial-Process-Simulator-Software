@@ -15,7 +15,7 @@ public class PathHelper {
     public static final String LOGO = "/images/logo.jpg";
     
     // - Arquivos
-    public static final String FERRAMENTAS_JSON = "src/main/resources/files/ferramentas.json";
+    public static final String FERRAMENTAS_JSON = "./src/main/resources/files/ferramentas.json";
     
     
 }

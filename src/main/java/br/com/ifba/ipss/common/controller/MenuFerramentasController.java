@@ -13,12 +13,14 @@ import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.helper.SizeHelper;
 import br.com.ifba.ipss.feature.bomba.domain.model.Bomba;
 import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
+import br.com.ifba.ipss.feature.equipamento.controller.FerramentaContainerController;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.reator.domain.model.Reator;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import br.com.ifba.ipss.feature.widget.model.FerramentaContainer;
+import br.com.ifba.ipss.util.Constantes;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Point;
@@ -54,6 +56,7 @@ public class MenuFerramentasController {
     // *************************************************//
     
     private ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
+    private FerramentaContainerController ferramentaContainerController = new FerramentaContainerController<>();
     
     private boolean _menuAberto = false;
     private String _nomeMenuAberto;
@@ -101,6 +104,7 @@ public class MenuFerramentasController {
         JLabel tituloMenu = new LabelBuilder()
                 .setTitulo(nome)
                 .setForeground(Color.white)
+                .setFonte(new Font(Constantes.FONTE, Font.PLAIN, Constantes.TAMANHO_FONTE))
                 .build();
         
         Font fonteNegrito = new Font(tituloMenu.getFont().getName(), Font.BOLD, tituloMenu.getFont().getSize());
@@ -143,41 +147,51 @@ public class MenuFerramentasController {
         
             List<Tubulacao> tubulacoes = tubulacaoService.pegarTubulacoes();
             
-            int cont = 0;
+        int x = 5;
+        int y = p.getHeight() / 8;
+        int cont = 0; 
+        
+        for(int i = 0; i < tubulacoes.size(); i++) {
+            Tubulacao tub = tubulacoes.get(i);
             
-            for(int i = 0; i < tubulacoes.size();i+=2){
+            FerramentaContainer ferramentaContainer = ferramentaContainerController.criarContainer(
+                tub,
+                SizeHelper.ALTURA_FERRAMENTA_CONTAINER,
+                SizeHelper.LARGURA_FERRAMENTA_CONTAINER,
+                x,
+                y,
+                i,
+                false 
+            );
             
-                boolean segundaIteracao = tubulacoes.size() > (i + 1);
-                
-                for(int j = 0; j < ((segundaIteracao) ? 2 : 1); j++){
-                    
-                    Tubulacao tub = tubulacoes.get(i);
-                    FerramentaContainer<Tubulacao> ferramentaContainer = new FerramentaContainer<>(tub,SizeHelper.ALTURA_FERRAMENTA_CONTAINER, SizeHelper.LARGURA_FERRAMENTA_CONTAINER, 5, (p.getHeight() / 8), i);
-                      
-                            ferramentaContainer.addMouseListener(new MouseAdapter(){
-                            
-                                @Override
-                                public void mouseClicked(MouseEvent me){
-                                
-                                    selecionarFerramenta(pnlEspacoTrabalho, nome, tub.get_nome(),f, me);
-                                    
-                                } 
-                                
-                            });
-                            p.add(ferramentaContainer);
-                            cont++;
-                    
-                }
-                
-                
+            ferramentaContainer.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent me) {
+                    selecionarFerramenta(pnlEspacoTrabalho, nome, tub.get_nome(), f, me);
+                } 
+            });
+            
+            p.add(ferramentaContainer);
+            
+            // Incrementa o contador de contêineres na linha atual
+            cont++;
+            
+            // Se já adicionou dois contêineres na linha atual, avança para a próxima linha
+            if(cont == 2) {
+                x = 5; // Volta para a posição inicial
+                y += SizeHelper.ALTURA_FERRAMENTA_CONTAINER + 10; // Avança para a próxima linha
+                cont = 0; // Reseta o contador
+            } else {
+                x += SizeHelper.LARGURA_FERRAMENTA_CONTAINER + 10;
             }
+        }
             
         }
         
 
         p.revalidate();
         p.repaint();
-    }
+    } // adicionarFerramentasAoMenu
     
     
     public void selecionarFerramenta(JPanel pnlEspacoTrabalho, String tipo, String nome, JFrame f,MouseEvent me){
@@ -198,7 +212,7 @@ public class MenuFerramentasController {
            f.revalidate();
            f.repaint();
         }
-    }
+    } // selecionarFerramenta
     
     public <T extends Equipamento>T pegarEquipamentoSelecionado(String tipo, String nome){
 
@@ -218,7 +232,7 @@ public class MenuFerramentasController {
            
         }
                
-    }
+    } // pegarEquipamentoSelecionado
     
     public void adicionarListenerDeCliqueAAFerramenta(JLabel lbl){
         
@@ -239,7 +253,7 @@ public class MenuFerramentasController {
             }
         });
         
-    }
+    } // adicionarListenerDeCliqueAAFerramenta
     
     public void adicionarListenerDeMovimentoAAFerramenta(JLabel lbl){
         
@@ -257,10 +271,9 @@ public class MenuFerramentasController {
                 
                 lbl.setLocation(x, y);
                 
-                System.out.println("Movendo");
             }
         });
-    }
+    } // adicionarListenerDeMovimentoAAFerramenta
     
         
     public void adicionarFerramentaAAAreaDeTrabalho(){

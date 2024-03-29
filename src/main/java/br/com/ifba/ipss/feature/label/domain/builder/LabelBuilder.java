@@ -9,6 +9,7 @@ package br.com.ifba.ipss.feature.label.domain.builder;
 // *************************************************//
 // ************ { COME�O - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.feature.label.domain.model.Label;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
@@ -27,7 +28,7 @@ public class LabelBuilder {
     private javax.swing.ImageIcon _imagem;
     private Color _background;
     private Color _foreground;
-    private Font _fonte;
+    private Font fonte;
     private int largura;
     private int altura;
     
@@ -62,7 +63,7 @@ public class LabelBuilder {
     
     public LabelBuilder setFonte(Font fonte){
         
-        this._fonte = fonte;
+        this.fonte = fonte;
         
         return this;
     }
@@ -88,10 +89,10 @@ public class LabelBuilder {
         label.setBackground(_background);
         label.setIcon(_imagem);
         label.setBounds(0, 0, largura, altura);
-       
-        //label.setFont(_fonte);
+        label.setFont(fonte);
         
         return label;
     }
+    
     
 }

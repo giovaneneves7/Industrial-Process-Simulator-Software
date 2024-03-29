@@ -46,8 +46,8 @@ public class TubulacaoRepositoryImpl implements ITubulacaoRepository{
                         case "_caminhoImagem" -> tubulacao.set_caminhoImagem(String.valueOf(valor.getAsString()));
                         case "_x" -> tubulacao.set_x(valor.getAsInt());
                         case "_y" -> tubulacao.set_y(valor.getAsInt());
-                        case "_largura" -> tubulacao.set_larguraPx(valor.getAsInt());
-                        case "_altura" -> tubulacao.set_alturaPx(valor.getAsInt());
+                        case "_larguraPx" -> tubulacao.set_larguraPx(valor.getAsInt());
+                        case "_alturaPx" -> tubulacao.set_alturaPx(valor.getAsInt());
                         case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsString());
                         case "comprimento" -> tubulacao.setComprimento(valor.getAsDouble());
                         default -> {}

@@ -195,8 +195,8 @@
     ],
    conexoes: [
         {
-            "_nome" : "Conexao1",
-            "_caminhoImagem" : "/images/*.png",
+            "_nome" : "Conexão 1",
+            "_caminhoImagem" : "/images/conexao_1.png",
             "_x" : 0,
             "_y" : 0,
             "_largura" : 30,
@@ -205,8 +205,8 @@
    
 
        {
-            "_nome" : "Conexao2",
-            "_caminhoImagem" : "/images/*.png",
+            "_nome" : "Conexão 2",
+            "_caminhoImagem" : "/images/conexao_2.png",
             "_x" : 0,
             "_y" : 0,
             "_largura" : 30,
@@ -215,32 +215,13 @@
         },
 
         {
-            "_nome" : "Conexao3",
-            "_caminhoImagem" : "/images/*.png",
+            "_nome" : "Conexão 3",
+            "_caminhoImagem" : "/images/conexao_3.png",
             "_x" : 0,
             "_y" : 0,
             "_largura" : 30,
             "_altura" :30
 
-        },
-
-        {
-            "_nome" : "Conexao4",
-            "_caminhoImagem" : "/images/*.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 30,
-            "_altura" :30
-
-        },
-
-        {
-            "_nome" : "Conexao5",
-            "_caminhoImagem" : "/images/*.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 30,
-            "_altura" :30
         }
    
    ]

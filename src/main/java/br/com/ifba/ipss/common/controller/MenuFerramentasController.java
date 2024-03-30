@@ -25,7 +25,9 @@ import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.NomeEquipamento;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -104,7 +106,7 @@ public class MenuFerramentasController {
         
         // Customiza��o do painel
         _ferramentasContainer.setBounds(x, y, 280, 820);
-        _ferramentasContainer.setBackground(Color.decode("#5E5E5E"));
+        _ferramentasContainer.setBackground(Constantes.COR_BACKGROUND_HOVER);
         
         // T�tulo do painel 
         JLabel tituloMenu = new LabelBuilder()
@@ -308,12 +310,28 @@ public class MenuFerramentasController {
         });
 
         lbl.addMouseMotionListener(new MouseAdapter() {
+              
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                final int x = e.getX();
+                final int y = e.getY();
+                final int width = lbl.getWidth();
+                final int height = lbl.getHeight();
+                if (x >= 0 && x <= width && y >= 0 && y <= height) {
+                    lbl.setCursor(new Cursor(Cursor.HAND_CURSOR));
+                } else {
+                    lbl.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+                }
+            }
+            
             @Override
             public void mouseDragged(MouseEvent e) {
                 mouseX = e.getX();
                 mouseY = e.getY();
             }
         });
+        
+        
         
     } // adicionarListenerDeMovimentoAAFerramenta
     

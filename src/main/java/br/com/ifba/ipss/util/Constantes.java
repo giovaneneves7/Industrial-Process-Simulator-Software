@@ -17,6 +17,7 @@ public class Constantes {
     public static final Color COR_PRIMARIA = new Color(0, 102, 51);
     public static final Color COR_SEGUNDARIA = Color.white;
     public static final Color COR_BACKGROUND = Color.decode("#CCCCCC");
+    public static final Color COR_BACKGROUND_HOVER = Color.decode("#9C9898"); 
     public static final Color COR_TEXTO = Color.black;
     
     public static final int DELAY_CARREGAMENTO = 20;

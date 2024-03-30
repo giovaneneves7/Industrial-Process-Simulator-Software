@@ -66,6 +66,7 @@ public class MenuFerramentasController {
     private Map<String, List<?>> equipamentos = new HashMap<>();
     
     private JLabel lblFerramentaSelecionada;
+    private JLabel lblFerramentaSelecionadaParaInteracao;
     private boolean ferramentaEstaSelecionada = false;
     
     // *************************************************//
@@ -271,6 +272,7 @@ public class MenuFerramentasController {
                 }
                 
                 lblFerramentaSelecionada = lbl;
+                lblFerramentaSelecionadaParaInteracao = lbl;
                 ferramentaEstaSelecionada = true;
             }
         });
@@ -282,36 +284,38 @@ public class MenuFerramentasController {
     double suavizacao = 1.01;
     
     public void adicionarListenerDeMovimentoAAFerramenta(JLabel lbl) {
-    Timer timer = new Timer(100, e -> {
-        int deltaX = lbl.getX() + mouseX;
-        int deltaY = lbl.getY() + mouseY;
-        lbl.setLocation(deltaX, deltaY);
-    });
+    
+        Timer timer = new Timer(100, e -> {
+            int deltaX = lbl.getX() + mouseX;
+            int deltaY = lbl.getY() + mouseY;
+            lbl.setLocation(deltaX, deltaY);
+        });
 
-    lbl.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mousePressed(MouseEvent me) {
-            mouseX = me.getX();
-            mouseY = me.getY();
-            if (!timer.isRunning()) {
-                timer.start();
+        lbl.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent me) {
+                mouseX = me.getX();
+                mouseY = me.getY();
+                if (!timer.isRunning()) {
+                    timer.start();
+                }
             }
-        }
 
-        @Override
-        public void mouseReleased(MouseEvent me) {
-            timer.stop();
-        }
-    });
+            @Override
+            public void mouseReleased(MouseEvent me) {
+                timer.stop();
+            }
+        });
 
-    lbl.addMouseMotionListener(new MouseAdapter() {
-        @Override
-        public void mouseDragged(MouseEvent e) {
-            mouseX = e.getX();
-            mouseY = e.getY();
-        }
-    });
-} // adicionarListenerDeMovimentoAAFerramenta
+        lbl.addMouseMotionListener(new MouseAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                mouseX = e.getX();
+                mouseY = e.getY();
+            }
+        });
+        
+    } // adicionarListenerDeMovimentoAAFerramenta
     
         
     public void adicionarFerramentaAAAreaDeTrabalho(){

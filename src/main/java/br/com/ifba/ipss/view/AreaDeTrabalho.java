@@ -10,6 +10,7 @@ package br.com.ifba.ipss.view;
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 import br.com.ifba.ipss.common.controller.MenuFerramentasController;
+import br.com.ifba.ipss.common.controller.MenuSuperiorController;
 import br.com.ifba.ipss.common.controller.ViewController;
 import br.com.ifba.ipss.feature.conexao.domain.service.ConexaoServiceImpl;
 import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
@@ -21,6 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -83,6 +85,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         PnlFixo = new javax.swing.JPanel();
         LabTítulo = new javax.swing.JLabel();
         PnlMenu = new javax.swing.JPanel();
+        btnGirarFerramenta = new javax.swing.JButton();
         pnlEspacoTrabalho = new javax.swing.JPanel();
         PnlBotoes = new javax.swing.JPanel();
         btnTubulacoes = new javax.swing.JButton();
@@ -109,15 +112,28 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         PnlMenu.setBackground(new java.awt.Color(255, 255, 255));
 
+        btnGirarFerramenta.setText("Girar");
+        btnGirarFerramenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGirarFerramentaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PnlMenuLayout = new javax.swing.GroupLayout(PnlMenu);
         PnlMenu.setLayout(PnlMenuLayout);
         PnlMenuLayout.setHorizontalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1370, Short.MAX_VALUE)
+            .addGroup(PnlMenuLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(btnGirarFerramenta)
+                .addContainerGap(1265, Short.MAX_VALUE))
         );
         PnlMenuLayout.setVerticalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(PnlMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnGirarFerramenta, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pnlBackgruond.add(PnlMenu);
@@ -255,6 +271,26 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnTubulacoesActionPerformed
 
+    private void btnGirarFerramentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGirarFerramentaActionPerformed
+        
+        JLabel lblFerramentaSelecionada = this._menuFerramentasController.getLblFerramentaSelecionadaParaInteracao();
+        ImageIcon iconAntigo = (ImageIcon) lblFerramentaSelecionada.getIcon();
+
+        lblFerramentaSelecionada.setSize(150, 150);
+
+        // Girar a imagem
+        ImageIcon iconGirado = MenuSuperiorController.girarEquipamento(iconAntigo, 90);
+
+        // Definir a nova imagem girada e redimensionada
+        lblFerramentaSelecionada.setIcon(iconGirado);
+
+        // Revalidar e repintar o componente pai
+        this.revalidate(); 
+        this.repaint();
+
+        
+    }//GEN-LAST:event_btnGirarFerramentaActionPerformed
+
     
     
 
@@ -301,6 +337,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private javax.swing.JPanel PnlMenu;
     private javax.swing.JButton btnConexoes;
     private javax.swing.JButton btnEquipamentos;
+    private javax.swing.JButton btnGirarFerramenta;
     private javax.swing.JButton btnTubulacoes;
     private javax.swing.JButton btnVavulas;
     private javax.swing.JPanel pnlBackgruond;

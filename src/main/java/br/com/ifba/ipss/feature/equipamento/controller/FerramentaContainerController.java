@@ -18,6 +18,8 @@ import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.util.Constantes;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -30,7 +32,7 @@ import javax.swing.JLabel;
  */
 public class FerramentaContainerController<E extends Equipamento> {
     
-    private ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
+    private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
     
     public FerramentaContainer criarContainer(E equipamento, final int altura, final int largura, final int x, final int y, int qtdInserida, boolean quebrarLinha){
         
@@ -39,6 +41,7 @@ public class FerramentaContainerController<E extends Equipamento> {
         container.setBackground(Constantes.COR_BACKGROUND);
         container.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         container.setForeground(Constantes.COR_BACKGROUND);
+        this.adicionarEventoHover(container);
         
         container.setBounds(
                 x, 
@@ -55,6 +58,9 @@ public class FerramentaContainerController<E extends Equipamento> {
                 .setFonte(new Font(Constantes.FONTE, Font.PLAIN, Constantes.TAMANHO_FONTE))
                 .build();
         
+        
+        JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
+
         if(equipamento instanceof Tubulacao tubulacao){
             
             JLabel lblDi = new LabelBuilder()
@@ -69,7 +75,6 @@ public class FerramentaContainerController<E extends Equipamento> {
                 .setFonte(new Font(Constantes.FONTE, Font.PLAIN, Constantes.TAMANHO_FONTE))
                 .build();
             
-            JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
             imagem.setBounds(60, 40, 10, 30);
 
             int tituloX = (largura - 50) / 2;
@@ -86,20 +91,40 @@ public class FerramentaContainerController<E extends Equipamento> {
 
         if(equipamento instanceof Conexao conexao){
             
-            
-            JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
-            imagem.setBounds(60, 40, 10, 30);
+            imagem.setBounds(25, 40, 84, 30);
 
             int tituloX = (largura - 50) / 2;
             titulo.setBounds(tituloX, 10, 84, 30);
             
-            container.add(titulo);
-            container.add(imagem);
-        
         }
+        
+        container.add(titulo);
+        container.add(imagem);
         
         return container;
         
     } // criarContainer
     
+    
+    public void adicionarEventoHover(FerramentaContainer container){
+        
+        container.addMouseListener(new MouseAdapter(){
+        
+            @Override
+            public void mouseEntered(MouseEvent me){
+                
+                container.setBackground(Constantes.COR_BACKGROUND_HOVER);
+                
+            }
+            
+            @Override
+            public void mouseExited(MouseEvent me){
+                
+                container.setBackground(Constantes.COR_BACKGROUND);
+                
+            }
+            
+        });
+        
+    }
 }

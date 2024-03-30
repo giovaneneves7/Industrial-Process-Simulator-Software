@@ -32,4 +32,7 @@ public class SizeHelper {
     
     public static final int LARGURA_FERRAMENTA_CONTAINER = 100;
     public static final int ALTURA_FERRAMENTA_CONTAINER = 100;
+    
+    public static final int LARGURA_WIDGET_PARAMETROS_SIMULACAO = 320;
+    public static final int ALTURA_WIDGET_PARAMETROS_SIMULACAO = 220;
 }

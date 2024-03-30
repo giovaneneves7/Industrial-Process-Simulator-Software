@@ -9,6 +9,7 @@ package br.com.ifba.ipss.view;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.common.controller.BotaoSimularController;
 import br.com.ifba.ipss.common.controller.MenuFerramentasController;
 import br.com.ifba.ipss.common.controller.MenuSuperiorController;
 import br.com.ifba.ipss.common.controller.ViewController;
@@ -39,13 +40,15 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     // ****************** { Atributos } ****************//
     // *************************************************//
     private final MenuFerramentasController _menuFerramentasController;
+    private final BotaoSimularController botaoSimularController;
+    
     private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
     private final IConexaoService conexaoService = new ConexaoServiceImpl();
     /**
      * Cria a interface com os componentes iniciais
      */
     public AreaDeTrabalho() {
-        
+        botaoSimularController = new BotaoSimularController();
         _menuFerramentasController = new MenuFerramentasController(pegarListaEquipamentos(PathHelper.FERRAMENTAS_JSON));
         
         inicializadorPersonalizado();
@@ -85,7 +88,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         PnlFixo = new javax.swing.JPanel();
         LabTítulo = new javax.swing.JLabel();
         PnlMenu = new javax.swing.JPanel();
-        btnGirarFerramenta = new javax.swing.JButton();
+        btnGirarEquipamento = new javax.swing.JButton();
+        btnConectarEquipamentos = new javax.swing.JButton();
+        btnRemoverEquipamento = new javax.swing.JButton();
+        btnSimular = new javax.swing.JButton();
         pnlEspacoTrabalho = new javax.swing.JPanel();
         PnlBotoes = new javax.swing.JPanel();
         btnTubulacoes = new javax.swing.JButton();
@@ -112,10 +118,31 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         PnlMenu.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnGirarFerramenta.setText("Girar");
-        btnGirarFerramenta.addActionListener(new java.awt.event.ActionListener() {
+        btnGirarEquipamento.setText("Girar");
+        btnGirarEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGirarFerramentaActionPerformed(evt);
+                btnGirarEquipamentoActionPerformed(evt);
+            }
+        });
+
+        btnConectarEquipamentos.setText("Conectar");
+        btnConectarEquipamentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConectarEquipamentosActionPerformed(evt);
+            }
+        });
+
+        btnRemoverEquipamento.setText("Remover");
+        btnRemoverEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverEquipamentoActionPerformed(evt);
+            }
+        });
+
+        btnSimular.setText("Simular");
+        btnSimular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimularActionPerformed(evt);
             }
         });
 
@@ -125,14 +152,24 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlMenuLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(btnGirarFerramenta)
-                .addContainerGap(1265, Short.MAX_VALUE))
+                .addComponent(btnGirarEquipamento)
+                .addGap(18, 18, 18)
+                .addComponent(btnConectarEquipamentos)
+                .addGap(18, 18, 18)
+                .addComponent(btnRemoverEquipamento)
+                .addGap(250, 250, 250)
+                .addComponent(btnSimular)
+                .addContainerGap(719, Short.MAX_VALUE))
         );
         PnlMenuLayout.setVerticalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnGirarFerramenta, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addGroup(PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGirarEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(btnConectarEquipamentos, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(btnRemoverEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(btnSimular, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -271,7 +308,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnTubulacoesActionPerformed
 
-    private void btnGirarFerramentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGirarFerramentaActionPerformed
+    private void btnGirarEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGirarEquipamentoActionPerformed
         
         JLabel lblFerramentaSelecionada = this._menuFerramentasController.getLblFerramentaSelecionadaParaInteracao();
         ImageIcon iconAntigo = (ImageIcon) lblFerramentaSelecionada.getIcon();
@@ -289,7 +326,21 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.repaint();
 
         
-    }//GEN-LAST:event_btnGirarFerramentaActionPerformed
+    }//GEN-LAST:event_btnGirarEquipamentoActionPerformed
+
+    private void btnConectarEquipamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConectarEquipamentosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConectarEquipamentosActionPerformed
+
+    private void btnRemoverEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEquipamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRemoverEquipamentoActionPerformed
+
+    private void btnSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularActionPerformed
+        
+        botaoSimularController.exibirWidgetDeParametrosSimulacao(this.pnlEspacoTrabalho);
+        
+    }//GEN-LAST:event_btnSimularActionPerformed
 
     
     
@@ -335,9 +386,12 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private javax.swing.JPanel PnlBotoes;
     private javax.swing.JPanel PnlFixo;
     private javax.swing.JPanel PnlMenu;
+    private javax.swing.JButton btnConectarEquipamentos;
     private javax.swing.JButton btnConexoes;
     private javax.swing.JButton btnEquipamentos;
-    private javax.swing.JButton btnGirarFerramenta;
+    private javax.swing.JButton btnGirarEquipamento;
+    private javax.swing.JButton btnRemoverEquipamento;
+    private javax.swing.JButton btnSimular;
     private javax.swing.JButton btnTubulacoes;
     private javax.swing.JButton btnVavulas;
     private javax.swing.JPanel pnlBackgruond;

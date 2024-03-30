@@ -12,6 +12,7 @@ package br.com.ifba.ipss.view;
 import br.com.ifba.ipss.common.controller.SplashController;
 import br.com.ifba.ipss.feature.splash.domain.model.Splash;
 import br.com.ifba.ipss.helper.PathHelper;
+import br.com.ifba.ipss.helper.ScreenHelper;
 import javax.swing.ImageIcon;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -51,7 +52,7 @@ public class TelaSplash extends javax.swing.JFrame {
         
         splashController.carregar(
                 this, 
-                new AreaDeTrabalho()
+                ScreenHelper.pegarTela(ScreenHelper.AREA_TRABALHO)
         );
         
     } // TelaSplash

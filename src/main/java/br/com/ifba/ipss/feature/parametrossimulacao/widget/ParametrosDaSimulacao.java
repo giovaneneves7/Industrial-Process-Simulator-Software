@@ -1,19 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
-package br.com.ifba.ipss.feature.widget.model;
+package br.com.ifba.ipss.feature.parametrossimulacao.widget;
 
 /**
  *
- * @author curso
+ * @author Lorrane554
+ * @since V0.0.1
  */
-public class ParmentrosDaSimulacao extends javax.swing.JPanel {
+public class ParametrosDaSimulacao extends javax.swing.JPanel {
 
     /**
      * Creates new form parâmentrosdasimulação
      */
-    public ParmentrosDaSimulacao() {
+    public ParametrosDaSimulacao() {
         initComponents();
     }
 
@@ -69,21 +66,21 @@ public class ParmentrosDaSimulacao extends javax.swing.JPanel {
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
         jPanel1.add(jSpinner1);
-        jSpinner1.setBounds(220, 50, 67, 22);
+        jSpinner1.setBounds(220, 50, 75, 24);
 
         jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
         jPanel1.add(jSpinner2);
-        jSpinner2.setBounds(220, 90, 67, 22);
+        jSpinner2.setBounds(220, 90, 75, 24);
 
         jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
         jPanel1.add(jSpinner3);
-        jSpinner3.setBounds(220, 130, 67, 22);
+        jSpinner3.setBounds(220, 130, 75, 24);
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão simulação.2.png"))); // NOI18N
         jButton2.setBorder(null);
         jPanel1.add(jButton2);
-        jButton2.setBounds(110, 170, 100, 40);
+        jButton2.setBounds(110, 170, 100, 0);
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
@@ -94,10 +91,10 @@ public class ParmentrosDaSimulacao extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(290, 10, 20, 16);
+        jButton1.setBounds(290, 10, 20, 13);
 
         add(jPanel1);
-        jPanel1.setBounds(240, 120, 320, 220);
+        jPanel1.setBounds(0, 0, 320, 220);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

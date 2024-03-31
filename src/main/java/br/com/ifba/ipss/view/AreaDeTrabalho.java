@@ -16,10 +16,13 @@ import br.com.ifba.ipss.common.controller.MenuSuperiorController;
 import br.com.ifba.ipss.common.controller.ViewController;
 import br.com.ifba.ipss.feature.conexao.domain.service.ConexaoServiceImpl;
 import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
+import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
+import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.NomeEquipamento;
+import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -314,19 +317,21 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnGirarEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGirarEquipamentoActionPerformed
         
-        JLabel lblFerramentaSelecionada = this._menuFerramentasController.getLblFerramentaSelecionadaParaInteracao();
+        Label lblFerramentaSelecionada = (Label) this._menuFerramentasController.getLblFerramentaSelecionadaParaInteracao();
         ImageIcon iconAntigo = (ImageIcon) lblFerramentaSelecionada.getIcon();
 
-        lblFerramentaSelecionada.setSize(150, 150);
+        // Convertendo a ToolkitImage para BufferedImage
+        BufferedImage bufferedImage = MenuSuperiorController.toBufferedImage(iconAntigo.getImage());
 
         // Girar a imagem
-        ImageIcon iconGirado = MenuSuperiorController.girarEquipamento(iconAntigo, 90);
+        ImageIcon iconGirado = MenuSuperiorController.rotate(bufferedImage, 90);
 
         // Definir a nova imagem girada e redimensionada
         lblFerramentaSelecionada.setIcon(iconGirado);
-
+        lblFerramentaSelecionada.setSize(lblFerramentaSelecionada.getHeight(), lblFerramentaSelecionada.getWidth());
+        lblFerramentaSelecionada.setOrientacao(lblFerramentaSelecionada.getOrientacao().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
         // Revalidar e repintar o componente pai
-        this.revalidate(); 
+        this.revalidate();
         this.repaint();
 
         

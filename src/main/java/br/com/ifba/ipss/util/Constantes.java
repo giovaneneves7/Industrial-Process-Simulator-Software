@@ -24,5 +24,6 @@ public class Constantes {
     
     public static final int DELAY_CARREGAMENTO = 20;
     
-    
+    public static final String HORIZONTAL = "horizontal";
+    public static final String VERTICAL = "vertical";
 }

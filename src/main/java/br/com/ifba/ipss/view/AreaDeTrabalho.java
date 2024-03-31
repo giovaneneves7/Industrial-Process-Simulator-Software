@@ -9,6 +9,7 @@ package br.com.ifba.ipss.view;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.common.controller.BotaoConectarController;
 import br.com.ifba.ipss.common.controller.BotaoSimularController;
 import br.com.ifba.ipss.common.controller.MenuFerramentasController;
 import br.com.ifba.ipss.common.controller.MenuSuperiorController;
@@ -41,6 +42,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     // *************************************************//
     private final MenuFerramentasController _menuFerramentasController;
     private final BotaoSimularController botaoSimularController;
+    private final BotaoConectarController botaoConectarController;
     
     private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
     private final IConexaoService conexaoService = new ConexaoServiceImpl();
@@ -49,6 +51,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
      */
     public AreaDeTrabalho() {
         botaoSimularController = new BotaoSimularController();
+        botaoConectarController = new BotaoConectarController();
+        
         _menuFerramentasController = new MenuFerramentasController(pegarListaEquipamentos(PathHelper.FERRAMENTAS_JSON));
         
         inicializadorPersonalizado();
@@ -329,7 +333,12 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGirarEquipamentoActionPerformed
 
     private void btnConectarEquipamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConectarEquipamentosActionPerformed
-        // TODO add your handling code here:
+
+        this.botaoConectarController.conectarEquipamentos(
+                this._menuFerramentasController.getPilhaConexaoEquipamento().get(0), 
+                this._menuFerramentasController.getPilhaConexaoEquipamento().get(1)
+        );
+        
     }//GEN-LAST:event_btnConectarEquipamentosActionPerformed
 
     private void btnRemoverEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEquipamentoActionPerformed

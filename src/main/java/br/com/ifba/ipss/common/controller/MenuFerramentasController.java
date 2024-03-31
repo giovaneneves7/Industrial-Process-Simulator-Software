@@ -35,6 +35,7 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -329,6 +330,8 @@ public class MenuFerramentasController {
                 mouseX = e.getX();
                 mouseY = e.getY();
             }
+            
+         
         });
         
         

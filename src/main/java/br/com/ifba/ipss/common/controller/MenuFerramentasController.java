@@ -27,6 +27,8 @@ import br.com.ifba.ipss.util.NomeEquipamento;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Insets;
 import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -41,6 +43,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.swing.border.Border;
 import lombok.Data;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -292,6 +295,7 @@ public class MenuFerramentasController {
             int deltaX = lbl.getX() + mouseX;
             int deltaY = lbl.getY() + mouseY;
             lbl.setLocation(deltaX, deltaY);
+
         });
 
         lbl.addMouseListener(new MouseAdapter() {
@@ -308,6 +312,18 @@ public class MenuFerramentasController {
             public void mouseReleased(MouseEvent me) {
                 timer.stop();
             }
+            
+            @Override
+            public void mouseEntered(MouseEvent me) {
+                lbl.setBorder(BorderFactory.createLineBorder(Constantes.COR_PRIMARIA));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me){
+                
+                lbl.setBorder(null);
+                
+            }
         });
 
         lbl.addMouseMotionListener(new MouseAdapter() {
@@ -322,6 +338,7 @@ public class MenuFerramentasController {
                     lbl.setCursor(new Cursor(Cursor.HAND_CURSOR));
                 } else {
                     lbl.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
                 }
             }
             

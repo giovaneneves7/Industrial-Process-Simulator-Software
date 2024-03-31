@@ -10,9 +10,9 @@ package br.com.ifba.ipss.feature.label.domain.builder;
 // ************ { COME�O - Imports } ***************//
 // *************************************************//
 import br.com.ifba.ipss.feature.label.domain.model.Label;
+import br.com.ifba.ipss.util.Constantes;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JLabel;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -31,7 +31,7 @@ public class LabelBuilder {
     private Font fonte;
     private int largura;
     private int altura;
-    
+    private String orientacao = Constantes.VERTICAL;
     
     public LabelBuilder setTitulo(String titulo){
         
@@ -79,10 +79,16 @@ public class LabelBuilder {
         this.altura = altura;
         return this;
     }
-            
-    public JLabel build(){
+    
+    public LabelBuilder setOrientacao(String orientacao){
         
-        javax.swing.JLabel label = new JLabel();
+        this.orientacao = orientacao;
+        return this;
+    }
+            
+    public Label build(){
+        
+        Label label = new Label();
         
         label.setText(_titulo);
         label.setForeground(_foreground);
@@ -90,6 +96,7 @@ public class LabelBuilder {
         label.setIcon(_imagem);
         label.setBounds(0, 0, largura, altura);
         label.setFont(fonte);
+        label.setOrientacao(orientacao);
         
         return label;
     }

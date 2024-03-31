@@ -9,7 +9,6 @@ package br.com.ifba.ipss.common.controller;
 // *************************************************//
 // ************ { COME�O - Imports } ***************//
 // *************************************************//
-import br.com.ifba.ipss.common.infrastructure.interfaces.Ferramenta;
 import br.com.ifba.ipss.common.infrastructure.interfaces.IEquipamentoService;
 import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
 import br.com.ifba.ipss.feature.conexao.domain.service.ConexaoServiceImpl;
@@ -22,28 +21,25 @@ import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
+import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.NomeEquipamento;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.border.Border;
 import lombok.Data;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -74,6 +70,10 @@ public class MenuFerramentasController {
     private JLabel lblFerramentaSelecionada;
     private JLabel lblFerramentaSelecionadaParaInteracao;
     private boolean ferramentaEstaSelecionada = false;
+    
+    private Label lblOrigemConexao;
+    private Label lblAlvoConexao;
+    private Stack<Label> pilhaConexaoEquipamento = new Stack();
     
     // *************************************************//
     // ***************** { Construtor } ****************//
@@ -213,7 +213,7 @@ public class MenuFerramentasController {
         if(eq instanceof Tubulacao tub){
             
             ImageIcon imgTub = new ImageIcon(this.getClass().getResource(eq.get_caminhoImagem()));
-            JLabel lblTub = new LabelBuilder()
+            Label lblTub = new LabelBuilder()
                     .setImagem(imgTub)
                     .setTitulo("")
                     .build();
@@ -229,7 +229,7 @@ public class MenuFerramentasController {
         if(eq instanceof Conexao con){
             
             ImageIcon imgTub = new ImageIcon(this.getClass().getResource(eq.get_caminhoImagem()));
-            JLabel lblTub = new LabelBuilder()
+            Label lblTub = new LabelBuilder()
                     .setImagem(imgTub)
                     .setTitulo("")
                     .build();
@@ -263,7 +263,7 @@ public class MenuFerramentasController {
                
     } // pegarEquipamentoSelecionado
     
-    public void adicionarListenerDeCliqueAAFerramenta(JLabel lbl){
+    public void adicionarListenerDeCliqueAAFerramenta(Label lbl){
         
         lbl.addMouseListener(new MouseAdapter(){
             
@@ -275,6 +275,23 @@ public class MenuFerramentasController {
                     ferramentaEstaSelecionada = false;
                     return;
 
+                }
+                
+                if(pilhaConexaoEquipamento.size() < 2){
+                    
+                    if(pilhaConexaoEquipamento.isEmpty()){
+                        
+                        pilhaConexaoEquipamento.push(lbl);
+                        System.out.println("Selecionando " + lbl.getName() + " como primeiro item");
+                    } else if(pilhaConexaoEquipamento.get(0) == lbl){
+                        
+                        pilhaConexaoEquipamento.pop();
+                        System.out.println("Removendo " + lbl.getName() + " como primeiro item");
+                    } else{
+                        
+                        pilhaConexaoEquipamento.push(lbl);
+                        System.out.println("Selecionando " + lbl.getName() + " como segundo item");
+                    } 
                 }
                 
                 lblFerramentaSelecionada = lbl;
@@ -289,7 +306,7 @@ public class MenuFerramentasController {
     int mouseX, mouseY;
     double suavizacao = 1.01;
     
-    public void adicionarListenerDeMovimentoAAFerramenta(JLabel lbl) {
+    public void adicionarListenerDeMovimentoAAFerramenta(Label lbl) {
     
         Timer timer = new Timer(100, e -> {
             int deltaX = lbl.getX() + mouseX;

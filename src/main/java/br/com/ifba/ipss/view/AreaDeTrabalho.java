@@ -10,6 +10,7 @@ package br.com.ifba.ipss.view;
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 import br.com.ifba.ipss.common.controller.BotaoConectarController;
+import br.com.ifba.ipss.common.controller.BotaoRemoverEquipamentoController;
 import br.com.ifba.ipss.common.controller.BotaoSimularController;
 import br.com.ifba.ipss.common.controller.MenuFerramentasController;
 import br.com.ifba.ipss.common.controller.MenuSuperiorController;
@@ -45,6 +46,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private final MenuFerramentasController _menuFerramentasController;
     private final BotaoSimularController botaoSimularController;
     private final BotaoConectarController botaoConectarController;
+    private final BotaoRemoverEquipamentoController botaoRemoverEquipamentoController;
     
     private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
     private final IConexaoService conexaoService = new ConexaoServiceImpl();
@@ -54,6 +56,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     public AreaDeTrabalho() {
         botaoSimularController = new BotaoSimularController();
         botaoConectarController = new BotaoConectarController();
+        botaoRemoverEquipamentoController = new BotaoRemoverEquipamentoController();
         
         _menuFerramentasController = new MenuFerramentasController(pegarListaEquipamentos(PathHelper.FERRAMENTAS_JSON));
         
@@ -348,7 +351,14 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConectarEquipamentosActionPerformed
 
     private void btnRemoverEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEquipamentoActionPerformed
-        // TODO add your handling code here:
+        
+        this.botaoRemoverEquipamentoController.removerEquipamento(
+                pnlEspacoTrabalho, 
+                this._menuFerramentasController.getLblFerramentaSelecionadaParaInteracao()
+        );
+        this.repaint();
+        this.revalidate();
+        
     }//GEN-LAST:event_btnRemoverEquipamentoActionPerformed
 
     private void btnSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularActionPerformed

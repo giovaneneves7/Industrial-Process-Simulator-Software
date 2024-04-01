@@ -66,15 +66,15 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
         jPanel1.add(jSpinner1);
-        jSpinner1.setBounds(220, 50, 75, 24);
+        jSpinner1.setBounds(220, 50, 67, 22);
 
         jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
         jPanel1.add(jSpinner2);
-        jSpinner2.setBounds(220, 90, 75, 24);
+        jSpinner2.setBounds(220, 90, 67, 22);
 
         jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
         jPanel1.add(jSpinner3);
-        jSpinner3.setBounds(220, 130, 75, 24);
+        jSpinner3.setBounds(220, 130, 67, 22);
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão simulação.2.png"))); // NOI18N
@@ -98,7 +98,7 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

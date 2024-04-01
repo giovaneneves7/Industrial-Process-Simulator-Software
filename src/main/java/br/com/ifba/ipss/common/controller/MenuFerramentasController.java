@@ -68,7 +68,7 @@ public class MenuFerramentasController {
     private Map<String, List<?>> equipamentos = new HashMap<>();
     
     private JLabel lblFerramentaSelecionada;
-    private JLabel lblFerramentaSelecionadaParaInteracao;
+    private Label lblFerramentaSelecionadaParaInteracao;
     private boolean ferramentaEstaSelecionada = false;
     
     private Stack<Label> pilhaConexaoEquipamento = new Stack();

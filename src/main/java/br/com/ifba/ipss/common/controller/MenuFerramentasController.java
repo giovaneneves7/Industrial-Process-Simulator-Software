@@ -71,8 +71,6 @@ public class MenuFerramentasController {
     private JLabel lblFerramentaSelecionadaParaInteracao;
     private boolean ferramentaEstaSelecionada = false;
     
-    private Label lblOrigemConexao;
-    private Label lblAlvoConexao;
     private Stack<Label> pilhaConexaoEquipamento = new Stack();
     
     // *************************************************//
@@ -156,51 +154,49 @@ public class MenuFerramentasController {
     
     public void adicionarFerramentasAoMenu(JPanel p, JPanel pnlEspacoTrabalho, JFrame f, String nome){
         
-        //if(nome.equals("Tubulações")){
         
-            EquipamentoFactory equipamentoFactory = new EquipamentoFactory(equipamentoServiceMap);
-            List<? extends Equipamento> equipamentosList = equipamentoFactory.pegarFerramentas(nome);
+        EquipamentoFactory equipamentoFactory = new EquipamentoFactory(equipamentoServiceMap);
+        List<? extends Equipamento> equipamentosList = equipamentoFactory.pegarFerramentas(nome);
             
-            int x = 20;
-            int y = p.getHeight() / 8;
-            int cont = 0; 
+        int x = 20;
+        int y = p.getHeight() / 8;
+        int cont = 0; 
 
-            for(int i = 0; i < equipamentosList.size(); i++) {
-                Equipamento eq = equipamentosList.get(i);
-
-                FerramentaContainer ferramentaContainer = ferramentaContainerController.criarContainer(
-                    eq,
-                    SizeHelper.ALTURA_FERRAMENTA_CONTAINER,
-                    SizeHelper.LARGURA_FERRAMENTA_CONTAINER,
-                    x,
-                    y,
-                    i,
-                    false 
-                );
-
-                ferramentaContainer.addMouseListener(new MouseAdapter() {
-                    @Override
-                    public void mouseClicked(MouseEvent me) {
-                        selecionarFerramenta(pnlEspacoTrabalho, nome, eq.get_nome(), f, me);
-                    } 
-                });
+        for(int i = 0; i < equipamentosList.size(); i++) {
                 
-                p.add(ferramentaContainer);
+            Equipamento eq = equipamentosList.get(i);
 
-                cont++;
+            FerramentaContainer ferramentaContainer = ferramentaContainerController.criarContainer(
+                eq,
+                SizeHelper.ALTURA_FERRAMENTA_CONTAINER,
+                SizeHelper.LARGURA_FERRAMENTA_CONTAINER,
+                x,
+                y,
+                i,
+                false 
+            );
 
-                if(cont == 2) {
-                    x = 20; 
-                    y += SizeHelper.ALTURA_FERRAMENTA_CONTAINER + 10; // Avança para a próxima linha
-                    cont = 0; // Reseta o contador
-                } else {
-                    x += SizeHelper.LARGURA_FERRAMENTA_CONTAINER + 10;
-                }
-            }
+            ferramentaContainer.addMouseListener(new MouseAdapter() {
             
-        //}
-        
+                @Override
+                public void mouseClicked(MouseEvent me) {
+                    selecionarFerramenta(pnlEspacoTrabalho, nome, eq.get_nome(), f, me);
+                } 
+            });
+                
+            p.add(ferramentaContainer);
 
+            cont++;
+
+            if(cont == 2) {
+                x = 20; 
+                y += SizeHelper.ALTURA_FERRAMENTA_CONTAINER + 10; // Avança para a próxima linha
+                cont = 0; // Reseta o contador
+            } else {
+                x += SizeHelper.LARGURA_FERRAMENTA_CONTAINER + 10;
+            }
+        }
+            
         p.revalidate();
         p.repaint();
     } // adicionarFerramentasAoMenu
@@ -281,16 +277,18 @@ public class MenuFerramentasController {
                     
                     if(pilhaConexaoEquipamento.isEmpty()){
                         
+                        lbl.setBorder(BorderFactory.createLineBorder(Constantes.COR_PRIMARIA));
                         pilhaConexaoEquipamento.push(lbl);
-                        System.out.println("Selecionando " + lbl.getName() + " como primeiro item");
+                        
                     } else if(pilhaConexaoEquipamento.get(0) == lbl){
                         
+                        lbl.setBorder(null);
                         pilhaConexaoEquipamento.pop();
-                        System.out.println("Removendo " + lbl.getName() + " como primeiro item");
+                        
                     } else{
                         
+                        lbl.setBorder(BorderFactory.createLineBorder(Constantes.COR_PRIMARIA));
                         pilhaConexaoEquipamento.push(lbl);
-                        System.out.println("Selecionando " + lbl.getName() + " como segundo item");
                     } 
                 }
                 
@@ -301,7 +299,7 @@ public class MenuFerramentasController {
         });
         
         
-    } // adicionarListenerDeCliqueAAFerramenta
+    } 
     
     int mouseX, mouseY;
     double suavizacao = 1.01;
@@ -318,8 +316,9 @@ public class MenuFerramentasController {
         lbl.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent me) {
-                mouseX = me.getX();
-                mouseY = me.getY();
+                
+                if(me.getClickCount() == 1) return; // evita que o label seja movido com apenas um clique.
+
                 if (!timer.isRunning()) {
                     timer.start();
                 }

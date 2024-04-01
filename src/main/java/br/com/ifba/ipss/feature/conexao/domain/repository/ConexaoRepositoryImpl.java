@@ -2,6 +2,7 @@ package br.com.ifba.ipss.feature.conexao.domain.repository;
 
 import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
 import br.com.ifba.ipss.helper.PathHelper;
+import br.com.ifba.ipss.singleton.GsonSingleton;
 import br.com.ifba.ipss.util.Constantes;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -20,7 +21,7 @@ import java.util.Map;
  */
 public class ConexaoRepositoryImpl implements IConexaoRepository{
 
-    private final Gson gson = new Gson();
+    private final Gson gson = GsonSingleton.getInstance();
     
     @Override
     public List<Conexao> pegarConexoes() {

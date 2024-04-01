@@ -17,7 +17,7 @@ public class ConexaoServiceImpl implements IConexaoService{
     @Override
     public List<Conexao> pegarEquipamentos() {
 
-        return conexaoRepository.pegarConexoes();
+        return conexaoRepository.pegarListaEquipamentos("conexoes"); 
 
     }
     

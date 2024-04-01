@@ -1,6 +1,5 @@
 package br.com.ifba.ipss.feature.tubulacao.domain.service;
 
-import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.repository.ITubulacaoRepository;
 import br.com.ifba.ipss.feature.tubulacao.domain.repository.TubulacaoRepositoryImpl;
@@ -19,8 +18,8 @@ public class TubulacaoServiceImpl implements ITubulacaoService{
     @Override
     public List<Tubulacao> pegarEquipamentos() {
 
-        return tubulacaoRepository.pegarTubulacoes();
-
+        return tubulacaoRepository.pegarListaEquipamentos("tubulacoes"); 
+        
     }
 
     @Override

@@ -27,7 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//

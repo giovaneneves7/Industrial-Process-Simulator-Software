@@ -213,7 +213,7 @@ public class MenuFerramentasController {
                     .setImagem(imgTub)
                     .setTitulo("")
                     .build();
-            
+           
            lblTub.setBounds((pnlEspacoTrabalho.getWidth() / 2), 0, (int ) tub.get_alturaPx(), (int) tub.get_larguraPx());
            pnlEspacoTrabalho.add(lblTub);
            adicionarListenerDeCliqueAAFerramenta(lblTub);
@@ -225,14 +225,14 @@ public class MenuFerramentasController {
         if(eq instanceof Conexao con){
             
             ImageIcon imgTub = new ImageIcon(this.getClass().getResource(eq.get_caminhoImagem()));
-            Label lblTub = new LabelBuilder()
+            Label lblCon = new LabelBuilder()
                     .setImagem(imgTub)
                     .setTitulo("")
                     .build();
-           lblTub.setBounds((pnlEspacoTrabalho.getWidth() / 2), 0, 150, 150);
-           pnlEspacoTrabalho.add(lblTub);
-           adicionarListenerDeCliqueAAFerramenta(lblTub);
-           adicionarListenerDeMovimentoAAFerramenta(lblTub);
+           lblCon.setBounds((pnlEspacoTrabalho.getWidth() / 2), 0, (int) con.get_larguraPx(), (int) con.get_alturaPx());
+           pnlEspacoTrabalho.add(lblCon);
+           adicionarListenerDeCliqueAAFerramenta(lblCon);
+           adicionarListenerDeMovimentoAAFerramenta(lblCon);
            f.revalidate();
            f.repaint();
         }
@@ -363,12 +363,7 @@ public class MenuFerramentasController {
                 mouseX = e.getX();
                 mouseY = e.getY();
             }
-            
-         
         });
-        
-        
-        
     } // adicionarListenerDeMovimentoAAFerramenta
     
         

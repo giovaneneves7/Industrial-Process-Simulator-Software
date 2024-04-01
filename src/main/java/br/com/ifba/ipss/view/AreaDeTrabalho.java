@@ -344,6 +344,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 this._menuFerramentasController.getPilhaConexaoEquipamento().get(1)
         );
         
+        this._menuFerramentasController.getPilhaConexaoEquipamento().clear(); // limpa a pilha de ferramentas a serem conectadas.
+        
     }//GEN-LAST:event_btnConectarEquipamentosActionPerformed
 
     private void btnRemoverEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEquipamentoActionPerformed

@@ -54,21 +54,23 @@ Escolha o EduSimLab para explorar, aprender e se inspirar. A educação industri
 </table>
 
 # Sumário 🔍
-1. Features
-2. Como intalar e executar
+1. [Features](https://github.com/giovaneneves7/Industrial-Process-Simulator-Software/edit/main/README.md#2---features)
+2. [Como intalar e executar](https://github.com/giovaneneves7/Industrial-Process-Simulator-Software/edit/main/README.md#2---como-instalar-e-executar)
 3. Exemplos
+
+## 1 - Features
 
 ## 2 - Como instalar e executar
 
-**Aviso!** Certifique-se te ter uma versão compatível do Java instalado em sua máquina antes de seguir com a passo a passo abaixo.
+**Passo 01:** Certifique-se de ter o **Java instalado e configurado** na sua máquina (Java 21 ou superior). Caso não tenha,instale e configure antes de prosseguir para os próximos passos. <br>
 
-**Versão local:**
+**Passo 02:** Faça download do repositório com a extensão .zip. <br>
 
-**Passo 01:** Faça download do repositório com a extensão .zip
 ![image](https://github.com/giovaneneves7/Industrial-Process-Simulator-Software/assets/123518676/52321d63-da3b-41d2-82a9-ba0ad3d13add)
-**Passo 02:** Extraia do arquivo .zip. <br>
-**Passo 03:** Execute o comando abaixo no terminal, na basta onde o arquivo .zip foi extraído:
+**Passo 03:** Extraia do arquivo .zip. <br>
+
+**Passo 04:** Execute o comando abaixo no terminal, na pasta onde o arquivo .zip foi extraído:
 ```
-java -jar ./Industrial-Process-Simulator-Software/artifacts/IPSS.jar
+java -jar ./app/Industrial-Process-Simulator-Software/artifacts/IPSS-0.0.1.jar
 ```
 

@@ -1,5 +1,7 @@
 package br.com.ifba.ipss.feature.parametrossimulacao.widget;
 
+import br.com.ifba.ipss.feature.parametrossimulacao.controller.ParametrosSimulacaoController;
+
 /**
  *
  * @author Lorrane554
@@ -79,6 +81,11 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão simulação.2.png"))); // NOI18N
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
         jButton2.setBounds(110, 170, 100, 40);
 
@@ -100,6 +107,13 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        this.getParent().add(new ParametrosSimulacaoController().criarWidgetDeResultados(0, 0, 0));
+        this.revalidate();
+        this.repaint();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

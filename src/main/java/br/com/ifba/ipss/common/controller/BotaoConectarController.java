@@ -6,6 +6,7 @@ import br.com.ifba.ipss.util.Constantes;
 /**
  *
  * @author Giovane Neves
+ * @since V0.01
  */
 public class BotaoConectarController {
     
@@ -13,11 +14,15 @@ public class BotaoConectarController {
         
         if(alvo.getOrientacao().equals(Constantes.HORIZONTAL)){
             
-            origem.setLocation((alvo.getX() - origem.getWidth()), alvo.getY());
+            int xOrigem = alvo.getX() + alvo.getWidth();
+            int yOrigem = alvo.getY() + (alvo.getHeight() / 2) - (origem.getHeight() / 2);
+            origem.setLocation(xOrigem, yOrigem);
             
         } else if(alvo.getOrientacao().equals(Constantes.VERTICAL)){
             
-            origem.setLocation(alvo.getX(), (alvo.getY() - origem.getHeight()));
+            int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (origem.getWidth() / 2);
+            int yOrigem = alvo.getY() + alvo.getHeight();
+            origem.setLocation(xOrigem, yOrigem);
             
         }
         

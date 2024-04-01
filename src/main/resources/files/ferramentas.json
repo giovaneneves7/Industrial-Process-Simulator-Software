@@ -104,13 +104,31 @@
    ],
    tanques: [
         {
-            "_nome" : "Tanque",
-            "_caminhoImagem" : "/images/*.png",
+            "_nome" : "Tanque 2",
+            "_caminhoImagem" : "/images/tanque_2.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 80,
-            "_altura" : 40
-        }   
+            "_larguraPx" : 80,
+            "_alturaPx" : 40
+        },
+        
+        {
+            "_nome" : "Tanque 3",
+            "_caminhoImagem" : "/images/tanque_3.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 80,
+            "_alturaPx" : 40
+        },
+        
+        {
+            "_nome" : "Tanque 4",
+            "_caminhoImagem" : "/images/tanque_4.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 80,
+            "_alturaPx" : 40
+        }
    ],
    trocadoresdecalor: [
         {

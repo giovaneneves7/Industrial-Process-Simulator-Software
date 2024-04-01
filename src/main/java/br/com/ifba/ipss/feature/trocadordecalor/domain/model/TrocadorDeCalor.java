@@ -1,4 +1,6 @@
-package br.com.ifba.ipss.feature.equipamento.domain.model;
+package br.com.ifba.ipss.feature.trocadordecalor.domain.model;
+
+import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 
 /**
  *

@@ -80,7 +80,7 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão simulação.2.png"))); // NOI18N
         jButton2.setBorder(null);
         jPanel1.add(jButton2);
-        jButton2.setBounds(110, 170, 100, 0);
+        jButton2.setBounds(110, 170, 100, 40);
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
@@ -91,7 +91,7 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(290, 10, 20, 13);
+        jButton1.setBounds(290, 10, 20, 16);
 
         add(jPanel1);
         jPanel1.setBounds(0, 0, 320, 220);

@@ -199,8 +199,8 @@
             "_caminhoImagem" : "/images/conexao_1.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 30,
-            "_altura" :30
+            "_larguraPx" : 30,
+            "_alturaPx" : 30
         },
    
 
@@ -209,8 +209,8 @@
             "_caminhoImagem" : "/images/conexao_2.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 30,
-            "_altura" :30
+            "_larguraPx" : 30,
+            "_alturaPx" : 30
 
         },
 
@@ -219,8 +219,8 @@
             "_caminhoImagem" : "/images/conexao_3.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 30,
-            "_altura" :30
+            "_larguraPx" : 30,
+            "_alturaPx" : 30
 
         }
    

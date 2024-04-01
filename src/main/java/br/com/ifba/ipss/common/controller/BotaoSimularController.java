@@ -23,8 +23,9 @@ public class BotaoSimularController {
     public void exibirWidgetDeParametrosSimulacao(JPanel p){
         
         ParametrosDaSimulacao parametrosDaSimulacaoWidget = this.parametrosSimulacaoController.criarWidgetDeParametros(
-                p.getWidth() / 2 + SizeHelper.LARGURA_WIDGET_PARAMETROS_SIMULACAO, 
-                p.getHeight() / 2 + SizeHelper.ALTURA_WIDGET_PARAMETROS_SIMULACAO
+                0,
+                0
+
         );
         
         p.add(parametrosDaSimulacaoWidget);

@@ -37,8 +37,8 @@ public class Constantes {
     public static final String ATRIBUTO_CAMINHO_IMAGEM = "_caminhoImagem";
     public static final String ATRIBUTO_POS_X = "_x";
     public static final String ATRIBUTO_POS_Y = "_y";
-    public static final String ATRIBUTO_LARGURA = "_largura";
-    public static final String ATRIBUTO_ALTURA = "_altura";
+    public static final String ATRIBUTO_LARGURA = "_larguraPx";
+    public static final String ATRIBUTO_ALTURA = "_alturaPx";
     public static final String ATRIBUTO_DIAMETRO_INTERNO  = "_diametroInterno";
     public static final String ATRIBUTO_COMPRIMENTO = "comprimento";
     

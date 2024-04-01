@@ -2,6 +2,7 @@ package br.com.ifba.ipss.feature.conexao.domain.repository;
 
 import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
 import br.com.ifba.ipss.helper.PathHelper;
+import br.com.ifba.ipss.util.Constantes;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -19,7 +20,7 @@ import java.util.Map;
  */
 public class ConexaoRepositoryImpl implements IConexaoRepository{
 
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
     
     @Override
     public List<Conexao> pegarConexoes() {
@@ -42,12 +43,12 @@ public class ConexaoRepositoryImpl implements IConexaoRepository{
                     JsonElement valor = entry.getValue();
 
                     switch (chave) {
-                        case "_nome" -> conexao.set_nome(valor.getAsString());
-                        case "_caminhoImagem" -> conexao.set_caminhoImagem(String.valueOf(valor.getAsString()));
-                        case "_x" -> conexao.set_x(valor.getAsInt());
-                        case "_y" -> conexao.set_y(valor.getAsInt());
-                        case "_largura" -> conexao.set_larguraPx(valor.getAsInt());
-                        case "_altura" -> conexao.set_alturaPx(valor.getAsInt());
+                        case Constantes.ATRIBUTO_NOME -> conexao.set_nome(valor.getAsString());
+                        case Constantes.ATRIBUTO_CAMINHO_IMAGEM -> conexao.set_caminhoImagem(String.valueOf(valor.getAsString()));
+                        case Constantes.ATRIBUTO_POS_X -> conexao.set_x(valor.getAsInt());
+                        case Constantes.ATRIBUTO_POS_Y -> conexao.set_y(valor.getAsInt());
+                        case Constantes.ATRIBUTO_LARGURA -> conexao.set_larguraPx(valor.getAsInt());
+                        case Constantes.ATRIBUTO_ALTURA -> conexao.set_alturaPx(valor.getAsInt());
                         default -> {}
                     }
 

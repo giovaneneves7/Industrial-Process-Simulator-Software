@@ -52,13 +52,14 @@ public class GenericRepositoryImpl implements IGenericRepository<Equipamento>{
                         case Constantes.ATRIBUTO_POS_Y -> eq.set_y(valor.getAsInt());
                         case Constantes.ATRIBUTO_LARGURA -> eq.set_larguraPx(valor.getAsInt());
                         case Constantes.ATRIBUTO_ALTURA -> eq.set_alturaPx(valor.getAsInt());
+                        
                         default -> {
                         
                             if(eq instanceof Tubulacao tub){
                                 
                                 switch (chave) {
-                                    case "_diametroInterno" -> tub.set_diametroInterno(valor.getAsString());
-                                    case "comprimento" -> tub.setComprimento(valor.getAsDouble());
+                                    case Constantes.ATRIBUTO_DIAMETRO_INTERNO -> tub.set_diametroInterno(valor.getAsString());
+                                    case Constantes.ATRIBUTO_COMPRIMENTO -> tub.setComprimento(valor.getAsDouble());
                                     default -> {}
                                 }
                                 

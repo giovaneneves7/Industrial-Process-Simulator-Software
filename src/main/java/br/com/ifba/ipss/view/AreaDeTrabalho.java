@@ -50,6 +50,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     
     private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
     private final IConexaoService conexaoService = new ConexaoServiceImpl();
+    
+    public static boolean emModoRemocao = false;
+    public static boolean emModoConexao = false;
+    
     /**
      * Cria a interface com os componentes iniciais
      */
@@ -127,21 +131,29 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         PnlMenu.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnGirarEquipamento.setText("Girar");
+        btnGirarEquipamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_girar.png"))); // NOI18N
+        btnGirarEquipamento.setBorderPainted(false);
+        btnGirarEquipamento.setContentAreaFilled(false);
+        btnGirarEquipamento.setFocusPainted(false);
         btnGirarEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGirarEquipamentoActionPerformed(evt);
             }
         });
 
-        btnConectarEquipamentos.setText("Conectar");
+        btnConectarEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_conectar.png"))); // NOI18N
+        btnConectarEquipamentos.setBorderPainted(false);
+        btnConectarEquipamentos.setContentAreaFilled(false);
         btnConectarEquipamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConectarEquipamentosActionPerformed(evt);
             }
         });
 
-        btnRemoverEquipamento.setText("Remover");
+        btnRemoverEquipamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_remover.png"))); // NOI18N
+        btnRemoverEquipamento.setBorderPainted(false);
+        btnRemoverEquipamento.setContentAreaFilled(false);
+        btnRemoverEquipamento.setFocusPainted(false);
         btnRemoverEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRemoverEquipamentoActionPerformed(evt);
@@ -162,24 +174,25 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             .addGroup(PnlMenuLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(btnGirarEquipamento)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnConectarEquipamentos)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRemoverEquipamento)
-                .addGap(250, 250, 250)
+                .addGap(274, 274, 274)
                 .addComponent(btnSimular)
-                .addContainerGap(719, Short.MAX_VALUE))
+                .addContainerGap(653, Short.MAX_VALUE))
         );
         PnlMenuLayout.setVerticalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGirarEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(btnConectarEquipamentos, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(btnRemoverEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(btnSimular, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                .addComponent(btnSimular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(PnlMenuLayout.createSequentialGroup()
+                .addComponent(btnGirarEquipamento)
+                .addGap(0, 4, Short.MAX_VALUE))
+            .addComponent(btnConectarEquipamentos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnRemoverEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pnlBackgruond.add(PnlMenu);
@@ -351,13 +364,9 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConectarEquipamentosActionPerformed
 
     private void btnRemoverEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEquipamentoActionPerformed
-        
-        this.botaoRemoverEquipamentoController.removerEquipamento(
-                pnlEspacoTrabalho, 
-                this._menuFerramentasController.getLblFerramentaSelecionadaParaInteracao()
-        );
-        this.repaint();
-        this.revalidate();
+                
+        emModoRemocao = !emModoRemocao;
+        emModoConexao = false;
         
     }//GEN-LAST:event_btnRemoverEquipamentoActionPerformed
 

@@ -90,35 +90,41 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="btnGirarEquipamento" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnConectarEquipamentos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnRemoverEquipamento" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="274" max="-2" attributes="0"/>
                       <Component id="btnSimular" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="719" max="32767" attributes="0"/>
+                      <EmptySpace pref="653" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnGirarEquipamento" alignment="3" pref="38" max="32767" attributes="0"/>
-                          <Component id="btnConectarEquipamentos" alignment="3" pref="38" max="32767" attributes="0"/>
-                          <Component id="btnRemoverEquipamento" alignment="3" pref="38" max="32767" attributes="0"/>
-                          <Component id="btnSimular" alignment="3" pref="38" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="btnSimular" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btnGirarEquipamento" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="btnConectarEquipamentos" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnRemoverEquipamento" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnGirarEquipamento">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Girar"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/botao_girar.png"/>
+                </Property>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGirarEquipamentoActionPerformed"/>
@@ -126,7 +132,11 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnConectarEquipamentos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Conectar"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/botao_conectar.png"/>
+                </Property>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConectarEquipamentosActionPerformed"/>
@@ -134,7 +144,12 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnRemoverEquipamento">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Remover"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/botao_remover.png"/>
+                </Property>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverEquipamentoActionPerformed"/>

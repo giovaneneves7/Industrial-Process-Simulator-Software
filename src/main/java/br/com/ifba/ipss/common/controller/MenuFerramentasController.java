@@ -24,7 +24,9 @@ import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.NomeEquipamento;
+import br.com.ifba.ipss.view.AreaDeTrabalho;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
@@ -63,13 +65,14 @@ public class MenuFerramentasController {
     private FerramentaContainerController ferramentaContainerController = new FerramentaContainerController<>();
     
     private boolean _menuAberto = false;
+    private boolean ferramentaEstaSelecionada = false;
+
     private String _nomeMenuAberto;
     private JPanel _ferramentasContainer;
     private Map<String, List<?>> equipamentos = new HashMap<>();
     
     private JLabel lblFerramentaSelecionada;
     private Label lblFerramentaSelecionadaParaInteracao;
-    private boolean ferramentaEstaSelecionada = false;
     
     private Stack<Label> pilhaConexaoEquipamento = new Stack();
     
@@ -180,7 +183,9 @@ public class MenuFerramentasController {
             
                 @Override
                 public void mouseClicked(MouseEvent me) {
+                    
                     selecionarFerramenta(pnlEspacoTrabalho, nome, eq.get_nome(), f, me);
+                
                 } 
             });
                 
@@ -266,6 +271,16 @@ public class MenuFerramentasController {
             @Override
             public void mouseClicked(MouseEvent me){
             
+                if(AreaDeTrabalho.emModoRemocao){
+                    
+                    Container parent = lbl.getParent();
+                    lbl.getParent().remove(lbl);
+                    parent.revalidate();
+                    parent.repaint();
+                    
+                }
+                
+                
                 if(lblFerramentaSelecionada == lbl){
                     
                     ferramentaEstaSelecionada = false;

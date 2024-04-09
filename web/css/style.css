@@ -57,9 +57,10 @@ body{
 .top_menu_container .top_menu_item a{
     text-decoration: none;
     color: var(--light);
+    margin-left: 5px;
 }
 
-.top_menu_container .top_menu_item a:hover{
+.top_menu_container .top_menu_item:hover{
     background-color: var(--secondary);
     padding: 5px;
     border-radius: 20px;

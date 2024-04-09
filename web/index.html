@@ -37,7 +37,7 @@
 
         <section id="see_more_container" class="see_more_container">
 
-            <button class="see_more_button btn"><a href="#about_software_title">Conheça o Simulador</a><i class="bi bi-arrow-down-circle"></i></button>
+            <button class="see_more_button btn"><a href="#info_section_title">Conheça o Simulador</a><i class="bi bi-arrow-down-circle"></i></button>
 
         </section>
 
@@ -45,22 +45,36 @@
 
         <hr class="divisor">
 
-        <section class="about_software_container">
-            <div class="content_container">
-                <h1 id="about_software_title">Sobre o <span class="secondary">EduSimLab<span></h1>
-                <div class="description_container">
-                    <p>Bem-vindo ao EduSimLab, o Laboratório Virtual de Simulação de Processos criado para auxiliar na forma como aprendemos sobre processos industriais nos cursos técnicos e tecnológicos. Nossa missão é proporcionar uma experiência educacional agradável, incorporando atividades simuladas como um recurso metodológico essencial.</p>
-                    <p>O EduSimLab é mais do que apenas um software; é uma plataforma dinâmica que visa cativar os alunos, levando-os a mergulhar no universo prático dos processos industriais. Desenvolvido utilizando a robusta linguagem de programação Java, garantimos não apenas funcionalidade, mas também portabilidade para ser executado em qualquer ambiente com suporte à tecnologia.</p>
-                </div>
-            </div>
 
-            <div class="description_screenshot">
 
-                <img src="./assets/images/screenshots/screenshot1.png" alt="Captura de tela da aplicação" width="300" height="100">
+      <section class="software_info_container container">
+        <h2 id="info_section_title" class="software_info_title">Informações</h2>
 
-            </div>
+        <div class="info-content">
+          <div class="connection-creation">
+            <i class="bi bi-pc-display icon"></i>
+            <h4>Um laboratório completo no seu computador</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores facilis quo est perferendis, dignissimos sapiente natus quae ipsa perspiciatis asperiores, possimus earum ratione nostrum quibusdam fugiat molestiae eum? Totam, voluptatibus?</p>
+          </div>
 
-        </section>
+          <div class="free-offer">
+            <i class="bi bi-folder icon"></i>
+
+            <h4>Domine a ferramenta com uma documentação amigável</h4>
+            <p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa quam error perferendis sint quae, blanditiis, quis vero adipisci assumenda tempore tempora ratione cum reprehenderit aperiam reiciendis, minus fuga iure iusto!</p>
+            </p>
+          </div>
+
+          <div class="sharing-feature">
+            <i class="bi bi-search icon"></i>
+
+            <h4>Faça hipóteses, teste, analise!</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum maxime eos minus iure, pariatur, vitae officiis distinctio dicta nemo optio officia. Obcaecati porro sapiente officia repudiandae. Quam voluptas nostrum dicta.</p>
+          </div>
+        </div>
+      </section>
+
 
     </main>
 
@@ -72,7 +86,7 @@
 
         window.addEventListener('scroll', function() {
             var buttonContainer = document.getElementById('see_more_container');
-            if (window.scrollY > 300) {
+            if (window.scrollY > 200) {
                 buttonContainer.classList.add('show');
             } else {
                 buttonContainer.classList.remove('show'); 

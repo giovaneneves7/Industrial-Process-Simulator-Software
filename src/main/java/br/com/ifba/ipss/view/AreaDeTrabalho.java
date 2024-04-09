@@ -160,7 +160,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             }
         });
 
-        btnSimular.setText("Simular");
+        btnSimular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_simular.png"))); // NOI18N
+        btnSimular.setBorderPainted(false);
+        btnSimular.setContentAreaFilled(false);
+        btnSimular.setFocusPainted(false);
+        btnSimular.setFocusable(false);
         btnSimular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularActionPerformed(evt);
@@ -178,21 +182,22 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 .addComponent(btnConectarEquipamentos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRemoverEquipamento)
-                .addGap(274, 274, 274)
+                .addGap(263, 263, 263)
                 .addComponent(btnSimular)
-                .addContainerGap(653, Short.MAX_VALUE))
+                .addContainerGap(638, Short.MAX_VALUE))
         );
         PnlMenuLayout.setVerticalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnSimular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(PnlMenuLayout.createSequentialGroup()
-                .addComponent(btnGirarEquipamento)
+                .addGroup(PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnRemoverEquipamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnConectarEquipamentos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGirarEquipamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 4, Short.MAX_VALUE))
-            .addComponent(btnConectarEquipamentos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnRemoverEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnSimular, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pnlBackgruond.add(PnlMenu);

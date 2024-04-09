@@ -94,25 +94,27 @@
                       <Component id="btnConectarEquipamentos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnRemoverEquipamento" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="274" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
                       <Component id="btnSimular" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="653" max="32767" attributes="0"/>
+                      <EmptySpace pref="638" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnSimular" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnGirarEquipamento" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="btnRemoverEquipamento" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnConectarEquipamentos" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnGirarEquipamento" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="btnConectarEquipamentos" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnRemoverEquipamento" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnSimular" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -157,7 +159,13 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnSimular">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Simular"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/botao_simular.png"/>
+                </Property>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSimularActionPerformed"/>

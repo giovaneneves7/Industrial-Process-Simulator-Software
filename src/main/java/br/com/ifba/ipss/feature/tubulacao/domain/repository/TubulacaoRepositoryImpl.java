@@ -8,8 +8,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Map;
 
 /**
@@ -19,60 +19,14 @@ import java.util.Map;
  */
 public class TubulacaoRepositoryImpl implements ITubulacaoRepository{
 
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
 
     @Override
-    public List<Tubulacao> pegarTubulacoes() {
-
-        List<Tubulacao> tubulacoes = new ArrayList<>();
-        
-        try(FileReader leitor = new FileReader(PathHelper.FERRAMENTAS_JSON)){
-            
-            JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
-            JsonArray tubulacoesArray = jsonObject.getAsJsonArray("tubulacoes");
-            
-            for (JsonElement je : tubulacoesArray) {
-            
-                JsonObject obj = je.getAsJsonObject();
-                Tubulacao tubulacao = new Tubulacao();
-
-                for(Map.Entry<String, JsonElement> entry : obj.entrySet()){
-
-                    String chave = entry.getKey();
-                    JsonElement valor = entry.getValue();
-
-                    switch (chave) {
-                        case "_nome" -> tubulacao.set_nome(valor.getAsString());
-                        case "_caminhoImagem" -> tubulacao.set_caminhoImagem(String.valueOf(valor.getAsString()));
-                        case "_x" -> tubulacao.set_x(valor.getAsInt());
-                        case "_y" -> tubulacao.set_y(valor.getAsInt());
-                        case "_larguraPx" -> tubulacao.set_larguraPx(valor.getAsInt());
-                        case "_alturaPx" -> tubulacao.set_alturaPx(valor.getAsInt());
-                        case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsString());
-                        case "comprimento" -> tubulacao.setComprimento(valor.getAsDouble());
-                        default -> {}
-                    }
-
-
-                }
-                tubulacoes.add(tubulacao);
-            }
-            
-        } catch(IOException ex){
-            
-            ex.printStackTrace();
-        
-        }
-        
-        return tubulacoes;
-    }
-
-    @Override
-    public String pegarDiametroInterno(String nomeTubulacao) {
+    public String pegarDiametroInterno(final String nomeTubulacao) {
                 
-        try(FileReader leitor = new FileReader(PathHelper.FERRAMENTAS_JSON)){
+        try(InputStream is = PathHelper.pegarFerramentasInputStream(); InputStreamReader isr = new InputStreamReader(is)){
             
-            JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
+            JsonObject jsonObject = gson.fromJson(isr, JsonObject.class);
             JsonArray tubulacoesArray = jsonObject.getAsJsonArray("tubulacoes");
             
             for (JsonElement je : tubulacoesArray) {
@@ -117,9 +71,9 @@ public class TubulacaoRepositoryImpl implements ITubulacaoRepository{
     public double pegarComprimento(String nomeTubulacao) {
          
     
-        try(FileReader leitor = new FileReader(PathHelper.FERRAMENTAS_JSON)){
+        try(InputStream is = PathHelper.pegarFerramentasInputStream(); InputStreamReader isr = new InputStreamReader(is)){
             
-            JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
+            JsonObject jsonObject = gson.fromJson(isr, JsonObject.class);
             JsonArray tubulacoesArray = jsonObject.getAsJsonArray("tubulacoes");
             
             for (JsonElement je : tubulacoesArray) {

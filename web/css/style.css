@@ -1,0 +1,165 @@
+/* Paleta de Cores */
+:root{
+    --primary: #1b5934;
+    --secondary: #f4bb58;
+    --dark: #073017;
+    --light: #ffffff;
+}
+
+/* Seletores */
+body{
+    background-color: var(--primary);
+}
+/* >>> Utilidades <<< */
+
+.divisor{
+    color: var(--light);
+    max-width: 1300px;
+    margin: auto;
+}
+
+.distance_divisor{
+    margin-bottom: 100%;
+}
+
+.secondary{
+    color: var(--secondary);
+}
+
+ /* >>> Estilo do Header <<< */
+
+.header{
+    display: flex;
+    max-width: 1300px;
+    margin: auto;
+    background-color: var(--dark);
+    color: var(--light);
+    align-items: center;
+    font-size: 20px;
+}
+
+.top_menu_container{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.top_menu_container .top_menu{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.top_menu_container .top_menu_item{
+    margin-right: 20px;
+}
+
+.top_menu_container .top_menu_item a{
+    text-decoration: none;
+    color: var(--light);
+}
+
+.top_menu_container .top_menu_item a:hover{
+    background-color: var(--secondary);
+    padding: 5px;
+    border-radius: 20px;
+}
+
+/* Estilo da Seção de Imagem Promocional */
+
+.promotional_image_container{
+    max-width: 1300px;
+    max-height: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary);
+}
+ 
+/* Estilo da Seção de Botão Veja Mais */
+
+.see_more_container{
+
+    display: none;
+    transition: opacity 8s easy-in-out;
+
+}
+
+.see_more_container.show{
+
+    max-width: 1300px;
+    margin: auto;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.see_more_container .see_more_button{
+
+    border-radius: 20px;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.see_more_container .see_more_button a, .see_more_container .see_more_button i{
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 20px;
+    margin-right: 5px;
+    padding: 5px 0 5px 0;
+}
+
+
+.see_more_container .see_more_button:hover{
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.see_more_container .see_more_button:hover a, .see_more_container .see_more_button:hover i{
+    color: inherit;
+} 
+
+/* Estilo da Seção 'Sobre o Software' */
+.about_software_container{
+    max-width: 1300px;
+    margin: auto;
+    background-color: var(--primary);
+    color: var(--light);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.content_container {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    margin-right: 1%;
+}
+
+.about_software_container .about_software_title{
+    width: 100%;
+}
+.about_software_container .description_container{
+    width: 100%;
+    background-color: var(--dark);
+    padding: 5px;
+}
+
+.about_software_container .description_screenshot{
+    width: 49%;
+    display: flex;
+    align-items: center;
+}
+
+.about_software_container .description_screenshot img{
+    width: 100%;
+    height: 70%;
+}

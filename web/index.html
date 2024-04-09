@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSimLab</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    
+    <header class="header">
+
+        <div class="top_menu_container">
+
+            <ul class="top_menu">
+                <li class="top_menu_item"><a href="#">Home</a></li>
+                <li class="top_menu_item"><a href="#">Tutoriais</a></li>
+                <li class="top_menu_item"><a href="#">Sobre o Projeto</a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+
+    <main class="main">
+
+        <section class="promotional_image_container">
+
+            <img src="https://github.com/giovaneneves7/Industrial-Process-Simulator-Software/raw/main/src/main/resources/images/logo.jpg" alt="Logo do EduSimLab" class="promotional_image">
+
+        </section>
+
+        <section id="see_more_container" class="see_more_container">
+
+            <button class="see_more_button btn"><a href="#about_software_title">Conheça o Simulador</a><i class="bi bi-arrow-down-circle"></i></button>
+
+        </section>
+
+        <div class="distance_divisor"></div>
+
+        <hr class="divisor">
+
+        <section class="about_software_container">
+            <div class="content_container">
+                <h1 id="about_software_title">Sobre o <span class="secondary">EduSimLab<span></h1>
+                <div class="description_container">
+                    <p>Bem-vindo ao EduSimLab, o Laboratório Virtual de Simulação de Processos criado para auxiliar na forma como aprendemos sobre processos industriais nos cursos técnicos e tecnológicos. Nossa missão é proporcionar uma experiência educacional agradável, incorporando atividades simuladas como um recurso metodológico essencial.</p>
+                    <p>O EduSimLab é mais do que apenas um software; é uma plataforma dinâmica que visa cativar os alunos, levando-os a mergulhar no universo prático dos processos industriais. Desenvolvido utilizando a robusta linguagem de programação Java, garantimos não apenas funcionalidade, mas também portabilidade para ser executado em qualquer ambiente com suporte à tecnologia.</p>
+                </div>
+            </div>
+
+            <div class="description_screenshot">
+
+                <img src="./assets/images/screenshots/screenshot1.png" alt="Captura de tela da aplicação" width="300" height="100">
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script>
+
+        window.addEventListener('scroll', function() {
+            var buttonContainer = document.getElementById('see_more_container');
+            if (window.scrollY > 300) {
+                buttonContainer.classList.add('show');
+            } else {
+                buttonContainer.classList.remove('show'); 
+            }
+        });
+
+    </script>
+</body>
+
+</html>

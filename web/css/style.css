@@ -26,8 +26,16 @@ body{
     color: var(--secondary);
 }
 
+.dark_bg{
+    background-color: var(--dark);
+}
+
 .light{
     color: var(--light);
+}
+
+.light_bg{
+    background-color: var(--light);
 }
 
  /* >>> Estilo do Header <<< */
@@ -175,7 +183,6 @@ body{
 
 .software_info_container {
     flex-direction: column;
-
     gap: 6rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
@@ -184,6 +191,7 @@ body{
   .software_info_container .software_info_title{
     color: var(--secondary);
   }
+  
   .software_info_container .info-content {
     display: flex;
     justify-content: center;
@@ -220,3 +228,35 @@ body{
     color: var(--light);
     text-align: center;
   }
+
+/* >>> Estilo da Seção de Download <<< */
+.software_download_container{
+    max-width: 1300px;
+    margin: auto;
+}
+.software_download_container .content-app {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 5rem 0;
+}
+ 
+.software_download_links a img{
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+
+.software_download_container .content-app .app-decription h2{
+    color: var(--secondary);
+}
+.software_download_container .content-app .app-decription p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    color: var(--primary);
+    max-width: 424px;
+    margin: 2.5rem 0;
+}

@@ -1,10 +1,21 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+// *************************************************//
 package br.com.ifba.ipss.common.controller;
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
 
-import br.com.ifba.ipss.helper.PathHelper;
-import br.com.ifba.ipss.util.Constantes;
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
+import static br.com.ifba.ipss.util.Dicionario.tr;
+
 import java.awt.Image;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
 
 /**
  *
@@ -15,7 +26,7 @@ public class ViewController {
     
     public static void definirTituloAplicacao(JFrame f){
         
-        f.setTitle(Constantes.NOME_APLICACAO);
+        f.setTitle(tr("titulo_aplicacao"));
         
     }
     

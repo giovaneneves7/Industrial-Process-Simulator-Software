@@ -1,4 +1,4 @@
-package br.com.ifba.ipss.infrastructure.exception.generic;
+package br.com.ifba.ipss.infrastructure.generic;
 
 import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
@@ -10,7 +10,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -87,54 +86,6 @@ public interface IGenericRepository<E extends Equipamento> {
             ex.printStackTrace();
         
         }
-       /* try(FileReader leitor = new FileReader(PathHelper.FERRAMENTAS_JSON)){
-            
-            JsonObject jsonObject = gson.fromJson(leitor, JsonObject.class);
-            JsonArray tubulacoesArray = jsonObject.getAsJsonArray(tipoEquipamento);
-            
-            for (JsonElement je : tubulacoesArray) {
-            
-                JsonObject obj = je.getAsJsonObject();
-                E eq = pegarInstancia(tipoEquipamento);
-
-                for(Map.Entry<String, JsonElement> entry : obj.entrySet()){
-
-                    String chave = entry.getKey();
-                    JsonElement valor = entry.getValue();
-
-                    switch (chave) {
-                        case Constantes.ATRIBUTO_NOME -> eq.set_nome(valor.getAsString());
-                        case Constantes.ATRIBUTO_CAMINHO_IMAGEM -> eq.set_caminhoImagem(String.valueOf(valor.getAsString()));
-                        case Constantes.ATRIBUTO_POS_X -> eq.set_x(valor.getAsInt());
-                        case Constantes.ATRIBUTO_POS_Y -> eq.set_y(valor.getAsInt());
-                        case Constantes.ATRIBUTO_LARGURA -> eq.set_larguraPx(valor.getAsInt());
-                        case Constantes.ATRIBUTO_ALTURA -> eq.set_alturaPx(valor.getAsInt());
-                        
-                        default -> {
-                        
-                            if(eq instanceof Tubulacao tub){
-                                
-                                switch (chave) {
-                                    case Constantes.ATRIBUTO_DIAMETRO_INTERNO -> tub.set_diametroInterno(valor.getAsString());
-                                    case Constantes.ATRIBUTO_COMPRIMENTO -> tub.setComprimento(valor.getAsDouble());
-                                    default -> {}
-                                }
-                                
-                            }
-                        
-                        }
-                    }
-
-
-                }
-                equipamentos.add(eq);
-            }
-            
-        } catch(IOException ex){
-            
-            ex.printStackTrace();
-        
-        }*/
         
         return equipamentos;
         

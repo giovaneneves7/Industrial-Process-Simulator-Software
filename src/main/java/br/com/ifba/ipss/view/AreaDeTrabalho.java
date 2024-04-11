@@ -9,12 +9,11 @@ package br.com.ifba.ipss.view;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.common.controller.AreaDeTrabalhoController;
 import br.com.ifba.ipss.common.controller.BotaoConectarController;
-import br.com.ifba.ipss.common.controller.BotaoRemoverEquipamentoController;
 import br.com.ifba.ipss.common.controller.BotaoSimularController;
 import br.com.ifba.ipss.common.controller.MenuFerramentasController;
 import br.com.ifba.ipss.common.controller.MenuSuperiorController;
-import br.com.ifba.ipss.common.controller.ViewController;
 import br.com.ifba.ipss.feature.conexao.domain.service.ConexaoServiceImpl;
 import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
@@ -43,10 +42,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     // *************************************************//
     // ****************** { Atributos } ****************//
     // *************************************************//
+    private AreaDeTrabalhoController areaDeTrabalhoController = new AreaDeTrabalhoController(this);
+    
     private final MenuFerramentasController _menuFerramentasController;
     private final BotaoSimularController botaoSimularController;
     private final BotaoConectarController botaoConectarController;
-    private final BotaoRemoverEquipamentoController botaoRemoverEquipamentoController;
     
     private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
     private final IConexaoService conexaoService = new ConexaoServiceImpl();
@@ -60,12 +60,13 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     public AreaDeTrabalho() {
         botaoSimularController = new BotaoSimularController();
         botaoConectarController = new BotaoConectarController();
-        botaoRemoverEquipamentoController = new BotaoRemoverEquipamentoController();
         
         _menuFerramentasController = new MenuFerramentasController(pegarListaEquipamentos(PathHelper.FERRAMENTAS_JSON));
         
         inicializadorPersonalizado();
         initComponents();
+        this.areaDeTrabalhoController.setPnlEspacoTrabalho(pnlEspacoTrabalho);
+
         
     } // AreaDeTrabalho
 
@@ -82,10 +83,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     
     private void inicializadorPersonalizado(){
         
-        ViewController.definirTituloAplicacao(this);
-        ImageIcon favicon = new ImageIcon(getClass().getResource(PathHelper.LOGO));
-        ViewController.definirLogoAplicacao(this, favicon.getImage());
-    
+        ImageIcon favicon = new ImageIcon(getClass().getResource(Constantes.CAMINHO_LOGO));
+        this.areaDeTrabalhoController.definirLogoAplicacao(favicon.getImage());
+        this.areaDeTrabalhoController.definirTituloAplicacao();
+        
     } // inicializadorPersonalizado
     
     /**
@@ -106,6 +107,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         btnRemoverEquipamento = new javax.swing.JButton();
         btnSimular = new javax.swing.JButton();
         pnlEspacoTrabalho = new javax.swing.JPanel();
+        lblNotificacaoDeEstado = new javax.swing.JLabel();
         PnlBotoes = new javax.swing.JPanel();
         btnTubulacoes = new javax.swing.JButton();
         btnConexoes = new javax.swing.JButton();
@@ -205,6 +207,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         pnlEspacoTrabalho.setBackground(new java.awt.Color(204, 204, 204));
         pnlEspacoTrabalho.setLayout(null);
+
+        lblNotificacaoDeEstado.setText("Nenhum modo de edição selecionado");
+        pnlEspacoTrabalho.add(lblNotificacaoDeEstado);
+        lblNotificacaoDeEstado.setBounds(0, 0, 320, 18);
+
         pnlBackgruond.add(pnlEspacoTrabalho);
         pnlEspacoTrabalho.setBounds(0, 80, 1250, 710);
 
@@ -282,6 +289,9 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private void btnConexoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConexoesActionPerformed
         
         
+        this.gerenciarMenuLateral("conexao");
+        
+        /*
         if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Conexões")){
             
             this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, this, "Conexões"); 
@@ -290,7 +300,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             
             this._menuFerramentasController.fecharMenuFerramentas(this.pnlEspacoTrabalho);
             
-        }
+        }*/
        
     }//GEN-LAST:event_btnConexoesActionPerformed
 
@@ -323,7 +333,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnTubulacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTubulacoesActionPerformed
         
-        if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Tubulações")){
+        this.gerenciarMenuLateral("tubulacao");
+        /*if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Tubulações")){
             
             this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, this, NomeEquipamento.TUBULACAO.getString()); 
             
@@ -331,7 +342,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             
             this._menuFerramentasController.fecharMenuFerramentas(this.pnlEspacoTrabalho);
             
-        }
+        }*/
         
     }//GEN-LAST:event_btnTubulacoesActionPerformed
 
@@ -369,8 +380,14 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConectarEquipamentosActionPerformed
 
     private void btnRemoverEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEquipamentoActionPerformed
-                
+              
+    
         emModoRemocao = !emModoRemocao;
+
+        this.areaDeTrabalhoController.mudarStatusModoRemocao(emModoRemocao);
+        this.areaDeTrabalhoController.atualizarImagemBotaoRemover(btnRemoverEquipamento);
+        this.areaDeTrabalhoController.exibirMensagemEstadoModoDeRemocao(lblNotificacaoDeEstado, 4000);        
+        
         emModoConexao = false;
         
     }//GEN-LAST:event_btnRemoverEquipamentoActionPerformed
@@ -381,6 +398,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnSimularActionPerformed
 
+    private void gerenciarMenuLateral(String tipoEquipamento){
+        
+        this.areaDeTrabalhoController.gerenciarMenuLateral(pnlEspacoTrabalho, tipoEquipamento);
+        
+    }
     
     
 
@@ -433,6 +455,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private javax.swing.JButton btnSimular;
     private javax.swing.JButton btnTubulacoes;
     private javax.swing.JButton btnVavulas;
+    private javax.swing.JLabel lblNotificacaoDeEstado;
     private javax.swing.JPanel pnlBackgruond;
     private javax.swing.JPanel pnlEspacoTrabalho;
     // End of variables declaration//GEN-END:variables

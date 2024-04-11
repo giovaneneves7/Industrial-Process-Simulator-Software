@@ -1,7 +1,6 @@
 package br.com.ifba.ipss.util;
 
 import java.awt.Color;
-import javax.swing.ImageIcon;
 
 /**
  *
@@ -46,5 +45,6 @@ public class Constantes {
     // Caminhos de Imagens
     public static final String CAMINHO_BOTAO_REMOVER = "/images/botao_remover.png";
     public static final String CAMINHO_BOTAO_REMOVER_SELECIONADO = "/images/botao_remover_selecionado.png"; 
-   
+    public static final String CAMINHO_LOGO = "/images/logo.jpg";
+    
 }

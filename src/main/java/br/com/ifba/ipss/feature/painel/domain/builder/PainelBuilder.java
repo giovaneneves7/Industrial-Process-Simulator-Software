@@ -1,6 +1,8 @@
 package br.com.ifba.ipss.feature.painel.domain.builder;
 
 import br.com.ifba.ipss.feature.painel.domain.model.Painel;
+import br.com.ifba.ipss.util.Constantes;
+import java.awt.Color;
 import java.awt.LayoutManager;
 
 /**
@@ -15,6 +17,7 @@ public class PainelBuilder {
     private int x; 
     private int y;
     private LayoutManager layout;
+    private Color background = Constantes.COR_BACKGROUND;
     
     public PainelBuilder setAltura(int altura){
         
@@ -50,10 +53,18 @@ public class PainelBuilder {
         return this;
     }
     
+    public PainelBuilder setBackground(Color background){
+        
+        this.background = background;
+        return this;
+        
+    }
+    
     public Painel build(){
         
         Painel p = new Painel(this.x, this.altura, this.largura, this.altura);
         p.setLayout(layout);
+        p.setBackground(background);
         return p;
         
     }

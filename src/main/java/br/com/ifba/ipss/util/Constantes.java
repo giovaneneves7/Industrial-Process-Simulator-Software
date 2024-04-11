@@ -1,6 +1,7 @@
 package br.com.ifba.ipss.util;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -42,4 +43,8 @@ public class Constantes {
     public static final String ATRIBUTO_DIAMETRO_INTERNO  = "_diametroInterno";
     public static final String ATRIBUTO_COMPRIMENTO = "comprimento";
     
+    // Caminhos de Imagens
+    public static final String CAMINHO_BOTAO_REMOVER = "/images/botao_remover.png";
+    public static final String CAMINHO_BOTAO_REMOVER_SELECIONADO = "/images/botao_remover_selecionado.png"; 
+   
 }

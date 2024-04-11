@@ -1,7 +1,7 @@
 package br.com.ifba.ipss.feature.tubulacao.domain.repository;
 
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
-import br.com.ifba.ipss.infrastructure.exception.generic.IGenericRepository;
+import br.com.ifba.ipss.infrastructure.generic.IGenericRepository;
 
 /**
  *

@@ -157,6 +157,17 @@ public class AreaDeTrabalhoController {
         }
     } // mudarStatusModoRotacao
     
+    public void mudarStatusModoConexao(final boolean status){
+        
+        this.emModoConexao = status;
+        
+        if(this.emModoConexao){
+            this.emModoRotacao = false;
+            this.emModoRemocao = false;
+        }
+        
+    } // mudarStatusModoConexao
+    
     public void exibirMensagemEstadoModoDeRemocao(JLabel lbl, final int tempo){
         
         String msg = (emModoRemocao) ? "modo_remocao_ativado" : "modo_remocao_desativado";
@@ -172,6 +183,14 @@ public class AreaDeTrabalhoController {
         this.exibirMensagemTemporaria(lbl, msg, tempo);
         
     } // exibirMensagemEstadoDeRotacao
+    
+    public void exibirMensagemEstadoDeConexao(JLabel lbl, final int tempo){
+        
+        String msg = (emModoConexao) ? "modo_conexao_ativado" : "modo_conexao_desativado";
+        
+        this.exibirMensagemTemporaria(lbl, msg, tempo);
+        
+    } // exibirMensagemEstadoDeConexao
     
     public void exibirMensagemTemporaria(JLabel lbl, String mensagem, final int tempo){
         

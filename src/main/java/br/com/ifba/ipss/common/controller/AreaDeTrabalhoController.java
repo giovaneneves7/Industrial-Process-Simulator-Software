@@ -11,11 +11,10 @@ import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
-import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import br.com.ifba.ipss.helper.SizeHelper;
 import br.com.ifba.ipss.util.Constantes;
-import br.com.ifba.ipss.view.AreaDeTrabalho;
+import br.com.ifba.ipss.util.Util;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -25,6 +24,7 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 
 import java.util.HashMap;
 import java.util.List;
@@ -59,8 +59,9 @@ public class AreaDeTrabalhoController {
     private JPanel pnlMenuLateral;
     private JPanel pnlEspacoTrabalho;
     
-    private static boolean emModoRemocao = false;
-    private static boolean emModoConexao = false;
+    private boolean emModoRotacao = false;
+    private boolean emModoRemocao = false;
+    private boolean emModoConexao = false;
     
     private boolean menuLateralAberto = false;
     private String nomeTipoMenuLateralAberto;
@@ -103,13 +104,58 @@ public class AreaDeTrabalhoController {
         
     } // definirLogoAplicacao
     
+    public void mudarSetaDoMouseNoBotao(List<JButton> botoes){
+        
+        for(JButton btn : botoes){
+            
+            btn.addMouseMotionListener(new MouseAdapter() {
+              
+                @Override
+                public void mouseMoved(MouseEvent e) {
+                   
+                    final int x = e.getX();
+                    final int y = e.getY();
+                    final int width = btn.getWidth();
+                    final int height = btn.getHeight();
+                    
+                    if (x >= 0 && x <= width && y >= 0 && y <= height) {
+                        
+                        btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+                    
+                    } else {
+                        
+                        btn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
+                    }
+                }
+                
+            });
+        }
+        
+    } // mudarSetaDoMouseNoBotao
+    
     // >>> Métodos do Menu Superior <<<
     
     public void mudarStatusModoRemocao(final boolean status){
         
         this.emModoRemocao = status;
+       
+        if(this.emModoRemocao){
+            this.emModoConexao = false;
+            this.emModoRotacao = false;
+        }
         
     } // mudarStatusModoRemocao
+    
+    public void mudarStatusModoRotacao(final boolean status){
+    
+        this.emModoRotacao = status;
+       
+        if(this.emModoRotacao){
+            this.emModoConexao = false;
+            this.emModoRemocao = false;
+        }
+    } // mudarStatusModoRotacao
     
     public void exibirMensagemEstadoModoDeRemocao(JLabel lbl, final int tempo){
         
@@ -118,6 +164,14 @@ public class AreaDeTrabalhoController {
         this.exibirMensagemTemporaria(lbl, msg, tempo);
         
     } // exibirMensagemEstadoModoDeRemocao 
+    
+    public void exibirMensagemEstadoDeRotacao(JLabel lbl, final int tempo){
+        
+        String msg = (emModoRotacao) ? "modo_rotacao_ativado" :  "modo_rotacao_desativado";
+        
+        this.exibirMensagemTemporaria(lbl, msg, tempo);
+        
+    } // exibirMensagemEstadoDeRotacao
     
     public void exibirMensagemTemporaria(JLabel lbl, String mensagem, final int tempo){
         
@@ -148,6 +202,40 @@ public class AreaDeTrabalhoController {
         btn.setIcon(img);
         
     } // mudarImagemBotao
+    
+    public void removerEquipamento(Label lbl){
+        
+        Container parent = lbl.getParent();
+        parent.remove(lbl);
+        parent.revalidate();
+        parent.repaint();
+        
+    } // removerEquipamento
+    
+    public void rotacionarEquipamento(Label lbl){
+        
+        ImageIcon iconAntigo = (ImageIcon) lbl.getIcon();
+        BufferedImage bufferedImage = Util.toBufferedImage(iconAntigo.getImage());
+        ImageIcon iconGirado = Util.rotate(bufferedImage, 90);
+        
+        lbl.setIcon(iconGirado);
+       
+        int newWidth = lbl.getHeight();  
+        int newHeight = lbl.getWidth();  
+        lbl.setSize(newWidth, newHeight);  
+
+        int currentX = lbl.getX();  
+        int currentY = lbl.getY();  
+        int centerX = currentX + ( newHeight/ 2);  
+        int centerY = currentY + (newWidth / 2);  
+
+        lbl.setLocation(centerX - (newWidth / 2), centerY - (newHeight / 2));
+        
+        Container parent = lbl.getParent();
+        parent.revalidate();
+        parent.repaint();
+        
+    } // rotacionarEquipamento
     
     // >>> Métodos do Menu Lateral <<<
     
@@ -311,15 +399,20 @@ public class AreaDeTrabalhoController {
             
                 if(emModoRemocao){
                     
-                    Container parent = lbl.getParent();
-                    lbl.getParent().remove(lbl);
-                    parent.revalidate();
-                    parent.repaint();
+                    removerEquipamento(lbl);
                     
                 }
+                
+                if(emModoRotacao){
+                
+                    rotacionarEquipamento(lbl);
+                    
+                }
+                
             }
         });        
     }
+    
     
     int mouseX, mouseY;
     double suavizacao = 1.01;
@@ -346,9 +439,6 @@ public class AreaDeTrabalhoController {
             @Override
             public void mousePressed(MouseEvent me) {
                 
-                /*if(me.getClickCount() == 1) return; // evita que o label seja movido com apenas um clique.
-                */
-                
                 if (!tempoPressionado.isRunning()) {
                     tempoPressionado.start();
                 }
@@ -356,8 +446,10 @@ public class AreaDeTrabalhoController {
 
             @Override
             public void mouseReleased(MouseEvent me) {
+                
                 timer.stop();
                 tempoPressionado.stop();
+            
             }
             
             @Override

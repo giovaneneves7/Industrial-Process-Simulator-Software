@@ -13,16 +13,13 @@ import br.com.ifba.ipss.common.controller.AreaDeTrabalhoController;
 import br.com.ifba.ipss.common.controller.BotaoConectarController;
 import br.com.ifba.ipss.common.controller.BotaoSimularController;
 import br.com.ifba.ipss.common.controller.MenuFerramentasController;
-import br.com.ifba.ipss.common.controller.MenuSuperiorController;
 import br.com.ifba.ipss.feature.conexao.domain.service.ConexaoServiceImpl;
 import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
-import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.NomeEquipamento;
-import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,8 +62,21 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         inicializadorPersonalizado();
         initComponents();
+        
         this.areaDeTrabalhoController.setPnlEspacoTrabalho(pnlEspacoTrabalho);
-
+        
+        List<javax.swing.JButton> botoes = List.of(
+                btnGirarEquipamento,
+                btnConectarEquipamentos,
+                btnRemoverEquipamento,
+                btnSimular,
+                btnTubulacoes,
+                btnConexoes,
+                btnVavulas,
+                btnEquipamentos
+        );
+        
+        this.areaDeTrabalhoController.mudarSetaDoMouseNoBotao(botoes);
         
     } // AreaDeTrabalho
 
@@ -348,6 +358,12 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnGirarEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGirarEquipamentoActionPerformed
         
+        this.areaDeTrabalhoController.mudarStatusModoRotacao(
+            !this.areaDeTrabalhoController.isEmModoRotacao()
+        );
+        this.areaDeTrabalhoController.exibirMensagemEstadoDeRotacao(lblNotificacaoDeEstado, 4000);
+        
+        /*
         Label lblFerramentaSelecionada = (Label) this._menuFerramentasController.getLblFerramentaSelecionadaParaInteracao();
         ImageIcon iconAntigo = (ImageIcon) lblFerramentaSelecionada.getIcon();
 
@@ -364,7 +380,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         // Revalidar e repintar o componente pai
         this.revalidate();
         this.repaint();
-
+        */
         
     }//GEN-LAST:event_btnGirarEquipamentoActionPerformed
 

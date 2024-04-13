@@ -1,5 +1,14 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+//// *************************************************//
 package br.com.ifba.ipss.common.controller;
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
 
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
 import static br.com.ifba.ipss.util.Dicionario.tr;
 import static br.com.ifba.ipss.util.Dicionario.trToPlural;
 
@@ -17,6 +26,7 @@ import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.Util;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -29,6 +39,8 @@ import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+import java.util.Stack;
 import javax.swing.BorderFactory;
 
 import javax.swing.ImageIcon;
@@ -39,6 +51,9 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import lombok.Data;
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
 
 /**
  *
@@ -65,6 +80,10 @@ public class AreaDeTrabalhoController {
     
     private boolean menuLateralAberto = false;
     private String nomeTipoMenuLateralAberto;
+    
+    private Stack<Label> pilhaDeConexao = new Stack<>(); 
+    
+    private Map<String, Label> espacoTrabalhoMap = new HashMap<>();
     
     // *************************************************//
     // ****************** { Construtor } ***************//
@@ -222,12 +241,12 @@ public class AreaDeTrabalhoController {
         
     } // mudarImagemBotao
     
-    public void removerEquipamento(Label lbl){
-        
-        Container parent = lbl.getParent();
-        parent.remove(lbl);
-        parent.revalidate();
-        parent.repaint();
+    public void removerEquipamento(String lblId){
+    
+        this.pnlEspacoTrabalho.remove(this.espacoTrabalhoMap.get(lblId));
+        this.espacoTrabalhoMap.remove(lblId);
+        this.pnlEspacoTrabalho.revalidate();
+        this.pnlEspacoTrabalho.repaint();
         
     } // removerEquipamento
     
@@ -255,6 +274,50 @@ public class AreaDeTrabalhoController {
         parent.repaint();
         
     } // rotacionarEquipamento
+    
+    public void adicionarNaPilhaDeConexao(Label lbl){
+        
+        if(this.pilhaDeConexao.isEmpty()){
+            
+            this.pilhaDeConexao.push(lbl);
+            
+        } else if(this.pilhaDeConexao.firstElement() == lbl){
+            
+            this.pilhaDeConexao.pop();
+            
+        } else{
+            
+            this.pilhaDeConexao.push(lbl);
+            
+        }
+        
+        if(this.pilhaDeConexao.size() == 2){
+            
+            this.conectarEquipamentos(
+                    this.pilhaDeConexao.firstElement(), 
+                    this.pilhaDeConexao.lastElement()
+            );
+            
+        }
+    } // adicionarNaPilhaDeConexao
+    
+    public void conectarEquipamentos(Label lblMovido, Label alvo){
+        
+        if(alvo.getOrientacao().equals(Constantes.HORIZONTAL)){
+            
+            int xOrigem = alvo.getX() + alvo.getWidth();
+            int yOrigem = alvo.getY() + (alvo.getHeight() / 2) - (lblMovido.getHeight() / 2);
+            lblMovido.setLocation(xOrigem, yOrigem);
+            
+        } else if(alvo.getOrientacao().equals(Constantes.VERTICAL)){
+            
+            int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
+            int yOrigem = alvo.getY() + alvo.getHeight();
+            lblMovido.setLocation(xOrigem, yOrigem);
+            
+        }
+        
+    } // conectarEquipamentos
     
     // >>> Métodos do Menu Lateral <<<
     
@@ -337,7 +400,9 @@ public class AreaDeTrabalhoController {
         int cont = 0; 
         
         for(int i = 0; i < listaEquipamentos.size(); i++) {
-        
+            
+            int index = i;
+            
             Equipamento eq = listaEquipamentos.get(i);
 
             FerramentaContainer ferramentaContainer = ferramentaContainerController.criarContainer(
@@ -355,7 +420,7 @@ public class AreaDeTrabalhoController {
                 @Override
                 public void mouseClicked(MouseEvent me) {
                     
-                        adicionarEquipamento(eq);
+                        adicionarEquipamento(ferramentaContainer.getEquipamento(), index);
                 
                     } 
                 });
@@ -379,16 +444,18 @@ public class AreaDeTrabalhoController {
         
     } // adicionarFerramentasAoMenu
     
-    public void adicionarEquipamento(Equipamento eq){
+    public void adicionarEquipamento(Equipamento eq, int i){
         
-        this.pnlEspacoTrabalho.add(criarLabelDeEquipamento(eq));
+        Label lbl = criarLabelDeEquipamento(eq, i);
+        this.pnlEspacoTrabalho.add(lbl);
+        this.espacoTrabalhoMap.put(lbl.getId(), lbl);
         this.pnlEspacoTrabalho.revalidate();
         this.pnlEspacoTrabalho.repaint();
 
         
     } // selecionarEquipamento
 
-    public Label criarLabelDeEquipamento(Equipamento eq){
+    public Label criarLabelDeEquipamento(Equipamento eq, int i){
         
         ImageIcon img = new ImageIcon(this.getClass().getResource(eq.get_caminhoImagem()));
         Label lbl = new LabelBuilder()
@@ -403,6 +470,7 @@ public class AreaDeTrabalhoController {
                 (int) eq.get_larguraPx()
         );
         
+        lbl.setId("eq".concat(eq.get_nome()).concat(String.valueOf(i)).concat(String.valueOf(new Random().nextLong(900))));
         this.adicionarListenerDeCliqueAoEquipamento(lbl);
         this.adicionarListenerDeMovimentoAoEquipamento(lbl);
         
@@ -418,13 +486,19 @@ public class AreaDeTrabalhoController {
             
                 if(emModoRemocao){
                     
-                    removerEquipamento(lbl);
+                    removerEquipamento(lbl.getId());
                     
                 }
                 
                 if(emModoRotacao){
                 
                     rotacionarEquipamento(lbl);
+                    
+                }
+                
+                if(emModoConexao){
+                    
+                    adicionarNaPilhaDeConexao(lbl);
                     
                 }
                 

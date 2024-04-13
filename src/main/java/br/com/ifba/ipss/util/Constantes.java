@@ -56,7 +56,8 @@ public class Constantes {
     public static final String CAMINHO_BOTAO_REMOVER_SELECIONADO = "/images/botao_remover_selecionado.png"; 
     public static final String CAMINHO_LOGO = "/images/logo.jpg";
     
-    // arquivos
+    // arquivos e diretórios
+    public static final String DIRETORIO_IMAGENS = "/images";
     public static final String ESPACO_TRABALHO_JSON = "/files/workspace.json";
     
     // resources/streams

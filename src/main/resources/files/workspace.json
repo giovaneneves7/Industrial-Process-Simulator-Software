@@ -1,0 +1,30 @@
+[
+	{
+		"id" : "eqT32627",
+ 		"caminho_imagem" : "/images/T3.png",
+ 		"largura" : 10,
+ 		"altura" : 70,
+ 		"orientacao" : "vertical"
+	},
+	{
+		"id" : "eqT549",
+ 		"caminho_imagem" : "/images/T5.png",
+ 		"largura" : 10,
+ 		"altura" : 100,
+ 		"orientacao" : "vertical"
+	},
+	{
+		"id" : "eqT54136",
+ 		"caminho_imagem" : "/images/T5.png",
+ 		"largura" : 10,
+ 		"altura" : 100,
+ 		"orientacao" : "vertical"
+	},
+	{
+		"id" : "eqT43347",
+ 		"caminho_imagem" : "/images/T4.png",
+ 		"largura" : 10,
+ 		"altura" : 90,
+ 		"orientacao" : "vertical"
+	}
+]

@@ -2,7 +2,6 @@ package br.com.ifba.ipss.feature.espacotrabalho.controller;
 
 import br.com.ifba.ipss.feature.espacotrabalho.domain.service.IEspacoTrabalhoService;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
-
 import static br.com.ifba.ipss.infrastructure.service.ServiceManager.pegarService;
 import java.util.Map;
 
@@ -24,6 +23,12 @@ public class EspacoTrabalhoController {
     public boolean salvarEspacoTrabalho(Map<String, Label> mapa){
         
         return this.espacoTrabalhoService.salvarEspacoTrabalho(mapa);
+        
+    }
+    
+    public boolean deletarEspacoTrabalho(){
+        
+        return this.espacoTrabalhoService.deletarEspacoTrabalho();
         
     }
     

@@ -23,11 +23,18 @@ public class EspacoTrabalhoServiceImpl implements IEspacoTrabalhoService, Implem
     @Override
     public boolean salvarEspacoTrabalho(Map<String, Label> mapa) {
 
-        /*if(mapa.isEmpty()){
+        if(mapa.isEmpty()){
             return false;
-        }*/
+        }
         
         return this.espacoTrabalhoRepository.salvarEspacoTrabalho(mapa);
+        
+    }
+
+    @Override
+    public boolean deletarEspacoTrabalho() {
+
+        return this.espacoTrabalhoRepository.deletarEspacoTrabalho();
         
     }
     

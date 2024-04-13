@@ -4,11 +4,15 @@
 package br.com.ifba.ipss.feature.equipamento.widget;
 // *************************************************//
 // *************** { FIM - Package } ***************//
-// *************************************************//
 
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+
+import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
+
+import lombok.Data;
+
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -19,8 +23,11 @@ package br.com.ifba.ipss.feature.equipamento.widget;
  * @author Giovane Neves
  * @since V0.0.1
  */
+@Data
 public class FerramentaContainer extends javax.swing.JPanel {
 
+    private Equipamento equipamento;
+    
     /**
      * Creates new form FerramentaContainer
      */

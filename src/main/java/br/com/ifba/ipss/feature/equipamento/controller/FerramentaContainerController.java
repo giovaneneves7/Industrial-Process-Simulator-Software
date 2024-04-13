@@ -38,6 +38,7 @@ public class FerramentaContainerController<E extends Equipamento> {
         
         FerramentaContainer container = new FerramentaContainer();
         
+        container.setEquipamento(equipamento);
         container.setBackground(Constantes.COR_BACKGROUND);
         container.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         container.setForeground(Constantes.COR_BACKGROUND);

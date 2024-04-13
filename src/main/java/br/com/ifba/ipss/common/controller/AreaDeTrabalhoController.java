@@ -18,6 +18,7 @@ import br.com.ifba.ipss.feature.equipamento.controller.FerramentaContainerContro
 import br.com.ifba.ipss.feature.equipamento.domain.factory.EquipamentoFactory;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
+import br.com.ifba.ipss.feature.espacotrabalho.controller.EspacoTrabalhoController;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
@@ -69,7 +70,8 @@ public class AreaDeTrabalhoController {
     
     private Map<String, IEquipamentoService> equipamentoServiceMap = new HashMap<>();
     private final FerramentaContainerController ferramentaContainerController = new FerramentaContainerController<>();
-    
+    private final EspacoTrabalhoController espacoTrabalhoController = new EspacoTrabalhoController();
+            
     private JFrame areaDeTrabalho;
     private JPanel pnlMenuLateral;
     private JPanel pnlEspacoTrabalho;
@@ -319,6 +321,25 @@ public class AreaDeTrabalhoController {
         
     } // conectarEquipamentos
     
+    public void salvarEspacoTrabalho(){
+        
+        if(this.espacoTrabalhoController.salvarEspacoTrabalho(espacoTrabalhoMap)){
+            System.out.println("Salvou!");
+        } else{
+            System.out.println("Falha!");
+        }
+        
+    }
+    
+    public void deletarEspacoTrabalho(){
+        
+        if(this.espacoTrabalhoController.deletarEspacoTrabalho()){
+            System.out.println("Deletou");
+        } else{
+            System.out.println("Falha");
+        }
+        
+    }
     // >>> Métodos do Menu Lateral <<<
     
     public void gerenciarMenuLateral(JPanel p, final String tipoEquipamento){

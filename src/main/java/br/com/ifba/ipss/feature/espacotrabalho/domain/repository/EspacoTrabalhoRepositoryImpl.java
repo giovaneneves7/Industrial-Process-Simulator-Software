@@ -27,6 +27,7 @@ public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, 
             int cont = 0;
             writer.write("[");
             writer.newLine();
+            
             for(Map.Entry<String, Label> entry : mapa.entrySet()){
                 
                 cont++;
@@ -41,7 +42,7 @@ public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, 
                 if(valor.getIcon() instanceof ImageIcon img){
                     
                     caminhoImagem = img.getDescription();
-                    int indice = caminhoImagem.indexOf("/images");
+                    int indice = caminhoImagem.indexOf(Constantes.DIRETORIO_IMAGENS);
                     
                     if(indice != -1){
                         caminhoImagem = caminhoImagem.substring(indice);
@@ -55,21 +56,39 @@ public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, 
                                 .concat((mapa.size()) == cont ? "" : ",")
                 );
                 writer.newLine();
-                
+
             }
-            writer.write("]");
             
+            writer.write("]");
+           
+            return true;
+
         } catch(IOException ex){
             
-            System.out.println("Deu errroooooooooooooooooooo");
-            System.out.println(ex.getMessage());
             ex.printStackTrace();
             return false;
         
         }
         
-        return true;
+    }
 
+    @Override
+    public boolean deletarEspacoTrabalho() {
+        
+        try(OutputStream os = Constantes.pegarEspacoTrabalhoJsonOutputStream(); 
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8));){
+        
+            writer.write("");
+            return true;
+
+        } catch(IOException ex){
+        
+            ex.printStackTrace();
+            return false;
+            
+        }
+        
+        
     }
     
 }

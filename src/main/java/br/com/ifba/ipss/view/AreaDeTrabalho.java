@@ -116,6 +116,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         btnConectarEquipamentos = new javax.swing.JButton();
         btnRemoverEquipamento = new javax.swing.JButton();
         btnSimular = new javax.swing.JButton();
+        btnLimparEspacoTrabalho = new javax.swing.JButton();
+        btnSalvarEspacoTrabalho = new javax.swing.JButton();
         pnlEspacoTrabalho = new javax.swing.JPanel();
         lblNotificacaoDeEstado = new javax.swing.JLabel();
         PnlBotoes = new javax.swing.JPanel();
@@ -183,6 +185,22 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             }
         });
 
+        btnLimparEspacoTrabalho.setText("Limpar");
+        btnLimparEspacoTrabalho.setFocusPainted(false);
+        btnLimparEspacoTrabalho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparEspacoTrabalhoActionPerformed(evt);
+            }
+        });
+
+        btnSalvarEspacoTrabalho.setText("Salvar");
+        btnSalvarEspacoTrabalho.setFocusPainted(false);
+        btnSalvarEspacoTrabalho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarEspacoTrabalhoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PnlMenuLayout = new javax.swing.GroupLayout(PnlMenu);
         PnlMenu.setLayout(PnlMenuLayout);
         PnlMenuLayout.setHorizontalGroup(
@@ -194,9 +212,13 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 .addComponent(btnConectarEquipamentos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRemoverEquipamento)
-                .addGap(263, 263, 263)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLimparEspacoTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSalvarEspacoTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addComponent(btnSimular)
-                .addContainerGap(638, Short.MAX_VALUE))
+                .addContainerGap(669, Short.MAX_VALUE))
         );
         PnlMenuLayout.setVerticalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,9 +228,12 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                     .addComponent(btnConectarEquipamentos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGirarEquipamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 4, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlMenuLayout.createSequentialGroup()
+            .addGroup(PnlMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnSimular, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGroup(PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSimular, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnLimparEspacoTrabalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSalvarEspacoTrabalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -386,13 +411,19 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnConectarEquipamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConectarEquipamentosActionPerformed
 
+        this.areaDeTrabalhoController.mudarStatusModoConexao(
+                !this.areaDeTrabalhoController.isEmModoConexao()
+        );
+        this.areaDeTrabalhoController.exibirMensagemEstadoDeConexao(lblNotificacaoDeEstado, 4000);
+        
+        /*
         this.botaoConectarController.conectarEquipamentos(
                 this._menuFerramentasController.getPilhaConexaoEquipamento().get(0), 
                 this._menuFerramentasController.getPilhaConexaoEquipamento().get(1)
         );
         
         this._menuFerramentasController.getPilhaConexaoEquipamento().clear(); // limpa a pilha de ferramentas a serem conectadas.
-        
+        */
     }//GEN-LAST:event_btnConectarEquipamentosActionPerformed
 
     private void btnRemoverEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEquipamentoActionPerformed
@@ -413,6 +444,18 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         botaoSimularController.exibirWidgetDeParametrosSimulacao(this.pnlEspacoTrabalho);
         
     }//GEN-LAST:event_btnSimularActionPerformed
+
+    private void btnLimparEspacoTrabalhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparEspacoTrabalhoActionPerformed
+        
+        this.areaDeTrabalhoController.deletarEspacoTrabalho();
+        
+    }//GEN-LAST:event_btnLimparEspacoTrabalhoActionPerformed
+
+    private void btnSalvarEspacoTrabalhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarEspacoTrabalhoActionPerformed
+      
+        this.areaDeTrabalhoController.salvarEspacoTrabalho();
+        
+    }//GEN-LAST:event_btnSalvarEspacoTrabalhoActionPerformed
 
     private void gerenciarMenuLateral(String tipoEquipamento){
         
@@ -467,7 +510,9 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private javax.swing.JButton btnConexoes;
     private javax.swing.JButton btnEquipamentos;
     private javax.swing.JButton btnGirarEquipamento;
+    private javax.swing.JButton btnLimparEspacoTrabalho;
     private javax.swing.JButton btnRemoverEquipamento;
+    private javax.swing.JButton btnSalvarEspacoTrabalho;
     private javax.swing.JButton btnSimular;
     private javax.swing.JButton btnTubulacoes;
     private javax.swing.JButton btnVavulas;

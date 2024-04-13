@@ -1,6 +1,15 @@
 package br.com.ifba.ipss.util;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  *
@@ -47,4 +56,34 @@ public class Constantes {
     public static final String CAMINHO_BOTAO_REMOVER_SELECIONADO = "/images/botao_remover_selecionado.png"; 
     public static final String CAMINHO_LOGO = "/images/logo.jpg";
     
+    // arquivos
+    public static final String ESPACO_TRABALHO_JSON = "/files/workspace.json";
+    
+    // resources/streams
+    public static InputStream pegarEspacoTrabalhoJsonInputStream() throws FileNotFoundException{
+        
+        return Constantes.class.getResourceAsStream(ESPACO_TRABALHO_JSON);
+        
+    }
+    
+    public static OutputStream pegarEspacoTrabalhoJsonOutputStream() throws IOException{
+        
+        InputStream is = pegarEspacoTrabalhoJsonInputStream();
+        
+        if (is == null) {
+            throw new FileNotFoundException("Arquivo não encontrado: " + ESPACO_TRABALHO_JSON);
+        }
+    
+        Path diretorioDestino = Paths.get("src", "main", "resources", "files");
+        
+        if (!Files.exists(diretorioDestino)) {
+            Files.createDirectories(diretorioDestino);
+        }
+        
+        Path caminhoAbsolutoArquivo = diretorioDestino.resolve("workspace.json");
+        
+        OutputStream outputStream = Files.newOutputStream(caminhoAbsolutoArquivo);
+        
+        return outputStream;
+    }
 }

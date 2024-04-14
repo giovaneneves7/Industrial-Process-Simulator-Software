@@ -42,6 +42,7 @@ public class Constantes {
     public static final String VERTICAL = "vertical";
     
     // Nome de Atributos de Equipamentos
+    public static final String ATRIBUTO_ID = "id";
     public static final String ATRIBUTO_NOME = "_nome";
     public static final String ATRIBUTO_CAMINHO_IMAGEM = "_caminhoImagem";
     public static final String ATRIBUTO_POS_X = "_x";
@@ -50,7 +51,13 @@ public class Constantes {
     public static final String ATRIBUTO_ALTURA = "_alturaPx";
     public static final String ATRIBUTO_DIAMETRO_INTERNO  = "_diametroInterno";
     public static final String ATRIBUTO_COMPRIMENTO = "comprimento";
-    
+    public static final String ATRIBUTO_LARGURA_LABEL = "largura";
+    public static final String ATRIBUTO_ALTURA_LABEL = "altura";
+    public static final String ATRIBUTO_X_LABEL = "x";
+    public static final String ATRIBUTO_Y_LABEL = "y";
+    public static final String ATRIBUTO_ORIENTACAO = "orientacao";
+    public static final String ATRIBUTO_CAMINHO_IMAGEM_LABEL = "caminho_imagem";
+   
     // Caminhos de Imagens
     public static final String CAMINHO_BOTAO_REMOVER = "/images/botao_remover.png";
     public static final String CAMINHO_BOTAO_REMOVER_SELECIONADO = "/images/botao_remover_selecionado.png"; 

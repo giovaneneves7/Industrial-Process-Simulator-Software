@@ -37,5 +37,12 @@ public class EspacoTrabalhoServiceImpl implements IEspacoTrabalhoService, Implem
         return this.espacoTrabalhoRepository.deletarEspacoTrabalho();
         
     }
+
+    @Override
+    public Map<String, Label> pegarEspacoTrabalho() {
+
+        return this.espacoTrabalhoRepository.pegarEspacoTrabalho();
+        
+    }
     
 }

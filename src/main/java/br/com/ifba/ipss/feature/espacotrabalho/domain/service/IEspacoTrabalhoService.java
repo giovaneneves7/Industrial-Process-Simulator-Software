@@ -12,6 +12,7 @@ import java.util.Map;
  */
 public interface IEspacoTrabalhoService extends Interface{
     
+    Map<String, Label> pegarEspacoTrabalho();
     boolean salvarEspacoTrabalho(Map<String, Label> mapa);
     boolean deletarEspacoTrabalho();
     

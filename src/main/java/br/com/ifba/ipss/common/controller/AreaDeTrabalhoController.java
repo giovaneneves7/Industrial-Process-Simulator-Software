@@ -155,6 +155,28 @@ public class AreaDeTrabalhoController {
         
     } // mudarSetaDoMouseNoBotao
     
+    public void carregarEquipamentos(){
+        
+        this.espacoTrabalhoMap = this.espacoTrabalhoController.pegarEspacoTrabalho();
+        
+        if(this.espacoTrabalhoMap == null || this.espacoTrabalhoMap.isEmpty()){
+            return;
+        }
+       
+        for(Map.Entry<String, Label> entry : this.espacoTrabalhoMap.entrySet()){
+        
+            this.adicionarListenerDeCliqueAoEquipamento(entry.getValue());
+            this.adicionarListenerDeMovimentoAoEquipamento(entry.getValue());
+            this.pnlEspacoTrabalho.add(entry.getValue());
+            this.pnlEspacoTrabalho.revalidate();
+            this.pnlEspacoTrabalho.repaint();
+        }
+        
+
+        
+        
+        
+    }
     // >>> Métodos do Menu Superior <<<
     
     public void mudarStatusModoRemocao(final boolean status){
@@ -475,6 +497,16 @@ public class AreaDeTrabalhoController {
 
         
     } // selecionarEquipamento
+    
+     public void adicionarEquipamento(Label lbl){
+        
+        this.pnlEspacoTrabalho.add(lbl);
+        this.espacoTrabalhoMap.put(lbl.getId(), lbl);
+        this.pnlEspacoTrabalho.revalidate();
+        this.pnlEspacoTrabalho.repaint();
+
+        
+    } 
 
     public Label criarLabelDeEquipamento(Equipamento eq, int i){
         

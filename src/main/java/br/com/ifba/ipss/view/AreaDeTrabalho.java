@@ -77,6 +77,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         );
         
         this.areaDeTrabalhoController.mudarSetaDoMouseNoBotao(botoes);
+        this.areaDeTrabalhoController.carregarEquipamentos();
         
     } // AreaDeTrabalho
 

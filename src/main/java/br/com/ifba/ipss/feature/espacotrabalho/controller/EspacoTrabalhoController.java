@@ -20,6 +20,11 @@ public class EspacoTrabalhoController {
         
     }
     
+    public Map<String, Label> pegarEspacoTrabalho(){
+        
+        return this.espacoTrabalhoService.pegarEspacoTrabalho();
+        
+    }
     public boolean salvarEspacoTrabalho(Map<String, Label> mapa){
         
         return this.espacoTrabalhoService.salvarEspacoTrabalho(mapa);

@@ -69,6 +69,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 btnGirarEquipamento,
                 btnConectarEquipamentos,
                 btnRemoverEquipamento,
+                btnLimparEspacoTrabalho,
+                btnSalvarEspacoTrabalho,
                 btnSimular,
                 btnTubulacoes,
                 btnConexoes,

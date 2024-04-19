@@ -284,7 +284,6 @@ public class AreaDeTrabalhoController {
     public void atualizarImagemBotaoGirar(JButton btn){
         
         this.mudarImagemBotao(btn, emModoRotacao);
-        
     }
     public void rotacionarEquipamento(Label lbl){
         

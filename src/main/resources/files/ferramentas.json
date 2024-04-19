@@ -130,10 +130,10 @@
             "_alturaPx" : 40
         }
    ],
-   trocadoresdecalor: [
+   equipamentos: [
         {
             "_nome" : "Trocador de calor",
-            "_caminhoImagem" : "/images/*.png",
+            "_caminhoImagem" : "/images/tanque_2.png",
             "_x" : 0,
             "_y" : 0,
             "_largura" : 80,

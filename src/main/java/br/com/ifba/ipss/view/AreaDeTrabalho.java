@@ -43,7 +43,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     
     private final MenuFerramentasController _menuFerramentasController;
     private final BotaoSimularController botaoSimularController;
-    private final BotaoConectarController botaoConectarController;
     
     private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
     private final IConexaoService conexaoService = new ConexaoServiceImpl();
@@ -56,7 +55,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
      */
     public AreaDeTrabalho() {
         botaoSimularController = new BotaoSimularController();
-        botaoConectarController = new BotaoConectarController();
         
         _menuFerramentasController = new MenuFerramentasController(pegarListaEquipamentos(PathHelper.FERRAMENTAS_JSON));
         
@@ -357,26 +355,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.areaDeTrabalhoController.mudarStatusModoRotacao(
             !this.areaDeTrabalhoController.isEmModoRotacao()
         );
+        this.areaDeTrabalhoController.atualizarImagemBotaoGirar(btnGirarEquipamento);
         this.areaDeTrabalhoController.exibirMensagemEstadoDeRotacao(lblNotificacaoDeEstado, 4000);
-        
-        /*
-        Label lblFerramentaSelecionada = (Label) this._menuFerramentasController.getLblFerramentaSelecionadaParaInteracao();
-        ImageIcon iconAntigo = (ImageIcon) lblFerramentaSelecionada.getIcon();
-
-        // Convertendo a ToolkitImage para BufferedImage
-        BufferedImage bufferedImage = MenuSuperiorController.toBufferedImage(iconAntigo.getImage());
-
-        // Girar a imagem
-        ImageIcon iconGirado = MenuSuperiorController.rotate(bufferedImage, 90);
-
-        // Definir a nova imagem girada e redimensionada
-        lblFerramentaSelecionada.setIcon(iconGirado);
-        lblFerramentaSelecionada.setSize(lblFerramentaSelecionada.getHeight(), lblFerramentaSelecionada.getWidth());
-        lblFerramentaSelecionada.setOrientacao(lblFerramentaSelecionada.getOrientacao().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
-        // Revalidar e repintar o componente pai
-        this.revalidate();
-        this.repaint();
-        */
         
     }//GEN-LAST:event_btnGirarEquipamentoActionPerformed
 
@@ -385,16 +365,9 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.areaDeTrabalhoController.mudarStatusModoConexao(
                 !this.areaDeTrabalhoController.isEmModoConexao()
         );
+        this.areaDeTrabalhoController.atualizarImagemBotaoConectar(btnConectarEquipamentos);
         this.areaDeTrabalhoController.exibirMensagemEstadoDeConexao(lblNotificacaoDeEstado, 4000);
         
-        /*
-        this.botaoConectarController.conectarEquipamentos(
-                this._menuFerramentasController.getPilhaConexaoEquipamento().get(0), 
-                this._menuFerramentasController.getPilhaConexaoEquipamento().get(1)
-        );
-        
-        this._menuFerramentasController.getPilhaConexaoEquipamento().clear(); // limpa a pilha de ferramentas a serem conectadas.
-        */
     }//GEN-LAST:event_btnConectarEquipamentosActionPerformed
 
     private void btnRemoverEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEquipamentoActionPerformed
@@ -405,8 +378,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.areaDeTrabalhoController.mudarStatusModoRemocao(emModoRemocao);
         this.areaDeTrabalhoController.atualizarImagemBotaoRemover(btnRemoverEquipamento);
         this.areaDeTrabalhoController.exibirMensagemEstadoModoDeRemocao(lblNotificacaoDeEstado, 4000);        
-        
-        emModoConexao = false;
         
     }//GEN-LAST:event_btnRemoverEquipamentoActionPerformed
 

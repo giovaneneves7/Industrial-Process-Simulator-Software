@@ -139,29 +139,15 @@ public class AreaDeTrabalhoController {
                     final int width = btn.getWidth();
                     final int height = btn.getHeight();
                     
-                    boolean selecionar;
                     
                     if (x >= 0 && x <= width && y >= 0 && y <= height) {
                         
                         btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
-                        selecionar = true;
-                        ImageIcon icon = new ImageIcon(
-                            this.getClass().getResource(
-                                     Constantes.pegarImagemBotaoSelecionado(btn.getName())
-                            )
-                        );
-                        btn.setIcon(icon);
-                        return;
+                        
                     } else {
                         
                         btn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-                        selecionar = false;
-                        ImageIcon icon = new ImageIcon(
-                               this.getClass().getResource(
-                                    Constantes.pegarImagemBotao(btn.getName())
-                               )
-                        );
-                        btn.setIcon(icon);
+                        System.out.println("Aooooooooooooooooooooo potência");
                     }
 
                     
@@ -268,19 +254,21 @@ public class AreaDeTrabalhoController {
     
     public void atualizarImagemBotaoRemover(JButton btn){
         
-        ImageIcon img = new ImageIcon(this.getClass().getResource((emModoRemocao) ? Constantes.CAMINHO_BOTAO_REMOVER_SELECIONADO : Constantes.CAMINHO_BOTAO_REMOVER));
+        ImageIcon img = new ImageIcon(this.getClass().getResource((emModoRemocao) ? Constantes.pegarImagemBotaoSelecionado(btn.getName()) : Constantes.pegarImagemBotao(btn.getName())));
         
         this.mudarImagemBotao(
-                img,
-                btn
+                btn,
+                emModoRemocao
         );
         
         
     } // atualizarImagemBotaoRemover
     
-    public void mudarImagemBotao(final ImageIcon img, JButton btn){
+    public void mudarImagemBotao(JButton btn, boolean selecionado){
         
-        btn.setIcon(img);
+        ImageIcon icon = new ImageIcon(this.getClass().getResource((selecionado) ? Constantes.pegarImagemBotaoSelecionado(btn.getName()) : Constantes.pegarImagemBotao(btn.getName())));
+        
+        btn.setIcon(icon);
         
     } // mudarImagemBotao
     
@@ -293,6 +281,11 @@ public class AreaDeTrabalhoController {
         
     } // removerEquipamento
     
+    public void atualizarImagemBotaoGirar(JButton btn){
+        
+        this.mudarImagemBotao(btn, emModoRotacao);
+        
+    }
     public void rotacionarEquipamento(Label lbl){
         
         ImageIcon iconAntigo = (ImageIcon) lbl.getIcon();
@@ -319,6 +312,12 @@ public class AreaDeTrabalhoController {
         lbl.setOrientacao(lbl.getOrientacao().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
         
     } // rotacionarEquipamento
+    
+    public void atualizarImagemBotaoConectar(JButton btn){
+        
+        this.mudarImagemBotao(btn, emModoConexao);
+        
+    }
     
     public void adicionarNaPilhaDeConexao(Label lbl){
         

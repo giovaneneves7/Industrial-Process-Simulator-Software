@@ -1,15 +1,16 @@
 package br.com.ifba.ipss.util;
 
 import java.awt.Color;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -61,7 +62,40 @@ public class Constantes {
     // Caminhos de Imagens
     public static final String CAMINHO_BOTAO_REMOVER = "/images/botao_remover.png";
     public static final String CAMINHO_BOTAO_REMOVER_SELECIONADO = "/images/botao_remover_selecionado.png"; 
+    public static final String CAMINHO_BOTAO_CONEXOES = "/images/botao_conexoes.png";
+    public static final String CAMINHO_BOTAO_CONEXOES_SELECIONADO = "/images/botao_conexoes_selecionado.png";
+    public static final String CAMINHO_BOTAO_TUBULACOES = "/images/botao_tubulacoes.png";
+    public static final String CAMINHO_BOTAO_TUBULACOES_SELECIONADO = "/images/botao_tubulacoes_selecionado.png";
     public static final String CAMINHO_LOGO = "/images/logo.jpg";
+    
+    private static final  Map<String, List<String>> imagensBotoes;
+    
+    static{
+    
+        imagensBotoes = new HashMap<>() {{
+        
+            put("btnTubulacoes", List.of(CAMINHO_BOTAO_TUBULACOES, CAMINHO_BOTAO_TUBULACOES_SELECIONADO));
+            put("btnConexoes", List.of(CAMINHO_BOTAO_CONEXOES, CAMINHO_BOTAO_CONEXOES_SELECIONADO));
+            
+        }};
+        
+    }
+    
+    public static String pegarImagemBotao(String chave){
+        
+        return (imagensBotoes.containsKey(chave)) ?
+                imagensBotoes.get(chave).get(0) :
+                chave;
+        
+    }
+            
+    public static String pegarImagemBotaoSelecionado(String chave){
+        
+        return (imagensBotoes.containsKey(chave)) ?
+                imagensBotoes.get(chave).getLast() :
+                chave;
+        
+    }
     
     // arquivos e diretórios
     public static final String DIRETORIO_IMAGENS = "/images";

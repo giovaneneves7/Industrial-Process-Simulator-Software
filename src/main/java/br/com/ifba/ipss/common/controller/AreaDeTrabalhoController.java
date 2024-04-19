@@ -125,35 +125,54 @@ public class AreaDeTrabalhoController {
         
     } // definirLogoAplicacao
     
-    public void mudarSetaDoMouseNoBotao(List<JButton> botoes){
+    public void mudarEfeitoHoverNoBotao(List<JButton> botoes){
         
         for(JButton btn : botoes){
             
             btn.addMouseMotionListener(new MouseAdapter() {
               
                 @Override
-                public void mouseMoved(MouseEvent e) {
+                public void mouseMoved(MouseEvent me) {
                    
-                    final int x = e.getX();
-                    final int y = e.getY();
+                    final int x = me.getX();
+                    final int y = me.getY();
                     final int width = btn.getWidth();
                     final int height = btn.getHeight();
+                    
+                    boolean selecionar;
                     
                     if (x >= 0 && x <= width && y >= 0 && y <= height) {
                         
                         btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
-                    
+                        selecionar = true;
+                        ImageIcon icon = new ImageIcon(
+                            this.getClass().getResource(
+                                     Constantes.pegarImagemBotaoSelecionado(btn.getName())
+                            )
+                        );
+                        btn.setIcon(icon);
+                        return;
                     } else {
                         
                         btn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-
+                        selecionar = false;
+                        ImageIcon icon = new ImageIcon(
+                               this.getClass().getResource(
+                                    Constantes.pegarImagemBotao(btn.getName())
+                               )
+                        );
+                        btn.setIcon(icon);
                     }
+
+                    
+                    
+                    
                 }
                 
             });
         }
         
-    } // mudarSetaDoMouseNoBotao
+    } // mudarEfeitoHoverNoBotao
     
     public void carregarEquipamentos(){
         
@@ -297,6 +316,8 @@ public class AreaDeTrabalhoController {
         parent.revalidate();
         parent.repaint();
         
+        lbl.setOrientacao(lbl.getOrientacao().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
+        
     } // rotacionarEquipamento
     
     public void adicionarNaPilhaDeConexao(Label lbl){
@@ -321,25 +342,56 @@ public class AreaDeTrabalhoController {
                     this.pilhaDeConexao.firstElement(), 
                     this.pilhaDeConexao.lastElement()
             );
+            this.pilhaDeConexao.clear();
             
         }
     } // adicionarNaPilhaDeConexao
     
     public void conectarEquipamentos(Label lblMovido, Label alvo){
         
-        if(alvo.getOrientacao().equals(Constantes.HORIZONTAL)){
+        if(alvo.getOrientacao().equals(Constantes.HORIZONTAL) && lblMovido.getOrientacao().equals(Constantes.HORIZONTAL)){
+        
+
+           
+        
+            /*int diferencaXDoTopo = lblMovido.getX() - (alvo.getX() - alvo.getHeight());
+            int diferencaXDeBaixo = lblMovido.getX() - (alvo.getX() + alvo.getHeight());
             
             int xOrigem = alvo.getX() + alvo.getWidth();
-            int yOrigem = alvo.getY() + (alvo.getHeight() / 2) - (lblMovido.getHeight() / 2);
-            lblMovido.setLocation(xOrigem, yOrigem);
+            int yOrigem = (diferencaXDoTopo < diferencaXDeBaixo) ? 
+                    alvo.getY() + (alvo.getHeight() / 2) - (lblMovido.getHeight() / 2) : 
+                    alvo.getY() - (alvo.getHeight() / 2) - (lblMovido.getHeight() / 2);
+            
+            lblMovido.setLocation(xOrigem, yOrigem);*/
             
         } else if(alvo.getOrientacao().equals(Constantes.VERTICAL)){
             
+            int diferencaY = lblMovido.getY() - alvo.getY(); 
+   
+             if (diferencaY < 0) { // lblMovido está acima do alvo
+                 
+                int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
+                int yOrigem = alvo.getY() - lblMovido.getHeight(); 
+                lblMovido.setLocation(xOrigem, yOrigem);
+                
+            } else { // lblMovido está abaixo do alvo
+                 
+               // int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
+               // int yOrigem = alvo.getY()+ (alvo.getHeight()) - (lblMovido.getHeight());
+                  int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
+                  int yOrigem = (diferencaY < 0) ? alvo.getY() - lblMovido.getHeight() : alvo.getY() + alvo.getHeight();
+ 
+               lblMovido.setLocation(xOrigem, yOrigem);
+                
+            }
+            /*
             int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
             int yOrigem = alvo.getY() + alvo.getHeight();
             lblMovido.setLocation(xOrigem, yOrigem);
-            
+            */
         }
+        
+        
         
     } // conectarEquipamentos
     

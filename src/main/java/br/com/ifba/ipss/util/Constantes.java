@@ -62,6 +62,10 @@ public class Constantes {
     // Caminhos de Imagens
     public static final String CAMINHO_BOTAO_REMOVER = "/images/botao_remover.png";
     public static final String CAMINHO_BOTAO_REMOVER_SELECIONADO = "/images/botao_remover_selecionado.png"; 
+    public static final String CAMINHO_BOTAO_GIRAR = "/images/botao_girar.png";
+    public static final String CAMINHO_BOTAO_GIRAR_SELECIONADO = "/images/botao_girar_selecionado.png";
+    public static final String CAMINHO_BOTAO_CONECTAR = "/images/botao_conectar.png";
+    public static final String CAMINHO_BOTAO_CONECTAR_SELECIONADO = "/images/botao_conectar_selecionado.png";
     public static final String CAMINHO_BOTAO_CONEXOES = "/images/botao_conexoes.png";
     public static final String CAMINHO_BOTAO_CONEXOES_SELECIONADO = "/images/botao_conexoes_selecionado.png";
     public static final String CAMINHO_BOTAO_TUBULACOES = "/images/botao_tubulacoes.png";
@@ -76,6 +80,9 @@ public class Constantes {
         
             put("btnTubulacoes", List.of(CAMINHO_BOTAO_TUBULACOES, CAMINHO_BOTAO_TUBULACOES_SELECIONADO));
             put("btnConexoes", List.of(CAMINHO_BOTAO_CONEXOES, CAMINHO_BOTAO_CONEXOES_SELECIONADO));
+            put("btnRemover", List.of(CAMINHO_BOTAO_REMOVER, CAMINHO_BOTAO_REMOVER_SELECIONADO));
+            put("btnGirar", List.of(CAMINHO_BOTAO_GIRAR, CAMINHO_BOTAO_GIRAR_SELECIONADO));
+            put("btnConectar", List.of(CAMINHO_BOTAO_CONECTAR, CAMINHO_BOTAO_CONECTAR_SELECIONADO));
             
         }};
         

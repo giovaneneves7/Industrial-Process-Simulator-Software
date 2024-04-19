@@ -78,7 +78,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 btnEquipamentos
         );
         
-        this.areaDeTrabalhoController.mudarSetaDoMouseNoBotao(botoes);
+        this.areaDeTrabalhoController.mudarEfeitoHoverNoBotao(botoes);
         this.areaDeTrabalhoController.carregarEquipamentos();
         
     } // AreaDeTrabalho
@@ -147,98 +147,81 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         PnlFixo.setBounds(0, 0, 1410, 30);
 
         PnlMenu.setBackground(new java.awt.Color(255, 255, 255));
+        PnlMenu.setLayout(new javax.swing.BoxLayout(PnlMenu, javax.swing.BoxLayout.LINE_AXIS));
 
         btnGirarEquipamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_girar.png"))); // NOI18N
         btnGirarEquipamento.setBorderPainted(false);
         btnGirarEquipamento.setContentAreaFilled(false);
         btnGirarEquipamento.setFocusPainted(false);
+        btnGirarEquipamento.setName("btnGirar"); // NOI18N
         btnGirarEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGirarEquipamentoActionPerformed(evt);
             }
         });
+        PnlMenu.add(btnGirarEquipamento);
 
         btnConectarEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_conectar.png"))); // NOI18N
         btnConectarEquipamentos.setBorderPainted(false);
         btnConectarEquipamentos.setContentAreaFilled(false);
+        btnConectarEquipamentos.setName("btnConectar"); // NOI18N
         btnConectarEquipamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConectarEquipamentosActionPerformed(evt);
             }
         });
+        PnlMenu.add(btnConectarEquipamentos);
 
         btnRemoverEquipamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_remover.png"))); // NOI18N
         btnRemoverEquipamento.setBorderPainted(false);
         btnRemoverEquipamento.setContentAreaFilled(false);
         btnRemoverEquipamento.setFocusPainted(false);
+        btnRemoverEquipamento.setName("btnRemover"); // NOI18N
         btnRemoverEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRemoverEquipamentoActionPerformed(evt);
             }
         });
+        PnlMenu.add(btnRemoverEquipamento);
 
         btnSimular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_simular.png"))); // NOI18N
         btnSimular.setBorderPainted(false);
         btnSimular.setContentAreaFilled(false);
         btnSimular.setFocusPainted(false);
         btnSimular.setFocusable(false);
+        btnSimular.setMaximumSize(new java.awt.Dimension(106, 46));
+        btnSimular.setMinimumSize(new java.awt.Dimension(106, 46));
+        btnSimular.setName("btnSimular"); // NOI18N
         btnSimular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularActionPerformed(evt);
             }
         });
+        PnlMenu.add(btnSimular);
 
-        btnLimparEspacoTrabalho.setText("Limpar");
+        btnLimparEspacoTrabalho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_limpar.png"))); // NOI18N
+        btnLimparEspacoTrabalho.setBorderPainted(false);
+        btnLimparEspacoTrabalho.setContentAreaFilled(false);
         btnLimparEspacoTrabalho.setFocusPainted(false);
+        btnLimparEspacoTrabalho.setName("btnLimpar"); // NOI18N
         btnLimparEspacoTrabalho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimparEspacoTrabalhoActionPerformed(evt);
             }
         });
+        PnlMenu.add(btnLimparEspacoTrabalho);
 
-        btnSalvarEspacoTrabalho.setText("Salvar");
+        btnSalvarEspacoTrabalho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_salvar.png"))); // NOI18N
+        btnSalvarEspacoTrabalho.setContentAreaFilled(false);
         btnSalvarEspacoTrabalho.setFocusPainted(false);
+        btnSalvarEspacoTrabalho.setFocusable(false);
+        btnSalvarEspacoTrabalho.setName("btnSalvar"); // NOI18N
         btnSalvarEspacoTrabalho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarEspacoTrabalhoActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout PnlMenuLayout = new javax.swing.GroupLayout(PnlMenu);
-        PnlMenu.setLayout(PnlMenuLayout);
-        PnlMenuLayout.setHorizontalGroup(
-            PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PnlMenuLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(btnGirarEquipamento)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnConectarEquipamentos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRemoverEquipamento)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnLimparEspacoTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalvarEspacoTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(btnSimular)
-                .addContainerGap(669, Short.MAX_VALUE))
-        );
-        PnlMenuLayout.setVerticalGroup(
-            PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PnlMenuLayout.createSequentialGroup()
-                .addGroup(PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnRemoverEquipamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnConectarEquipamentos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGirarEquipamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 4, Short.MAX_VALUE))
-            .addGroup(PnlMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSimular, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnLimparEspacoTrabalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalvarEspacoTrabalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        PnlMenu.add(btnSalvarEspacoTrabalho);
 
         pnlBackgruond.add(PnlMenu);
         PnlMenu.setBounds(0, 30, 1370, 50);
@@ -257,6 +240,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         btnTubulacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão tubulação.png"))); // NOI18N
         btnTubulacoes.setBorder(null);
+        btnTubulacoes.setName("btnTubulacoes"); // NOI18N
         btnTubulacoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTubulacoesActionPerformed(evt);
@@ -265,6 +249,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         btnConexoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão conexões.png"))); // NOI18N
         btnConexoes.setBorder(null);
+        btnConexoes.setName("btnConexoes"); // NOI18N
         btnConexoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConexoesActionPerformed(evt);
@@ -273,6 +258,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         btnEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão equipamentos.png"))); // NOI18N
         btnEquipamentos.setBorder(null);
+        btnEquipamentos.setName("btnEquipamentos"); // NOI18N
         btnEquipamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEquipamentosActionPerformed(evt);
@@ -281,6 +267,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         btnVavulas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão vávulas.png"))); // NOI18N
         btnVavulas.setBorder(null);
+        btnVavulas.setName("btnValvulas"); // NOI18N
         btnVavulas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVavulasActionPerformed(evt);
@@ -328,22 +315,12 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         
         this.gerenciarMenuLateral("conexao");
-        
-        /*
-        if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Conexões")){
-            
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, this, "Conexões"); 
-            
-        } else {
-            
-            this._menuFerramentasController.fecharMenuFerramentas(this.pnlEspacoTrabalho);
-            
-        }*/
        
     }//GEN-LAST:event_btnConexoesActionPerformed
 
     private void btnVavulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVavulasActionPerformed
       
+        
         if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Válvulas")){
             
             this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho,this, NomeEquipamento.VALVULA.getString()); 
@@ -372,15 +349,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private void btnTubulacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTubulacoesActionPerformed
         
         this.gerenciarMenuLateral("tubulacao");
-        /*if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Tubulações")){
-            
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho, this, NomeEquipamento.TUBULACAO.getString()); 
-            
-        } else {
-            
-            this._menuFerramentasController.fecharMenuFerramentas(this.pnlEspacoTrabalho);
-            
-        }*/
         
     }//GEN-LAST:event_btnTubulacoesActionPerformed
 

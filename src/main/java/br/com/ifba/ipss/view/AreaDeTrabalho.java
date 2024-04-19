@@ -355,7 +355,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.areaDeTrabalhoController.mudarStatusModoRotacao(
             !this.areaDeTrabalhoController.isEmModoRotacao()
         );
-        this.areaDeTrabalhoController.atualizarImagemBotaoGirar(btnGirarEquipamento);
+        this.mudarImagemDeGrupoBotoesSuperior();
         this.areaDeTrabalhoController.exibirMensagemEstadoDeRotacao(lblNotificacaoDeEstado, 4000);
         
     }//GEN-LAST:event_btnGirarEquipamentoActionPerformed
@@ -365,7 +365,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.areaDeTrabalhoController.mudarStatusModoConexao(
                 !this.areaDeTrabalhoController.isEmModoConexao()
         );
-        this.areaDeTrabalhoController.atualizarImagemBotaoConectar(btnConectarEquipamentos);
+        this.mudarImagemDeGrupoBotoesSuperior();
         this.areaDeTrabalhoController.exibirMensagemEstadoDeConexao(lblNotificacaoDeEstado, 4000);
         
     }//GEN-LAST:event_btnConectarEquipamentosActionPerformed
@@ -376,7 +376,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         emModoRemocao = !emModoRemocao;
 
         this.areaDeTrabalhoController.mudarStatusModoRemocao(emModoRemocao);
-        this.areaDeTrabalhoController.atualizarImagemBotaoRemover(btnRemoverEquipamento);
+        this.mudarImagemDeGrupoBotoesSuperior();
         this.areaDeTrabalhoController.exibirMensagemEstadoModoDeRemocao(lblNotificacaoDeEstado, 4000);        
         
     }//GEN-LAST:event_btnRemoverEquipamentoActionPerformed
@@ -403,6 +403,14 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         this.areaDeTrabalhoController.gerenciarMenuLateral(pnlEspacoTrabalho, tipoEquipamento);
         
+    }
+    
+    private void mudarImagemDeGrupoBotoesSuperior(){
+           
+        this.areaDeTrabalhoController.atualizarImagemBotaoRemover(btnRemoverEquipamento);
+        this.areaDeTrabalhoController.atualizarImagemBotaoConectar(btnConectarEquipamentos);
+        this.areaDeTrabalhoController.atualizarImagemBotaoGirar(btnGirarEquipamento);
+
     }
     
     

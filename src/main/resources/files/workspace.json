@@ -5,8 +5,17 @@
  		"caminho_imagem" : "/images/T4.png",
  		"largura" : 10,
  		"altura" : 90,
- 		"x" : 637,
- 		"y" : 321,
+ 		"x" : 396,
+ 		"y" : 389,
+ 		"orientacao" : "vertical"
+	},
+	{
+		"id" : "eqConexão 21116",
+ 		"caminho_imagem" : "/images/conexao_2.png",
+ 		"largura" : 30,
+ 		"altura" : 30,
+ 		"x" : 386,
+ 		"y" : 329,
  		"orientacao" : "vertical"
 	},
 	{
@@ -14,8 +23,8 @@
  		"caminho_imagem" : "/images/T4.png",
  		"largura" : 10,
  		"altura" : 90,
- 		"x" : 439,
- 		"y" : 190,
+ 		"x" : 396,
+ 		"y" : 479,
  		"orientacao" : "vertical"
 	},
 	{
@@ -23,8 +32,8 @@
  		"caminho_imagem" : "/images/T1.png",
  		"largura" : 10,
  		"altura" : 30,
- 		"x" : 632,
- 		"y" : 232,
+ 		"x" : 396,
+ 		"y" : 359,
  		"orientacao" : "vertical"
 	}
 ]

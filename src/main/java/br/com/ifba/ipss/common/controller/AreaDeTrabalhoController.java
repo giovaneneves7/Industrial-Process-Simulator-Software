@@ -21,6 +21,8 @@ import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.feature.espacotrabalho.controller.EspacoTrabalhoController;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
+import br.com.ifba.ipss.feature.parametrossimulacao.controller.ParametrosSimulacaoController;
+import br.com.ifba.ipss.feature.parametrossimulacao.widget.ParametrosDaSimulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import br.com.ifba.ipss.helper.SizeHelper;
 import br.com.ifba.ipss.util.Constantes;
@@ -71,7 +73,8 @@ public class AreaDeTrabalhoController {
     private Map<String, IEquipamentoService> equipamentoServiceMap = new HashMap<>();
     private final FerramentaContainerController ferramentaContainerController = new FerramentaContainerController<>();
     private final EspacoTrabalhoController espacoTrabalhoController = new EspacoTrabalhoController();
-            
+    private final ParametrosSimulacaoController parametrosSimulacaoController = new ParametrosSimulacaoController();
+    
     private JFrame areaDeTrabalho;
     private JPanel pnlMenuLateral;
     private JPanel pnlEspacoTrabalho;
@@ -147,7 +150,6 @@ public class AreaDeTrabalhoController {
                     } else {
                         
                         btn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-                        System.out.println("Aooooooooooooooooooooo potência");
                     }
 
                     
@@ -393,6 +395,19 @@ public class AreaDeTrabalhoController {
         
     } // conectarEquipamentos
     
+    public void exibirWidgetDeParametrosSimulacao(JPanel p){
+        
+        ParametrosDaSimulacao ps = parametrosSimulacaoController.criarWidgetDeParametros(
+                SizeHelper.LARGURA_ESPACO_TRABALHO / 30, 
+                SizeHelper.ALTURA_ESPACO_TRABALHO / 4
+        );
+        
+        p.add(ps);
+        p.revalidate();
+        p.repaint();
+        
+    }
+    
     public void salvarEspacoTrabalho(){
         
         if(this.espacoTrabalhoController.salvarEspacoTrabalho(espacoTrabalhoMap)){
@@ -401,7 +416,7 @@ public class AreaDeTrabalhoController {
             System.out.println("Falha!");
         }
         
-    }
+    }// salvarEspacoTrabalho
     
     public void deletarEspacoTrabalho(){
         
@@ -411,7 +426,7 @@ public class AreaDeTrabalhoController {
             System.out.println("Falha");
         }
         
-    }
+    }// deletarEspacoTrabalho
     // >>> Métodos do Menu Lateral <<<
     
     public void gerenciarMenuLateral(JPanel p, final String tipoEquipamento){

@@ -383,8 +383,9 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularActionPerformed
         
-        botaoSimularController.exibirWidgetDeParametrosSimulacao(this.pnlEspacoTrabalho);
-        
+       // botaoSimularController.exibirWidgetDeParametrosSimulacao(this.pnlEspacoTrabalho);
+       this.areaDeTrabalhoController.exibirWidgetDeParametrosSimulacao(this.pnlEspacoTrabalho);
+       
     }//GEN-LAST:event_btnSimularActionPerformed
 
     private void btnLimparEspacoTrabalhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparEspacoTrabalhoActionPerformed

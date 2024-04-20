@@ -112,8 +112,8 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         this.getParent().add(new ParametrosSimulacaoController().criarWidgetDeResultados(0, 0, 0));
-        this.revalidate();
-        this.repaint();
+        this.getParent().revalidate();
+        this.getParent().repaint();
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

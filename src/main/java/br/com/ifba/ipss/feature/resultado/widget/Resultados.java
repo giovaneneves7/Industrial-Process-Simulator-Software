@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package br.com.ifba.ipss.feature.resultado.widget;
 
 /**
  *
- * @author curso
+ * @author Lorrane554
+ * @since V0.0.1
  */
 public class Resultados extends javax.swing.JPanel {
 
@@ -38,7 +35,7 @@ public class Resultados extends javax.swing.JPanel {
 
         setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -122,7 +119,9 @@ public class Resultados extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
+        this.setVisible(false);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

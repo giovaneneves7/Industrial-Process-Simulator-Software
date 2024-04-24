@@ -29,7 +29,6 @@ import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.Util;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -50,6 +49,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -150,13 +150,30 @@ public class AreaDeTrabalhoController {
                     } else {
                         
                         btn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-                    }
+                    }                      
+                }                
+            });
+            
+            btn.addMouseListener(new MouseAdapter(){
+        
+                @Override
+                public void mouseEntered(MouseEvent me){
 
+                    ImageIcon img = new ImageIcon(this.getClass().getResource(Constantes.pegarImagemBotaoSelecionado(btn.getName())));
                     
-                    
-                    
+                    if(img.getImage() != null)
+                        btn.setIcon(img);
+
                 }
-                
+
+                @Override
+                public void mouseExited(MouseEvent me){
+
+                    ImageIcon img = new ImageIcon(this.getClass().getResource(Constantes.pegarImagemBotao(btn.getName())));
+                    
+                    if(img.getImage() != null)
+                        btn.setIcon(img);
+                }
             });
         }
         
@@ -351,44 +368,51 @@ public class AreaDeTrabalhoController {
         
         if(alvo.getOrientacao().equals(Constantes.HORIZONTAL) && lblMovido.getOrientacao().equals(Constantes.HORIZONTAL)){
         
-
-           
-        
-            /*int diferencaXDoTopo = lblMovido.getX() - (alvo.getX() - alvo.getHeight());
-            int diferencaXDeBaixo = lblMovido.getX() - (alvo.getX() + alvo.getHeight());
+            int diferencaX = lblMovido.getX() - alvo.getX();
+            int xOrigem = 0;
+            int yOrigem = 0;
             
-            int xOrigem = alvo.getX() + alvo.getWidth();
-            int yOrigem = (diferencaXDoTopo < diferencaXDeBaixo) ? 
-                    alvo.getY() + (alvo.getHeight() / 2) - (lblMovido.getHeight() / 2) : 
-                    alvo.getY() - (alvo.getHeight() / 2) - (lblMovido.getHeight() / 2);
+            if(diferencaX <= 0) { //lblMovido está à esquerda do alvo
+                
+                if(alvo.getConexoes().containsKey(Constantes.ESQUERDA)) return;
+                
+                xOrigem = alvo.getX() - alvo.getWidth();
+                yOrigem = alvo.getY();
+                
+                alvo.getConexoes().put(Constantes.ESQUERDA, lblMovido);
+                
+            } else { // lblMovido está à direita do alvo
+                
+                if(alvo.getConexoes().containsKey(Constantes.DIREITA)) return;
+                
+                xOrigem = alvo.getX() + alvo.getWidth();
+                yOrigem = alvo.getY();
+                
+                alvo.getConexoes().put(Constantes.DIREITA, lblMovido);
+            }
             
-            lblMovido.setLocation(xOrigem, yOrigem);*/
+            lblMovido.setLocation(xOrigem, yOrigem);
             
-        } else if(alvo.getOrientacao().equals(Constantes.VERTICAL)){
+            
+            
+        } else if(alvo.getOrientacao().equals(Constantes.VERTICAL) && lblMovido.getOrientacao().equals(Constantes.VERTICAL)){
             
             int diferencaY = lblMovido.getY() - alvo.getY(); 
    
-             if (diferencaY < 0) { // lblMovido está acima do alvo
+             if (diferencaY <= 0) { // lblMovido está acima do alvo
                  
                 int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
                 int yOrigem = alvo.getY() - lblMovido.getHeight(); 
                 lblMovido.setLocation(xOrigem, yOrigem);
                 
             } else { // lblMovido está abaixo do alvo
-                 
-               // int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
-               // int yOrigem = alvo.getY()+ (alvo.getHeight()) - (lblMovido.getHeight());
-                  int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
+           
+                 int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
                   int yOrigem = (diferencaY < 0) ? alvo.getY() - lblMovido.getHeight() : alvo.getY() + alvo.getHeight();
  
                lblMovido.setLocation(xOrigem, yOrigem);
                 
             }
-            /*
-            int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
-            int yOrigem = alvo.getY() + alvo.getHeight();
-            lblMovido.setLocation(xOrigem, yOrigem);
-            */
         }
         
         
@@ -410,21 +434,31 @@ public class AreaDeTrabalhoController {
     
     public void salvarEspacoTrabalho(){
         
-        if(this.espacoTrabalhoController.salvarEspacoTrabalho(espacoTrabalhoMap)){
-            System.out.println("Salvou!");
-        } else{
-            System.out.println("Falha!");
+        if(JOptionPane.showOptionDialog(null, tr("deseja_salvar_a_area_de_trabalho"), tr("salvar_area_trabalho"), JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, Constantes.SIM_NAO, Constantes.SIM_NAO[0]) == 0){
+            
+            if(this.espacoTrabalhoController.salvarEspacoTrabalho(espacoTrabalhoMap)){
+                System.out.println("Salvou!");
+            } else{
+                System.out.println("Falha!");
+            }
+            
         }
+        
         
     }// salvarEspacoTrabalho
     
     public void deletarEspacoTrabalho(){
         
-        if(this.espacoTrabalhoController.deletarEspacoTrabalho()){
-            System.out.println("Deletou");
-        } else{
-            System.out.println("Falha");
+        if(JOptionPane.showOptionDialog(null, tr("deseja_limpar_a_area_de_trabalho"), tr("limpar_area_trabalho"), JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, Constantes.SIM_NAO, Constantes.SIM_NAO[0]) == 0){
+        
+            if(this.espacoTrabalhoController.deletarEspacoTrabalho()){
+                System.out.println("Deletou");
+            } else{
+                System.out.println("Falha");
+            }
+            
         }
+        
         
     }// deletarEspacoTrabalho
     // >>> Métodos do Menu Lateral <<<

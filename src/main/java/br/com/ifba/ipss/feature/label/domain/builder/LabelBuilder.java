@@ -13,8 +13,8 @@ import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.util.Constantes;
 import java.awt.Color;
 import java.awt.Font;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -34,7 +34,8 @@ public class LabelBuilder {
     private int largura;
     private int altura;
     private String orientacao = Constantes.VERTICAL;
-    private List<Label> conexoes = new ArrayList<>();
+    private String tipo = "";
+    private Map<String, Label> conexoes = new HashMap<>();
     
     public LabelBuilder setTitulo(String titulo){
         
@@ -89,7 +90,13 @@ public class LabelBuilder {
         return this;
     } // setOrientacao
     
-    public LabelBuilder setConexoes(List<Label> conexoes){
+    public LabelBuilder setTipo(String tipo){
+        
+        this.tipo = tipo;
+        return this;
+    }
+    
+    public LabelBuilder setConexoes(Map<String, Label> conexoes){
         
         this.conexoes = conexoes;
         return this;
@@ -107,6 +114,7 @@ public class LabelBuilder {
         label.setBounds(0, 0, this.largura, this.altura);
         label.setFont(this.fonte);
         label.setOrientacao(this.orientacao);
+        label.setTipo(this.tipo);
         label.setConexoes(this.conexoes);
         
         return label;

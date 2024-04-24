@@ -41,7 +41,14 @@ public class Constantes {
     // Orientações
     public static final String HORIZONTAL = "horizontal";
     public static final String VERTICAL = "vertical";
+    public static final String CIMA = "up";
+    public static final String DIREITA = "right";
+    public static final String BAIXO = "down";
+    public static final String ESQUERDA = "left";
     
+    // Opções
+    public static final Object[] SIM_NAO = {"Sim", "Não"};
+            
     // Nome de Atributos de Equipamentos
     public static final String ATRIBUTO_ID = "id";
     public static final String ATRIBUTO_NOME = "_nome";
@@ -66,10 +73,20 @@ public class Constantes {
     public static final String CAMINHO_BOTAO_GIRAR_SELECIONADO = "/images/botao_girar_selecionado.png";
     public static final String CAMINHO_BOTAO_CONECTAR = "/images/botao_conectar.png";
     public static final String CAMINHO_BOTAO_CONECTAR_SELECIONADO = "/images/botao_conectar_selecionado.png";
+    public static final String CAMINHO_BOTAO_LIMPAR = "/images/botao_limpar.png";
+    public static final String CAMINHO_BOTAO_LIMPAR_SELECIONADO = "/images/botao_limpar_selecionado.png";
+    public static final String CAMINHO_BOTAO_SALVAR = "/images/botao_salvar.png";
+    public static final String CAMINHO_BOTAO_SALVAR_SELECIONADO = "/images/botao_salvar_selecionado.png";
+    public static final String CAMINHO_BOTAO_SIMULAR = "/images/botao_simular.png";
+    public static final String CAMINHO_BOTAO_SIMULAR_SELECIONADO = "/images/botao_simular_selecionado.png";
     public static final String CAMINHO_BOTAO_CONEXOES = "/images/botao_conexoes.png";
     public static final String CAMINHO_BOTAO_CONEXOES_SELECIONADO = "/images/botao_conexoes_selecionado.png";
     public static final String CAMINHO_BOTAO_TUBULACOES = "/images/botao_tubulacoes.png";
     public static final String CAMINHO_BOTAO_TUBULACOES_SELECIONADO = "/images/botao_tubulacoes_selecionado.png";
+    public static final String CAMINHO_BOTAO_VALVULAS = "/images/botao_valvulas.png";
+    public static final String CAMINHO_BOTAO_VALVULAS_SELECIONADO = "/images/botao_valvulas_selecionado.png";
+    public static final String CAMINHO_BOTAO_EQUIPAMENTOS = "/images/botao_equipamentos.png";
+    public static final String CAMINHO_BOTAO_EQUIPAMENTOS_SELECIONADO = "/images/botao_equipamentos_selecionado.png";
     public static final String CAMINHO_LOGO = "/images/logo.jpg";
     
     private static final  Map<String, List<String>> imagensBotoes;
@@ -80,9 +97,14 @@ public class Constantes {
         
             put("btnTubulacoes", List.of(CAMINHO_BOTAO_TUBULACOES, CAMINHO_BOTAO_TUBULACOES_SELECIONADO));
             put("btnConexoes", List.of(CAMINHO_BOTAO_CONEXOES, CAMINHO_BOTAO_CONEXOES_SELECIONADO));
+            put("btnValvulas", List.of(CAMINHO_BOTAO_VALVULAS, CAMINHO_BOTAO_VALVULAS_SELECIONADO));
+            put("btnEquipamentos", List.of(CAMINHO_BOTAO_EQUIPAMENTOS, CAMINHO_BOTAO_EQUIPAMENTOS_SELECIONADO));
             put("btnRemover", List.of(CAMINHO_BOTAO_REMOVER, CAMINHO_BOTAO_REMOVER_SELECIONADO));
             put("btnGirar", List.of(CAMINHO_BOTAO_GIRAR, CAMINHO_BOTAO_GIRAR_SELECIONADO));
             put("btnConectar", List.of(CAMINHO_BOTAO_CONECTAR, CAMINHO_BOTAO_CONECTAR_SELECIONADO));
+            put("btnLimpar", List.of(CAMINHO_BOTAO_LIMPAR, CAMINHO_BOTAO_LIMPAR_SELECIONADO));
+            put("btnSalvar", List.of(CAMINHO_BOTAO_SALVAR, CAMINHO_BOTAO_SALVAR_SELECIONADO));
+            put("btnSimular", List.of(CAMINHO_BOTAO_SIMULAR, CAMINHO_BOTAO_SIMULAR_SELECIONADO));
             
         }};
         

@@ -9,7 +9,7 @@ package br.com.ifba.ipss.feature.label.domain.model;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-import java.util.List;
+import java.util.Map;
 
 import lombok.Data;
 // *************************************************//
@@ -26,6 +26,7 @@ public class Label extends javax.swing.JLabel {
     
     private String id;
     private String orientacao;
-    private List<Label> conexoes; // 0 -> Cima, 1 -> Direita, 2 -> Baixo, 3 -> Esquerda
+    private String tipo;
+    private Map<String, Label> conexoes; // up -> Cima, right -> Direita, down -> Baixo, 3 -> left
 
 }

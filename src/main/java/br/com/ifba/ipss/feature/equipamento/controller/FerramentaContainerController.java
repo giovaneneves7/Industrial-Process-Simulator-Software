@@ -16,6 +16,7 @@ import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
+import br.com.ifba.ipss.feature.valvula.domain.model.Valvula;
 import br.com.ifba.ipss.util.Constantes;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
@@ -97,6 +98,13 @@ public class FerramentaContainerController<E extends Equipamento> {
             int tituloX = (largura - 50) / 2;
             titulo.setBounds(tituloX, 10, 84, 30);
             
+        }
+        
+        if(equipamento instanceof Valvula v){
+            
+            int tituloX = (largura - 50) / 2;
+            titulo.setBounds(tituloX, 10, 84, 30);
+            imagem.setBounds(25, 40, 84, 30);
         }
         
         container.add(titulo);

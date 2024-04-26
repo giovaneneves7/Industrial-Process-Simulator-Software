@@ -87,7 +87,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
         equipamentos.put("Tubulações", tubulacaoService.pegarEquipamentos());
         equipamentos.put("Conexões", conexaoService.pegarEquipamentos());
-        
+        //equipamentos.put("Válvulas", )
         return equipamentos;
         
     } // pegarListEquipamentos
@@ -318,16 +318,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnVavulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVavulasActionPerformed
       
+        this.gerenciarMenuLateral("valvula");
         
-        if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Válvulas")){
-            
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho,this, NomeEquipamento.VALVULA.getString()); 
-            
-        } else {
-            
-            this._menuFerramentasController.fecharMenuFerramentas(this.pnlEspacoTrabalho);
-            
-        }
     }//GEN-LAST:event_btnVavulasActionPerformed
 
     private void btnEquipamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipamentosActionPerformed

@@ -24,6 +24,8 @@ import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.feature.parametrossimulacao.controller.ParametrosSimulacaoController;
 import br.com.ifba.ipss.feature.parametrossimulacao.widget.ParametrosDaSimulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
+import br.com.ifba.ipss.feature.valvula.domain.model.Valvula;
+import br.com.ifba.ipss.feature.valvula.domain.service.ValvulaServiceImpl;
 import br.com.ifba.ipss.helper.SizeHelper;
 import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.Util;
@@ -100,6 +102,7 @@ public class AreaDeTrabalhoController {
         
         equipamentoServiceMap.put(trToPlural("tubulacao"), new TubulacaoServiceImpl());
         equipamentoServiceMap.put(trToPlural("conexao"), new ConexaoServiceImpl());
+        equipamentoServiceMap.put(trToPlural("valvula"), new ValvulaServiceImpl());
         
     } // AreaDeTrabalhoController
     
@@ -563,7 +566,6 @@ public class AreaDeTrabalhoController {
                 public void mouseClicked(MouseEvent me) {
                     
                         adicionarEquipamento(ferramentaContainer.getEquipamento(), index);
-                
                     } 
                 });
             

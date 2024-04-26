@@ -9,6 +9,7 @@ package br.com.ifba.ipss.feature.valvula.domain.model;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.common.infrastructure.interfaces.Ferramenta;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +26,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Valvula extends Equipamento{
+public class Valvula extends Equipamento implements Ferramenta{
     
     // *************************************************//
     // ***************** { Atributos } *****************//

@@ -3,6 +3,7 @@ package br.com.ifba.ipss.infrastructure.generic;
 import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
+import br.com.ifba.ipss.feature.valvula.domain.model.Valvula;
 import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.singleton.GsonSingleton;
 import br.com.ifba.ipss.util.Constantes;
@@ -97,6 +98,8 @@ public interface IGenericRepository<E extends Equipamento> {
                 (E) new Conexao() : 
                (tipoEquipamento.equals("tubulacoes")) ?
                 (E) new Tubulacao() :
+               (tipoEquipamento.equals("valvulas")) ?
+                (E) new Valvula() :
                 null;
         
     }

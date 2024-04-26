@@ -160,55 +160,36 @@
             "_altura" : 40
         }
   ],
-   vavulas: [
+   valvulas: [
         {
-            "_nome" : "Vavula1",
-            "_caminhoImagem" : "/images/*.png",
+            "_nome" : "Gaveta",
+            "_caminhoImagem" : "/images/valvula_gaveta.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 30,
-            "_altura" :30
+            "_larguraPx" : 30,
+            "_alturaPx" :30
 
         },
 
         {
-            "_nome" : "Vavula2",
-            "_caminhoImagem" : "/images/*.png",
+            "_nome" : "Borboleta",
+            "_caminhoImagem" : "/images/valvula_borboleta.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 30,
-            "_altura" :30
+            "_larguraPx" : 30,
+            "_alturaPx" :30
 
         },
 
         {
-            "_nome" : "Vavula3",
-            "_caminhoImagem" : "/images/*.png",
+            "_nome" : "Esfera",
+            "_caminhoImagem" : "/images/valvula_esfera.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 30,
-            "_altura" :30
+            "_larguraPx" : 30,
+            "_alturaPx" :30
 
-       },
-
-       {
-            "_nome" : "Vavula4",
-            "_caminhoImagem" : "/images/*.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 30,
-            "_altura" :30
-
-      },
-
-      {
-            "_nome" : "Vavula5",
-            "_caminhoImagem" : "/images/*.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 30,
-            "_altura" :30
-      }
+       }
         
     ],
    conexoes: [

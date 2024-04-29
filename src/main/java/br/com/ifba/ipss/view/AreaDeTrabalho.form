@@ -253,7 +253,7 @@
             <Component class="javax.swing.JButton" name="btnTubulacoes">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/Bot&#xe3;o tubula&#xe7;&#xe3;o.png"/>
+                  <Image iconType="3" name="/images/botao_tubulacoes.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -267,7 +267,7 @@
             <Component class="javax.swing.JButton" name="btnConexoes">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/Bot&#xe3;o conex&#xf5;es.png"/>
+                  <Image iconType="3" name="/images/botao_conexoes.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -281,7 +281,7 @@
             <Component class="javax.swing.JButton" name="btnEquipamentos">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/Bot&#xe3;o equipamentos.png"/>
+                  <Image iconType="3" name="/images/botao_equipamentos.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -295,7 +295,7 @@
             <Component class="javax.swing.JButton" name="btnVavulas">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/Bot&#xe3;o v&#xe1;vulas.png"/>
+                  <Image iconType="3" name="/images/botao_valvulas.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>

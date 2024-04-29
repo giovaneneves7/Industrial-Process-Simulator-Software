@@ -236,7 +236,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         PnlBotoes.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnTubulacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão tubulação.png"))); // NOI18N
+        btnTubulacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_tubulacoes.png"))); // NOI18N
         btnTubulacoes.setBorder(null);
         btnTubulacoes.setName("btnTubulacoes"); // NOI18N
         btnTubulacoes.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +245,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             }
         });
 
-        btnConexoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão conexões.png"))); // NOI18N
+        btnConexoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_conexoes.png"))); // NOI18N
         btnConexoes.setBorder(null);
         btnConexoes.setName("btnConexoes"); // NOI18N
         btnConexoes.addActionListener(new java.awt.event.ActionListener() {
@@ -254,7 +254,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             }
         });
 
-        btnEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão equipamentos.png"))); // NOI18N
+        btnEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_equipamentos.png"))); // NOI18N
         btnEquipamentos.setBorder(null);
         btnEquipamentos.setName("btnEquipamentos"); // NOI18N
         btnEquipamentos.addActionListener(new java.awt.event.ActionListener() {
@@ -263,7 +263,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             }
         });
 
-        btnVavulas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão vávulas.png"))); // NOI18N
+        btnVavulas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_valvulas.png"))); // NOI18N
         btnVavulas.setBorder(null);
         btnVavulas.setName("btnValvulas"); // NOI18N
         btnVavulas.addActionListener(new java.awt.event.ActionListener() {

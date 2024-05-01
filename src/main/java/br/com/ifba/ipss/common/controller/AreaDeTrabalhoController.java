@@ -13,7 +13,7 @@ import static br.com.ifba.ipss.util.Dicionario.tr;
 import static br.com.ifba.ipss.util.Dicionario.trToPlural;
 
 import br.com.ifba.ipss.common.infrastructure.interfaces.IEquipamentoService;
-import br.com.ifba.ipss.feature.conexao.domain.service.ConexaoServiceImpl;
+import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
 import br.com.ifba.ipss.feature.equipamento.controller.FerramentaContainerController;
 import br.com.ifba.ipss.feature.equipamento.domain.factory.EquipamentoFactory;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
@@ -23,10 +23,10 @@ import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.feature.parametrossimulacao.controller.ParametrosSimulacaoController;
 import br.com.ifba.ipss.feature.parametrossimulacao.widget.ParametrosDaSimulacao;
-import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
-import br.com.ifba.ipss.feature.valvula.domain.model.Valvula;
-import br.com.ifba.ipss.feature.valvula.domain.service.ValvulaServiceImpl;
+import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
+import br.com.ifba.ipss.feature.valvula.domain.service.IValvulaService;
 import br.com.ifba.ipss.helper.SizeHelper;
+import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.Util;
 
@@ -100,9 +100,10 @@ public class AreaDeTrabalhoController {
         
         this.areaDeTrabalho = areaDeTrabalho;
         
-        equipamentoServiceMap.put(trToPlural("tubulacao"), new TubulacaoServiceImpl());
-        equipamentoServiceMap.put(trToPlural("conexao"), new ConexaoServiceImpl());
-        equipamentoServiceMap.put(trToPlural("valvula"), new ValvulaServiceImpl());
+        equipamentoServiceMap.put(trToPlural("tubulacao"), ServiceManager.find(ITubulacaoService.class));
+        equipamentoServiceMap.put(trToPlural("conexao"), ServiceManager.find(IConexaoService.class));
+        equipamentoServiceMap.put(trToPlural("valvula"), ServiceManager.find(IValvulaService.class));
+        equipamentoServiceMap.put(trToPlural("equipamento"), ServiceManager.find(IEquipamentoService.class));
         
     } // AreaDeTrabalhoController
     

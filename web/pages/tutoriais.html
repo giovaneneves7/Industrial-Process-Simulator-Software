@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1b5934;
+            --secondary: #f4bb58;
+            --dark: #073017;
+            --light: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .card {
+            background-color: var(--secondary);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin-bottom: 0;
+            font-size: 1.2rem;
+        }
+
+        .card i {
+            float: right;
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Tutoriais</h1>
+
+        <div class="card">
+            <h2>Primeiros passos com a aplicação</h2>
+            <p>Veja como iniciar sua jornada no EduSimLab</p>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="card">
+            <h2>Tutorial 2</h2>
+            <p>Descrição do Tutorial 2.</p>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="card">
+            <h2>Tutorial 3</h2>
+            <p>Descrição do Tutorial 3.</p>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+
+</body>
+
+</html>

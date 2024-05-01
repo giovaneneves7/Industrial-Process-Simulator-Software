@@ -100,6 +100,8 @@ public interface IGenericRepository<E extends Equipamento> {
                 (E) new Tubulacao() :
                (tipoEquipamento.equals("valvulas")) ?
                 (E) new Valvula() :
+               (tipoEquipamento.equals("equipamentos")) ?
+                (E) new Equipamento() :
                 null;
         
     }

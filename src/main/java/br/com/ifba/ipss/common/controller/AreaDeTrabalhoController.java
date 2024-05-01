@@ -84,6 +84,7 @@ public class AreaDeTrabalhoController {
     private boolean emModoRotacao = false;
     private boolean emModoRemocao = false;
     private boolean emModoConexao = false;
+    private boolean algumBotaoSelecionado = false;
     
     private boolean menuLateralAberto = false;
     private String nomeTipoMenuLateralAberto;
@@ -163,6 +164,9 @@ public class AreaDeTrabalhoController {
                 @Override
                 public void mouseEntered(MouseEvent me){
 
+                    System.out.println("Botao selecionado?" + algumBotaoSelecionado);
+                    if(algumBotaoSelecionado) return;
+                    
                     ImageIcon img = new ImageIcon(this.getClass().getResource(Constantes.pegarImagemBotaoSelecionado(btn.getName())));
                     
                     if(img.getImage() != null)
@@ -173,6 +177,8 @@ public class AreaDeTrabalhoController {
                 @Override
                 public void mouseExited(MouseEvent me){
 
+                    if(algumBotaoSelecionado) return;
+                    
                     ImageIcon img = new ImageIcon(this.getClass().getResource(Constantes.pegarImagemBotao(btn.getName())));
                     
                     if(img.getImage() != null)
@@ -209,6 +215,7 @@ public class AreaDeTrabalhoController {
     
     public void mudarStatusModoRemocao(final boolean status){
         
+        algumBotaoSelecionado = status;
         this.emModoRemocao = status;
        
         if(this.emModoRemocao){
@@ -220,6 +227,7 @@ public class AreaDeTrabalhoController {
     
     public void mudarStatusModoRotacao(final boolean status){
     
+        algumBotaoSelecionado = status;
         this.emModoRotacao = status;
        
         if(this.emModoRotacao){
@@ -230,6 +238,7 @@ public class AreaDeTrabalhoController {
     
     public void mudarStatusModoConexao(final boolean status){
         
+        algumBotaoSelecionado = status;
         this.emModoConexao = status;
         
         if(this.emModoConexao){
@@ -276,8 +285,6 @@ public class AreaDeTrabalhoController {
     } // exibirMensagemTemporaria
     
     public void atualizarImagemBotaoRemover(JButton btn){
-        
-        ImageIcon img = new ImageIcon(this.getClass().getResource((emModoRemocao) ? Constantes.pegarImagemBotaoSelecionado(btn.getName()) : Constantes.pegarImagemBotao(btn.getName())));
         
         this.mudarImagemBotao(
                 btn,
@@ -441,9 +448,13 @@ public class AreaDeTrabalhoController {
         if(JOptionPane.showOptionDialog(null, tr("deseja_salvar_a_area_de_trabalho"), tr("salvar_area_trabalho"), JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, Constantes.SIM_NAO, Constantes.SIM_NAO[0]) == 0){
             
             if(this.espacoTrabalhoController.salvarEspacoTrabalho(espacoTrabalhoMap)){
-                System.out.println("Salvou!");
+                
+                JOptionPane.showOptionDialog(null, tr("area_de_trabalho_salva_com_sucesso"), tr("salvar_area_trabalho"), JOptionPane.OK_OPTION, JOptionPane.INFORMATION_MESSAGE, null, Constantes.OK, Constantes.OK[0]);
+                
             } else{
-                System.out.println("Falha!");
+                
+                JOptionPane.showOptionDialog(null, tr("erro_ao_salvar_area_trabalho"), tr("salvar_area_trabalho"), JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE, null, Constantes.OK, Constantes.OK[0]);
+                
             }
             
         }
@@ -456,15 +467,30 @@ public class AreaDeTrabalhoController {
         if(JOptionPane.showOptionDialog(null, tr("deseja_limpar_a_area_de_trabalho"), tr("limpar_area_trabalho"), JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, Constantes.SIM_NAO, Constantes.SIM_NAO[0]) == 0){
         
             if(this.espacoTrabalhoController.deletarEspacoTrabalho()){
-                System.out.println("Deletou");
+                
+                this.limparPainel(this.pnlEspacoTrabalho);
+                
+                JOptionPane.showOptionDialog(null, tr("area_de_trabalho_deletada_com_sucesso"), tr("limpar_area_trabalho"), JOptionPane.OK_OPTION, JOptionPane.INFORMATION_MESSAGE, null, Constantes.OK, Constantes.OK[0]);
+                
             } else{
-                System.out.println("Falha");
+                
+                JOptionPane.showOptionDialog(null, tr("erro_ao_deletar_area_trabalho"), tr("limpar_area_trabalho"), JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE, null, Constantes.OK, Constantes.OK[0]);
+                
             }
             
         }
         
         
     }// deletarEspacoTrabalho
+    
+    private void limparPainel(final JPanel p){
+    
+        p.removeAll();
+        p.revalidate();
+        p.repaint();
+        
+    }
+    
     // >>> Métodos do Menu Lateral <<<
     
     public void gerenciarMenuLateral(JPanel p, final String tipoEquipamento){

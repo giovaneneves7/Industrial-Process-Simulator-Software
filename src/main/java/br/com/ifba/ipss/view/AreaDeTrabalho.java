@@ -71,16 +71,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
     } // AreaDeTrabalho
 
-    public Map<String, List<?>> pegarListaEquipamentos(String caminho){
-        
-        Map<String, List<?>> equipamentos = new HashMap<>();
-        
-        equipamentos.put("Tubulações", tubulacaoService.pegarEquipamentos());
-        equipamentos.put("Conexões", conexaoService.pegarEquipamentos());
-        //equipamentos.put("Válvulas", )
-        return equipamentos;
-        
-    } // pegarListEquipamentos
+
     
     private void inicializadorPersonalizado(){
         
@@ -347,9 +338,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private void btnRemoverEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEquipamentoActionPerformed
               
     
-        emModoRemocao = !emModoRemocao;
 
-        this.areaDeTrabalhoController.mudarStatusModoRemocao(emModoRemocao);
+        this.areaDeTrabalhoController.mudarStatusModoRemocao(
+                !this.areaDeTrabalhoController.isEmModoRemocao()
+        );
         this.mudarImagemDeGrupoBotoesSuperior();
         this.areaDeTrabalhoController.exibirMensagemEstadoModoDeRemocao(lblNotificacaoDeEstado, 4000);        
         

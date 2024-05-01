@@ -132,12 +132,20 @@
    ],
    equipamentos: [
         {
-            "_nome" : "Trocador de calor",
-            "_caminhoImagem" : "/images/tanque_2.png",
+            "_nome" : "Reator 01",
+            "_caminhoImagem" : "/images/reator_1.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 80,
-            "_altura" : 40
+            "_largura" : 50,
+            "_altura" : 50
+        },
+        {
+            "_nome" : "Reator 02",
+            "_caminhoImagem" : "/images/reator_2.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 50,
+            "_altura" : 50
         }
   ],
    torresdedestilacao: [

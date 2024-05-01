@@ -1,5 +1,5 @@
 /* Paleta de Cores */
-:root{
+:root {
     --primary: #1b5934;
     --secondary: #f4bb58;
     --dark: #073017;
@@ -7,43 +7,46 @@
 }
 
 /* Seletores */
-body{
+body {
+    font-family: Arial, sans-serif;
     background-color: var(--primary);
+    color: var(--dark);
+    margin: 0;
+    padding: 0;
 }
-/* >>> Utilidades <<< */
 
-.divisor{
+/* Utilidades */
+.divisor {
     color: var(--light);
     max-width: 1300px;
     margin: auto;
 }
 
-.distance_divisor{
+.distance_divisor {
     margin-bottom: 100%;
 }
 
-.secondary{
+.secondary {
     color: var(--secondary);
 }
 
-.dark_bg{
+.dark_bg {
     background-color: var(--dark);
 }
 
-.light{
+.light {
     color: var(--light);
 }
 
-.light_bg{
+.light_bg {
     background-color: var(--light);
 }
 
- /* >>> Estilo do Header <<< */
-
-.header{
+/* Estilo do Header */
+.header {
     display: flex;
     max-width: 1300px;
-    height: 25%;
+    height: 80px;
     margin: auto;
     background-color: var(--dark);
     color: var(--light);
@@ -52,211 +55,166 @@ body{
     overflow: hidden;
 }
 
-.top_menu_container{
+.top_menu_container {
     padding: 5px;
     display: flex;
     align-items: center;
 }
 
-.top_menu_container .top_menu{
+.top_menu_container .top_menu {
     display: flex;
     list-style: none;
     align-items: center;
 }
 
-.top_menu_container .top_menu_item{
+.top_menu_container .top_menu_item {
     margin-right: 20px;
     padding: 5px;
 }
 
-.top_menu_container .top_menu_item a{
+.top_menu_container .top_menu_item a, .top_menu_container .top_menu_item i {
     text-decoration: none;
     color: var(--light);
-    margin-left: 5px;
+    margin-right: 5px;
 }
 
-.top_menu_container .top_menu_item:hover{
+.top_menu_container .top_menu_item:hover {
     background-color: var(--secondary);
     border-radius: 20px;
 }
 
 /* Estilo da Seção de Imagem Promocional */
-
-.promotional_image_container{
-    max-width: 1300px;
-    max-height: 600px;
+.promotional_image_container {
+    max-width: 100%;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    background-color: var(--primary);
-}
- 
-/* Estilo da Seção de Botão Veja Mais */
-
-.see_more_container{
-
-    display: none;
-    transition: opacity 8s easy-in-out;
-
+    text-align: center;
 }
 
-.see_more_container.show{
-
-    max-width: 1300px;
-    margin: auto;
-    background-color: var(--primary);
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-}
-
-.see_more_container .see_more_button{
-
-    border-radius: 20px;
-    background-color: var(--secondary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.see_more_container .see_more_button a, .see_more_container .see_more_button i{
-    text-decoration: none;
-    color: var(--primary);
-    font-size: 20px;
-    margin-right: 5px;
-    padding: 5px 0 5px 0;
-}
-
-
-.see_more_container .see_more_button:hover{
-    background-color: var(--primary);
-    color: var(--secondary);
-    border: 1px solid var(--secondary);
-}
-
-.see_more_container .see_more_button:hover a, .see_more_container .see_more_button:hover i{
-    color: inherit;
-} 
-
-/* Estilo da Seção 'Sobre o Software' */
-.about_software_container{
-    max-width: 1300px;
-    margin: auto;
-    background-color: var(--primary);
-    color: var(--light);
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 10px;
-    overflow: hidden;
-}
-
-.content_container {
-    display: flex;
-    flex-direction: column;
-    width: 49%;
-    margin-right: 1%;
-}
-
-.about_software_container .about_software_title{
-    width: 100%;
-}
-.about_software_container .description_container{
-    width: 100%;
-    background-color: var(--dark);
-    padding: 5px;
-}
-
-.about_software_container .description_screenshot{
-    width: 49%;
-    display: flex;
-    align-items: center;
-}
-
-.about_software_container .description_screenshot img{
-    width: 100%;
-    height: 70%;
+.promotional_image_container .promotional_image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 /* Estilo da Seção de Informação */
-
 .software_info_container {
-    flex-direction: column;
-    gap: 6rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
-  
-  .software_info_container .software_info_title{
-    color: var(--secondary);
-  }
-  
-  .software_info_container .info-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%;
     margin: auto;
-    font-size: 50px;
-    color: var(--secondary);
-  }
-  
-  .software_info_container .info-content > div {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .software_info_container .info-content .free-offer {
-    margin: 0 5rem;
-  }
-  
-  .software_info_container .info-content .icon {
-    text-align: center;
-    font-size: inherit;
-    color: inherit;
-  }
-  
-  .software_info_container .info-content h4 {
-    font-family: var(--font-sora);
-    font-weight: 200;
-    text-align: center;
-  }
-  
-  .software_info_container .info-content p {
-    font-size: 12px;
-    color: var(--light);
-    text-align: center;
-  }
-
-/* >>> Estilo da Seção de Download <<< */
-.software_download_container{
-    max-width: 1300px;
-    margin: auto;
+    padding: 40px 20px;
 }
-.software_download_container .content-app {
 
-    width: 100%;
+.software_info_container .software_info_title {
+    color: var(--secondary);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.software_info_container .info-content {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     flex-wrap: wrap;
-    padding: 5rem 0;
-}
- 
-.software_download_links a img{
-    border: 1px solid #000000;
-    border-radius: 20px;
+    justify-content: center;
 }
 
-.software_download_container .content-app .app-decription h2{
-    color: var(--secondary);
+.software_info_container .info-content .connection-creation,
+.software_info_container .info-content .free-offer,
+.software_info_container .info-content .sharing-feature {
+    flex: 0 0 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
 }
-.software_download_container .content-app .app-decription p {
-    font-size: 1.6rem;
-    font-weight: 300;
-    line-height: 2.5rem;
-    color: var(--primary);
-    max-width: 424px;
-    margin: 2.5rem 0;
+
+.software_info_container .info-content .connection-creation:hover,
+.software_info_container .info-content .free-offer:hover,
+.software_info_container .info-content .sharing-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.software_info_container .info-content h4 {
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.software_info_container .info-content p {
+    color: var(--dark);
+    margin-bottom: 0;
+}
+
+/* Estilo da Seção de Download */
+.software_download_container {
+    max-width: 100%;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.software_download_container .content-app {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.software_download_container .content-app .app-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.software_download_container .content-app .app-info h2 {
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.software_download_container .content-app .app-info p {
+    color: var(--dark);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.software_download_container .content-app .software_download_links {
+    text-align: center;
+}
+
+.software_download_container .content-app .software_download_links a img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.software_download_container .content-app .software_download_links a img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo do Footer */
+.dark_bg {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.tutoriais_container ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.tutoriais_container ul li {
+    margin-bottom: 10px;
+}
+
+.tutoriais_container ul li a {
+    color: var(--light);
+    text-decoration: none;
+}
+
+.tutoriais_container ul li a:hover {
+    color: var(--secondary);
 }

@@ -48,7 +48,8 @@ public class Constantes {
     
     // Opções
     public static final Object[] SIM_NAO = {"Sim", "Não"};
-            
+    public static final Object[] OK = {"Ok"};
+    
     // Nome de Atributos de Equipamentos
     public static final String ATRIBUTO_ID = "id";
     public static final String ATRIBUTO_NOME = "_nome";

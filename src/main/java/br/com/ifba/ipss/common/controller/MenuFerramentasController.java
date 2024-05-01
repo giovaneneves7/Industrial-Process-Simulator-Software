@@ -12,6 +12,7 @@ package br.com.ifba.ipss.common.controller;
 import br.com.ifba.ipss.common.infrastructure.interfaces.IEquipamentoService;
 import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
 import br.com.ifba.ipss.feature.conexao.domain.service.ConexaoServiceImpl;
+import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.helper.SizeHelper;
 import br.com.ifba.ipss.feature.equipamento.controller.FerramentaContainerController;
@@ -22,6 +23,7 @@ import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
+import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.NomeEquipamento;
 import br.com.ifba.ipss.view.AreaDeTrabalho;
@@ -61,7 +63,7 @@ public class MenuFerramentasController {
     
     private Map<String, IEquipamentoService> equipamentoServiceMap = new HashMap<>();
     
-    private ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
+    private ITubulacaoService tubulacaoService = ServiceManager.find(ITubulacaoService.class);
     private FerramentaContainerController ferramentaContainerController = new FerramentaContainerController<>();
     
     private boolean _menuAberto = false;
@@ -83,8 +85,8 @@ public class MenuFerramentasController {
         
         this.equipamentos = equipamentos;
         
-        equipamentoServiceMap.put(NomeEquipamento.TUBULACAO.getString(), new TubulacaoServiceImpl());
-        equipamentoServiceMap.put(NomeEquipamento.CONEXAO.getString(), new ConexaoServiceImpl());
+        equipamentoServiceMap.put(NomeEquipamento.TUBULACAO.getString(), ServiceManager.find(ITubulacaoService.class));
+        equipamentoServiceMap.put(NomeEquipamento.CONEXAO.getString(), ServiceManager.find(IConexaoService.class));
         
     }
     // *************************************************//
@@ -155,7 +157,7 @@ public class MenuFerramentasController {
         
     } // fecharMenuFerramentas
     
-    public void adicionarFerramentasAoMenu(JPanel p, JPanel pnlEspacoTrabalho, JFrame f, String nome){
+    public void adicionarFerramentasAoMenu(JPanel p, JPanel pnlEspacoTrabalho, JFrame f, final String nome){
         
         
         EquipamentoFactory equipamentoFactory = new EquipamentoFactory(equipamentoServiceMap);

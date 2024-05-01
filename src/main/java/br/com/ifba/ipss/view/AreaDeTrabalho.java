@@ -10,19 +10,15 @@ package br.com.ifba.ipss.view;
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 import br.com.ifba.ipss.common.controller.AreaDeTrabalhoController;
-import br.com.ifba.ipss.common.controller.BotaoConectarController;
-import br.com.ifba.ipss.common.controller.BotaoSimularController;
-import br.com.ifba.ipss.common.controller.MenuFerramentasController;
-import br.com.ifba.ipss.feature.conexao.domain.service.ConexaoServiceImpl;
 import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
-import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
-import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
+import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
-import br.com.ifba.ipss.util.NomeEquipamento;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.swing.ImageIcon;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -39,13 +35,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     // *************************************************//
     // ****************** { Atributos } ****************//
     // *************************************************//
-    private AreaDeTrabalhoController areaDeTrabalhoController = new AreaDeTrabalhoController(this);
+    private final AreaDeTrabalhoController areaDeTrabalhoController = new AreaDeTrabalhoController(this);
     
-    private final MenuFerramentasController _menuFerramentasController;
-    private final BotaoSimularController botaoSimularController;
-    
-    private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
-    private final IConexaoService conexaoService = new ConexaoServiceImpl();
+    private final ITubulacaoService tubulacaoService = ServiceManager.find(ITubulacaoService.class);
+    private final IConexaoService conexaoService = ServiceManager.find(IConexaoService.class);
     
     public static boolean emModoRemocao = false;
     public static boolean emModoConexao = false;
@@ -54,9 +47,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
      * Cria a interface com os componentes iniciais
      */
     public AreaDeTrabalho() {
-        botaoSimularController = new BotaoSimularController();
-        
-        _menuFerramentasController = new MenuFerramentasController(pegarListaEquipamentos(PathHelper.FERRAMENTAS_JSON));
         
         inicializadorPersonalizado();
         initComponents();
@@ -324,15 +314,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     private void btnEquipamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipamentosActionPerformed
         
-        if(!this._menuFerramentasController.is_menuAberto() || this._menuFerramentasController.is_menuAberto() && !this._menuFerramentasController.get_nomeMenuAberto().equals("Equipamentos")){
-            
-            this._menuFerramentasController.abrirMenuFerramentas(this.pnlEspacoTrabalho,this, "Equipamentos"); 
-            
-        } else {
-            
-            this._menuFerramentasController.fecharMenuFerramentas(this.pnlEspacoTrabalho);
-            
-        }
+        this.gerenciarMenuLateral("equipamento");
         
     }//GEN-LAST:event_btnEquipamentosActionPerformed
 

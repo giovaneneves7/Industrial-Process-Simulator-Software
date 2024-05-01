@@ -1,7 +1,19 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+//// *************************************************//
 package br.com.ifba.ipss.util;
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
 
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
 import java.util.HashMap;
 import java.util.List;
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
 
 /**
  *
@@ -14,11 +26,15 @@ public class Dicionario {
     
     static {
 
+        DICIONARIO.put("area_de_trabalho_deletada_com_sucesso", List.of("Área de Trabalho deletada com sucesso!"));
+        DICIONARIO.put("area_de_trabalho_salva_com_sucesso", List.of("Área de Trabalho salva com sucesso!"));
         DICIONARIO.put("conexao", List.of("Conexão", "Conexões"));
         DICIONARIO.put("deseja_limpar_a_area_de_trabalho", List.of("Deseja limpar a Área de Trabalho?"));
         DICIONARIO.put("deseja_salvar_a_area_de_trabalho", List.of("Deseja salvar a Área de Trabalho?"));
         DICIONARIO.put("di", List.of("Di"));
         DICIONARIO.put("equipamento", List.of("Equipamento", "Equipamentos"));
+        DICIONARIO.put("erro_ao_deletar_area_trabalho", List.of("Ocorreu um erro ao deletar a área de trabalho!"));
+        DICIONARIO.put("erro_ao_salvar_area_trabalho", List.of("Ocorreu um erro ao salvar a área de trabalho!"));
         DICIONARIO.put("l", List.of("L"));
         DICIONARIO.put("limpar_area_trabalho", List.of("Limpar Área de Trabalho"));
         DICIONARIO.put("modo_conexao_ativado", List.of("Modo Conexão: Ativado"));

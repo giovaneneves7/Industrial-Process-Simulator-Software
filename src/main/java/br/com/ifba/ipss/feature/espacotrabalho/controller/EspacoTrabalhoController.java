@@ -2,8 +2,8 @@ package br.com.ifba.ipss.feature.espacotrabalho.controller;
 
 import br.com.ifba.ipss.feature.espacotrabalho.domain.service.IEspacoTrabalhoService;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
-import static br.com.ifba.ipss.infrastructure.service.ServiceManager.pegarService;
 import java.util.Map;
+import static br.com.ifba.ipss.infrastructure.manager.ServiceManager.find;
 
 /**
  *
@@ -16,7 +16,7 @@ public class EspacoTrabalhoController {
     
     public EspacoTrabalhoController(){
         
-        espacoTrabalhoService = pegarService(IEspacoTrabalhoService.class);
+        espacoTrabalhoService = find(IEspacoTrabalhoService.class);
         
     }
     

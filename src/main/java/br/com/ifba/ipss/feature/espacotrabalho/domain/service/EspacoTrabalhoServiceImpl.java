@@ -2,15 +2,15 @@ package br.com.ifba.ipss.feature.espacotrabalho.domain.service;
 
 import br.com.ifba.ipss.feature.espacotrabalho.domain.repository.IEspacoTrabalhoRepository;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
-import br.com.ifba.ipss.infrastructure.interfaces.Implementacao;
 import java.util.Map;
+import br.com.ifba.ipss.infrastructure.interfaces.ServiceImpl;
 
 /**
  *
  * @author Giovane Neves
  * @since V0.0.1
  */
-public class EspacoTrabalhoServiceImpl implements IEspacoTrabalhoService, Implementacao{
+public class EspacoTrabalhoServiceImpl implements IEspacoTrabalhoService, ServiceImpl{
 
     private final IEspacoTrabalhoRepository espacoTrabalhoRepository;
     

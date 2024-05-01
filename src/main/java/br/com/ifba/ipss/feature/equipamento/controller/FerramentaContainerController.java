@@ -14,9 +14,9 @@ import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
-import br.com.ifba.ipss.feature.tubulacao.domain.service.TubulacaoServiceImpl;
 import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.feature.valvula.domain.model.Valvula;
+import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
@@ -33,7 +33,7 @@ import javax.swing.JLabel;
  */
 public class FerramentaContainerController<E extends Equipamento> {
     
-    private final ITubulacaoService tubulacaoService = new TubulacaoServiceImpl();
+    private final ITubulacaoService tubulacaoService = ServiceManager.find(ITubulacaoService.class);
     
     public FerramentaContainer criarContainer(E equipamento, final int altura, final int largura, final int x, final int y, int qtdInserida, boolean quebrarLinha){
         

@@ -1,35 +1,5 @@
 {
 
-    bombas : [
-        {
-            "_nome" : "Bomba centrifuga",
-            "_caminhoImagem" : "/images/*.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 30,
-            "_altura" : 30
-        },
-   
-        {
-            "_nome" : "Bomba helicoidal",
-            "_caminhoImagem" : "/images/*.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 30,
-            "_altura" : 30
-
-        },
-  
-        {
-            "_nome" : "Bomba",
-            "_caminhoImagem" : "/images/*.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 30,
-            "_altura" : 30
-        }
-    ],
-
     tubulacoes : [
 
         {
@@ -92,44 +62,7 @@
 
        
     ],
-    reatores: [
-        {
-            "_nome" : "Reator",
-            "_caminhoImagem" : "/images/*.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 50,
-            "_altura" : 50
-        }
-   ],
-   tanques: [
-        {
-            "_nome" : "Tanque 2",
-            "_caminhoImagem" : "/images/tanque_2.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_larguraPx" : 80,
-            "_alturaPx" : 40
-        },
-        
-        {
-            "_nome" : "Tanque 3",
-            "_caminhoImagem" : "/images/tanque_3.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_larguraPx" : 80,
-            "_alturaPx" : 40
-        },
-        
-        {
-            "_nome" : "Tanque 4",
-            "_caminhoImagem" : "/images/tanque_4.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_larguraPx" : 80,
-            "_alturaPx" : 40
-        }
-   ],
+
    equipamentos: [
         {
             "_nome" : "Reator 01",
@@ -139,6 +72,7 @@
             "_largura" : 50,
             "_altura" : 50
         },
+        
         {
             "_nome" : "Reator 02",
             "_caminhoImagem" : "/images/reator_2.png",
@@ -146,28 +80,18 @@
             "_y" : 0,
             "_largura" : 50,
             "_altura" : 50
-        }
-  ],
-   torresdedestilacao: [
+        },
+        
         {
-            "_nome" : "Torres de destilação",
-            "_caminhoImagem" : "/images/*.png",
+            "_nome" : "Tanque 2",
+            "_caminhoImagem" : "/images/tanque_2.png",
             "_x" : 0,
             "_y" : 0,
-            "_largura" : 80,
-            "_altura" : 40
+            "_larguraPx" : 80,
+            "_alturaPx" : 40
         }
   ],
-   torresderesfriamento: [
-        {
-            "_nome" : "Torres de resfriamento",
-            "_caminhoImagem" : "/images/*.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 80,
-            "_altura" : 40
-        }
-  ],
+  
    valvulas: [
         {
             "_nome" : "Gaveta",

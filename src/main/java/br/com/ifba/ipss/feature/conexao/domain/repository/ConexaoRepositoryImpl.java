@@ -13,13 +13,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import br.com.ifba.ipss.infrastructure.interfaces.ServiceImpl;
 
 /**
  *
  * @author Giovane Neves
  * @since V0.0.1
  */
-public class ConexaoRepositoryImpl implements IConexaoRepository{
+public class ConexaoRepositoryImpl implements IConexaoRepository, ServiceImpl{
 
     private final Gson gson = GsonSingleton.getInstance();
     

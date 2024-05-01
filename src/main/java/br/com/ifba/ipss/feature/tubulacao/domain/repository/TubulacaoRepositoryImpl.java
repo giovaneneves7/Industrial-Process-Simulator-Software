@@ -6,18 +6,18 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Map;
+import br.com.ifba.ipss.infrastructure.interfaces.ServiceImpl;
 
 /**
  *
  * @author Giovane Neves
  * @since V0.0.1
  */
-public class TubulacaoRepositoryImpl implements ITubulacaoRepository{
+public class TubulacaoRepositoryImpl implements ITubulacaoRepository, ServiceImpl{
 
     private final Gson gson = new Gson();
 

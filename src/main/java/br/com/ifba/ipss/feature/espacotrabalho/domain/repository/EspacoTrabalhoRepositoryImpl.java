@@ -1,7 +1,6 @@
 package br.com.ifba.ipss.feature.espacotrabalho.domain.repository;
 
 import br.com.ifba.ipss.feature.label.domain.model.Label;
-import br.com.ifba.ipss.infrastructure.interfaces.Implementacao;
 import br.com.ifba.ipss.singleton.GsonSingleton;
 import br.com.ifba.ipss.util.Constantes;
 import com.google.gson.Gson;
@@ -18,13 +17,14 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.ImageIcon;
+import br.com.ifba.ipss.infrastructure.interfaces.ServiceImpl;
 
 /**
  *
  * @author Giovane Neves
  * @since V0.0.1
  */
-public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, Implementacao{
+public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, ServiceImpl{
 
     @Override
     public boolean salvarEspacoTrabalho(Map<String, Label> mapa) {

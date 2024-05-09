@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -39,7 +40,8 @@ public interface IGenericRepository<E extends Equipamento> {
             for (JsonElement je : tubulacoesArray) {
                 JsonObject obj = je.getAsJsonObject();
                 E eq = pegarInstancia(tipoEquipamento);
-
+                boolean up = false, right = false, down = false, left = false;
+                
                 for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
                     String chave = entry.getKey();
                     JsonElement valor = entry.getValue();
@@ -63,6 +65,18 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.ATRIBUTO_ALTURA:
                             eq.set_alturaPx(valor.getAsInt());
                             break;
+                        case Constantes.ATRIBUTO_UP:
+                            up = (valor.getAsInt() == 1);
+                            break;
+                        case Constantes.ATRIBUTO_RIGHT:
+                            right = (valor.getAsInt() == 1);
+                            break;
+                        case Constantes.ATRIBUTO_DOWN:
+                            down = (valor.getAsInt() == 1);
+                            break;
+                        case Constantes.ATRIBUTO_LEFT:
+                            left = (valor.getAsInt() == 1);
+                            break;    
                         default:
                             if (eq instanceof Tubulacao tub) {
                                 switch (chave) {
@@ -78,7 +92,17 @@ public interface IGenericRepository<E extends Equipamento> {
                             }
                             break;
                     }
+
                 }
+                
+                Map<String, Boolean> entradas = new HashMap<>();
+                entradas.put(Constantes.CIMA, up);
+                entradas.put(Constantes.DIREITA, right);
+                entradas.put(Constantes.BAIXO, down);
+                entradas.put(Constantes.ESQUERDA, left);
+                
+                eq.setEntradas(entradas);
+                
                 equipamentos.add(eq);
             }
             
@@ -100,9 +124,8 @@ public interface IGenericRepository<E extends Equipamento> {
                 (E) new Tubulacao() :
                (tipoEquipamento.equals("valvulas")) ?
                 (E) new Valvula() :
-               (tipoEquipamento.equals("equipamentos")) ?
-                (E) new Equipamento() :
-                null;
+                (E) new Equipamento();
+                
         
     }
     

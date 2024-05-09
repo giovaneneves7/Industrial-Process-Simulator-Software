@@ -100,12 +100,13 @@ public class FerramentaContainerController<E extends Equipamento> {
             
         }
         
-        if(equipamento instanceof Valvula v){
+        if(equipamento instanceof Valvula || equipamento instanceof Equipamento){
             
             int tituloX = (largura - 50) / 2;
             titulo.setBounds(tituloX, 10, 84, 30);
             imagem.setBounds(25, 40, 84, 30);
         }
+        
         
         container.add(titulo);
         container.add(imagem);

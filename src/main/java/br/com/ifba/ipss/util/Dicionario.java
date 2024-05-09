@@ -33,6 +33,7 @@ public class Dicionario {
         DICIONARIO.put("deseja_salvar_a_area_de_trabalho", List.of("Deseja salvar a Área de Trabalho?"));
         DICIONARIO.put("di", List.of("Di"));
         DICIONARIO.put("equipamento", List.of("Equipamento", "Equipamentos"));
+        DICIONARIO.put("erro", List.of("Erro", "Erros"));
         DICIONARIO.put("erro_ao_deletar_area_trabalho", List.of("Ocorreu um erro ao deletar a área de trabalho!"));
         DICIONARIO.put("erro_ao_salvar_area_trabalho", List.of("Ocorreu um erro ao salvar a área de trabalho!"));
         DICIONARIO.put("l", List.of("L"));
@@ -44,6 +45,7 @@ public class Dicionario {
         DICIONARIO.put("modo_rotacao_ativado", List.of("Modo Rotação: Ativado"));
         DICIONARIO.put("modo_rotacao_desativado", List.of("Modo Rotação: Desativado"));
         DICIONARIO.put("salvar_area_trabalho", List.of("Salvar Área de Trabalho"));
+        DICIONARIO.put("service_nao_encontrado", List.of("O serviço requerido não foi encontrado"));
         DICIONARIO.put("titulo_aplicacao", List.of(Constantes.NOME_APLICACAO));
         DICIONARIO.put("tubulacao", List.of("Tubulação", "Tubulações"));
         DICIONARIO.put("valvula", List.of("Válvula", "Válvulas"));

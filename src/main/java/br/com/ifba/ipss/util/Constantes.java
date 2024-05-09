@@ -66,7 +66,11 @@ public class Constantes {
     public static final String ATRIBUTO_Y_LABEL = "y";
     public static final String ATRIBUTO_ORIENTACAO = "orientacao";
     public static final String ATRIBUTO_CAMINHO_IMAGEM_LABEL = "caminho_imagem";
-   
+    public static final String ATRIBUTO_UP = "up";
+    public static final String ATRIBUTO_RIGHT = "right";
+    public static final String ATRIBUTO_DOWN = "down";
+    public static final String ATRIBUTO_LEFT = "left";
+    
     // Caminhos de Imagens
     public static final String CAMINHO_BOTAO_REMOVER = "/images/botao_remover.png";
     public static final String CAMINHO_BOTAO_REMOVER_SELECIONADO = "/images/botao_remover_selecionado.png"; 

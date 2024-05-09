@@ -26,6 +26,7 @@ import br.com.ifba.ipss.feature.parametrossimulacao.widget.ParametrosDaSimulacao
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.valvula.domain.service.IValvulaService;
 import br.com.ifba.ipss.helper.SizeHelper;
+import br.com.ifba.ipss.infrastructure.exception.ServiceNotFound;
 import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.Util;
@@ -104,7 +105,7 @@ public class AreaDeTrabalhoController {
         equipamentoServiceMap.put(trToPlural("tubulacao"), ServiceManager.find(ITubulacaoService.class));
         equipamentoServiceMap.put(trToPlural("conexao"), ServiceManager.find(IConexaoService.class));
         equipamentoServiceMap.put(trToPlural("valvula"), ServiceManager.find(IValvulaService.class));
-        equipamentoServiceMap.put(trToPlural("equipamento"), ServiceManager.find(IEquipamentoService.class));
+        equipamentoServiceMap.put(trToPlural("equipamento"), ServiceManager.find(br.com.ifba.ipss.feature.equipamento.domain.service.IEquipamentoService.class));
         
     } // AreaDeTrabalhoController
     
@@ -164,7 +165,6 @@ public class AreaDeTrabalhoController {
                 @Override
                 public void mouseEntered(MouseEvent me){
 
-                    System.out.println("Botao selecionado?" + algumBotaoSelecionado);
                     if(algumBotaoSelecionado) return;
                     
                     ImageIcon img = new ImageIcon(this.getClass().getResource(Constantes.pegarImagemBotaoSelecionado(btn.getName())));
@@ -392,7 +392,7 @@ public class AreaDeTrabalhoController {
                 
                 alvo.getConexoes().put(Constantes.ESQUERDA, lblMovido);
                 
-            } else { // lblMovido está à direita do alvo
+            } else{ // lblMovido está à direita do alvo
                 
                 if(alvo.getConexoes().containsKey(Constantes.DIREITA)) return;
                 
@@ -408,21 +408,39 @@ public class AreaDeTrabalhoController {
             
         } else if(alvo.getOrientacao().equals(Constantes.VERTICAL) && lblMovido.getOrientacao().equals(Constantes.VERTICAL)){
             
+            
             int diferencaY = lblMovido.getY() - alvo.getY(); 
    
-             if (diferencaY <= 0) { // lblMovido está acima do alvo
+            if (diferencaY <= 0) { // lblMovido está acima do alvo
                  
+                
+                if(!alvo.getEquipamento().getEntradas().get(Constantes.CIMA)) return; // retorna caso o alvo não permita conexão em cima.
+                if(alvo.getConexoes().containsKey(Constantes.CIMA)) return; // retorna caso o alvo já possua uma conexão em cima.
+                if(!lblMovido.getEquipamento().getEntradas().get(Constantes.BAIXO)) return; // retorna caso a label a ser movida não permita conexão em baixo.
+                if(lblMovido.getConexoes().containsKey(Constantes.BAIXO)) return;  // retorna caso o label movido já possua uma conexão em baixo.
+                
                 int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
                 int yOrigem = alvo.getY() - lblMovido.getHeight(); 
-                lblMovido.setLocation(xOrigem, yOrigem);
+                
+                lblMovido.setLocation(xOrigem, yOrigem); // junta as labels.
+                
+                alvo.getConexoes().put(Constantes.CIMA, lblMovido);
+                lblMovido.getConexoes().put(Constantes.BAIXO, alvo);
                 
             } else { // lblMovido está abaixo do alvo
-           
-                 int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
-                  int yOrigem = (diferencaY < 0) ? alvo.getY() - lblMovido.getHeight() : alvo.getY() + alvo.getHeight();
+                
+                if(!alvo.getEquipamento().getEntradas().get(Constantes.BAIXO)) return; // retorna caso o alvo não permita conexão em cima.
+                if(alvo.getConexoes().containsKey(Constantes.BAIXO)) return; // retorna caso o alvo já possua uma conexão em BAIXO.
+                if(!lblMovido.getEquipamento().getEntradas().get(Constantes.CIMA)) return; // retorna caso a label a ser movida não permita conexão em cima.
+                if(lblMovido.getConexoes().containsKey(Constantes.CIMA)) return;  // retorna caso o label movido já possua uma conexão em cima.
+                
+                int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
+                int yOrigem = (diferencaY < 0) ? alvo.getY() - lblMovido.getHeight() : alvo.getY() + alvo.getHeight();
  
                lblMovido.setLocation(xOrigem, yOrigem);
                 
+               alvo.getConexoes().put(Constantes.BAIXO, lblMovido);
+               lblMovido.getConexoes().put(Constantes.CIMA, alvo);
             }
         }
         
@@ -565,53 +583,63 @@ public class AreaDeTrabalhoController {
     public void adicionarFerramentasAoMenu(final String tipoEquipamento){
         
         EquipamentoFactory equipamentoFactory = new EquipamentoFactory(equipamentoServiceMap);
-        List<? extends Equipamento> listaEquipamentos = equipamentoFactory.pegarFerramentas(trToPlural(tipoEquipamento));
-        
-        int x = 20;
-        int y = this.pnlMenuLateral.getHeight() / 8;
-        int cont = 0; 
-        
-        for(int i = 0; i < listaEquipamentos.size(); i++) {
-            
-            int index = i;
-            
-            Equipamento eq = listaEquipamentos.get(i);
 
-            FerramentaContainer ferramentaContainer = ferramentaContainerController.criarContainer(
-                eq,
-                SizeHelper.ALTURA_FERRAMENTA_CONTAINER,
-                SizeHelper.LARGURA_FERRAMENTA_CONTAINER,
-                x,
-                y,
-                i,
-                false 
-            );
+        try{
             
-            ferramentaContainer.addMouseListener(new MouseAdapter() {
-            
-                @Override
-                public void mouseClicked(MouseEvent me) {
-                    
-                        adicionarEquipamento(ferramentaContainer.getEquipamento(), index);
-                    } 
-                });
-            
-            this.pnlMenuLateral.add(ferramentaContainer);
-            
-            cont++;
+            List<? extends Equipamento> listaEquipamentos = equipamentoFactory.pegarFerramentas(trToPlural(tipoEquipamento));
+            int x = 20;
+            int y = this.pnlMenuLateral.getHeight() / 8;
+            int cont = 0; 
 
-            if(cont == 2) {
-                x = 20; 
-                y += SizeHelper.ALTURA_FERRAMENTA_CONTAINER + 10; // Avança para a próxima linha
-                cont = 0; // Reseta o contador
-            } else {
-                x += SizeHelper.LARGURA_FERRAMENTA_CONTAINER + 10;
+            for(int i = 0; i < listaEquipamentos.size(); i++) {
+
+                int index = i;
+
+                Equipamento eq = listaEquipamentos.get(i);
+
+                FerramentaContainer ferramentaContainer = ferramentaContainerController.criarContainer(
+                    eq,
+                    SizeHelper.ALTURA_FERRAMENTA_CONTAINER,
+                    SizeHelper.LARGURA_FERRAMENTA_CONTAINER,
+                    x,
+                    y,
+                    i,
+                    false 
+                );
+
+                ferramentaContainer.addMouseListener(new MouseAdapter() {
+
+                    @Override
+                    public void mouseClicked(MouseEvent me) {
+
+                            adicionarEquipamento(ferramentaContainer.getEquipamento(), index);
+                        } 
+                    });
+
+                this.pnlMenuLateral.add(ferramentaContainer);
+
+                cont++;
+
+                if(cont == 2) {
+                    x = 20; 
+                    y += SizeHelper.ALTURA_FERRAMENTA_CONTAINER + 10; // Avança para a próxima linha
+                    cont = 0; // Reseta o contador
+                } else {
+                    x += SizeHelper.LARGURA_FERRAMENTA_CONTAINER + 10;
+                }
+
             }
 
+            this.pnlMenuLateral.revalidate();
+            this.pnlMenuLateral.repaint();
+            
+        } catch(ServiceNotFound ex){
+            
+            JOptionPane.showOptionDialog(null, tr(ex.getMessage()), tr("erro"), JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE, null, Constantes.OK, Constantes.OK[0]);
+            
         }
         
-        this.pnlMenuLateral.revalidate();
-        this.pnlMenuLateral.repaint();
+        
         
     } // adicionarFerramentasAoMenu
     
@@ -652,6 +680,8 @@ public class AreaDeTrabalhoController {
         );
         
         lbl.setId("eq".concat(eq.get_nome()).concat(String.valueOf(i)).concat(String.valueOf(new Random().nextLong(900))));
+        lbl.setEquipamento(eq);
+        
         this.adicionarListenerDeCliqueAoEquipamento(lbl);
         this.adicionarListenerDeMovimentoAoEquipamento(lbl);
         
@@ -688,6 +718,24 @@ public class AreaDeTrabalhoController {
     }
     
     
+    private void desconectar(Map<String, Label> conexoes, Label anterior){
+        
+        System.out.println("Desconectando....");
+        for(Map.Entry<String, Label> entry : conexoes.entrySet()){
+            
+            if(!entry.getValue().getConexoes().isEmpty()){
+                
+                if(entry.getValue() == anterior) continue;
+                
+                desconectar(entry.getValue().getConexoes(), null);
+                
+            }
+            
+            entry.getValue().getConexoes().clear();
+            
+        }
+        
+    }
     int mouseX, mouseY;
     double suavizacao = 1.01;
     
@@ -695,10 +743,14 @@ public class AreaDeTrabalhoController {
         
         Timer timer = new Timer(100, ev -> {
             
-                int deltaX = lbl.getX() + mouseX;
+                 int deltaX = lbl.getX() + mouseX;
                 int deltaY = lbl.getY() + mouseY;
                 lbl.setLocation(deltaX, deltaY);
 
+                desconectar(lbl.getConexoes(), null);
+                
+                
+                
         });
         
         Timer tempoPressionado = new Timer(150, e ->{

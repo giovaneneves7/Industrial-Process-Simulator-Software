@@ -21,7 +21,6 @@ public class EquipamentoServiceImpl implements IEquipamentoService, ServiceImpl{
     }
     @Override
     public List<Equipamento> pegarEquipamentos() {
-
         return this.equipamentoRepository.pegarListaEquipamentos("equipamentos");
         
     }

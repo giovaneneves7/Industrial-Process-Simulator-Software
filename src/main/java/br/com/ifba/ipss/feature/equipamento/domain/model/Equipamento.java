@@ -9,6 +9,7 @@ package br.com.ifba.ipss.feature.equipamento.domain.model;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,5 +38,5 @@ public class Equipamento {
     private double _larguraPx;     // A largura do equipamento em pixels.
     private double _alturaPx;      // A altura do equipamento em pixels.
     private double _comprimentoM;  // O comprimento do equipamento em metros.
-    
+    private Map<String, Boolean> entradas;
 } // class Equipamento

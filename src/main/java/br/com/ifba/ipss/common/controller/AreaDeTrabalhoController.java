@@ -88,8 +88,9 @@ public class AreaDeTrabalhoController {
     private boolean algumBotaoSelecionado = false;
     
     private boolean menuLateralAberto = false;
-    private String nomeTipoMenuLateralAberto;
     
+    private String nomeTipoMenuLateralAberto;
+    private String workspacePath;
     private Stack<Label> pilhaDeConexao = new Stack<>(); 
     
     private Map<String, Label> espacoTrabalhoMap = new HashMap<>();
@@ -118,6 +119,13 @@ public class AreaDeTrabalhoController {
         this.pnlEspacoTrabalho = pnlEspacaoTrabalho;
     
     }
+    
+    public void setWorkspacePath(String workspacePath){
+        
+        this.workspacePath = workspacePath;
+        
+    }
+    
     // *************************************************//
     // ******************* { Métodos } *****************//
     // *************************************************//
@@ -189,9 +197,9 @@ public class AreaDeTrabalhoController {
         
     } // mudarEfeitoHoverNoBotao
     
-    public void carregarEquipamentos(){
+    public void carregarEquipamentos(String workspacePath){
         
-        this.espacoTrabalhoMap = this.espacoTrabalhoController.pegarEspacoTrabalho();
+        this.espacoTrabalhoMap = this.espacoTrabalhoController.pegarEspacoTrabalho(workspacePath);
         
         if(this.espacoTrabalhoMap == null || this.espacoTrabalhoMap.isEmpty()){
             return;
@@ -465,7 +473,7 @@ public class AreaDeTrabalhoController {
         
         if(JOptionPane.showOptionDialog(null, tr("deseja_salvar_a_area_de_trabalho"), tr("salvar_area_trabalho"), JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, Constantes.SIM_NAO, Constantes.SIM_NAO[0]) == 0){
             
-            if(this.espacoTrabalhoController.salvarEspacoTrabalho(espacoTrabalhoMap)){
+            if(this.espacoTrabalhoController.salvarEspacoTrabalho(espacoTrabalhoMap, workspacePath)){
                 
                 JOptionPane.showOptionDialog(null, tr("area_de_trabalho_salva_com_sucesso"), tr("salvar_area_trabalho"), JOptionPane.OK_OPTION, JOptionPane.INFORMATION_MESSAGE, null, Constantes.OK, Constantes.OK[0]);
                 
@@ -484,7 +492,7 @@ public class AreaDeTrabalhoController {
         
         if(JOptionPane.showOptionDialog(null, tr("deseja_limpar_a_area_de_trabalho"), tr("limpar_area_trabalho"), JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, Constantes.SIM_NAO, Constantes.SIM_NAO[0]) == 0){
         
-            if(this.espacoTrabalhoController.deletarEspacoTrabalho()){
+            if(this.espacoTrabalhoController.deletarEspacoTrabalho(workspacePath)){
                 
                 this.limparPainel(this.pnlEspacoTrabalho);
                 

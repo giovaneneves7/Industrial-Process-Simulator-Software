@@ -21,27 +21,27 @@ public class EspacoTrabalhoServiceImpl implements IEspacoTrabalhoService, Servic
     }
     
     @Override
-    public boolean salvarEspacoTrabalho(Map<String, Label> mapa) {
+    public boolean salvarEspacoTrabalho(Map<String, Label> mapa, String workspacePath) {
 
         if(mapa.isEmpty()){
             return false;
         }
         
-        return this.espacoTrabalhoRepository.salvarEspacoTrabalho(mapa);
+        return this.espacoTrabalhoRepository.salvarEspacoTrabalho(mapa, workspacePath);
         
     }
 
     @Override
-    public boolean deletarEspacoTrabalho() {
+    public boolean deletarEspacoTrabalho(String workspacePath) {
 
-        return this.espacoTrabalhoRepository.deletarEspacoTrabalho();
+        return this.espacoTrabalhoRepository.deletarEspacoTrabalho(workspacePath);
         
     }
 
     @Override
-    public Map<String, Label> pegarEspacoTrabalho() {
+    public Map<String, Label> pegarEspacoTrabalho(String workspacePath) {
 
-        return this.espacoTrabalhoRepository.pegarEspacoTrabalho();
+        return this.espacoTrabalhoRepository.pegarEspacoTrabalho(workspacePath);
         
     }
     

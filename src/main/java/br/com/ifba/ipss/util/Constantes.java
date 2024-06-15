@@ -136,28 +136,37 @@ public class Constantes {
     public static final String ESPACO_TRABALHO_JSON = "/files/workspace.json";
     
     // resources/streams
-    public static InputStream pegarEspacoTrabalhoJsonInputStream() throws FileNotFoundException{
+    public static InputStream pegarEspacoTrabalhoJsonInputStream(String workspacePath) throws FileNotFoundException{
         
-        return Constantes.class.getResourceAsStream(ESPACO_TRABALHO_JSON);
+        return Constantes.class.getResourceAsStream("/files/".concat(workspacePath));
         
     }
     
-    public static OutputStream pegarEspacoTrabalhoJsonOutputStream() throws IOException{
+    public static OutputStream pegarEspacoTrabalhoJsonOutputStream(String workspacePath) throws IOException{
         
-        InputStream is = pegarEspacoTrabalhoJsonInputStream();
         
-        if (is == null) {
-            throw new FileNotFoundException("Arquivo não encontrado: " + ESPACO_TRABALHO_JSON);
-        }
+        
+        //if (is == null) {
+          //  throw new FileNotFoundException("Arquivo não encontrado: " + ESPACO_TRABALHO_JSON);
+        //}
     
         Path diretorioDestino = Paths.get("src", "main", "resources", "files");
+        Path caminhoAbsolutoArquivo = diretorioDestino.resolve(workspacePath);
         
         if (!Files.exists(diretorioDestino)) {
             Files.createDirectories(diretorioDestino);
         }
         
-        Path caminhoAbsolutoArquivo = diretorioDestino.resolve("workspace.json");
+        if (!Files.exists(caminhoAbsolutoArquivo)) {
+            Files.createFile(caminhoAbsolutoArquivo);
+        }
         
+        InputStream is = pegarEspacoTrabalhoJsonInputStream(workspacePath);
+        
+        if (is == null) {
+            throw new FileNotFoundException("Arquivo não encontrado: " + ESPACO_TRABALHO_JSON);
+        }
+                
         OutputStream outputStream = Files.newOutputStream(caminhoAbsolutoArquivo);
         
         return outputStream;

@@ -27,9 +27,9 @@ import br.com.ifba.ipss.infrastructure.interfaces.ServiceImpl;
 public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, ServiceImpl{
 
     @Override
-    public boolean salvarEspacoTrabalho(Map<String, Label> mapa) {
+    public boolean salvarEspacoTrabalho(Map<String, Label> mapa, String workspacePath) {
 
-        try(OutputStream os = Constantes.pegarEspacoTrabalhoJsonOutputStream(); 
+        try(OutputStream os = Constantes.pegarEspacoTrabalhoJsonOutputStream(workspacePath); 
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8));){
             
             int cont = 0;
@@ -85,9 +85,9 @@ public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, 
     }
 
     @Override
-    public boolean deletarEspacoTrabalho() {
+    public boolean deletarEspacoTrabalho(String workspacePath) {
         
-        try(OutputStream os = Constantes.pegarEspacoTrabalhoJsonOutputStream(); 
+        try(OutputStream os = Constantes.pegarEspacoTrabalhoJsonOutputStream(workspacePath); 
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8));){
         
             writer.write("");
@@ -104,12 +104,12 @@ public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, 
     }
 
     @Override
-    public Map<String, Label> pegarEspacoTrabalho() {
+    public Map<String, Label> pegarEspacoTrabalho(String workspacePath) {
         
         Map<String, Label> mapa = new HashMap<>();
         Gson gson = GsonSingleton.getInstance();
         
-        try(InputStream is = Constantes.pegarEspacoTrabalhoJsonInputStream(); 
+        try(InputStream is = Constantes.pegarEspacoTrabalhoJsonInputStream(workspacePath); 
             InputStreamReader isr = new InputStreamReader(is);){
         
             if(is.available() <= 0){

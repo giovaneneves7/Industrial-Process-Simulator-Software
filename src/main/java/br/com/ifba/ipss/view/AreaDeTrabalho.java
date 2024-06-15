@@ -15,9 +15,7 @@ import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.swing.ImageIcon;
 // *************************************************//
@@ -43,11 +41,13 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     public static boolean emModoRemocao = false;
     public static boolean emModoConexao = false;
     
+    public static String workspacePathString;
     /**
      * Cria a interface com os componentes iniciais
      */
-    public AreaDeTrabalho() {
+    public AreaDeTrabalho(String workspacePath) {
         
+        workspacePathString = workspacePath;
         inicializadorPersonalizado();
         initComponents();
         
@@ -67,7 +67,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         );
         
         this.areaDeTrabalhoController.mudarEfeitoHoverNoBotao(botoes);
-        this.areaDeTrabalhoController.carregarEquipamentos();
+        this.areaDeTrabalhoController.carregarEquipamentos(workspacePath);
+        this.areaDeTrabalhoController.setWorkspacePath(workspacePath);
         
     } // AreaDeTrabalho
 
@@ -413,7 +414,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AreaDeTrabalho().setVisible(true);
+                new AreaDeTrabalho(workspacePathString).setVisible(true);
             }
         });
     }

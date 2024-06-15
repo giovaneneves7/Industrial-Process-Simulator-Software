@@ -52,7 +52,7 @@ public class TelaSplash extends javax.swing.JFrame {
         
         splashController.carregar(
                 this, 
-                ScreenHelper.pegarTela(ScreenHelper.AREA_TRABALHO)
+                ScreenHelper.pegarTela(ScreenHelper.TELA_INICIAL)
         );
         
     } // TelaSplash

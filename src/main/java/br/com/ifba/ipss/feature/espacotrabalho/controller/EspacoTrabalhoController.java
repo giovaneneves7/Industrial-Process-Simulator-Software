@@ -20,20 +20,20 @@ public class EspacoTrabalhoController {
         
     }
     
-    public Map<String, Label> pegarEspacoTrabalho(){
+    public Map<String, Label> pegarEspacoTrabalho(String workspacePath){
         
-        return this.espacoTrabalhoService.pegarEspacoTrabalho();
+        return this.espacoTrabalhoService.pegarEspacoTrabalho(workspacePath);
         
     }
-    public boolean salvarEspacoTrabalho(Map<String, Label> mapa){
+    public boolean salvarEspacoTrabalho(Map<String, Label> mapa, String workspacePath){
         
-        return this.espacoTrabalhoService.salvarEspacoTrabalho(mapa);
+        return this.espacoTrabalhoService.salvarEspacoTrabalho(mapa, workspacePath);
         
     }
     
-    public boolean deletarEspacoTrabalho(){
+    public boolean deletarEspacoTrabalho(String workspacePath){
         
-        return this.espacoTrabalhoService.deletarEspacoTrabalho();
+        return this.espacoTrabalhoService.deletarEspacoTrabalho(workspacePath);
         
     }
     

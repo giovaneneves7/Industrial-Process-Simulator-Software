@@ -12,8 +12,8 @@ import java.util.Map;
  */
 public interface IEspacoTrabalhoService extends Interface{
     
-    Map<String, Label> pegarEspacoTrabalho();
-    boolean salvarEspacoTrabalho(Map<String, Label> mapa);
-    boolean deletarEspacoTrabalho();
+    Map<String, Label> pegarEspacoTrabalho(String workspacePath);
+    boolean salvarEspacoTrabalho(Map<String, Label> mapa, String workspacePath);
+    boolean deletarEspacoTrabalho(String workspacePath);
     
 }

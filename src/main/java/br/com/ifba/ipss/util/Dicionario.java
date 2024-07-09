@@ -58,7 +58,7 @@ public class Dicionario {
     public static String tr(String chave){
         
         if(DICIONARIO.containsKey(chave))
-            return DICIONARIO.get(chave).getFirst();
+            return DICIONARIO.get(chave).get(0);//.getFirst();
         
         return chave;
         
@@ -68,7 +68,7 @@ public class Dicionario {
         
         if(DICIONARIO.containsKey(chave)){
             
-            return (DICIONARIO.get(chave).size() > 1) ? DICIONARIO.get(chave).getLast() : chave;
+            return (DICIONARIO.get(chave).size() > 1) ? DICIONARIO.get(chave).get(1) : chave;
             
         }
         

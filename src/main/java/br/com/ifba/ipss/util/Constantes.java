@@ -126,7 +126,7 @@ public class Constantes {
     public static String pegarImagemBotaoSelecionado(String chave){
         
         return (imagensBotoes.containsKey(chave)) ?
-                imagensBotoes.get(chave).getLast() :
+                imagensBotoes.get(chave).get(imagensBotoes.get(chave).size()-1) :
                 chave;
         
     }

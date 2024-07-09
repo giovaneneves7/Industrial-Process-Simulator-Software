@@ -1,0 +1,33 @@
+{
+
+    tubulacoes : [
+
+        {
+            "_nome" : "Tubo 01",
+            "_caminhoImagem" : "/images/T1.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 10,
+            "_altura" : 30,
+            "_diametroInterno" : 10,
+            "_comprimento" : 30
+
+        },
+
+        {
+            "_nome" : "T2",
+            "_caminhoImagem" : "/images/T2.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_largura" : 10,
+            "_altura" : 50,
+            "_diametroInterno" : 10,
+            "_comprimento" : 30
+
+        }
+
+    ]
+
+    
+
+}

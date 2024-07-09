@@ -10,7 +10,11 @@
             "_larguraPx" : 30,
             "_alturaPx" : 10,
             "_diametroInterno" : 1,
-            "comprimento" : 2
+            "comprimento" : 2,
+            "up" : 1,
+            "right" : 0,
+            "down" : 1,
+            "left" : 0
 
         },
 
@@ -22,7 +26,11 @@
             "_larguraPx" : 50,
             "_alturaPx" : 10,
             "_diametroInterno" : 1,
-            "comprimento" : 4
+            "comprimento" : 4,
+            "up" : 1,
+            "right" : 0,
+            "down" : 1,
+            "left" : 0
 
         },
  
@@ -33,7 +41,11 @@
             "_larguraPx" : 70,
             "_alturaPx" : 10,
             "_diametroInterno" : 1,
-            "comprimento" : 6
+            "comprimento" : 6,
+            "up" : 1,
+            "right" : 0,
+            "down" : 1,
+            "left" : 0
 
         },
 
@@ -45,7 +57,11 @@
             "_larguraPx" : 90,
             "_alturaPx" : 10,
             "_diametroInterno" : 1,
-            "comprimento" : 8
+            "comprimento" : 8,
+            "up" : 1,
+            "right" : 0,
+            "down" : 1,
+            "left" : 0
 
        },
 
@@ -56,7 +72,11 @@
             "_larguraPx" : 100,
             "_alturaPx" : 10,
             "_diametroInterno" : 1,
-            "comprimento" : 10 
+            "comprimento" : 10,
+            "up" : 1,
+            "right" : 0,
+            "down" : 1,
+            "left" : 0
 
        }
 

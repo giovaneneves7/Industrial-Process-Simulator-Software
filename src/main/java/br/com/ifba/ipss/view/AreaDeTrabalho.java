@@ -211,10 +211,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         lblNotificacaoDeEstado.setText("Nenhum modo de edição selecionado");
         pnlEspacoTrabalho.add(lblNotificacaoDeEstado);
-        lblNotificacaoDeEstado.setBounds(30, 10, 320, 18);
+        lblNotificacaoDeEstado.setBounds(30, 10, 320, 16);
 
         pnlBackgruond.add(pnlEspacoTrabalho);
-        pnlEspacoTrabalho.setBounds(0, 80, 1250, 710);
+        pnlEspacoTrabalho.setBounds(0, 90, 1250, 710);
 
         PnlBotoes.setBackground(new java.awt.Color(255, 255, 255));
 

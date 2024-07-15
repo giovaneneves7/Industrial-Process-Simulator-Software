@@ -118,7 +118,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private void btnLoadProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadProjectActionPerformed
         
         dispose();
-        ScreenHelper.pegarTela(ScreenHelper.LISTA_SIMULACOES).setVisible(true);
+        ScreenHelper.getScreen(ScreenHelper.LISTA_SIMULACOES).setVisible(true);
         
     }//GEN-LAST:event_btnLoadProjectActionPerformed
 

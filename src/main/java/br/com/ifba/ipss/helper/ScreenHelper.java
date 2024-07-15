@@ -57,7 +57,7 @@ public class ScreenHelper {
      * @param nome O nome da tela.
      * @return a tela com o nome passado por parâmetro, ou 'null' caso a tela não exista.
      */
-    public static JFrame pegarTela(String nome){
+    public static JFrame getScreen(String nome){
     
         return switch(nome){
             case TELA_SPLASH -> new TelaSplash();
@@ -67,7 +67,7 @@ public class ScreenHelper {
             default -> null;    
         };
             
-    } // pegarTela
+    } // getScreen
     
     public static JFrame pegarTela(String nome, String query){
     
@@ -79,6 +79,6 @@ public class ScreenHelper {
             default -> null;    
         };
             
-    } // pegarTela
+    } // getScreen
     
 } // ScreenHelper

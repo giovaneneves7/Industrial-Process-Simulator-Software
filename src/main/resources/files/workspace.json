@@ -1,39 +1,12 @@
 {
 	 equipamentos: [
 	{
-		"id" : "eqT43755",
- 		"caminho_imagem" : "/images/T4.png",
- 		"largura" : 10,
- 		"altura" : 90,
- 		"x" : 396,
- 		"y" : 389,
- 		"orientacao" : "vertical"
-	},
-	{
-		"id" : "eqConexão 21116",
+		"id" : "eqConexÃ£o 21125",
  		"caminho_imagem" : "/images/conexao_2.png",
  		"largura" : 30,
  		"altura" : 30,
- 		"x" : 386,
- 		"y" : 329,
- 		"orientacao" : "vertical"
-	},
-	{
-		"id" : "eqT43572",
- 		"caminho_imagem" : "/images/T4.png",
- 		"largura" : 10,
- 		"altura" : 90,
- 		"x" : 396,
- 		"y" : 479,
- 		"orientacao" : "vertical"
-	},
-	{
-		"id" : "eqTubo 010653",
- 		"caminho_imagem" : "/images/T1.png",
- 		"largura" : 10,
- 		"altura" : 30,
- 		"x" : 396,
- 		"y" : 359,
+ 		"x" : 369,
+ 		"y" : 141,
  		"orientacao" : "vertical"
 	}
 ]

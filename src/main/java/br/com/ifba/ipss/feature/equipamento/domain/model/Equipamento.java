@@ -32,11 +32,13 @@ public class Equipamento {
     // *************************************************//
     
     private String _nome;          // O nome do equipamento.
+    private String thumbnail;      // A thumbnail do equipamento.
     private String _caminhoImagem; // O caminho para a imagem do equipamento.
     private double _x;             // A posição 'X' do equipamento.
     private double _y;             // A posição 'Y' do equipamento.
     private double _larguraPx;     // A largura do equipamento em pixels.
     private double _alturaPx;      // A altura do equipamento em pixels.
     private double _comprimentoM;  // O comprimento do equipamento em metros.
-    private Map<String, Boolean> entradas;
+    private Map<String, Boolean> entradas; 
+    
 } // class Equipamento

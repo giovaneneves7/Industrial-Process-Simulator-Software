@@ -53,6 +53,7 @@ public class Constantes {
     // Nome de Atributos de Equipamentos
     public static final String ATRIBUTO_ID = "id";
     public static final String ATRIBUTO_NOME = "_nome";
+    public static final String ATRIBUTO_THUMBNAIL = "thumbnail";
     public static final String ATRIBUTO_CAMINHO_IMAGEM = "_caminhoImagem";
     public static final String ATRIBUTO_POS_X = "_x";
     public static final String ATRIBUTO_POS_Y = "_y";

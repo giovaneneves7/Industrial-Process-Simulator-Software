@@ -4,6 +4,7 @@
 
         {
             "_nome" : "Tubo 01",
+            "thumbnail" : "/images/T1.png",
             "_caminhoImagem" : "/images/T1.png",
             "_x" : 0,
             "_y" : 0,
@@ -20,6 +21,7 @@
 
         {
             "_nome" : "T2",
+            "thumbnail" : "/images/T1.png",
             "_caminhoImagem" : "/images/T2.png",
             "_x" : 0,
             "_y" : 0,
@@ -34,7 +36,9 @@
 
         },
  
-        {    "_nome" : "T3",
+        {    
+            "_nome" : "T3",
+            "thumbnail" : "/images/T1.png",
             "_caminhoImagem" : "/images/T3.png",
             "_x" : 0,
             "_y" : 0,
@@ -51,6 +55,7 @@
 
         {
             "_nome" : "T4",
+            "thumbnail" : "/images/T1.png",
             "_caminhoImagem" : "/images/T4.png",
             "_x" : 0,
             "_y" : 0,
@@ -66,6 +71,7 @@
        },
 
        {    "_nome" : "T5",
+            "thumbnail" : "/images/T1.png",
             "_caminhoImagem" : "/images/T5.png",
             "_x" : 0,
             "_y" : 0,
@@ -84,27 +90,32 @@
     ],
 
    equipamentos: [
-        {
-            "_nome" : "Reator 01",
-            "_caminhoImagem" : "/images/reator_1.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 50,
-            "_altura" : 50
-        },
         
         {
-            "_nome" : "Reator 02",
-            "_caminhoImagem" : "/images/reator_2.png",
-            "_x" : 0,
-            "_y" : 0,
-            "_largura" : 50,
-            "_altura" : 50
-        },
-        
-        {
-            "_nome" : "Tanque 2",
+            "_nome" : "Tanque 01",
+            "thumbnail" : "/images/tanque_thumbnail.png",
             "_caminhoImagem" : "/images/tanque_2.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 80,
+            "_alturaPx" : 40
+        },
+        
+        
+        {
+            "_nome" : "Bomba Helicodal",
+            "thumbnail" : "/images/bomba_helicodal.png",
+            "_caminhoImagem" : "/images/bomba_helicodal.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 80,
+            "_alturaPx" : 40
+        },
+        
+        {
+            "_nome" : "Bomba Centrifuga",
+            "thumbnail" : "/images/bomba_centrifuga.png",
+            "_caminhoImagem" : "/images/bomba_centrifuga.png",
             "_x" : 0,
             "_y" : 0,
             "_larguraPx" : 80,
@@ -115,6 +126,7 @@
    valvulas: [
         {
             "_nome" : "Gaveta",
+            "thumbnail" : "/images/conexao_1.png",
             "_caminhoImagem" : "/images/valvula_gaveta.png",
             "_x" : 0,
             "_y" : 0,
@@ -125,6 +137,7 @@
 
         {
             "_nome" : "Borboleta",
+            "thumbnail" : "/images/conexao_1.png",
             "_caminhoImagem" : "/images/valvula_borboleta.png",
             "_x" : 0,
             "_y" : 0,
@@ -135,6 +148,7 @@
 
         {
             "_nome" : "Esfera",
+            "thumbnail" : "/images/conexao_1.png",
             "_caminhoImagem" : "/images/valvula_esfera.png",
             "_x" : 0,
             "_y" : 0,
@@ -147,6 +161,7 @@
    conexoes: [
         {
             "_nome" : "Conexão 1",
+            "thumbnail" : "/images/conexao_1.png",
             "_caminhoImagem" : "/images/conexao_1.png",
             "_x" : 0,
             "_y" : 0,
@@ -157,6 +172,7 @@
 
        {
             "_nome" : "Conexão 2",
+            "thumbnail" : "/images/conexao_1.png",
             "_caminhoImagem" : "/images/conexao_2.png",
             "_x" : 0,
             "_y" : 0,
@@ -167,6 +183,7 @@
 
         {
             "_nome" : "Conexão 3",
+            "thumbnail" : "/images/conexao_1.png",
             "_caminhoImagem" : "/images/conexao_3.png",
             "_x" : 0,
             "_y" : 0,

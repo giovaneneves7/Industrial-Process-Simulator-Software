@@ -1,1 +1,6 @@
 /target/
+
+./push.sh
+./push.sh.save
+./dependency-reduced-pom.xml
+

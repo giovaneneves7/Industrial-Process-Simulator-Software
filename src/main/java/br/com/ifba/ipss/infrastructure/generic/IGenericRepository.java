@@ -30,7 +30,7 @@ public interface IGenericRepository<E extends Equipamento> {
         
         Gson gson = GsonSingleton.getInstance();
         
-        List<E> equipamentos = new ArrayList<>();
+        List<E> equipaments = new ArrayList<>();
 
         try(InputStream is = PathHelper.pegarFerramentasInputStream(); InputStreamReader isr = new InputStreamReader(is)){
     
@@ -50,6 +50,8 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.ATRIBUTO_NOME:
                             eq.set_nome(valor.getAsString());
                             break;
+                        case Constantes.ATRIBUTO_THUMBNAIL:
+                            eq.setThumbnail(String.valueOf(valor.getAsString()));
                         case Constantes.ATRIBUTO_CAMINHO_IMAGEM:
                             eq.set_caminhoImagem(String.valueOf(valor.getAsString()));
                             break;
@@ -103,7 +105,7 @@ public interface IGenericRepository<E extends Equipamento> {
                 
                 eq.setEntradas(entradas);
                 
-                equipamentos.add(eq);
+                equipaments.add(eq);
             }
             
         } catch(IOException ex){
@@ -112,7 +114,7 @@ public interface IGenericRepository<E extends Equipamento> {
         
         }
         
-        return equipamentos;
+        return equipaments;
         
     }
     

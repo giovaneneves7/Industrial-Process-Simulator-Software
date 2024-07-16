@@ -20,7 +20,7 @@
         },
 
         {
-            "_nome" : "T2",
+            "_nome" : "Tubo 02",
             "thumbnail" : "/images/T1.png",
             "_caminhoImagem" : "/images/T2.png",
             "_x" : 0,
@@ -37,7 +37,7 @@
         },
  
         {    
-            "_nome" : "T3",
+            "_nome" : "Tubo 03",
             "thumbnail" : "/images/T1.png",
             "_caminhoImagem" : "/images/T3.png",
             "_x" : 0,
@@ -54,7 +54,7 @@
         },
 
         {
-            "_nome" : "T4",
+            "_nome" : "Tubo 04",
             "thumbnail" : "/images/T1.png",
             "_caminhoImagem" : "/images/T4.png",
             "_x" : 0,
@@ -70,7 +70,7 @@
 
        },
 
-       {    "_nome" : "T5",
+       {    "_nome" : "Tubo 05",
             "thumbnail" : "/images/T1.png",
             "_caminhoImagem" : "/images/T5.png",
             "_x" : 0,

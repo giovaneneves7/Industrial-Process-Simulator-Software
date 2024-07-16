@@ -567,7 +567,7 @@ public class AreaDeTrabalhoController {
         int larguraC = pnlMenuLateral.getWidth();
         int alturaC = pnlMenuLateral.getHeight(); 
         int tituloX = (larguraC - 60) / 2;
-        int tituloY = alturaC - 740;
+        int tituloY = alturaC - 760;
        
         tituloMenu.setBounds(tituloX, tituloY, 120, 20);
         
@@ -628,7 +628,7 @@ public class AreaDeTrabalhoController {
 
                 cont++;
 
-                if(cont == 2) {
+                if(cont == 1) {
                     x = 20; 
                     y += SizeHelper.ALTURA_FERRAMENTA_CONTAINER + 10; // Avança para a próxima linha
                     cont = 0; // Reseta o contador

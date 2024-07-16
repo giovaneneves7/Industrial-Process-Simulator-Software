@@ -4,11 +4,19 @@
 package br.com.ifba.ipss.helper;
 // *************************************************//
 // *************** { FIM - Package } ***************//
+// *************************************************//
+
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
 // *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
+
 
 /**
  * Helper para guardar tamanhos padrões dos elementos que estarão na interface gráfica.
@@ -27,7 +35,7 @@ public class SizeHelper {
     public static final int ALTURA_TELA = TAMANHO_TELA.height;
     public static final int LARGURA_TELA_SPLASH = 840;
     public static final int ALTURA_TELA_SPLASH = 700;  
-    public static final int LARGURA_MENU_LATERAL = 280;
+    public static final int LARGURA_MENU_LATERAL = 150;
     public static final int ALTURA_MENU_LATERAL = 820;
     public static final int LARGURA_FERRAMENTA_CONTAINER = 100;
     public static final int ALTURA_FERRAMENTA_CONTAINER = 100; 

@@ -114,7 +114,7 @@
         
         {
             "_nome" : "Bomba Centrifuga",
-            "thumbnail" : "/images/bomba_centrifuga.png",
+            "thumbnail" : "/images/bomba_centrifuga_thumb.png",
             "_caminhoImagem" : "/images/bomba_centrifuga.png",
             "_x" : 0,
             "_y" : 0,
@@ -124,6 +124,18 @@
   ],
   
    valvulas: [
+        
+        {
+            "_nome" : "Retenção",
+            "thumbnail" : "/images/valvula_de_retencao.png",
+            "_caminhoImagem" : "/images/valvula_de_retencao.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 60,
+            "_alturaPx" :60
+
+        },
+        
         {
             "_nome" : "Gaveta",
             "thumbnail" : "/images/conexao_1.png",

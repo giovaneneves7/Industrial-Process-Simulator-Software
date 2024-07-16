@@ -9,6 +9,7 @@ package br.com.ifba.ipss.feature.equipamento.controller;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+
 import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
@@ -18,10 +19,12 @@ import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.feature.valvula.domain.model.Valvula;
 import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
+
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
+
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -61,7 +64,7 @@ public class FerramentaContainerController<E extends Equipamento> {
                 .build();
         
         
-        JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.get_caminhoImagem())));
+        JLabel imagem = new JLabel(new javax.swing.ImageIcon(getClass().getResource(equipamento.getThumbnail())));
 
         if(equipamento instanceof Tubulacao tubulacao){
             

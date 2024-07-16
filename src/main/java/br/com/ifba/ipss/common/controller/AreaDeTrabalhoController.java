@@ -130,17 +130,45 @@ public class AreaDeTrabalhoController {
     // ******************* { Métodos } *****************//
     // *************************************************//
     
-    public void definirTituloAplicacao(){
+        public void atualizarImagemBotaoRemover(JButton btn){
+
+            this.mudarImagemBotao(
+                    btn,
+                    emModoRemocao
+            );
+
+        } // atualizarImagemBotaoRemover
         
-        ViewController.definirTituloAplicacao(this.areaDeTrabalho);
+    public void carregarEquipamentos(String workspacePath){
         
-    } // definirTituloAplicacao
+        this.espacoTrabalhoMap = this.espacoTrabalhoController.pegarEspacoTrabalho(workspacePath);
+        
+        if(this.espacoTrabalhoMap == null || this.espacoTrabalhoMap.isEmpty()){
+            return;
+        }
+       
+        for(Map.Entry<String, Label> entry : this.espacoTrabalhoMap.entrySet()){
+        
+            this.adicionarListenerDeCliqueAoEquipamento(entry.getValue());
+            this.adicionarListenerDeMovimentoAoEquipamento(entry.getValue());
+            this.pnlEspacoTrabalho.add(entry.getValue());
+            this.pnlEspacoTrabalho.revalidate();
+            this.pnlEspacoTrabalho.repaint();
+        }
+        
+    } // carregarEquipamentos
     
     public void definirLogoAplicacao(Image img){
     
         ViewController.definirLogoAplicacao(this.areaDeTrabalho, img);
         
     } // definirLogoAplicacao
+    
+    public void definirTituloAplicacao(){
+        
+        ViewController.definirTituloAplicacao(this.areaDeTrabalho);
+        
+    } // definirTituloAplicacao
     
     public void mudarEfeitoHoverNoBotao(List<JButton> botoes){
         
@@ -196,30 +224,6 @@ public class AreaDeTrabalhoController {
         }
         
     } // mudarEfeitoHoverNoBotao
-    
-    public void carregarEquipamentos(String workspacePath){
-        
-        this.espacoTrabalhoMap = this.espacoTrabalhoController.pegarEspacoTrabalho(workspacePath);
-        
-        if(this.espacoTrabalhoMap == null || this.espacoTrabalhoMap.isEmpty()){
-            return;
-        }
-       
-        for(Map.Entry<String, Label> entry : this.espacoTrabalhoMap.entrySet()){
-        
-            this.adicionarListenerDeCliqueAoEquipamento(entry.getValue());
-            this.adicionarListenerDeMovimentoAoEquipamento(entry.getValue());
-            this.pnlEspacoTrabalho.add(entry.getValue());
-            this.pnlEspacoTrabalho.revalidate();
-            this.pnlEspacoTrabalho.repaint();
-        }
-        
-
-        
-        
-        
-    }
-    // >>> Métodos do Menu Superior <<<
     
     public void mudarStatusModoRemocao(final boolean status){
         
@@ -291,16 +295,6 @@ public class AreaDeTrabalhoController {
         timer.start();
         
     } // exibirMensagemTemporaria
-    
-    public void atualizarImagemBotaoRemover(JButton btn){
-        
-        this.mudarImagemBotao(
-                btn,
-                emModoRemocao
-        );
-        
-        
-    } // atualizarImagemBotaoRemover
     
     public void mudarImagemBotao(JButton btn, boolean selecionado){
         

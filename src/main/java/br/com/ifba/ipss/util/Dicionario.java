@@ -1,7 +1,9 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
-//// *************************************************//
+//// ***********************************************//
+
 package br.com.ifba.ipss.util;
+
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -9,8 +11,10 @@ package br.com.ifba.ipss.util;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+
 import java.util.HashMap;
 import java.util.List;
+
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -38,6 +42,7 @@ public class Dicionario {
         DICIONARIO.put("erro", List.of("Erro", "Erros"));
         DICIONARIO.put("erro_ao_deletar_area_trabalho", List.of("Ocorreu um erro ao deletar a área de trabalho!"));
         DICIONARIO.put("erro_ao_salvar_area_trabalho", List.of("Ocorreu um erro ao salvar a área de trabalho!"));
+        DICIONARIO.put("insira_o_nome_da_simulacao", List.of("Insira o Nome da Simulação"));
         DICIONARIO.put("instrucoes", List.of("Instruções"));
         DICIONARIO.put("l", List.of("L"));
         DICIONARIO.put("limpar_area_trabalho", List.of("Limpar Área de Trabalho"));
@@ -53,7 +58,8 @@ public class Dicionario {
         DICIONARIO.put("titulo_aplicacao", List.of(Constantes.NOME_APLICACAO));
         DICIONARIO.put("tubulacao", List.of("Tubulação", "Tubulações"));
         DICIONARIO.put("valvula", List.of("Válvula", "Válvulas"));
-    }
+        
+    } // static
     
     public static String tr(String chave){
         
@@ -62,7 +68,7 @@ public class Dicionario {
         
         return chave;
         
-    }
+    } // tr
     
     public static String trToPlural(String chave){
         
@@ -74,6 +80,6 @@ public class Dicionario {
         
         return chave;
         
-    }
+    } // trToPlural
     
 }

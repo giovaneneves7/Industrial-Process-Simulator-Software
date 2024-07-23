@@ -10,10 +10,11 @@ package br.com.ifba.ipss.helper;
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 import br.com.ifba.ipss.view.AreaDeTrabalho;
+import br.com.ifba.ipss.view.Instructions;
 import br.com.ifba.ipss.view.ListaSimulacoes;
 import br.com.ifba.ipss.view.TelaInicial;
 import br.com.ifba.ipss.view.TelaSplash;
-import java.util.List;
+import java.util.Stack;
 
 import javax.swing.JFrame;
 // *************************************************//
@@ -35,7 +36,9 @@ public class ScreenHelper {
     public final static String AREA_TRABALHO = "area_de_trabalho";
     public final static String TELA_INICIAL = "tela_inicial";
     public final static String LISTA_SIMULACOES = "lista_simulacoes";
+    public final static String TELA_INSTRUCOES = "instrucoes";
     
+    public final static Stack<JFrame> SCREEN_STACK = new Stack<>();
     
     // *************************************************//
     // ****************** { Métodos } ******************//
@@ -65,6 +68,7 @@ public class ScreenHelper {
             //case AREA_TRABALHO -> new AreaDeTrabalho();
             case TELA_INICIAL  -> new TelaInicial();
             case LISTA_SIMULACOES -> new ListaSimulacoes();
+            case TELA_INSTRUCOES -> new Instructions();
             default -> null;    
         };
             
@@ -81,5 +85,12 @@ public class ScreenHelper {
         };
             
     } // getScreen
+    
+    public static void addToScreenStack(JFrame currentScreen){
+        
+        SCREEN_STACK.add(currentScreen);
+        
+    }
+    
     
 } // ScreenHelper

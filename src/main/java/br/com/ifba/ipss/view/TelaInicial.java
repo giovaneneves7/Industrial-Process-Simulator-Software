@@ -139,8 +139,15 @@ public class TelaInicial extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Abre tela de instruções
+     */
     private void btnInstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstructionsActionPerformed
-        // TODO add your handling code here:
+        
+        ScreenHelper.addToScreenStack(this);
+        dispose();
+        ScreenHelper.getScreen(ScreenHelper.TELA_INSTRUCOES).setVisible(true);
+        
     }//GEN-LAST:event_btnInstructionsActionPerformed
 
     private void btnLoadProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadProjectActionPerformed

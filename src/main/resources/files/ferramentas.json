@@ -92,6 +92,16 @@
    equipamentos: [
         
         {
+            "_nome" : "Torre de Destilação",
+            "thumbnail" : "/images/torre_de_destilacao.png",
+            "_caminhoImagem" : "/images/torre_de_destilacao.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 100,
+            "_alturaPx" : 60
+        },
+        
+        {
             "_nome" : "Tanque 01",
             "thumbnail" : "/images/tanque_thumbnail.png",
             "_caminhoImagem" : "/images/tanque_2.png",
@@ -184,7 +194,7 @@
 
        {
             "_nome" : "Conexão 2",
-            "thumbnail" : "/images/conexao_1.png",
+            "thumbnail" : "/images/conexao_2.png",
             "_caminhoImagem" : "/images/conexao_2.png",
             "_x" : 0,
             "_y" : 0,
@@ -195,7 +205,7 @@
 
         {
             "_nome" : "Conexão 3",
-            "thumbnail" : "/images/conexao_1.png",
+            "thumbnail" : "/images/conexao_3.png",
             "_caminhoImagem" : "/images/conexao_3.png",
             "_x" : 0,
             "_y" : 0,

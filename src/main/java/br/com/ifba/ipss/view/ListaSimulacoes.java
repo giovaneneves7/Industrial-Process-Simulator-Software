@@ -11,6 +11,8 @@ import static br.com.ifba.ipss.util.Dicionario.tr;
  */
 public class ListaSimulacoes extends javax.swing.JFrame {
 
+    String typedKeyCharList = "";
+    
     /**
      * Creates new form ListaSimulacoes
      */
@@ -42,7 +44,7 @@ public class ListaSimulacoes extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlBackground = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txtFieldSearchBox = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         listWorkspaces = new javax.swing.JList<>();
         btnSearch = new javax.swing.JButton();
@@ -51,8 +53,14 @@ public class ListaSimulacoes extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         pnlBackground.setLayout(null);
-        pnlBackground.add(jTextField1);
-        jTextField1.setBounds(60, 30, 300, 24);
+
+        txtFieldSearchBox.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFieldSearchBoxKeyTyped(evt);
+            }
+        });
+        pnlBackground.add(txtFieldSearchBox);
+        txtFieldSearchBox.setBounds(60, 30, 300, 22);
 
         listWorkspaces.setForeground(new java.awt.Color(0, 102, 51));
         listWorkspaces.setModel(new javax.swing.AbstractListModel<String>() {
@@ -79,7 +87,7 @@ public class ListaSimulacoes extends javax.swing.JFrame {
         btnSearch.setBorderPainted(false);
         btnSearch.setFocusPainted(false);
         pnlBackground.add(btnSearch);
-        btnSearch.setBounds(370, 30, 100, 24);
+        btnSearch.setBounds(370, 30, 100, 23);
 
         getContentPane().add(pnlBackground);
         pnlBackground.setBounds(-4, 0, 510, 460);
@@ -99,6 +107,17 @@ public class ListaSimulacoes extends javax.swing.JFrame {
         
     }//GEN-LAST:event_listWorkspacesMouseClicked
 
+    private void txtFieldSearchBoxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFieldSearchBoxKeyTyped
+        
+        updateTypedKeyCharList(String.valueOf(evt.getKeyChar()), typedKeyCharList);
+        
+    }//GEN-LAST:event_txtFieldSearchBoxKeyTyped
+
+    private void updateTypedKeyCharList(String typedChar, String list){
+        
+        typedKeyCharList = typedKeyCharList.concat(typedChar);
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -137,8 +156,8 @@ public class ListaSimulacoes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JList<String> listWorkspaces;
     private javax.swing.JPanel pnlBackground;
+    private javax.swing.JTextField txtFieldSearchBox;
     // End of variables declaration//GEN-END:variables
 }

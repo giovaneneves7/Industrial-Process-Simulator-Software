@@ -32,6 +32,7 @@ public class Dicionario {
 
         DICIONARIO.put("area_de_trabalho_deletada_com_sucesso", List.of("Área de Trabalho deletada com sucesso!"));
         DICIONARIO.put("area_de_trabalho_salva_com_sucesso", List.of("Área de Trabalho salva com sucesso!"));
+        DICIONARIO.put("arquivo_ja_existe", List.of("O Nome de Arquivo Informado Já Está em Uso!"));
         DICIONARIO.put("buscar", List.of("Buscar"));
         DICIONARIO.put("carregar_simulacao", List.of("Carregar Simulação"));
         DICIONARIO.put("conexao", List.of("Conexão", "Conexões"));
@@ -40,6 +41,7 @@ public class Dicionario {
         DICIONARIO.put("di", List.of("Di"));
         DICIONARIO.put("equipamento", List.of("Equipamento", "Equipamentos"));
         DICIONARIO.put("erro", List.of("Erro", "Erros"));
+        DICIONARIO.put("erro_criacao_arquivo", List.of("Ocorreu um erro ao criar o arquivo"));
         DICIONARIO.put("erro_ao_deletar_area_trabalho", List.of("Ocorreu um erro ao deletar a área de trabalho!"));
         DICIONARIO.put("erro_ao_salvar_area_trabalho", List.of("Ocorreu um erro ao salvar a área de trabalho!"));
         DICIONARIO.put("insira_o_nome_da_simulacao", List.of("Insira o Nome da Simulação"));

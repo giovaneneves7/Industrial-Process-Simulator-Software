@@ -19,6 +19,7 @@ public class PathHelper {
     
     // - Arquivos
     public static final String FERRAMENTAS_JSON = "/files/ferramentas.json";
+    public static final String FILES_PATH = "src/main/resources/files";
     
     public static InputStream pegarFerramentasInputStream() {
         

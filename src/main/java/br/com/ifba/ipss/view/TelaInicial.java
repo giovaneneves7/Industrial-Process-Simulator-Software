@@ -1,12 +1,37 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+// *************************************************//
+
 package br.com.ifba.ipss.view;
 
+
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
+
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
+
+import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.helper.ScreenHelper;
 import br.com.ifba.ipss.theme.ThemeManager;
 import static br.com.ifba.ipss.util.Dicionario.tr;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.swing.JOptionPane;
+
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
+
 /**
  *
  * @author Giovane Neves
+ * @since V0.0.1
  */
 public class TelaInicial extends javax.swing.JFrame {
 
@@ -16,6 +41,9 @@ public class TelaInicial extends javax.swing.JFrame {
         
     } // TelaInicial
     
+    /**
+     * Faz a incialização personalizada da tela.
+     */
     public void customIntl(){
         
         this.btnLoadProject.setBackground(ThemeManager.getColor("primary"));
@@ -126,7 +154,29 @@ public class TelaInicial extends javax.swing.JFrame {
         
         String input = JOptionPane.showInputDialog(null, tr("insira_o_nome_da_simulacao"), tr("nova_simulacao"), JOptionPane.QUESTION_MESSAGE);
      
-        if(input != null){
+        if(input != null && !input.trim().isEmpty()){
+            
+            String fileName = PathHelper.FILES_PATH.concat(input).concat(".json");
+            File file = new File(fileName);
+            
+            try {
+                
+                if(file.createNewFile()){
+                    
+                    ScreenHelper.pegarTela(ScreenHelper.AREA_TRABALHO, fileName);
+                    
+                } else{
+                    
+                    JOptionPane.showMessageDialog(null, tr("arquivo_ja_existe"));
+                    
+                }
+                
+            } catch (IOException ex) {
+                
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, tr("erro_criacao_arquivo"));
+                
+            }
             
         }
         
@@ -176,4 +226,4 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
-}
+} // TelaInicial

@@ -30,6 +30,7 @@ public class ScreenHelper {
     // *************************************************//
     // ****************** { Atributos } ****************//
     // *************************************************//
+    
     public final static String TELA_SPLASH = "tela_splash";
     public final static String AREA_TRABALHO = "area_de_trabalho";
     public final static String TELA_INICIAL = "tela_inicial";

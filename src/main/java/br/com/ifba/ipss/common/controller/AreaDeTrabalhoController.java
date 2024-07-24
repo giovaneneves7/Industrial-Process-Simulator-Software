@@ -35,11 +35,18 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.awt.event.MouseMotionAdapter;
 
 import java.util.HashMap;
 import java.util.List;
@@ -50,10 +57,12 @@ import javax.swing.BorderFactory;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.OverlayLayout;
 import javax.swing.Timer;
 
 import lombok.Data;
@@ -95,6 +104,7 @@ public class AreaDeTrabalhoController {
     
     private Map<String, Label> espacoTrabalhoMap = new HashMap<>();
     
+    
     // *************************************************//
     // ****************** { Construtor } ***************//
     // *************************************************//
@@ -107,7 +117,7 @@ public class AreaDeTrabalhoController {
         equipamentoServiceMap.put(trToPlural("conexao"), ServiceManager.find(IConexaoService.class));
         equipamentoServiceMap.put(trToPlural("valvula"), ServiceManager.find(IValvulaService.class));
         equipamentoServiceMap.put(trToPlural("equipamento"), ServiceManager.find(br.com.ifba.ipss.feature.equipamento.domain.service.IEquipamentoService.class));
-        
+                
     } // AreaDeTrabalhoController
     
     // *************************************************//
@@ -117,8 +127,12 @@ public class AreaDeTrabalhoController {
     public void setPnlEspacoTrabalho(JPanel pnlEspacaoTrabalho){
         
         this.pnlEspacoTrabalho = pnlEspacaoTrabalho;
+        
+        this.pnlEspacoTrabalho.repaint();
+
     
     }
+    
     
     public void setWorkspacePath(String workspacePath){
         
@@ -130,12 +144,12 @@ public class AreaDeTrabalhoController {
     // ******************* { Métodos } *****************//
     // *************************************************//
     
-        public void atualizarImagemBotaoRemover(JButton btn){
+    public void atualizarImagemBotaoRemover(JButton btn){
 
-            this.mudarImagemBotao(
-                    btn,
-                    emModoRemocao
-            );
+        this.mudarImagemBotao(
+                btn,
+      emModoRemocao
+        );
 
         } // atualizarImagemBotaoRemover
         

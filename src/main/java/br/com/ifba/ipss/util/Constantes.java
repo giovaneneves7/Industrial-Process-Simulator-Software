@@ -44,7 +44,8 @@ public class Constantes {
     public static final int TAMANHO_FONTE = 12;
     
     // Paleta de Cores
-    public static final Color COR_PRIMARIA = new Color(0, 102, 51);
+    public static final Color COR_PRIMARIA = Color.decode("#006633");
+    public static final Color COR_PRIMARIA_SELECIONADA = Color.decode("#034A26");
     public static final Color COR_SEGUNDARIA = Color.white;
     public static final Color COR_DARK = Color.decode("#9C9C9C");
     public static final Color COR_BACKGROUND = Color.decode("#CCCCCC");
@@ -95,10 +96,10 @@ public class Constantes {
     public static final String CAMINHO_BOTAO_GIRAR_SELECIONADO = "/images/botao_girar_selecionado.png";
     public static final String CAMINHO_BOTAO_CONECTAR = "/images/botao_conectar.png";
     public static final String CAMINHO_BOTAO_CONECTAR_SELECIONADO = "/images/botao_conectar_selecionado.png";
-    public static final String CAMINHO_BOTAO_LIMPAR = "/images/botao_limpar.png";
-    public static final String CAMINHO_BOTAO_LIMPAR_SELECIONADO = "/images/botao_limpar_selecionado.png";
-    public static final String CAMINHO_BOTAO_SALVAR = "/images/botao_salvar.png";
-    public static final String CAMINHO_BOTAO_SALVAR_SELECIONADO = "/images/botao_salvar_selecionado.png";
+    public static final String CAMINHO_BOTAO_LIMPAR = "/images/delete_file.png";
+    public static final String CAMINHO_BOTAO_LIMPAR_SELECIONADO = "/images/delete_file_selected.png";
+    public static final String CAMINHO_BOTAO_SALVAR = "/images/save.png";
+    public static final String CAMINHO_BOTAO_SALVAR_SELECIONADO = "/images/save_selected.png";
     public static final String CAMINHO_BOTAO_SIMULAR = "/images/botao_simular.png";
     public static final String CAMINHO_BOTAO_SIMULAR_SELECIONADO = "/images/botao_simular_selecionado.png";
     public static final String CAMINHO_BOTAO_CONEXOES = "/images/botao_conexoes.png";

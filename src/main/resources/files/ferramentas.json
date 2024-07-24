@@ -92,9 +92,9 @@
    equipamentos: [
         
         {
-            "_nome" : "Torre de Destilação",
-            "thumbnail" : "/images/torre_de_destilacao.png",
-            "_caminhoImagem" : "/images/torre_de_destilacao.png",
+            "_nome" : "Reator",
+            "thumbnail" : "/images/default.jpeg",
+            "_caminhoImagem" : "/images/reator.png",
             "_x" : 0,
             "_y" : 0,
             "_larguraPx" : 100,
@@ -102,8 +102,8 @@
         },
         
         {
-            "_nome" : "Tanque 01",
-            "thumbnail" : "/images/tanque_thumbnail.png",
+            "_nome" : "Tanque",
+            "thumbnail" : "/images/default.jpeg",
             "_caminhoImagem" : "/images/tanque_2.png",
             "_x" : 0,
             "_y" : 0,
@@ -114,7 +114,7 @@
         
         {
             "_nome" : "Bomba Helicodal",
-            "thumbnail" : "/images/bomba_helicodal.png",
+            "thumbnail" : "/images/default.jpeg",
             "_caminhoImagem" : "/images/bomba_helicodal.png",
             "_x" : 0,
             "_y" : 0,
@@ -124,7 +124,7 @@
         
         {
             "_nome" : "Bomba Centrifuga",
-            "thumbnail" : "/images/bomba_centrifuga_thumb.png",
+            "thumbnail" : "/images/default.jpeg",
             "_caminhoImagem" : "/images/bomba_centrifuga.png",
             "_x" : 0,
             "_y" : 0,

@@ -14,6 +14,12 @@ import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
+import static br.com.ifba.ipss.util.Dicionario.tr;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
+import java.awt.Rectangle;
 
 import java.util.List;
 
@@ -42,6 +48,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     public static boolean emModoConexao = false;
     
     public static String workspacePathString;
+    
+    private Rectangle selectionArea;
+    private Point selectionInitialPoint;
+    
     /**
      * Cria a interface com os componentes iniciais
      */
@@ -50,7 +60,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         workspacePathString = workspacePath;
         inicializadorPersonalizado();
         initComponents();
-        
+
         this.areaDeTrabalhoController.setPnlEspacoTrabalho(pnlEspacoTrabalho);
         
         List<javax.swing.JButton> botoes = List.of(
@@ -70,18 +80,72 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.areaDeTrabalhoController.carregarEquipamentos(workspacePath);
         this.areaDeTrabalhoController.setWorkspacePath(workspacePath);
         
+        addTooltipToButtons();
+        addMouseListeners();
+        
     } // AreaDeTrabalho
 
+    private void addMouseListeners() {
+        pnlEspacoTrabalho.addMouseListener(new java.awt.event.MouseAdapter() {
+            
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                selectionInitialPoint = evt.getPoint();
+                selectionArea = new Rectangle();
+            }
 
+            @Override
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                repaint();
+            }
+        });
+
+        pnlEspacoTrabalho.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            
+            @Override
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                int x = Math.min(selectionInitialPoint.x, evt.getX());
+                int y = Math.min(selectionInitialPoint.y, evt.getY());
+                int width = Math.abs(selectionInitialPoint.x - evt.getX());
+                int height = Math.abs(selectionInitialPoint.y - evt.getY());
+                width = Math.min(width, pnlEspacoTrabalho.getWidth() - x);
+                height = Math.min(height, pnlEspacoTrabalho.getHeight() - y);
+
+                selectionArea.setBounds(x, y, width, height);
+                repaint();
+            }
+            
+        });
+    }
+    
+    private void addTooltipToButtons(){
+        
+        this.btnSalvarEspacoTrabalho.setToolTipText(tr("salvar_area_trabalho"));
+        this.btnLimparEspacoTrabalho.setToolTipText(tr("limpar_area_trabalho"));
+        this.btnGirarEquipamento.setToolTipText(tr("girar_equipamento"));
+        this.btnRemoverEquipamento.setToolTipText("remover_equipamento");
+        this.btnConectarEquipamentos.setToolTipText(("conectar_equipamento"));
+        
+    } // addTooltipToButtons
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        if (selectionArea != null) {
+            Graphics2D g2d = (Graphics2D) g;
+            g2d.draw(selectionArea);
+        }
+    }
     
     private void inicializadorPersonalizado(){
         
         ImageIcon favicon = new ImageIcon(getClass().getResource(Constantes.CAMINHO_LOGO));
         this.areaDeTrabalhoController.definirLogoAplicacao(favicon.getImage());
         this.areaDeTrabalhoController.definirTituloAplicacao();
-        
+                
     } // inicializadorPersonalizado
     
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -179,7 +243,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         });
         PnlMenu.add(btnSimular);
 
-        btnLimparEspacoTrabalho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_limpar.png"))); // NOI18N
+        btnLimparEspacoTrabalho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete_file.png"))); // NOI18N
         btnLimparEspacoTrabalho.setBorderPainted(false);
         btnLimparEspacoTrabalho.setContentAreaFilled(false);
         btnLimparEspacoTrabalho.setFocusPainted(false);
@@ -191,7 +255,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         });
         PnlMenu.add(btnLimparEspacoTrabalho);
 
-        btnSalvarEspacoTrabalho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_salvar.png"))); // NOI18N
+        btnSalvarEspacoTrabalho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
         btnSalvarEspacoTrabalho.setContentAreaFilled(false);
         btnSalvarEspacoTrabalho.setFocusPainted(false);
         btnSalvarEspacoTrabalho.setFocusable(false);
@@ -211,10 +275,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         lblNotificacaoDeEstado.setText("Nenhum modo de edição selecionado");
         pnlEspacoTrabalho.add(lblNotificacaoDeEstado);
-        lblNotificacaoDeEstado.setBounds(30, 10, 320, 16);
+        lblNotificacaoDeEstado.setBounds(30, 10, 320, 18);
 
         pnlBackgruond.add(pnlEspacoTrabalho);
-        pnlEspacoTrabalho.setBounds(0, 90, 1250, 710);
+        pnlEspacoTrabalho.setBounds(0, 80, 1250, 710);
 
         PnlBotoes.setBackground(new java.awt.Color(255, 255, 255));
 

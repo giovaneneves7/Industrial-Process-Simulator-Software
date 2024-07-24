@@ -151,7 +151,7 @@
             <Component class="javax.swing.JButton" name="btnLimparEspacoTrabalho">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/botao_limpar.png"/>
+                  <Image iconType="3" name="/images/delete_file.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -165,7 +165,7 @@
             <Component class="javax.swing.JButton" name="btnSalvarEspacoTrabalho">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/botao_salvar.png"/>
+                  <Image iconType="3" name="/images/save.png"/>
                 </Property>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
@@ -186,7 +186,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="90" width="1250" height="710"/>
+              <AbsoluteConstraints x="0" y="80" width="1250" height="710"/>
             </Constraint>
           </Constraints>
 

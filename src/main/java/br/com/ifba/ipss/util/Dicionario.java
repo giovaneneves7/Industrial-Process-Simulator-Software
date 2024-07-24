@@ -35,6 +35,7 @@ public class Dicionario {
         DICIONARIO.put("arquivo_ja_existe", List.of("O Nome de Arquivo Informado Já Está em Uso!"));
         DICIONARIO.put("buscar", List.of("Buscar"));
         DICIONARIO.put("carregar_simulacao", List.of("Carregar Simulação"));
+        DICIONARIO.put("conectar_equipamento", List.of("Conectar Equipamento"));
         DICIONARIO.put("conexao", List.of("Conexão", "Conexões"));
         DICIONARIO.put("deseja_limpar_a_area_de_trabalho", List.of("Deseja limpar a Área de Trabalho?"));
         DICIONARIO.put("deseja_salvar_a_area_de_trabalho", List.of("Deseja salvar a Área de Trabalho?"));
@@ -44,6 +45,7 @@ public class Dicionario {
         DICIONARIO.put("erro_criacao_arquivo", List.of("Ocorreu um erro ao criar o arquivo"));
         DICIONARIO.put("erro_ao_deletar_area_trabalho", List.of("Ocorreu um erro ao deletar a área de trabalho!"));
         DICIONARIO.put("erro_ao_salvar_area_trabalho", List.of("Ocorreu um erro ao salvar a área de trabalho!"));
+        DICIONARIO.put("girar_equipamento", List.of("Girar Equipamento"));
         DICIONARIO.put("insira_o_nome_da_simulacao", List.of("Insira o Nome da Simulação"));
         DICIONARIO.put("instrucoes", List.of("Instruções"));
         DICIONARIO.put("l", List.of("L"));
@@ -55,8 +57,10 @@ public class Dicionario {
         DICIONARIO.put("modo_rotacao_ativado", List.of("Modo Rotação: Ativado"));
         DICIONARIO.put("modo_rotacao_desativado", List.of("Modo Rotação: Desativado"));
         DICIONARIO.put("nova_simulacao", List.of("Nova Simulação"));
+        DICIONARIO.put("remover_equipamento", List.of("Remover Equipamento"));
         DICIONARIO.put("salvar_area_trabalho", List.of("Salvar Área de Trabalho"));
         DICIONARIO.put("service_nao_encontrado", List.of("O serviço requerido não foi encontrado"));
+        DICIONARIO.put("simular", List.of("Simular"));
         DICIONARIO.put("titulo_aplicacao", List.of(Constantes.NOME_APLICACAO));
         DICIONARIO.put("tubulacao", List.of("Tubulação", "Tubulações"));
         DICIONARIO.put("valvula", List.of("Válvula", "Válvulas"));

@@ -32,6 +32,7 @@ public class Dicionario {
 
         DICIONARIO.put("area_de_trabalho_deletada_com_sucesso", List.of("Área de Trabalho deletada com sucesso!"));
         DICIONARIO.put("area_de_trabalho_salva_com_sucesso", List.of("Área de Trabalho salva com sucesso!"));
+        DICIONARIO.put("area_do_orientador", List.of("Área do Orientador"));
         DICIONARIO.put("arquivo_ja_existe", List.of("O Nome de Arquivo Informado Já Está em Uso!"));
         DICIONARIO.put("buscar", List.of("Buscar"));
         DICIONARIO.put("carregar_simulacao", List.of("Carregar Simulação"));
@@ -40,6 +41,7 @@ public class Dicionario {
         DICIONARIO.put("deseja_limpar_a_area_de_trabalho", List.of("Deseja limpar a Área de Trabalho?"));
         DICIONARIO.put("deseja_salvar_a_area_de_trabalho", List.of("Deseja salvar a Área de Trabalho?"));
         DICIONARIO.put("di", List.of("Di"));
+        DICIONARIO.put("entrar", List.of("Entrar"));
         DICIONARIO.put("equipamento", List.of("Equipamento", "Equipamentos"));
         DICIONARIO.put("erro", List.of("Erro", "Erros"));
         DICIONARIO.put("erro_criacao_arquivo", List.of("Ocorreu um erro ao criar o arquivo"));
@@ -56,6 +58,7 @@ public class Dicionario {
         DICIONARIO.put("modo_remocao_desativado", List.of("Modo Remoção: Desativado"));
         DICIONARIO.put("modo_rotacao_ativado", List.of("Modo Rotação: Ativado"));
         DICIONARIO.put("modo_rotacao_desativado", List.of("Modo Rotação: Desativado"));
+        DICIONARIO.put("nome_usuario", List.of("Nome de Usuário"));
         DICIONARIO.put("nova_simulacao", List.of("Nova Simulação"));
         DICIONARIO.put("remover_equipamento", List.of("Remover Equipamento"));
         DICIONARIO.put("salvar_area_trabalho", List.of("Salvar Área de Trabalho"));

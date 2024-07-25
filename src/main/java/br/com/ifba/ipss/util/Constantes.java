@@ -90,18 +90,18 @@ public class Constantes {
     public static final String ATRIBUTO_LEFT = "left";
     
     // Caminhos de Imagens
-    public static final String CAMINHO_BOTAO_REMOVER = "/images/botao_remover.png";
-    public static final String CAMINHO_BOTAO_REMOVER_SELECIONADO = "/images/botao_remover_selecionado.png"; 
-    public static final String CAMINHO_BOTAO_GIRAR = "/images/botao_girar.png";
-    public static final String CAMINHO_BOTAO_GIRAR_SELECIONADO = "/images/botao_girar_selecionado.png";
-    public static final String CAMINHO_BOTAO_CONECTAR = "/images/botao_conectar.png";
-    public static final String CAMINHO_BOTAO_CONECTAR_SELECIONADO = "/images/botao_conectar_selecionado.png";
+    public static final String CAMINHO_BOTAO_REMOVER = "/images/trash.png";
+    public static final String CAMINHO_BOTAO_REMOVER_SELECIONADO = "/images/trash_selected.png"; 
+    public static final String CAMINHO_BOTAO_GIRAR = "/images/spin.png";
+    public static final String CAMINHO_BOTAO_GIRAR_SELECIONADO = "/images/spin_selected.png";
+    public static final String CAMINHO_BOTAO_CONECTAR = "/images/connection.png";
+    public static final String CAMINHO_BOTAO_CONECTAR_SELECIONADO = "/images/connection_selected.png";
     public static final String CAMINHO_BOTAO_LIMPAR = "/images/delete_file.png";
     public static final String CAMINHO_BOTAO_LIMPAR_SELECIONADO = "/images/delete_file_selected.png";
     public static final String CAMINHO_BOTAO_SALVAR = "/images/save.png";
     public static final String CAMINHO_BOTAO_SALVAR_SELECIONADO = "/images/save_selected.png";
-    public static final String CAMINHO_BOTAO_SIMULAR = "/images/botao_simular.png";
-    public static final String CAMINHO_BOTAO_SIMULAR_SELECIONADO = "/images/botao_simular_selecionado.png";
+    public static final String CAMINHO_BOTAO_SIMULAR = "/images/play.png";
+    public static final String CAMINHO_BOTAO_SIMULAR_SELECIONADO = "/images/play_selected.png";
     public static final String CAMINHO_BOTAO_CONEXOES = "/images/botao_conexoes.png";
     public static final String CAMINHO_BOTAO_CONEXOES_SELECIONADO = "/images/botao_conexoes_selecionado.png";
     public static final String CAMINHO_BOTAO_TUBULACOES = "/images/botao_tubulacoes.png";

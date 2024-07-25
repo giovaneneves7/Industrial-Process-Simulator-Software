@@ -159,12 +159,17 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         PnlFixo = new javax.swing.JPanel();
         LabTítulo = new javax.swing.JLabel();
         PnlMenu = new javax.swing.JPanel();
+        pnlSpanSpace1 = new javax.swing.JPanel();
         btnGirarEquipamento = new javax.swing.JButton();
+        pnlSpanSpace4 = new javax.swing.JPanel();
         btnConectarEquipamentos = new javax.swing.JButton();
+        pnlSpanSpace3 = new javax.swing.JPanel();
         btnRemoverEquipamento = new javax.swing.JButton();
         btnSimular = new javax.swing.JButton();
         btnLimparEspacoTrabalho = new javax.swing.JButton();
+        pnlSpanSpace = new javax.swing.JPanel();
         btnSalvarEspacoTrabalho = new javax.swing.JButton();
+        pnlSpanSpace2 = new javax.swing.JPanel();
         pnlEspacoTrabalho = new javax.swing.JPanel();
         lblNotificacaoDeEstado = new javax.swing.JLabel();
         PnlBotoes = new javax.swing.JPanel();
@@ -193,7 +198,23 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         PnlMenu.setBackground(new java.awt.Color(255, 255, 255));
         PnlMenu.setLayout(new javax.swing.BoxLayout(PnlMenu, javax.swing.BoxLayout.LINE_AXIS));
 
-        btnGirarEquipamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_girar.png"))); // NOI18N
+        pnlSpanSpace1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlSpanSpace1.setMaximumSize(new java.awt.Dimension(30, 50));
+
+        javax.swing.GroupLayout pnlSpanSpace1Layout = new javax.swing.GroupLayout(pnlSpanSpace1);
+        pnlSpanSpace1.setLayout(pnlSpanSpace1Layout);
+        pnlSpanSpace1Layout.setHorizontalGroup(
+            pnlSpanSpace1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        pnlSpanSpace1Layout.setVerticalGroup(
+            pnlSpanSpace1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        PnlMenu.add(pnlSpanSpace1);
+
+        btnGirarEquipamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/spin.png"))); // NOI18N
         btnGirarEquipamento.setBorderPainted(false);
         btnGirarEquipamento.setContentAreaFilled(false);
         btnGirarEquipamento.setFocusPainted(false);
@@ -205,7 +226,23 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         });
         PnlMenu.add(btnGirarEquipamento);
 
-        btnConectarEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_conectar.png"))); // NOI18N
+        pnlSpanSpace4.setBackground(new java.awt.Color(255, 255, 255));
+        pnlSpanSpace4.setMaximumSize(new java.awt.Dimension(10, 50));
+
+        javax.swing.GroupLayout pnlSpanSpace4Layout = new javax.swing.GroupLayout(pnlSpanSpace4);
+        pnlSpanSpace4.setLayout(pnlSpanSpace4Layout);
+        pnlSpanSpace4Layout.setHorizontalGroup(
+            pnlSpanSpace4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        pnlSpanSpace4Layout.setVerticalGroup(
+            pnlSpanSpace4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        PnlMenu.add(pnlSpanSpace4);
+
+        btnConectarEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/connection.png"))); // NOI18N
         btnConectarEquipamentos.setBorderPainted(false);
         btnConectarEquipamentos.setContentAreaFilled(false);
         btnConectarEquipamentos.setName("btnConectar"); // NOI18N
@@ -216,7 +253,23 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         });
         PnlMenu.add(btnConectarEquipamentos);
 
-        btnRemoverEquipamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_remover.png"))); // NOI18N
+        pnlSpanSpace3.setBackground(new java.awt.Color(255, 255, 255));
+        pnlSpanSpace3.setMaximumSize(new java.awt.Dimension(10, 50));
+
+        javax.swing.GroupLayout pnlSpanSpace3Layout = new javax.swing.GroupLayout(pnlSpanSpace3);
+        pnlSpanSpace3.setLayout(pnlSpanSpace3Layout);
+        pnlSpanSpace3Layout.setHorizontalGroup(
+            pnlSpanSpace3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        pnlSpanSpace3Layout.setVerticalGroup(
+            pnlSpanSpace3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        PnlMenu.add(pnlSpanSpace3);
+
+        btnRemoverEquipamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash.png"))); // NOI18N
         btnRemoverEquipamento.setBorderPainted(false);
         btnRemoverEquipamento.setContentAreaFilled(false);
         btnRemoverEquipamento.setFocusPainted(false);
@@ -228,7 +281,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         });
         PnlMenu.add(btnRemoverEquipamento);
 
-        btnSimular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_simular.png"))); // NOI18N
+        btnSimular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/play.png"))); // NOI18N
         btnSimular.setBorderPainted(false);
         btnSimular.setContentAreaFilled(false);
         btnSimular.setFocusPainted(false);
@@ -255,6 +308,22 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         });
         PnlMenu.add(btnLimparEspacoTrabalho);
 
+        pnlSpanSpace.setBackground(new java.awt.Color(255, 255, 255));
+        pnlSpanSpace.setMaximumSize(new java.awt.Dimension(10, 50));
+
+        javax.swing.GroupLayout pnlSpanSpaceLayout = new javax.swing.GroupLayout(pnlSpanSpace);
+        pnlSpanSpace.setLayout(pnlSpanSpaceLayout);
+        pnlSpanSpaceLayout.setHorizontalGroup(
+            pnlSpanSpaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        pnlSpanSpaceLayout.setVerticalGroup(
+            pnlSpanSpaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        PnlMenu.add(pnlSpanSpace);
+
         btnSalvarEspacoTrabalho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
         btnSalvarEspacoTrabalho.setContentAreaFilled(false);
         btnSalvarEspacoTrabalho.setFocusPainted(false);
@@ -266,6 +335,22 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             }
         });
         PnlMenu.add(btnSalvarEspacoTrabalho);
+
+        pnlSpanSpace2.setBackground(new java.awt.Color(255, 255, 255));
+        pnlSpanSpace2.setMaximumSize(new java.awt.Dimension(30, 50));
+
+        javax.swing.GroupLayout pnlSpanSpace2Layout = new javax.swing.GroupLayout(pnlSpanSpace2);
+        pnlSpanSpace2.setLayout(pnlSpanSpace2Layout);
+        pnlSpanSpace2Layout.setHorizontalGroup(
+            pnlSpanSpace2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        pnlSpanSpace2Layout.setVerticalGroup(
+            pnlSpanSpace2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        PnlMenu.add(pnlSpanSpace2);
 
         pnlBackgruond.add(PnlMenu);
         PnlMenu.setBounds(0, 30, 1370, 50);
@@ -501,5 +586,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private javax.swing.JLabel lblNotificacaoDeEstado;
     private javax.swing.JPanel pnlBackgruond;
     private javax.swing.JPanel pnlEspacoTrabalho;
+    private javax.swing.JPanel pnlSpanSpace;
+    private javax.swing.JPanel pnlSpanSpace1;
+    private javax.swing.JPanel pnlSpanSpace2;
+    private javax.swing.JPanel pnlSpanSpace3;
+    private javax.swing.JPanel pnlSpanSpace4;
     // End of variables declaration//GEN-END:variables
 }

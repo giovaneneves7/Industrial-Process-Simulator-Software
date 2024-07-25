@@ -5,11 +5,11 @@
         {
             "_nome" : "Tubo 01",
             "thumbnail" : "/images/T1.png",
-            "_caminhoImagem" : "/images/T1.png",
+            "_caminhoImagem" : "/images/tub_1.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 30,
-            "_alturaPx" : 10,
+            "_larguraPx" : 10,
+            "_alturaPx" : 30,
             "_diametroInterno" : 1,
             "comprimento" : 2,
             "up" : 1,
@@ -22,7 +22,7 @@
         {
             "_nome" : "Tubo 02",
             "thumbnail" : "/images/T1.png",
-            "_caminhoImagem" : "/images/T2.png",
+            "_caminhoImagem" : "/images/tub_2.png",
             "_x" : 0,
             "_y" : 0,
             "_larguraPx" : 50,
@@ -39,7 +39,7 @@
         {    
             "_nome" : "Tubo 03",
             "thumbnail" : "/images/T1.png",
-            "_caminhoImagem" : "/images/T3.png",
+            "_caminhoImagem" : "/images/tub_3.png",
             "_x" : 0,
             "_y" : 0,
             "_larguraPx" : 70,
@@ -56,7 +56,7 @@
         {
             "_nome" : "Tubo 04",
             "thumbnail" : "/images/T1.png",
-            "_caminhoImagem" : "/images/T4.png",
+            "_caminhoImagem" : "/images/tub_4.png",
             "_x" : 0,
             "_y" : 0,
             "_larguraPx" : 90,
@@ -72,11 +72,11 @@
 
        {    "_nome" : "Tubo 05",
             "thumbnail" : "/images/T1.png",
-            "_caminhoImagem" : "/images/T5.png",
+            "_caminhoImagem" : "/images/tub_5.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 100,
-            "_alturaPx" : 10,
+            "_larguraPx" : 20,
+            "_alturaPx" : 100,
             "_diametroInterno" : 1,
             "comprimento" : 10,
             "up" : 1,
@@ -93,7 +93,7 @@
         
         {
             "_nome" : "Reator",
-            "thumbnail" : "/images/default.jpeg",
+            "thumbnail" : "/images/default.png",
             "_caminhoImagem" : "/images/reator.png",
             "_x" : 0,
             "_y" : 0,
@@ -103,7 +103,7 @@
         
         {
             "_nome" : "Tanque",
-            "thumbnail" : "/images/default.jpeg",
+            "thumbnail" : "/images/default.png",
             "_caminhoImagem" : "/images/tanque_2.png",
             "_x" : 0,
             "_y" : 0,
@@ -114,7 +114,7 @@
         
         {
             "_nome" : "Bomba Helicodal",
-            "thumbnail" : "/images/default.jpeg",
+            "thumbnail" : "/images/default.png",
             "_caminhoImagem" : "/images/bomba_helicodal.png",
             "_x" : 0,
             "_y" : 0,
@@ -124,7 +124,7 @@
         
         {
             "_nome" : "Bomba Centrifuga",
-            "thumbnail" : "/images/default.jpeg",
+            "thumbnail" : "/images/default.png",
             "_caminhoImagem" : "/images/bomba_centrifuga.png",
             "_x" : 0,
             "_y" : 0,
@@ -137,7 +137,7 @@
         
         {
             "_nome" : "Retenção",
-            "thumbnail" : "/images/valvula_de_retencao.png",
+            "thumbnail" : "/images/default.png",
             "_caminhoImagem" : "/images/valvula_de_retencao.png",
             "_x" : 0,
             "_y" : 0,
@@ -148,7 +148,7 @@
         
         {
             "_nome" : "Gaveta",
-            "thumbnail" : "/images/conexao_1.png",
+            "thumbnail" : "/images/default.png",
             "_caminhoImagem" : "/images/valvula_gaveta.png",
             "_x" : 0,
             "_y" : 0,
@@ -159,7 +159,7 @@
 
         {
             "_nome" : "Borboleta",
-            "thumbnail" : "/images/conexao_1.png",
+            "thumbnail" : "/images/default.png",
             "_caminhoImagem" : "/images/valvula_borboleta.png",
             "_x" : 0,
             "_y" : 0,
@@ -170,7 +170,7 @@
 
         {
             "_nome" : "Esfera",
-            "thumbnail" : "/images/conexao_1.png",
+            "thumbnail" : "/images/default.png",
             "_caminhoImagem" : "/images/valvula_esfera.png",
             "_x" : 0,
             "_y" : 0,

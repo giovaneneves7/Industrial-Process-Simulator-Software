@@ -1,8 +1,33 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+// *************************************************//
+
 package br.com.ifba.ipss.view;
 
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
+
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
+
+import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.helper.ScreenHelper;
 import br.com.ifba.ipss.theme.ThemeManager;
 import static br.com.ifba.ipss.util.Dicionario.tr;
+
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import javax.swing.DefaultListModel;
+
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
 
 /**
  *
@@ -30,6 +55,30 @@ public class ListaSimulacoes extends javax.swing.JFrame {
         this.btnSearch.setForeground(ThemeManager.getColor("secondary"));
         this.btnSearch.setText(tr(this.btnSearch.getText()));
         
+        loadJsonFiles();
+    }
+    
+    private void loadJsonFiles(){
+        
+        DefaultListModel<String> model = new DefaultListModel<>();
+        Path filesDir = Paths.get(PathHelper.FILES_PATH);
+        
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(filesDir, "*.json")) {
+            
+            for (Path entry : stream) {
+                if(entry.getFileName().toString().equals("tools.json") || entry.getFileName().toString().equals("ferramentas.json"))
+                    continue;
+                model.addElement(entry.getFileName().toString());
+            }
+            
+        } catch (IOException e) {
+            
+            e.printStackTrace();
+            
+        }
+        
+        listWorkspaces.setModel(model);
+         
     }
     
     

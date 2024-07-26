@@ -21,6 +21,7 @@ import static br.com.ifba.ipss.util.Dicionario.tr;
 
 import java.io.File;
 import java.io.IOException;
+import javax.swing.ImageIcon;
 
 import javax.swing.JOptionPane;
 
@@ -74,6 +75,10 @@ public class TelaInicial extends javax.swing.JFrame {
         this.btnInstructions.setBackground(ThemeManager.getColor("primary"));
         this.btnInstructions.setForeground(ThemeManager.getColor("secondary"));
         this.btnInstructions.setText(tr(this.btnInstructions.getText()));
+        
+        this.setIconImage(
+                new ImageIcon(this.getClass().getResource(PathHelper.LOGO)).getImage()
+        );
     } // CustomIntl
 
     /**
@@ -158,7 +163,7 @@ public class TelaInicial extends javax.swing.JFrame {
         btnAdmLogin.setBounds(600, 20, 50, 40);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(10, 0, 740, 467);
+        jPanel2.setBounds(0, 0, 750, 467);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 740, 530);

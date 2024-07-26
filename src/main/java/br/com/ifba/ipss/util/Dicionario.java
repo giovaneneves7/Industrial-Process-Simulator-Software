@@ -60,6 +60,7 @@ public class Dicionario {
         DICIONARIO.put("modo_rotacao_desativado", List.of("Modo Rotação: Desativado"));
         DICIONARIO.put("nome_usuario", List.of("Nome de Usuário"));
         DICIONARIO.put("nova_simulacao", List.of("Nova Simulação"));
+        DICIONARIO.put("nova_simulacao_criada_com_sucesso", List.of("Nova Simulação Criada com Sucesso!"));
         DICIONARIO.put("remover_equipamento", List.of("Remover Equipamento"));
         DICIONARIO.put("salvar_area_trabalho", List.of("Salvar Área de Trabalho"));
         DICIONARIO.put("service_nao_encontrado", List.of("O serviço requerido não foi encontrado"));

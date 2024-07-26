@@ -18,10 +18,9 @@ import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.helper.ScreenHelper;
 import br.com.ifba.ipss.theme.ThemeManager;
 import static br.com.ifba.ipss.util.Dicionario.tr;
+
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
@@ -42,6 +41,23 @@ public class TelaInicial extends javax.swing.JFrame {
         
     } // TelaInicial
     
+    private boolean createNetProject(String projectName){
+        
+        String fileName = PathHelper.FILES_PATH.concat(projectName).concat(".json");
+        File file = new File(fileName);
+        
+        try {
+                
+            return file.createNewFile();
+            
+        } catch (IOException ex) {
+                
+            ex.printStackTrace();
+            return false;
+                
+        }
+        
+    }
     /**
      * Faz a incialização personalizada da tela.
      */
@@ -71,7 +87,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        btnConfig = new javax.swing.JButton();
+        btnInfo = new javax.swing.JButton();
         btnLoadProject = new javax.swing.JButton();
         btnNewProject = new javax.swing.JButton();
         btnInstructions = new javax.swing.JButton();
@@ -86,11 +102,11 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
-        btnConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
-        btnConfig.setBorderPainted(false);
-        btnConfig.setContentAreaFilled(false);
-        jPanel2.add(btnConfig);
-        btnConfig.setBounds(640, 70, 70, 70);
+        btnInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/info.png"))); // NOI18N
+        btnInfo.setBorderPainted(false);
+        btnInfo.setContentAreaFilled(false);
+        jPanel2.add(btnInfo);
+        btnInfo.setBounds(650, 20, 40, 40);
 
         btnLoadProject.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         btnLoadProject.setText("carregar_simulacao");
@@ -132,13 +148,14 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel1.setBounds(280, 60, 250, 70);
 
         btnAdmLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/scientist.png"))); // NOI18N
+        btnAdmLogin.setContentAreaFilled(false);
         btnAdmLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdmLoginActionPerformed(evt);
             }
         });
         jPanel2.add(btnAdmLogin);
-        btnAdmLogin.setBounds(650, 10, 50, 50);
+        btnAdmLogin.setBounds(600, 20, 50, 40);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(10, 0, 740, 467);
@@ -174,27 +191,13 @@ public class TelaInicial extends javax.swing.JFrame {
      
         if(input != null && !input.trim().isEmpty()){
             
-            String fileName = PathHelper.FILES_PATH.concat(input).concat(".json");
-            File file = new File(fileName);
-            
-            try {
+            if(!createNetProject(input)){
                 
-                if(file.createNewFile()){
-                    
-                    ScreenHelper.pegarTela(ScreenHelper.AREA_TRABALHO, fileName);
-                    
-                } else{
-                    
-                    JOptionPane.showMessageDialog(null, tr("arquivo_ja_existe"));
-                    
-                }
-                
-            } catch (IOException ex) {
-                
-                ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, tr("erro_criacao_arquivo"));
-                
+                JOptionPane.showMessageDialog(null, tr("erro_criacao_arquivo"), tr("nova_simulacao"), JOptionPane.ERROR_MESSAGE);
+                return;
             }
+            
+            JOptionPane.showMessageDialog(null, tr("nova_simulacao_criada_com_sucesso"), tr("nova_simulacao"), JOptionPane.INFORMATION_MESSAGE);
             
         }
         
@@ -248,7 +251,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdmLogin;
-    private javax.swing.JButton btnConfig;
+    private javax.swing.JButton btnInfo;
     private javax.swing.JButton btnInstructions;
     private javax.swing.JButton btnLoadProject;
     private javax.swing.JButton btnNewProject;

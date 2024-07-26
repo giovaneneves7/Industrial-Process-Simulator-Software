@@ -4,11 +4,11 @@
 
         {
             "_nome" : "Tubo 01",
-            "thumbnail" : "/images/T1.png",
+            "thumbnail" : "/images/tubulacao_thumb.png",
             "_caminhoImagem" : "/images/tub_1.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 10,
+            "_larguraPx" : 20,
             "_alturaPx" : 30,
             "_diametroInterno" : 1,
             "comprimento" : 2,
@@ -21,12 +21,12 @@
 
         {
             "_nome" : "Tubo 02",
-            "thumbnail" : "/images/T1.png",
+            "thumbnail" : "/images/tubulacao_thumb.png",
             "_caminhoImagem" : "/images/tub_2.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 50,
-            "_alturaPx" : 10,
+            "_larguraPx" : 20,
+            "_alturaPx" : 50,
             "_diametroInterno" : 1,
             "comprimento" : 4,
             "up" : 1,
@@ -38,12 +38,12 @@
  
         {    
             "_nome" : "Tubo 03",
-            "thumbnail" : "/images/T1.png",
+            "thumbnail" : "/images/tubulacao_thumb.png",
             "_caminhoImagem" : "/images/tub_3.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 70,
-            "_alturaPx" : 10,
+            "_larguraPx" : 20,
+            "_alturaPx" : 70,
             "_diametroInterno" : 1,
             "comprimento" : 6,
             "up" : 1,
@@ -55,12 +55,12 @@
 
         {
             "_nome" : "Tubo 04",
-            "thumbnail" : "/images/T1.png",
+            "thumbnail" : "/images/tubulacao_thumb.png",
             "_caminhoImagem" : "/images/tub_4.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 90,
-            "_alturaPx" : 10,
+            "_larguraPx" : 20,
+            "_alturaPx" : 90,
             "_diametroInterno" : 1,
             "comprimento" : 8,
             "up" : 1,
@@ -71,7 +71,7 @@
        },
 
        {    "_nome" : "Tubo 05",
-            "thumbnail" : "/images/T1.png",
+            "thumbnail" : "/images/tubulacao_thumb.png",
             "_caminhoImagem" : "/images/tub_5.png",
             "_x" : 0,
             "_y" : 0,

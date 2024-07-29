@@ -89,7 +89,7 @@
        
     ],
 
-   equipamentos: [
+    equipamentos: [
         
         {
             "_nome" : "Reator",
@@ -125,13 +125,13 @@
         {
             "_nome" : "Bomba Centrifuga",
             "thumbnail" : "/images/default.png",
-            "_caminhoImagem" : "/images/bomba_centrifuga.png",
+            "_caminhoImagem" : "/images/bomba_centrifuga_rgt.png",
             "_x" : 0,
             "_y" : 0,
             "_larguraPx" : 80,
             "_alturaPx" : 40
         }
-  ],
+    ],
   
    valvulas: [
         

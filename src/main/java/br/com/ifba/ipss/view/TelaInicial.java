@@ -212,7 +212,7 @@ public class TelaInicial extends javax.swing.JFrame {
         System.out.println(this.btnNewProject.getY());
         LoginView loginView = new LoginView();
         
-        loginView.setBounds(120, 50, 550, 260);
+        loginView.setBounds(100, 80, 600, 260);
         
         this.pnlBackground.add(loginView);
         this.pnlBackground.setComponentZOrder(loginView, 1);

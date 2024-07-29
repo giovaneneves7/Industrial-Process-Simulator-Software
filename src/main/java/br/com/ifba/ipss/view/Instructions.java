@@ -45,6 +45,7 @@ public class Instructions extends javax.swing.JFrame {
         pnlBackground = new javax.swing.JPanel();
         divTitle = new javax.swing.JSeparator();
         lblScreenTitle = new javax.swing.JLabel();
+        btnUnderstood = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -59,8 +60,13 @@ public class Instructions extends javax.swing.JFrame {
         pnlBackground.add(lblScreenTitle);
         lblScreenTitle.setBounds(190, 30, 190, 40);
 
+        btnUnderstood.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnUnderstood.setText("Entendi!");
+        pnlBackground.add(btnUnderstood);
+        btnUnderstood.setBounds(150, 310, 270, 60);
+
         getContentPane().add(pnlBackground);
-        pnlBackground.setBounds(0, 0, 560, 360);
+        pnlBackground.setBounds(0, 0, 550, 380);
 
         setSize(new java.awt.Dimension(563, 386));
         setLocationRelativeTo(null);
@@ -102,6 +108,7 @@ public class Instructions extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnUnderstood;
     private javax.swing.JSeparator divTitle;
     private javax.swing.JLabel lblScreenTitle;
     private javax.swing.JPanel pnlBackground;

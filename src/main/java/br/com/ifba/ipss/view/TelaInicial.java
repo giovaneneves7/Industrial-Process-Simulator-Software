@@ -110,6 +110,11 @@ public class TelaInicial extends javax.swing.JFrame {
         btnInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/info.png"))); // NOI18N
         btnInfo.setBorderPainted(false);
         btnInfo.setContentAreaFilled(false);
+        btnInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInfoActionPerformed(evt);
+            }
+        });
         pnlBackground.add(btnInfo);
         btnInfo.setBounds(650, 20, 40, 40);
 
@@ -176,11 +181,7 @@ public class TelaInicial extends javax.swing.JFrame {
      * Abre tela de instruções
      */
     private void btnInstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstructionsActionPerformed
-        
-        ScreenHelper.addToScreenStack(this);
-        dispose();
-        ScreenHelper.getScreen(ScreenHelper.TELA_INSTRUCOES).setVisible(true);
-        
+
     }//GEN-LAST:event_btnInstructionsActionPerformed
 
     private void btnLoadProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadProjectActionPerformed
@@ -219,6 +220,12 @@ public class TelaInicial extends javax.swing.JFrame {
         this.revalidate();
         this.repaint();
     }//GEN-LAST:event_btnAdmLoginActionPerformed
+
+    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
+        ScreenHelper.addToScreenStack(this);
+        dispose();
+        ScreenHelper.getScreen(ScreenHelper.TELA_INSTRUCOES).setVisible(true);
+    }//GEN-LAST:event_btnInfoActionPerformed
 
     /**
      * @param args the command line arguments

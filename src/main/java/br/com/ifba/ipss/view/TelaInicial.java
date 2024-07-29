@@ -91,7 +91,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        pnlBackground = new javax.swing.JPanel();
         btnInfo = new javax.swing.JButton();
         btnLoadProject = new javax.swing.JButton();
         btnNewProject = new javax.swing.JButton();
@@ -104,13 +104,13 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(null);
+        pnlBackground.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBackground.setLayout(null);
 
         btnInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/info.png"))); // NOI18N
         btnInfo.setBorderPainted(false);
         btnInfo.setContentAreaFilled(false);
-        jPanel2.add(btnInfo);
+        pnlBackground.add(btnInfo);
         btnInfo.setBounds(650, 20, 40, 40);
 
         btnLoadProject.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -123,7 +123,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 btnLoadProjectActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLoadProject);
+        pnlBackground.add(btnLoadProject);
         btnLoadProject.setBounds(240, 120, 310, 60);
 
         btnNewProject.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -133,7 +133,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 btnNewProjectActionPerformed(evt);
             }
         });
-        jPanel2.add(btnNewProject);
+        pnlBackground.add(btnNewProject);
         btnNewProject.setBounds(240, 190, 310, 60);
 
         btnInstructions.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -143,13 +143,13 @@ public class TelaInicial extends javax.swing.JFrame {
                 btnInstructionsActionPerformed(evt);
             }
         });
-        jPanel2.add(btnInstructions);
+        pnlBackground.add(btnInstructions);
         btnInstructions.setBounds(240, 260, 310, 60);
 
         jLabel1.setFont(new java.awt.Font("Kalimati", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 204, 0));
         jLabel1.setText("EduSimLab - v0.0.1");
-        jPanel2.add(jLabel1);
+        pnlBackground.add(jLabel1);
         jLabel1.setBounds(280, 60, 250, 70);
 
         btnAdmLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/scientist.png"))); // NOI18N
@@ -159,11 +159,11 @@ public class TelaInicial extends javax.swing.JFrame {
                 btnAdmLoginActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAdmLogin);
+        pnlBackground.add(btnAdmLogin);
         btnAdmLogin.setBounds(600, 20, 50, 40);
 
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 750, 467);
+        jPanel1.add(pnlBackground);
+        pnlBackground.setBounds(0, 0, 730, 490);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 740, 530);
@@ -209,12 +209,13 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewProjectActionPerformed
 
     private void btnAdmLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdmLoginActionPerformed
-        
+        System.out.println(this.btnNewProject.getY());
         LoginView loginView = new LoginView();
         
-        loginView.setBounds(this.getWidth() / 2, this.getHeight() / 2, 300, 250);
+        loginView.setBounds(120, 50, 550, 260);
         
-        this.add(loginView);
+        this.pnlBackground.add(loginView);
+        this.pnlBackground.setComponentZOrder(loginView, 1);
         this.revalidate();
         this.repaint();
     }//GEN-LAST:event_btnAdmLoginActionPerformed
@@ -262,6 +263,6 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JButton btnNewProject;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel pnlBackground;
     // End of variables declaration//GEN-END:variables
 } // TelaInicial

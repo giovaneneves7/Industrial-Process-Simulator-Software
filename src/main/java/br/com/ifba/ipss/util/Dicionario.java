@@ -29,7 +29,8 @@ public class Dicionario {
     public static final HashMap<String, List<String>> DICIONARIO = new HashMap<>();
     
     static {
-
+        
+        DICIONARIO.put("acesso_orientador", List.of("Acesso Orientador"));
         DICIONARIO.put("area_de_trabalho_deletada_com_sucesso", List.of("Área de Trabalho deletada com sucesso!"));
         DICIONARIO.put("area_de_trabalho_salva_com_sucesso", List.of("Área de Trabalho salva com sucesso!"));
         DICIONARIO.put("area_do_orientador", List.of("Área do Orientador"));

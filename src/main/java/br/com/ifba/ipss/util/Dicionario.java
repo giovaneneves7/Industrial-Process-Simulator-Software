@@ -40,6 +40,7 @@ public class Dicionario {
         DICIONARIO.put("conectar_equipamento", List.of("Conectar Equipamento"));
         DICIONARIO.put("conexao", List.of("Conexão", "Conexões"));
         DICIONARIO.put("deseja_limpar_a_area_de_trabalho", List.of("Deseja limpar a Área de Trabalho?"));
+        DICIONARIO.put("deseja_retornar_ao_inicio", List.of("Deseja Retornar à Tela Inicial?"));
         DICIONARIO.put("deseja_salvar_a_area_de_trabalho", List.of("Deseja salvar a Área de Trabalho?"));
         DICIONARIO.put("di", List.of("Di"));
         DICIONARIO.put("entrar", List.of("Entrar"));
@@ -63,6 +64,7 @@ public class Dicionario {
         DICIONARIO.put("nova_simulacao", List.of("Nova Simulação"));
         DICIONARIO.put("nova_simulacao_criada_com_sucesso", List.of("Nova Simulação Criada com Sucesso!"));
         DICIONARIO.put("remover_equipamento", List.of("Remover Equipamento"));
+        DICIONARIO.put("retornar_ao_inicio", List.of("Retornar à Tela Inicial"));
         DICIONARIO.put("salvar_area_trabalho", List.of("Salvar Área de Trabalho"));
         DICIONARIO.put("service_nao_encontrado", List.of("O serviço requerido não foi encontrado"));
         DICIONARIO.put("simular", List.of("Simular"));

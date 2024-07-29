@@ -12,6 +12,7 @@ package br.com.ifba.ipss.view;
 import br.com.ifba.ipss.common.controller.AreaDeTrabalhoController;
 import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
 import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
+import br.com.ifba.ipss.helper.ScreenHelper;
 import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
 import static br.com.ifba.ipss.util.Dicionario.tr;
@@ -24,6 +25,7 @@ import java.awt.Rectangle;
 import java.util.List;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -177,6 +179,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         btnConexoes = new javax.swing.JButton();
         btnEquipamentos = new javax.swing.JButton();
         btnVavulas = new javax.swing.JButton();
+        btnReturnToHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -360,7 +363,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         lblNotificacaoDeEstado.setText("Nenhum modo de edição selecionado");
         pnlEspacoTrabalho.add(lblNotificacaoDeEstado);
-        lblNotificacaoDeEstado.setBounds(30, 10, 320, 18);
+        lblNotificacaoDeEstado.setBounds(30, 10, 320, 16);
 
         pnlBackgruond.add(pnlEspacoTrabalho);
         pnlEspacoTrabalho.setBounds(0, 80, 1250, 710);
@@ -403,6 +406,15 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             }
         });
 
+        btnReturnToHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
+        btnReturnToHome.setText("Voltar");
+        btnReturnToHome.setContentAreaFilled(false);
+        btnReturnToHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnToHomeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PnlBotoesLayout = new javax.swing.GroupLayout(PnlBotoes);
         PnlBotoes.setLayout(PnlBotoesLayout);
         PnlBotoesLayout.setHorizontalGroup(
@@ -413,7 +425,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                     .addComponent(btnTubulacoes)
                     .addComponent(btnConexoes)
                     .addComponent(btnEquipamentos)
-                    .addComponent(btnVavulas))
+                    .addComponent(btnVavulas)
+                    .addComponent(btnReturnToHome))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         PnlBotoesLayout.setVerticalGroup(
@@ -427,7 +440,9 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 .addComponent(btnEquipamentos)
                 .addGap(5, 5, 5)
                 .addComponent(btnVavulas)
-                .addGap(288, 288, 288))
+                .addGap(74, 74, 74)
+                .addComponent(btnReturnToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(159, 159, 159))
         );
 
         pnlBackgruond.add(PnlBotoes);
@@ -516,6 +531,17 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnSalvarEspacoTrabalhoActionPerformed
 
+    private void btnReturnToHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnToHomeActionPerformed
+        
+         if(JOptionPane.showOptionDialog(null, tr("deseja_retornar_ao_inicio"), tr("retornar_ao_inicio"), JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, Constantes.SIM_NAO, Constantes.SIM_NAO[0]) == 0){
+             
+            dispose();
+            ScreenHelper.getScreen(ScreenHelper.TELA_INICIAL).setVisible(true);
+
+         }
+        
+    }//GEN-LAST:event_btnReturnToHomeActionPerformed
+
     private void gerenciarMenuLateral(String tipoEquipamento){
         
         this.areaDeTrabalhoController.gerenciarMenuLateral(pnlEspacoTrabalho, tipoEquipamento);
@@ -579,6 +605,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private javax.swing.JButton btnGirarEquipamento;
     private javax.swing.JButton btnLimparEspacoTrabalho;
     private javax.swing.JButton btnRemoverEquipamento;
+    private javax.swing.JButton btnReturnToHome;
     private javax.swing.JButton btnSalvarEspacoTrabalho;
     private javax.swing.JButton btnSimular;
     private javax.swing.JButton btnTubulacoes;

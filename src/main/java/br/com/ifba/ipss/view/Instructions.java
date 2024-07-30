@@ -1,7 +1,10 @@
 package br.com.ifba.ipss.view;
 
+import br.com.ifba.ipss.helper.PathHelper;
+import br.com.ifba.ipss.helper.ScreenHelper;
 import br.com.ifba.ipss.theme.ThemeManager;
 import static br.com.ifba.ipss.util.Dicionario.tr;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,12 +21,26 @@ public class Instructions extends javax.swing.JFrame {
         initComponents();
         customIntl();
         
+        this.setIconImage(
+                new ImageIcon(this.getClass().getResource(PathHelper.LOGO)).getImage()
+        );
+        
     }
 
     public void customIntl(){
         
         this.lblScreenTitle.setForeground(ThemeManager.getColor("secondary"));
         this.pnlBackground.setBackground(ThemeManager.getColor("primary"));
+        
+        this.pnlInstructionsBackground.setBackground(ThemeManager.getColor("primary"));
+        this.pnlInstruction1.setBackground(ThemeManager.getColor("primary"));
+        this.pnlInstruction2.setBackground(ThemeManager.getColor("primary"));
+        this.pnlInstruction3.setBackground(ThemeManager.getColor("primary"));
+        this.pnlInstruction4.setBackground(ThemeManager.getColor("primary"));
+        this.pnlInstruction5.setBackground(ThemeManager.getColor("primary"));
+        
+        this.btnUnderstood.setForeground(ThemeManager.getColor("primary"));
+        this.btnUnderstood.setBackground(ThemeManager.getColor("secondary"));
         
         translateDefaultText();
     }
@@ -46,8 +63,20 @@ public class Instructions extends javax.swing.JFrame {
         divTitle = new javax.swing.JSeparator();
         lblScreenTitle = new javax.swing.JLabel();
         btnUnderstood = new javax.swing.JButton();
+        pnlInstructionsBackground = new javax.swing.JPanel();
+        pnlInstruction1 = new javax.swing.JPanel();
+        txtInstruction1 = new javax.swing.JLabel();
+        pnlInstruction2 = new javax.swing.JPanel();
+        txtInstruction2 = new javax.swing.JLabel();
+        pnlInstruction3 = new javax.swing.JPanel();
+        txtInstruction3 = new javax.swing.JLabel();
+        pnlInstruction4 = new javax.swing.JPanel();
+        txtInstruction4 = new javax.swing.JLabel();
+        pnlInstruction5 = new javax.swing.JPanel();
+        txtInstruction5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(null);
 
         pnlBackground.setBackground(new java.awt.Color(255, 255, 255));
@@ -62,15 +91,156 @@ public class Instructions extends javax.swing.JFrame {
 
         btnUnderstood.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnUnderstood.setText("Entendi!");
+        btnUnderstood.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUnderstoodActionPerformed(evt);
+            }
+        });
         pnlBackground.add(btnUnderstood);
-        btnUnderstood.setBounds(150, 310, 270, 60);
+        btnUnderstood.setBounds(150, 280, 270, 60);
+
+        pnlInstructionsBackground.setBackground(new java.awt.Color(255, 255, 255));
+        pnlInstructionsBackground.setLayout(null);
+
+        pnlInstruction1.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtInstruction1.setForeground(new java.awt.Color(255, 255, 255));
+        txtInstruction1.setText("1 - Instrução 1");
+
+        javax.swing.GroupLayout pnlInstruction1Layout = new javax.swing.GroupLayout(pnlInstruction1);
+        pnlInstruction1.setLayout(pnlInstruction1Layout);
+        pnlInstruction1Layout.setHorizontalGroup(
+            pnlInstruction1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInstruction1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(txtInstruction1)
+                .addContainerGap(435, Short.MAX_VALUE))
+        );
+        pnlInstruction1Layout.setVerticalGroup(
+            pnlInstruction1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInstruction1Layout.createSequentialGroup()
+                .addContainerGap(8, Short.MAX_VALUE)
+                .addComponent(txtInstruction1)
+                .addContainerGap())
+        );
+
+        pnlInstructionsBackground.add(pnlInstruction1);
+        pnlInstruction1.setBounds(20, 10, 530, 30);
+
+        pnlInstruction2.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtInstruction2.setForeground(new java.awt.Color(255, 255, 255));
+        txtInstruction2.setText("2 - Instrução 2");
+
+        javax.swing.GroupLayout pnlInstruction2Layout = new javax.swing.GroupLayout(pnlInstruction2);
+        pnlInstruction2.setLayout(pnlInstruction2Layout);
+        pnlInstruction2Layout.setHorizontalGroup(
+            pnlInstruction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInstruction2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(txtInstruction2)
+                .addContainerGap(435, Short.MAX_VALUE))
+        );
+        pnlInstruction2Layout.setVerticalGroup(
+            pnlInstruction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInstruction2Layout.createSequentialGroup()
+                .addContainerGap(8, Short.MAX_VALUE)
+                .addComponent(txtInstruction2)
+                .addContainerGap())
+        );
+
+        pnlInstructionsBackground.add(pnlInstruction2);
+        pnlInstruction2.setBounds(20, 40, 530, 30);
+
+        pnlInstruction3.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtInstruction3.setForeground(new java.awt.Color(255, 255, 255));
+        txtInstruction3.setText("3 - Instrução 3");
+
+        javax.swing.GroupLayout pnlInstruction3Layout = new javax.swing.GroupLayout(pnlInstruction3);
+        pnlInstruction3.setLayout(pnlInstruction3Layout);
+        pnlInstruction3Layout.setHorizontalGroup(
+            pnlInstruction3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInstruction3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(txtInstruction3)
+                .addContainerGap(435, Short.MAX_VALUE))
+        );
+        pnlInstruction3Layout.setVerticalGroup(
+            pnlInstruction3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInstruction3Layout.createSequentialGroup()
+                .addContainerGap(8, Short.MAX_VALUE)
+                .addComponent(txtInstruction3)
+                .addContainerGap())
+        );
+
+        pnlInstructionsBackground.add(pnlInstruction3);
+        pnlInstruction3.setBounds(20, 70, 530, 30);
+
+        pnlInstruction4.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtInstruction4.setForeground(new java.awt.Color(255, 255, 255));
+        txtInstruction4.setText("4 - Instrução 4");
+
+        javax.swing.GroupLayout pnlInstruction4Layout = new javax.swing.GroupLayout(pnlInstruction4);
+        pnlInstruction4.setLayout(pnlInstruction4Layout);
+        pnlInstruction4Layout.setHorizontalGroup(
+            pnlInstruction4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInstruction4Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(txtInstruction4)
+                .addContainerGap(435, Short.MAX_VALUE))
+        );
+        pnlInstruction4Layout.setVerticalGroup(
+            pnlInstruction4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInstruction4Layout.createSequentialGroup()
+                .addContainerGap(8, Short.MAX_VALUE)
+                .addComponent(txtInstruction4)
+                .addContainerGap())
+        );
+
+        pnlInstructionsBackground.add(pnlInstruction4);
+        pnlInstruction4.setBounds(20, 100, 530, 30);
+
+        pnlInstruction5.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtInstruction5.setForeground(new java.awt.Color(255, 255, 255));
+        txtInstruction5.setText("5 - Instrução 5");
+
+        javax.swing.GroupLayout pnlInstruction5Layout = new javax.swing.GroupLayout(pnlInstruction5);
+        pnlInstruction5.setLayout(pnlInstruction5Layout);
+        pnlInstruction5Layout.setHorizontalGroup(
+            pnlInstruction5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInstruction5Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(txtInstruction5)
+                .addContainerGap(435, Short.MAX_VALUE))
+        );
+        pnlInstruction5Layout.setVerticalGroup(
+            pnlInstruction5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInstruction5Layout.createSequentialGroup()
+                .addContainerGap(8, Short.MAX_VALUE)
+                .addComponent(txtInstruction5)
+                .addContainerGap())
+        );
+
+        pnlInstructionsBackground.add(pnlInstruction5);
+        pnlInstruction5.setBounds(20, 130, 530, 30);
+
+        pnlBackground.add(pnlInstructionsBackground);
+        pnlInstructionsBackground.setBounds(-10, 80, 560, 190);
 
         getContentPane().add(pnlBackground);
-        pnlBackground.setBounds(0, 0, 550, 380);
+        pnlBackground.setBounds(0, 0, 550, 370);
 
-        setSize(new java.awt.Dimension(563, 386));
+        setSize(new java.awt.Dimension(547, 371));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnUnderstoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnderstoodActionPerformed
+        dispose();
+        ScreenHelper.getScreen(ScreenHelper.TELA_INICIAL).setVisible(true);
+    }//GEN-LAST:event_btnUnderstoodActionPerformed
 
     /**
      * @param args the command line arguments
@@ -112,5 +282,16 @@ public class Instructions extends javax.swing.JFrame {
     private javax.swing.JSeparator divTitle;
     private javax.swing.JLabel lblScreenTitle;
     private javax.swing.JPanel pnlBackground;
+    private javax.swing.JPanel pnlInstruction1;
+    private javax.swing.JPanel pnlInstruction2;
+    private javax.swing.JPanel pnlInstruction3;
+    private javax.swing.JPanel pnlInstruction4;
+    private javax.swing.JPanel pnlInstruction5;
+    private javax.swing.JPanel pnlInstructionsBackground;
+    private javax.swing.JLabel txtInstruction1;
+    private javax.swing.JLabel txtInstruction2;
+    private javax.swing.JLabel txtInstruction3;
+    private javax.swing.JLabel txtInstruction4;
+    private javax.swing.JLabel txtInstruction5;
     // End of variables declaration//GEN-END:variables
 }

@@ -72,10 +72,7 @@ public class TelaInicial extends javax.swing.JFrame {
         this.btnNewProject.setForeground(ThemeManager.getColor("secondary"));
         this.btnNewProject.setText(tr(this.btnNewProject.getText()));
         
-        this.btnInstructions.setBackground(ThemeManager.getColor("primary"));
-        this.btnInstructions.setForeground(ThemeManager.getColor("secondary"));
-        this.btnInstructions.setText(tr(this.btnInstructions.getText()));
-        
+     
         this.setIconImage(
                 new ImageIcon(this.getClass().getResource(PathHelper.LOGO)).getImage()
         );
@@ -95,7 +92,6 @@ public class TelaInicial extends javax.swing.JFrame {
         btnInfo = new javax.swing.JButton();
         btnLoadProject = new javax.swing.JButton();
         btnNewProject = new javax.swing.JButton();
-        btnInstructions = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnAdmLogin = new javax.swing.JButton();
 
@@ -141,16 +137,6 @@ public class TelaInicial extends javax.swing.JFrame {
         pnlBackground.add(btnNewProject);
         btnNewProject.setBounds(240, 190, 310, 60);
 
-        btnInstructions.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        btnInstructions.setText("instrucoes");
-        btnInstructions.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInstructionsActionPerformed(evt);
-            }
-        });
-        pnlBackground.add(btnInstructions);
-        btnInstructions.setBounds(240, 260, 310, 60);
-
         jLabel1.setFont(new java.awt.Font("Kalimati", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 204, 0));
         jLabel1.setText("EduSimLab - v0.0.1");
@@ -176,13 +162,6 @@ public class TelaInicial extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(742, 499));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * Abre tela de instruções
-     */
-    private void btnInstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstructionsActionPerformed
-
-    }//GEN-LAST:event_btnInstructionsActionPerformed
 
     private void btnLoadProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadProjectActionPerformed
         
@@ -265,7 +244,6 @@ public class TelaInicial extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdmLogin;
     private javax.swing.JButton btnInfo;
-    private javax.swing.JButton btnInstructions;
     private javax.swing.JButton btnLoadProject;
     private javax.swing.JButton btnNewProject;
     private javax.swing.JLabel jLabel1;

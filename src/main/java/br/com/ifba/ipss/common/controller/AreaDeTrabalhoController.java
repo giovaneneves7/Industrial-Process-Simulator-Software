@@ -104,6 +104,8 @@ public class AreaDeTrabalhoController {
     
     private Map<String, Label> espacoTrabalhoMap = new HashMap<>();
     
+    private Label selectEquipament;
+    
     
     // *************************************************//
     // ****************** { Construtor } ***************//
@@ -710,7 +712,7 @@ public class AreaDeTrabalhoController {
             
             @Override
             public void mouseClicked(MouseEvent me){
-            
+                
                 if(emModoRemocao){
                     
                     removerEquipamento(lbl.getId());

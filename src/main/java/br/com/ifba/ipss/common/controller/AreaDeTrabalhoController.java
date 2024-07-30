@@ -736,7 +736,6 @@ public class AreaDeTrabalhoController {
     
     private void desconectar(Map<String, Label> conexoes, Label anterior){
         
-        System.out.println("Desconectando....");
         for(Map.Entry<String, Label> entry : conexoes.entrySet()){
             
             if(!entry.getValue().getConexoes().isEmpty()){

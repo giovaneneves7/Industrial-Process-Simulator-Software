@@ -21,6 +21,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
 
 import java.util.List;
 
@@ -182,6 +183,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         btnReturnToHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         pnlBackgruond.setBackground(new java.awt.Color(204, 204, 204));
@@ -541,6 +547,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
          }
         
     }//GEN-LAST:event_btnReturnToHomeActionPerformed
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        
+    }//GEN-LAST:event_formKeyPressed
 
     private void gerenciarMenuLateral(String tipoEquipamento){
         

@@ -8,8 +8,8 @@
             "_caminhoImagem" : "/images/tub_1.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 20,
-            "_alturaPx" : 30,
+            "_larguraPx" : 30,
+            "_alturaPx" : 17,
             "_diametroInterno" : 1,
             "comprimento" : 2,
             "up" : 1,
@@ -25,8 +25,8 @@
             "_caminhoImagem" : "/images/tub_2.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 20,
-            "_alturaPx" : 50,
+            "_larguraPx" : 50,
+            "_alturaPx" : 17,
             "_diametroInterno" : 1,
             "comprimento" : 4,
             "up" : 1,
@@ -42,8 +42,8 @@
             "_caminhoImagem" : "/images/tub_3.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 20,
-            "_alturaPx" : 70,
+            "_larguraPx" : 70,
+            "_alturaPx" : 17,
             "_diametroInterno" : 1,
             "comprimento" : 6,
             "up" : 1,
@@ -59,8 +59,8 @@
             "_caminhoImagem" : "/images/tub_4.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 20,
-            "_alturaPx" : 90,
+            "_larguraPx" : 90,
+            "_alturaPx" : 17,
             "_diametroInterno" : 1,
             "comprimento" : 8,
             "up" : 1,
@@ -75,8 +75,8 @@
             "_caminhoImagem" : "/images/tub_5.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 20,
-            "_alturaPx" : 100,
+            "_larguraPx" : 100,
+            "_alturaPx" : 17,
             "_diametroInterno" : 1,
             "comprimento" : 10,
             "up" : 1,
@@ -93,43 +93,42 @@
         
         {
             "_nome" : "Reator",
-            "thumbnail" : "/images/default.png",
+            "thumbnail" : "/images/reator_thumb.png",
             "_caminhoImagem" : "/images/reator.png",
             "_x" : 0,
             "_y" : 0,
             "_larguraPx" : 100,
-            "_alturaPx" : 60
+            "_alturaPx" : 50
         },
         
         {
             "_nome" : "Tanque",
-            "thumbnail" : "/images/default.png",
-            "_caminhoImagem" : "/images/tanque_2.png",
+            "thumbnail" : "/images/tanque_thumb.png",
+            "_caminhoImagem" : "/images/tanque.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 80,
-            "_alturaPx" : 40
+            "_larguraPx" : 100,
+            "_alturaPx" : 50
         },
         
-        
         {
-            "_nome" : "Bomba Helicodal",
-            "thumbnail" : "/images/default.png",
-            "_caminhoImagem" : "/images/bomba_helicodal.png",
+            "_nome" : "Torre de Destilação",
+            "thumbnail" : "/images/torre_de_destilacao_thumb.png",
+            "_caminhoImagem" : "/images/torre_de_destilacao.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 80,
-            "_alturaPx" : 40
+            "_larguraPx" : 100,
+            "_alturaPx" : 50
         },
         
         {
             "_nome" : "Bomba Centrifuga",
-            "thumbnail" : "/images/default.png",
+            "thumbnail" : "/images/bomba_centrifuga_thumb.png",
             "_caminhoImagem" : "/images/bomba_centrifuga_rgt.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 80,
-            "_alturaPx" : 40
+            "_larguraPx" : 60,
+            "_alturaPx" : 50
         }
     ],
   
@@ -137,7 +136,7 @@
         
         {
             "_nome" : "Retenção",
-            "thumbnail" : "/images/default.png",
+            "thumbnail" : "/images/valvula_de_retencao_thumb.png",
             "_caminhoImagem" : "/images/valvula_de_retencao.png",
             "_x" : 0,
             "_y" : 0,
@@ -148,34 +147,45 @@
         
         {
             "_nome" : "Gaveta",
-            "thumbnail" : "/images/default.png",
+            "thumbnail" : "/images/valvula_gaveta_thumb.png",
             "_caminhoImagem" : "/images/valvula_gaveta.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 30,
-            "_alturaPx" :30
+            "_larguraPx" : 60,
+            "_alturaPx" : 60
 
         },
 
         {
             "_nome" : "Borboleta",
-            "thumbnail" : "/images/default.png",
+            "thumbnail" : "/images/valvula_borboleta_thumb.png",
             "_caminhoImagem" : "/images/valvula_borboleta.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 30,
-            "_alturaPx" :30
+            "_larguraPx" : 60,
+            "_alturaPx" :60
+
+        },
+        
+        {
+            "_nome" : "Globo",
+            "thumbnail" : "/images/valvula_globo_thumb.png",
+            "_caminhoImagem" : "/images/valvula_globo.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 60,
+            "_alturaPx" :60
 
         },
 
         {
             "_nome" : "Esfera",
-            "thumbnail" : "/images/default.png",
+            "thumbnail" : "/images/valvula_esfera_thumb.png",
             "_caminhoImagem" : "/images/valvula_esfera.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 30,
-            "_alturaPx" :30
+            "_larguraPx" : 51,
+            "_alturaPx" :55
 
        }
         
@@ -183,34 +193,34 @@
    conexoes: [
         {
             "_nome" : "Conexão 1",
-            "thumbnail" : "/images/conexao_1.png",
+            "thumbnail" : "/images/conexao_1_thumb.png",
             "_caminhoImagem" : "/images/conexao_1.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 30,
-            "_alturaPx" : 30
+            "_larguraPx" : 40,
+            "_alturaPx" : 40
         },
    
 
        {
             "_nome" : "Conexão 2",
-            "thumbnail" : "/images/conexao_2.png",
+            "thumbnail" : "/images/conexao_2_thumb.png",
             "_caminhoImagem" : "/images/conexao_2.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 30,
-            "_alturaPx" : 30
+            "_larguraPx" : 40,
+            "_alturaPx" : 40
 
         },
 
         {
             "_nome" : "Conexão 3",
-            "thumbnail" : "/images/conexao_3.png",
+            "thumbnail" : "/images/conexao_3_thumb.png",
             "_caminhoImagem" : "/images/conexao_3.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 30,
-            "_alturaPx" : 30
+            "_larguraPx" : 40,
+            "_alturaPx" : 40
 
         }
    

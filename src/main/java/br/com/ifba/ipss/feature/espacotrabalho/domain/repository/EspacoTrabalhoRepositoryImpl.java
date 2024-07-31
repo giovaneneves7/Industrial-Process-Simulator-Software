@@ -31,7 +31,6 @@ public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, 
 
         try(OutputStream os = Constantes.pegarEspacoTrabalhoJsonOutputStream(workspacePath); 
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8));){
-            
             int cont = 0;
             writer.write("{\n\t equipamentos: [");
             writer.newLine();

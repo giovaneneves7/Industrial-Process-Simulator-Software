@@ -97,8 +97,8 @@
             "_caminhoImagem" : "/images/reator.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 100,
-            "_alturaPx" : 50
+            "_larguraPx" : 200,
+            "_alturaPx" : 100
         },
         
         {
@@ -117,8 +117,8 @@
             "_caminhoImagem" : "/images/torre_de_destilacao.png",
             "_x" : 0,
             "_y" : 0,
-            "_larguraPx" : 100,
-            "_alturaPx" : 60
+            "_larguraPx" : 200,
+            "_alturaPx" : 80
         },
         
         {

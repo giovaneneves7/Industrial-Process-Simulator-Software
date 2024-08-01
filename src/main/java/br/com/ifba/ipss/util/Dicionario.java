@@ -44,6 +44,7 @@ public class Dicionario {
         DICIONARIO.put("deseja_salvar_a_area_de_trabalho", List.of("Deseja salvar a Área de Trabalho?"));
         DICIONARIO.put("di", List.of("Di"));
         DICIONARIO.put("entrar", List.of("Entrar"));
+        DICIONARIO.put("espelhar", List.of("Espelhar"));
         DICIONARIO.put("equipamento", List.of("Equipamento", "Equipamentos"));
         DICIONARIO.put("erro", List.of("Erro", "Erros"));
         DICIONARIO.put("erro_criacao_arquivo", List.of("Ocorreu um erro ao criar o arquivo"));

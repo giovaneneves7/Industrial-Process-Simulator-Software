@@ -76,7 +76,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
                 btnTubulacoes,
                 btnConexoes,
                 btnVavulas,
-                btnEquipamentos
+                btnEquipamentos,
+                btnMirror
         );
         
         this.areaDeTrabalhoController.mudarEfeitoHoverNoBotao(botoes);
@@ -126,8 +127,9 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.btnSalvarEspacoTrabalho.setToolTipText(tr("salvar_area_trabalho"));
         this.btnLimparEspacoTrabalho.setToolTipText(tr("limpar_area_trabalho"));
         this.btnGirarEquipamento.setToolTipText(tr("girar_equipamento"));
-        this.btnRemoverEquipamento.setToolTipText("remover_equipamento");
-        this.btnConectarEquipamentos.setToolTipText(("conectar_equipamento"));
+        this.btnRemoverEquipamento.setToolTipText(tr("remover_equipamento"));
+        this.btnConectarEquipamentos.setToolTipText(tr("conectar_equipamento"));
+        this.btnMirror.setToolTipText(tr("espelhar"));
         
     } // addTooltipToButtons
 
@@ -165,6 +167,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         pnlSpanSpace1 = new javax.swing.JPanel();
         btnGirarEquipamento = new javax.swing.JButton();
         pnlSpanSpace4 = new javax.swing.JPanel();
+        btnMirror = new javax.swing.JButton();
+        pnlSpanSpace5 = new javax.swing.JPanel();
         btnConectarEquipamentos = new javax.swing.JButton();
         pnlSpanSpace3 = new javax.swing.JPanel();
         btnRemoverEquipamento = new javax.swing.JButton();
@@ -250,6 +254,28 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         );
 
         PnlMenu.add(pnlSpanSpace4);
+
+        btnMirror.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mirror.png"))); // NOI18N
+        btnMirror.setBorderPainted(false);
+        btnMirror.setContentAreaFilled(false);
+        PnlMenu.add(btnMirror);
+        btnMirror.getAccessibleContext().setAccessibleName("btnMirror");
+
+        pnlSpanSpace5.setBackground(new java.awt.Color(255, 255, 255));
+        pnlSpanSpace5.setMaximumSize(new java.awt.Dimension(10, 50));
+
+        javax.swing.GroupLayout pnlSpanSpace5Layout = new javax.swing.GroupLayout(pnlSpanSpace5);
+        pnlSpanSpace5.setLayout(pnlSpanSpace5Layout);
+        pnlSpanSpace5Layout.setHorizontalGroup(
+            pnlSpanSpace5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        pnlSpanSpace5Layout.setVerticalGroup(
+            pnlSpanSpace5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        PnlMenu.add(pnlSpanSpace5);
 
         btnConectarEquipamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/connection.png"))); // NOI18N
         btnConectarEquipamentos.setBorderPainted(false);
@@ -614,6 +640,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private javax.swing.JButton btnEquipamentos;
     private javax.swing.JButton btnGirarEquipamento;
     private javax.swing.JButton btnLimparEspacoTrabalho;
+    private javax.swing.JButton btnMirror;
     private javax.swing.JButton btnRemoverEquipamento;
     private javax.swing.JButton btnReturnToHome;
     private javax.swing.JButton btnSalvarEspacoTrabalho;
@@ -628,5 +655,6 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private javax.swing.JPanel pnlSpanSpace2;
     private javax.swing.JPanel pnlSpanSpace3;
     private javax.swing.JPanel pnlSpanSpace4;
+    private javax.swing.JPanel pnlSpanSpace5;
     // End of variables declaration//GEN-END:variables
 }

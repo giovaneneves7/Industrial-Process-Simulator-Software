@@ -111,6 +111,8 @@ public class Constantes {
     public static final String CAMINHO_BOTAO_EQUIPAMENTOS = "/images/botao_equipamentos.png";
     public static final String CAMINHO_BOTAO_EQUIPAMENTOS_SELECIONADO = "/images/botao_equipamentos_selecionado.png";
     public static final String CAMINHO_LOGO = "/images/logo.jpg";
+    public static final String MIRROR_BUTTON_PATH = "/images/mirror.png";
+    public static final String SELECTED_MIRROR_BUTTON_PATH = "/images/mirror_selected.png";
     
     private static final  Map<String, List<String>> imagensBotoes;
     
@@ -128,6 +130,7 @@ public class Constantes {
             put("btnLimpar", List.of(CAMINHO_BOTAO_LIMPAR, CAMINHO_BOTAO_LIMPAR_SELECIONADO));
             put("btnSalvar", List.of(CAMINHO_BOTAO_SALVAR, CAMINHO_BOTAO_SALVAR_SELECIONADO));
             put("btnSimular", List.of(CAMINHO_BOTAO_SIMULAR, CAMINHO_BOTAO_SIMULAR_SELECIONADO));
+            put("btnMirror", List.of(MIRROR_BUTTON_PATH, SELECTED_MIRROR_BUTTON_PATH));
             
         }};
         

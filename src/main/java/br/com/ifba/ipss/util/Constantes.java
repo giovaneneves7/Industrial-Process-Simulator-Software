@@ -88,6 +88,7 @@ public class Constantes {
     public static final String ATRIBUTO_RIGHT = "right";
     public static final String ATRIBUTO_DOWN = "down";
     public static final String ATRIBUTO_LEFT = "left";
+    public static final String CAN_MIRRORING_ATTRIBUTE = "can_mirroring";
     
     // Caminhos de Imagens
     public static final String CAMINHO_BOTAO_REMOVER = "/images/trash.png";

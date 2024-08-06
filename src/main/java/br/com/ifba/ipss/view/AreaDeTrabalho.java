@@ -258,6 +258,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         btnMirror.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mirror.png"))); // NOI18N
         btnMirror.setBorderPainted(false);
         btnMirror.setContentAreaFilled(false);
+        btnMirror.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMirrorActionPerformed(evt);
+            }
+        });
         PnlMenu.add(btnMirror);
         btnMirror.getAccessibleContext().setAccessibleName("btnMirror");
 
@@ -578,6 +583,16 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formKeyPressed
 
+    private void btnMirrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMirrorActionPerformed
+        
+        this.areaDeTrabalhoController.changeMirroringModeStatus(
+                !this.areaDeTrabalhoController.isInMirroringMode()
+        );
+        this.areaDeTrabalhoController.updateMirroringButtonImage(btnMirror);
+        this.areaDeTrabalhoController.showMirroringStatusMessage(lblNotificacaoDeEstado, 4000);
+        
+    }//GEN-LAST:event_btnMirrorActionPerformed
+
     private void gerenciarMenuLateral(String tipoEquipamento){
         
         this.areaDeTrabalhoController.gerenciarMenuLateral(pnlEspacoTrabalho, tipoEquipamento);
@@ -589,7 +604,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.areaDeTrabalhoController.atualizarImagemBotaoRemover(btnRemoverEquipamento);
         this.areaDeTrabalhoController.atualizarImagemBotaoConectar(btnConectarEquipamentos);
         this.areaDeTrabalhoController.atualizarImagemBotaoGirar(btnGirarEquipamento);
-
+        
     }
     
     

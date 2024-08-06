@@ -94,6 +94,7 @@ public class AreaDeTrabalhoController {
     private boolean emModoRotacao = false;
     private boolean emModoRemocao = false;
     private boolean emModoConexao = false;
+    private boolean inMirroringMode = false;
     private boolean algumBotaoSelecionado = false;
     
     private boolean menuLateralAberto = false;
@@ -249,6 +250,7 @@ public class AreaDeTrabalhoController {
         if(this.emModoRemocao){
             this.emModoConexao = false;
             this.emModoRotacao = false;
+            this.inMirroringMode = false;
         }
         
     } // mudarStatusModoRemocao
@@ -261,8 +263,23 @@ public class AreaDeTrabalhoController {
         if(this.emModoRotacao){
             this.emModoConexao = false;
             this.emModoRemocao = false;
+            this.inMirroringMode = false;
         }
     } // mudarStatusModoRotacao
+    
+    public void changeMirroringModeStatus(final boolean status){
+        
+        this.inMirroringMode = status;
+        
+        if(this.inMirroringMode){
+            
+            this.emModoRotacao = false;
+            this.emModoConexao = false;
+            this.emModoRemocao = false;
+            
+        }
+        
+    } // changeMirroringModeStatus
     
     public void mudarStatusModoConexao(final boolean status){
         
@@ -272,6 +289,7 @@ public class AreaDeTrabalhoController {
         if(this.emModoConexao){
             this.emModoRotacao = false;
             this.emModoRemocao = false;
+            this.inMirroringMode = false;
         }
         
     } // mudarStatusModoConexao
@@ -299,6 +317,14 @@ public class AreaDeTrabalhoController {
         this.exibirMensagemTemporaria(lbl, msg, tempo);
         
     } // exibirMensagemEstadoDeConexao
+    
+    public void showMirroringStatusMessage(JLabel lbl, final int time){
+        
+        String msg = (inMirroringMode) ? "modo_espelhamento_ativado" : "modo_espelhamento_desativado";
+        
+        this.exibirMensagemTemporaria(lbl, msg, time);
+        
+    } // showMirroringStatusMessage
     
     public void exibirMensagemTemporaria(JLabel lbl, String mensagem, final int tempo){
         
@@ -363,6 +389,12 @@ public class AreaDeTrabalhoController {
     public void atualizarImagemBotaoConectar(JButton btn){
         
         this.mudarImagemBotao(btn, emModoConexao);
+        
+    } // atualizarImagemBotaoConectar
+    
+    public void updateMirroringButtonImage(JButton btn){
+        
+        this.mudarImagemBotao(btn, inMirroringMode);
         
     }
     

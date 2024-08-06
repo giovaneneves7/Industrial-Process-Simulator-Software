@@ -95,17 +95,16 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.ATRIBUTO_LEFT:
                             left = (valor.getAsInt() == 1);
                             break;    
+                        case Constantes.CAN_MIRRORING_ATTRIBUTE:
+                            eq.setCanMirroring(valor.getAsInt() == 1);
+                            break;
                         default:
                             if (eq instanceof Tubulacao tub) {
                                 switch (chave) {
-                                    case Constantes.ATRIBUTO_DIAMETRO_INTERNO:
-                                        tub.set_diametroInterno(valor.getAsString());
-                                        break;
-                                    case Constantes.ATRIBUTO_COMPRIMENTO:
-                                        tub.setComprimento(valor.getAsDouble());
-                                        break;
-                                    default:
-                                        break;
+                                    case Constantes.ATRIBUTO_DIAMETRO_INTERNO -> tub.set_diametroInterno(valor.getAsString());
+                                    case Constantes.ATRIBUTO_COMPRIMENTO -> tub.setComprimento(valor.getAsDouble());
+                                    default -> {
+                            }
                                 }
                             }
                             break;

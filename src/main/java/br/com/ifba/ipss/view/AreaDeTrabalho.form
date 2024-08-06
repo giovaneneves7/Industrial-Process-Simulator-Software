@@ -160,6 +160,9 @@
               <AccessibilityProperties>
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="btnMirror"/>
               </AccessibilityProperties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMirrorActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="pnlSpanSpace5">
               <Properties>

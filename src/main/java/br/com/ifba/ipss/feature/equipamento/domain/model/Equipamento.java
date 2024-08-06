@@ -40,5 +40,6 @@ public class Equipamento {
     private double _alturaPx;      // A altura do equipamento em pixels.
     private double _comprimentoM;  // O comprimento do equipamento em metros.
     private Map<String, Boolean> entradas; 
+    private boolean canMirroring; // Valor booleano. Pode ou não espelhar.
     
 } // class Equipamento

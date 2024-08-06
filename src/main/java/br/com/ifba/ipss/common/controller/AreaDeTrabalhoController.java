@@ -220,6 +220,7 @@ public class AreaDeTrabalhoController {
 
                     if(algumBotaoSelecionado) return;
                     
+                    System.out.println("Nome botão:" + btn.getName());
                     ImageIcon img = new ImageIcon(this.getClass().getResource(Constantes.pegarImagemBotaoSelecionado(btn.getName())));
                     
                     if(img.getImage() != null)

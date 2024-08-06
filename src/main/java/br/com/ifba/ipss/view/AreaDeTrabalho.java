@@ -66,6 +66,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         this.areaDeTrabalhoController.setPnlEspacoTrabalho(pnlEspacoTrabalho);
         
+        this.btnMirror.setName("btnMirror");
         List<javax.swing.JButton> botoes = List.of(
                 btnGirarEquipamento,
                 btnConectarEquipamentos,

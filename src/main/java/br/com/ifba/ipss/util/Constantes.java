@@ -115,7 +115,11 @@ public class Constantes {
     public static final String MIRROR_BUTTON_PATH = "/images/mirror.png";
     public static final String SELECTED_MIRROR_BUTTON_PATH = "/images/mirror_selected.png";
     
+    public static final String BOMBA_CENTRIFUGA = "/images/bomba_centrifuga.png";
+    public static final String BOMBA_CENTRIFUGA_MIRRORED = "/images/bomba_centrifuga_mirrored.png";
+    
     private static final  Map<String, List<String>> imagensBotoes;
+    private static final Map<String, String> mirroredEquipaments;
     
     static{
     
@@ -133,6 +137,12 @@ public class Constantes {
             put("btnSimular", List.of(CAMINHO_BOTAO_SIMULAR, CAMINHO_BOTAO_SIMULAR_SELECIONADO));
             put("btnMirror", List.of(MIRROR_BUTTON_PATH, SELECTED_MIRROR_BUTTON_PATH));
             
+        }};
+        
+        mirroredEquipaments = new HashMap<>() {{
+        
+            put(BOMBA_CENTRIFUGA, BOMBA_CENTRIFUGA_MIRRORED);
+        
         }};
         
     }

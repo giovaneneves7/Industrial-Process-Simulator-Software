@@ -764,6 +764,12 @@ public class AreaDeTrabalhoController {
                     
                 }
                 
+                if(inMirroringMode){
+                    
+                    mirrorEquipament(lbl);
+                    
+                }
+                
             }
         });        
     }
@@ -865,5 +871,19 @@ public class AreaDeTrabalhoController {
         });
         
     }
+    
+    private void mirrorEquipament(Label lbl){
+        
+        
+        if(!lbl.getEquipamento().isCanMirroring()){
+            return;
+        }
+        
+        
+        lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource(lbl.getEquipamento().get_caminhoImagem())));
+        
+        
+        
+    } // mirrorEquipament
     
 }

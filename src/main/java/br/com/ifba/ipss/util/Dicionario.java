@@ -57,6 +57,8 @@ public class Dicionario {
         DICIONARIO.put("limpar_area_trabalho", List.of("Limpar Área de Trabalho"));
         DICIONARIO.put("modo_conexao_ativado", List.of("Modo Conexão: Ativado"));
         DICIONARIO.put("modo_conexao_desativado", List.of("Modo Conexão: Desativado"));
+        DICIONARIO.put("modo_espelhamento_ativado", List.of("Modo Espelhamento: Ativado"));
+        DICIONARIO.put("modo_espelhamento_desativado", List.of("Modo Espelhamento: Desativado"));
         DICIONARIO.put("modo_remocao_ativado", List.of("Modo Remoção: Ativado"));
         DICIONARIO.put("modo_remocao_desativado", List.of("Modo Remoção: Desativado"));
         DICIONARIO.put("modo_rotacao_ativado", List.of("Modo Rotação: Ativado"));

@@ -879,10 +879,13 @@ public class AreaDeTrabalhoController {
             return;
         }
         
+        String currentImagePath = lbl.getEquipamento().get_caminhoImagem();
+        boolean isMirrored = false;
         
-        lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource(lbl.getEquipamento().get_caminhoImagem())));
-        
-        
+        String newImagePath = "jhg";
+                    
+        System.out.println(newImagePath);
+        lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource(newImagePath)));
         
     } // mirrorEquipament
     

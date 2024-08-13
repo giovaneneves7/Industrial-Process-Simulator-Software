@@ -3,6 +3,7 @@
     tubulacoes : [
 
         {
+            "id" : "tb01",
             "_nome" : "Tubo 01",
             "thumbnail" : "/images/tubulacao_thumb.png",
             "_caminhoImagem" : "/images/tub_1.png",
@@ -22,6 +23,7 @@
         },
 
         {
+            "id" : "tb02",
             "_nome" : "Tubo 02",
             "thumbnail" : "/images/tubulacao_thumb.png",
             "_caminhoImagem" : "/images/tub_2.png",
@@ -41,6 +43,7 @@
         },
  
         {    
+            "id" : "tb03",
             "_nome" : "Tubo 03",
             "thumbnail" : "/images/tubulacao_thumb.png",
             "_caminhoImagem" : "/images/tub_3.png",
@@ -60,6 +63,7 @@
         },
 
         {
+            "id" : "tb04",
             "_nome" : "Tubo 04",
             "thumbnail" : "/images/tubulacao_thumb.png",
             "_caminhoImagem" : "/images/tub_4.png",
@@ -78,7 +82,9 @@
 
        },
 
-       {    "_nome" : "Tubo 05",
+       {    
+            "id" : "tb05",
+            "_nome" : "Tubo 05",
             "thumbnail" : "/images/tubulacao_thumb.png",
             "_caminhoImagem" : "/images/tub_5.png",
             "_x" : 0,
@@ -102,6 +108,7 @@
     equipamentos: [
         
         {
+            "id" : "react",
             "_nome" : "Reator",
             "thumbnail" : "/images/reator_thumb.png",
             "_caminhoImagem" : "/images/reator.png",
@@ -114,6 +121,7 @@
         },
         
         {
+            "id" : "tank",
             "_nome" : "Tanque",
             "thumbnail" : "/images/tanque_thumb.png",
             "_caminhoImagem" : "/images/tanque.png",
@@ -126,6 +134,7 @@
         },
         
         {
+            "id" : "dest_tow",
             "_nome" : "Torre de Destilação",
             "thumbnail" : "/images/torre_de_destilacao_thumb.png",
             "_caminhoImagem" : "/images/torre_de_destilacao.png",
@@ -138,9 +147,10 @@
         },
         
         {
+            "id" : "centri_bomb",
             "_nome" : "Bomba Centrifuga",
             "thumbnail" : "/images/bomba_centrifuga_thumb.png",
-            "_caminhoImagem" : "/images/bomba_centrifuga_rgt.png",
+            "_caminhoImagem" : "/images/bomba_centrifuga.png",
             "_x" : 0,
             "_y" : 0,
             "_larguraPx" : 60,
@@ -153,6 +163,7 @@
    valvulas: [
         
         {
+            "id" : "ret_valv",
             "_nome" : "Retenção",
             "thumbnail" : "/images/valvula_de_retencao_thumb.png",
             "_caminhoImagem" : "/images/valvula_de_retencao.png",
@@ -167,6 +178,7 @@
         },
         
         {
+            "id" : "galv_valv",
             "_nome" : "Gaveta",
             "thumbnail" : "/images/valvula_gaveta_thumb.png",
             "_caminhoImagem" : "/images/valvula_gaveta.png",
@@ -180,6 +192,7 @@
         },
 
         {
+            "id" : "borb_valv",
             "_nome" : "Borboleta",
             "thumbnail" : "/images/valvula_borboleta_thumb.png",
             "_caminhoImagem" : "/images/valvula_borboleta.png",
@@ -193,6 +206,7 @@
         },
         
         {
+            "id" : "glob_valv",
             "_nome" : "Globo",
             "thumbnail" : "/images/valvula_globo_thumb.png",
             "_caminhoImagem" : "/images/valvula_globo.png",
@@ -206,6 +220,7 @@
         },
 
         {
+            "id" : "esf_valv",
             "_nome" : "Esfera",
             "thumbnail" : "/images/valvula_esfera_thumb.png",
             "_caminhoImagem" : "/images/valvula_esfera.png",
@@ -221,6 +236,7 @@
     ],
    conexoes: [
         {
+            "id" : "conn01",
             "_nome" : "Conexão 1",
             "thumbnail" : "/images/conexao_1_thumb.png",
             "_caminhoImagem" : "/images/conexao_1.png",
@@ -234,6 +250,7 @@
    
 
        {
+           "id" : "conn02",
             "_nome" : "Conexão 2",
             "thumbnail" : "/images/conexao_2_thumb.png",
             "_caminhoImagem" : "/images/conexao_2.png",
@@ -247,6 +264,7 @@
         },
 
         {
+            "id" : "conn03",
             "_nome" : "Conexão 3",
             "thumbnail" : "/images/conexao_3_thumb.png",
             "_caminhoImagem" : "/images/conexao_3.png",
@@ -261,7 +279,4 @@
    
    ]
         
-
-    
-
 }

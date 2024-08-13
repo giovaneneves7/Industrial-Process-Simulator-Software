@@ -589,7 +589,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.areaDeTrabalhoController.changeMirroringModeStatus(
                 !this.areaDeTrabalhoController.isInMirroringMode()
         );
-        this.areaDeTrabalhoController.updateMirroringButtonImage(btnMirror);
+        this.mudarImagemDeGrupoBotoesSuperior();
         this.areaDeTrabalhoController.showMirroringStatusMessage(lblNotificacaoDeEstado, 4000);
         
     }//GEN-LAST:event_btnMirrorActionPerformed
@@ -605,6 +605,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.areaDeTrabalhoController.atualizarImagemBotaoRemover(btnRemoverEquipamento);
         this.areaDeTrabalhoController.atualizarImagemBotaoConectar(btnConectarEquipamentos);
         this.areaDeTrabalhoController.atualizarImagemBotaoGirar(btnGirarEquipamento);
+        this.areaDeTrabalhoController.updateMirroringButtonImage(btnMirror);
         
     }
     

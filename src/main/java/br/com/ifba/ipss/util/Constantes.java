@@ -119,7 +119,7 @@ public class Constantes {
     public static final String BOMBA_CENTRIFUGA_MIRRORED = "/images/bomba_centrifuga_mirrored.png";
     
     private static final  Map<String, List<String>> imagensBotoes;
-    private static final Map<String, String> mirroredEquipaments;
+    public static final Map<String, List<String>> mirroredEquipaments;
     
     static{
     
@@ -141,9 +141,21 @@ public class Constantes {
         
         mirroredEquipaments = new HashMap<>() {{
         
-            put(BOMBA_CENTRIFUGA, BOMBA_CENTRIFUGA_MIRRORED);
+            put("", List.of(BOMBA_CENTRIFUGA, BOMBA_CENTRIFUGA_MIRRORED));
         
         }};
+        
+    }
+    
+    public static String getMirroredEquipament(String key){
+        
+        return mirroredEquipaments.get(key).get(1);
+        
+    }
+    
+    public static String getNormalEquipament(String key){
+    
+        return mirroredEquipaments.get(key).get(0);
         
     }
     
@@ -156,7 +168,6 @@ public class Constantes {
     }
             
     public static String pegarImagemBotaoSelecionado(String chave){
-        
         return (imagensBotoes.containsKey(chave)) ?
                 imagensBotoes.get(chave).get(imagensBotoes.get(chave).size()-1) :
                 chave;

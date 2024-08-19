@@ -882,8 +882,7 @@ public class AreaDeTrabalhoController {
         String currentImagePath = lbl.getEquipamento().get_caminhoImagem();
         boolean isMirrored = false;
         
-        String newImagePath = "jhg";
-                    
+        String newImagePath = Constantes.getMirroredEquipament(currentImagePath);
         System.out.println(newImagePath);
         lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource(newImagePath)));
         

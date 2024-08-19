@@ -141,7 +141,7 @@ public class Constantes {
         
         mirroredEquipaments = new HashMap<>() {{
         
-            put("", List.of(BOMBA_CENTRIFUGA, BOMBA_CENTRIFUGA_MIRRORED));
+            put(BOMBA_CENTRIFUGA, List.of(BOMBA_CENTRIFUGA, BOMBA_CENTRIFUGA_MIRRORED));
         
         }};
         

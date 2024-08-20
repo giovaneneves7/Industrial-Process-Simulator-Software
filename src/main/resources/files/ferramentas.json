@@ -272,7 +272,7 @@
             "_y" : 0,
             "_larguraPx" : 40,
             "_alturaPx" : 40,
-            "can_mirroring" : 0,
+            "can_mirroring" : 1,
             "can_rotate" : 1
 
         }

@@ -18,7 +18,7 @@ import br.com.ifba.ipss.feature.equipamento.controller.FerramentaContainerContro
 import br.com.ifba.ipss.feature.equipamento.domain.factory.EquipamentoFactory;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
-import br.com.ifba.ipss.feature.espacotrabalho.controller.EspacoTrabalhoController;
+import br.com.ifba.ipss.feature.workspace.controller.EspacoTrabalhoController;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.feature.parametrossimulacao.controller.ParametrosSimulacaoController;

@@ -1,7 +1,7 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
-package br.com.ifba.ipss.view;
+package br.com.ifba.ipss.feature.workspace.view;
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -401,7 +401,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
         lblNotificacaoDeEstado.setText("Nenhum modo de edição selecionado");
         pnlEspacoTrabalho.add(lblNotificacaoDeEstado);
-        lblNotificacaoDeEstado.setBounds(30, 10, 320, 16);
+        lblNotificacaoDeEstado.setBounds(30, 10, 320, 18);
 
         pnlBackgruond.add(pnlEspacoTrabalho);
         pnlEspacoTrabalho.setBounds(0, 80, 1250, 710);

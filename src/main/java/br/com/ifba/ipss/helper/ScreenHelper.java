@@ -9,7 +9,7 @@ package br.com.ifba.ipss.helper;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-import br.com.ifba.ipss.view.AreaDeTrabalho;
+import br.com.ifba.ipss.feature.workspace.view.AreaDeTrabalho;
 import br.com.ifba.ipss.view.Instructions;
 import br.com.ifba.ipss.view.ListaSimulacoes;
 import br.com.ifba.ipss.view.TelaInicial;

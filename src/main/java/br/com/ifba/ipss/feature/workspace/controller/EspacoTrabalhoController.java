@@ -1,4 +1,4 @@
-package br.com.ifba.ipss.feature.espacotrabalho.controller;
+package br.com.ifba.ipss.feature.workspace.controller;
 
 import br.com.ifba.ipss.feature.espacotrabalho.domain.service.IEspacoTrabalhoService;
 import br.com.ifba.ipss.feature.label.domain.model.Label;

@@ -117,7 +117,8 @@
             "_larguraPx" : 200,
             "_alturaPx" : 100,
             "can_mirroring" : 0,
-            "can_rotate" : 0
+            "can_rotate" : 0,
+            "type" : "reator"
         },
         
         {

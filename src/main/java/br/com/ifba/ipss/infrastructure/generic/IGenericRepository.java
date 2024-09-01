@@ -19,6 +19,8 @@ import br.com.ifba.ipss.feature.valvula.domain.model.Valvula;
 import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.singleton.GsonSingleton;
 import br.com.ifba.ipss.util.Constantes;
+import br.com.ifba.ipss.util.EquipamentType;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -98,6 +100,9 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.CAN_MIRRORING_ATTRIBUTE:
                             eq.setCanMirroring(valor.getAsInt() == 1);
                             break;
+                        case Constantes.TYPE_ATTRIBUTE:
+                            eq.setType(getEquipamentType(valor.getAsString()));
+                            break;
                         default:
                             if (eq instanceof Tubulacao tub) {
                                 switch (chave) {
@@ -144,6 +149,25 @@ public interface IGenericRepository<E extends Equipamento> {
                 (E) new Equipamento();
                 
         
+    }
+    
+    private EquipamentType getEquipamentType(String type){
+    
+        switch(type){
+            case "conexao" -> {
+                return EquipamentType.CONEXAO;
+            }
+            case "reator" -> {
+                return EquipamentType.REATOR;
+            }
+            case "tubulacao" -> {
+                return EquipamentType.TUBULACAO;
+            }
+            default -> { 
+                return EquipamentType.UNKNOWN;
+            }
+           
+        }
     }
     
 }

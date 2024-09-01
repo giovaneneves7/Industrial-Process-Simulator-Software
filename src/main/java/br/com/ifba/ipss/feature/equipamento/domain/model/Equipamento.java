@@ -13,6 +13,7 @@ import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import br.com.ifba.ipss.util.EquipamentType;
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -41,5 +42,6 @@ public class Equipamento {
     private double _comprimentoM;  // O comprimento do equipamento em metros.
     private Map<String, Boolean> entradas; 
     private boolean canMirroring; // Valor booleano. Pode ou não espelhar.
+    private EquipamentType type; // O tipo do equipamento.
     
 } // class Equipamento

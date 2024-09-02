@@ -43,5 +43,6 @@ public class Equipamento {
     private Map<String, Boolean> entradas; 
     private boolean canMirroring; // Valor booleano. Pode ou não espelhar.
     private EquipamentType type; // O tipo do equipamento.
+    private String axios; // Se horizontal ou vertical.
     
 } // class Equipamento

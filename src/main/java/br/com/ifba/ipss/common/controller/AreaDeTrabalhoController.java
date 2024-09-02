@@ -14,6 +14,7 @@ import static br.com.ifba.ipss.util.Dicionario.trToPlural;
 
 import br.com.ifba.ipss.common.infrastructure.interfaces.IEquipamentoService;
 import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
+import br.com.ifba.ipss.feature.equipamento.controller.EquipamentoController;
 import br.com.ifba.ipss.feature.equipamento.controller.FerramentaContainerController;
 import br.com.ifba.ipss.feature.equipamento.domain.factory.EquipamentoFactory;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
@@ -384,7 +385,7 @@ public class AreaDeTrabalhoController {
         parent.repaint();
         
         lbl.setOrientacao(lbl.getOrientacao().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
-        
+        lbl.getEquipamento().setAxios(lbl.getEquipamento().getAxios().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
     } // rotacionarEquipamento
     
     public void atualizarImagemBotaoConectar(JButton btn){
@@ -428,7 +429,8 @@ public class AreaDeTrabalhoController {
     
     public void conectarEquipamentos(Label lblMovido, Label alvo){
         
-        if(alvo.getOrientacao().equals(Constantes.HORIZONTAL) && lblMovido.getOrientacao().equals(Constantes.HORIZONTAL)){
+        EquipamentoController.connectEquipament(lblMovido, alvo);
+        /*if(alvo.getOrientacao().equals(Constantes.HORIZONTAL) && lblMovido.getOrientacao().equals(Constantes.HORIZONTAL)){
         
             int diferencaX = lblMovido.getX() - alvo.getX();
             int xOrigem = 0;
@@ -493,7 +495,7 @@ public class AreaDeTrabalhoController {
                alvo.getConexoes().put(Constantes.BAIXO, lblMovido);
                lblMovido.getConexoes().put(Constantes.CIMA, alvo);
             }
-        }
+        }*/
         
         
         

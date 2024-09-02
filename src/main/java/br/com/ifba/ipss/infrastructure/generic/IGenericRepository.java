@@ -103,6 +103,9 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.TYPE_ATTRIBUTE:
                             eq.setType(getEquipamentType(valor.getAsString()));
                             break;
+                        case Constantes.AXIOS_ATTRIBUTE:
+                            eq.setAxios(valor.getAsString());
+                            break;
                         default:
                             if (eq instanceof Tubulacao tub) {
                                 switch (chave) {

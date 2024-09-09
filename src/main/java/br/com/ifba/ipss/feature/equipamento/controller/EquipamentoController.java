@@ -53,36 +53,43 @@ public class EquipamentoController implements ApplicationController{
             int diferencaY = movedLabel.getY() - target.getY(); 
    
             if (diferencaY <= 0) { // lblMovido está acima do alvo
-                 
-                
-                //if(!alvo.getEquipamento().getEntradas().get(Constantes.CIMA)) return; // retorna caso o alvo não permita conexão em cima.
-                //if(alvo.getConexoes().containsKey(Constantes.CIMA)) return; // retorna caso o alvo já possua uma conexão em cima.
-                //if(!lblMovido.getEquipamento().getEntradas().get(Constantes.BAIXO)) return; // retorna caso a label a ser movida não permita conexão em baixo.
-              //  if(lblMovido.getConexoes().containsKey(Constantes.BAIXO)) return;  // retorna caso o label movido já possua uma conexão em baixo.
                 
                 int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
                 int yOrigem = target.getY() - movedLabel.getHeight(); 
                 
                 movedLabel.setLocation(xOrigem, yOrigem); // junta as labels.
                 
-                //alvo.getConexoes().put(Constantes.CIMA, lblMovido);
-              //  lblMovido.getConexoes().put(Constantes.BAIXO, target);
-                
             } else { // lblMovido está abaixo do alvo
-                
-               // if(!alvo.getEquipamento().getEntradas().get(Constantes.BAIXO)) return; // retorna caso o alvo não permita conexão em cima.
-                ///if(alvo.getConexoes().containsKey(Constantes.BAIXO)) return; // retorna caso o alvo já possua uma conexão em BAIXO.
-                //if(!lblMovido.getEquipamento().getEntradas().get(Constantes.CIMA)) return; // retorna caso a label a ser movida não permita conexão em cima.
-               // if(lblMovido.getConexoes().containsKey(Constantes.CIMA)) return;  // retorna caso o label movido já possua uma conexão em cima.
                 
                 int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
                 int yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
  
                movedLabel.setLocation(xOrigem, yOrigem);
                 
-          //     alvo.getConexoes().put(Constantes.BAIXO, lblMovido);
-            //   lblMovido.getConexoes().put(Constantes.CIMA, alvo);
-            }   
+            }
+            
+        } else if(target.getEquipamento().getAxios().equals(Constantes.HORIZONTAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.VERTICAL)){
+            
+            int diferencaY = movedLabel.getY() - target.getY(); 
+   
+            if (diferencaY <= 0) { // lblMovido está acima do alvo
+                
+                if(!target.getEquipamento().isCanTopConnect()) return;
+                
+                int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                int yOrigem = target.getY() - movedLabel.getHeight(); 
+                
+                movedLabel.setLocation(xOrigem, yOrigem); // junta as labels.
+                
+            } else { // lblMovido está abaixo do alvo
+                
+                int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                int yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
+ 
+               movedLabel.setLocation(xOrigem, yOrigem);
+                
+            }
+            
         }
     }
     

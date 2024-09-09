@@ -20,7 +20,8 @@
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
-            "can__horizontal_connect" : 1
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
 
         },
 
@@ -42,7 +43,8 @@
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
-            "can__horizontal_connect" : 1
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
 
         },
  
@@ -64,7 +66,8 @@
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
-            "can__horizontal_connect" : 1
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
 
         },
 
@@ -86,7 +89,8 @@
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
-            "can__horizontal_connect" : 1
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
 
        },
 
@@ -108,7 +112,8 @@
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
-            "can__horizontal_connect" : 1
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
 
        }
 
@@ -130,7 +135,8 @@
             "can_rotate" : 0,
             "type" : "reator",
             "axios" : "vertical",
-            "can__horizontal_connect" : 1
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
         },
         
         {
@@ -146,7 +152,8 @@
             "can_rotate" : 0,
             "can_connect" : 1,
             "axios" : "vertical",
-            "can__horizontal_connect" : 1
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
         },
         
         {
@@ -161,7 +168,8 @@
             "can_mirroring" : 0,
             "can_rotate" : 0,
             "axios" : "vertical",
-            "can__horizontal_connect" : 1
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
         },
         
         {
@@ -176,7 +184,8 @@
             "can_mirroring" : 1,
             "can_rotate" : 0,
             "axios" : "vertical",
-            "can__horizontal_connect" : 1
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
         }
     ],
   
@@ -193,8 +202,10 @@
             "_alturaPx" :60,
             "can_mirroring" : 0,
             "can_rotate" : 1,
-            "axios" : "vertical",
-            "can_rotate" : 0
+            "axios" : "horizontal",
+            "can_rotate" : 0,
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 0
 
         },
         
@@ -208,8 +219,10 @@
             "_larguraPx" : 60,
             "_alturaPx" : 60,
             "can_mirroring" : 0,
-            "axios" : "vertical",
-            "can_rotate" : 1
+            "axios" : "horizontal",
+            "can_rotate" : 1,
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 0
 
         },
 
@@ -223,8 +236,10 @@
             "_larguraPx" : 60,
             "_alturaPx" :60,
             "can_mirroring" : 0,
-            "axios" : "vertical",
-            "can_rotate" : 1
+            "axios" : "horizontal",
+            "can_rotate" : 1,
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 0
 
         },
         
@@ -238,8 +253,10 @@
             "_larguraPx" : 60,
             "_alturaPx" :60,
             "can_mirroring" : 0,
-            "axios" : "vertical",
-            "can_rotate" : 1
+            "axios" : "horizontal",
+            "can_rotate" : 1,
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 0
 
         },
 
@@ -253,8 +270,10 @@
             "_larguraPx" : 51,
             "_alturaPx" :55,
             "can_mirroring" : 0,
-            "axios" : "vertical",
-            "can_rotate" : 1
+            "axios" : "horizontal",
+            "can_rotate" : 1,
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 0
 
        }
         
@@ -271,7 +290,9 @@
             "_alturaPx" : 40,
             "can_mirroring" : 0,
             "axios" : "vertical",
-            "can_rotate" : 1
+            "can_rotate" : 1,
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
         },
    
 
@@ -286,7 +307,9 @@
             "_alturaPx" : 40,
             "can_mirroring" : 0,
             "axios" : "vertical",
-            "can_rotate" : 1
+            "can_rotate" : 1,
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1
 
         },
 
@@ -301,7 +324,9 @@
             "_alturaPx" : 40,
             "can_mirroring" : 1,
             "axios" : "vertical",
-            "can_rotate" : 1
+            "can_rotate" : 1,
+            "can_horizontal_connect" : 1,
+            "can_top_connect" : 1 
 
         }
    

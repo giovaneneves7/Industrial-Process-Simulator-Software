@@ -25,6 +25,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -105,6 +106,12 @@ public interface IGenericRepository<E extends Equipamento> {
                             break;
                         case Constantes.AXIOS_ATTRIBUTE:
                             eq.setAxios(valor.getAsString());
+                            break;
+                        case Constantes.CAN_TOP_CONNECT_ATTRIBUTE:
+                            eq.setCanTopConnect(valor.getAsInt() == 1);
+                            break;
+                        case Constantes.CAN_BOTTOM_CONNECT_ATTRIBUTE:
+                            eq.setCanBottomConnect(valor.getAsInt() == 1);
                             break;
                         default:
                             if (eq instanceof Tubulacao tub) {

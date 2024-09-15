@@ -363,6 +363,8 @@ public class AreaDeTrabalhoController {
     }
     public void rotacionarEquipamento(Label lbl){
         
+        EquipamentoController.rotateEquipament(lbl);
+        /*
         ImageIcon iconAntigo = (ImageIcon) lbl.getIcon();
         BufferedImage bufferedImage = Util.toBufferedImage(iconAntigo.getImage());
         ImageIcon iconGirado = Util.rotate(bufferedImage, 90);
@@ -386,6 +388,7 @@ public class AreaDeTrabalhoController {
         
         lbl.setOrientacao(lbl.getOrientacao().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
         lbl.getEquipamento().setAxios(lbl.getEquipamento().getAxios().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
+    */
     } // rotacionarEquipamento
     
     public void atualizarImagemBotaoConectar(JButton btn){

@@ -15,12 +15,15 @@
             "comprimento" : 2,
             "up" : 1,
             "right" : 0,
+            "type" : "tubulacao",
             "down" : 1,
             "left" : 0,
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
+            "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 1
 
         },
@@ -38,12 +41,15 @@
             "comprimento" : 4,
             "up" : 1,
             "right" : 0,
+            "type" : "tubulacao",
             "down" : 1,
             "left" : 0,
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
+            "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 1
 
         },
@@ -61,12 +67,15 @@
             "comprimento" : 6,
             "up" : 1,
             "right" : 0,
+            "type" : "tubulacao",
             "down" : 1,
             "left" : 0,
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
+            "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 1
 
         },
@@ -84,12 +93,15 @@
             "comprimento" : 8,
             "up" : 1,
             "right" : 0,
+            "type" : "tubulacao",
             "down" : 1,
             "left" : 0,
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
+            "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 1
 
        },
@@ -107,12 +119,15 @@
             "comprimento" : 10,
             "up" : 1,
             "right" : 0,
+            "type" : "tubulacao",
             "down" : 1,
             "left" : 0,
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
+            "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 1
 
        }
@@ -134,8 +149,11 @@
             "can_mirroring" : 0,
             "can_rotate" : 0,
             "type" : "reator",
+            "can_right_connect" : 0,
             "axios" : "vertical",
+            "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 1
         },
         
@@ -152,7 +170,9 @@
             "can_rotate" : 0,
             "can_connect" : 1,
             "axios" : "vertical",
+            "can_bottom_connect": 0,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 1
         },
         
@@ -168,8 +188,10 @@
             "can_mirroring" : 0,
             "can_rotate" : 0,
             "axios" : "vertical",
+            "can_bottom_connect": 0,
             "can_horizontal_connect" : 1,
-            "can_top_connect" : 1
+            "can_right_connect" : 1,
+            "can_top_connect" : 0
         },
         
         {
@@ -184,7 +206,9 @@
             "can_mirroring" : 1,
             "can_rotate" : 0,
             "axios" : "vertical",
+            "can_bottom_connect": 0,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 1
         }
     ],
@@ -203,8 +227,10 @@
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "horizontal",
+            "can_bottom_connect": 0,
             "can_rotate" : 0,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 0
 
         },
@@ -220,8 +246,10 @@
             "_alturaPx" : 60,
             "can_mirroring" : 0,
             "axios" : "horizontal",
+            "can_bottom_connect": 0,
             "can_rotate" : 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 0
 
         },
@@ -237,8 +265,10 @@
             "_alturaPx" :60,
             "can_mirroring" : 0,
             "axios" : "horizontal",
+            "can_bottom_connect": 1,
             "can_rotate" : 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 0
 
         },
@@ -254,8 +284,10 @@
             "_alturaPx" :60,
             "can_mirroring" : 0,
             "axios" : "horizontal",
+            "can_bottom_connect": 0,
             "can_rotate" : 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 0
 
         },
@@ -271,8 +303,10 @@
             "_alturaPx" :55,
             "can_mirroring" : 0,
             "axios" : "horizontal",
+            "can_bottom_connect": 0,
             "can_rotate" : 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 0
 
        }
@@ -290,8 +324,10 @@
             "_alturaPx" : 40,
             "can_mirroring" : 0,
             "axios" : "vertical",
+            "can_bottom_connect": 1,
             "can_rotate" : 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 1,
             "can_top_connect" : 1
         },
    
@@ -307,8 +343,10 @@
             "_alturaPx" : 40,
             "can_mirroring" : 0,
             "axios" : "vertical",
+            "can_bottom_connect": 1,
             "can_rotate" : 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 1,
             "can_top_connect" : 1
 
         },
@@ -324,10 +362,11 @@
             "_alturaPx" : 40,
             "can_mirroring" : 1,
             "axios" : "vertical",
+            "can_bottom_connect": 1,
             "can_rotate" : 1,
             "can_horizontal_connect" : 1,
+            "can_right_connect" : 0,
             "can_top_connect" : 1 
-
         }
    
    ]

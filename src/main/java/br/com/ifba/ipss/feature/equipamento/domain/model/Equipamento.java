@@ -44,7 +44,7 @@ public class Equipamento {
     private boolean canMirroring; // Valor booleano. Pode ou não espelhar.
     private EquipamentType type; // O tipo do equipamento.
     private String axios; // Se horizontal ou vertical.
+    private boolean canBottomConnect; // Se é permitida a conexão na parte inferior.
     private boolean canTopConnect; // Se é permitida a conexão no topo.
-    
     
 } // class Equipamento

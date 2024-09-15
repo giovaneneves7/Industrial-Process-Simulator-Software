@@ -4,6 +4,11 @@ import br.com.ifba.ipss.feature.equipamento.domain.service.IEquipamentoService;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.infrastructure.interfaces.ApplicationController;
 import br.com.ifba.ipss.util.Constantes;
+import br.com.ifba.ipss.util.EquipamentType;
+import br.com.ifba.ipss.util.Util;
+import java.awt.Container;
+import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -47,12 +52,13 @@ public class EquipamentoController implements ApplicationController{
             }
             
             movedLabel.setLocation(xOrigem, yOrigem);
-        } else if(target.getEquipamento().getAxios().equals(Constantes.VERTICAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.VERTICAL)){
-            
+        } else if(target.getEquipamento().getAxios().equals(Constantes.VERTICAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.VERTICAL)){ // Ambos os equipamentos na vertical
             
             int diferencaY = movedLabel.getY() - target.getY(); 
    
             if (diferencaY <= 0) { // lblMovido está acima do alvo
+                
+                if(!target.getEquipamento().isCanTopConnect()) return;
                 
                 int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
                 int yOrigem = target.getY() - movedLabel.getHeight(); 
@@ -61,10 +67,12 @@ public class EquipamentoController implements ApplicationController{
                 
             } else { // lblMovido está abaixo do alvo
                 
+                if(!target.getEquipamento().isCanBottomConnect()) return;
+                
                 int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
                 int yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
  
-               movedLabel.setLocation(xOrigem, yOrigem);
+                movedLabel.setLocation(xOrigem, yOrigem);
                 
             }
             
@@ -89,6 +97,40 @@ public class EquipamentoController implements ApplicationController{
                movedLabel.setLocation(xOrigem, yOrigem);
                 
             }
+            
+        }
+    }
+    
+    public static void rotateEquipament(Label lbl){
+        
+        ImageIcon iconAntigo = (ImageIcon) lbl.getIcon();
+        BufferedImage bufferedImage = Util.toBufferedImage(iconAntigo.getImage());
+        ImageIcon iconGirado = Util.rotate(bufferedImage, 90);
+        
+        lbl.setIcon(iconGirado);
+       
+        int newWidth = lbl.getHeight();  
+        int newHeight = lbl.getWidth();  
+        lbl.setSize(newWidth, newHeight);  
+
+        int currentX = lbl.getX();  
+        int currentY = lbl.getY();  
+        int centerX = currentX + ( newHeight/ 2);  
+        int centerY = currentY + (newWidth / 2);  
+
+        lbl.setLocation(centerX - (newWidth / 2), centerY - (newHeight / 2));
+        
+        Container parent = lbl.getParent();
+        parent.revalidate();
+        parent.repaint();
+        
+        lbl.setOrientacao(lbl.getOrientacao().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
+        lbl.getEquipamento().setAxios(lbl.getEquipamento().getAxios().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
+        
+        // Lógica de rotacionar personalizada para a tubulação
+        if(lbl.getEquipamento().getType() == EquipamentType.CONEXAO){
+            
+            lbl.getEquipamento().setCanTopConnect(lbl.getEquipamento().getAxios().equals(Constantes.VERTICAL));
             
         }
     }

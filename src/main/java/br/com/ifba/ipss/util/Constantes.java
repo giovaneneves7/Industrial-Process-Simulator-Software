@@ -91,7 +91,10 @@ public class Constantes {
     public static final String CAN_MIRRORING_ATTRIBUTE = "can_mirroring";
     public static final String TYPE_ATTRIBUTE = "type";
     public static final String AXIOS_ATTRIBUTE = "axios";
+    public static final String CAN_BOTTOM_CONNECT_ATTRIBUTE = "can_bottom_connect";
     public static final String CAN_TOP_CONNECT_ATTRIBUTE = "can_top_connect";
+    
+    public static final String TUBULACAO_TYPE = "tubulacao";
     
     // Caminhos de Imagens
     public static final String CAMINHO_BOTAO_REMOVER = "/images/trash.png";

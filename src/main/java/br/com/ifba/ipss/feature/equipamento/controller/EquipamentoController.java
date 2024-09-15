@@ -1,4 +1,16 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+// *************************************************//
+
 package br.com.ifba.ipss.feature.equipamento.controller;
+
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
+
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
 
 import br.com.ifba.ipss.feature.equipamento.domain.service.IEquipamentoService;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
@@ -6,9 +18,14 @@ import br.com.ifba.ipss.infrastructure.interfaces.ApplicationController;
 import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.EquipamentType;
 import br.com.ifba.ipss.util.Util;
+
 import java.awt.Container;
 import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
+
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
 
 /**
  *
@@ -33,25 +50,17 @@ public class EquipamentoController implements ApplicationController{
             int xOrigem = 0;
             int yOrigem = 0;
             
-            if(diferencaX <= 0) { //lblMovido está à esquerda do alvo
-                
-                //if(target.getConexoes().containsKey(Constantes.ESQUERDA)) return;
-                
-                xOrigem = target.getX() - target.getWidth();
+            if(diferencaX <= 0) { // movedLabel está à esquerda do alvo
+                xOrigem = target.getX() - movedLabel.getWidth(); 
                 yOrigem = target.getY();
-                
-                //target.getConexoes().put(Constantes.ESQUERDA, lblMovido);
-            } else{ // lblMovido está à direita do alvo
-                
-                //if(alvo.getConexoes().containsKey(Constantes.DIREITA)) return;
-                
+            } else { // movedLabel está à direita do alvo
                 xOrigem = target.getX() + target.getWidth();
                 yOrigem = target.getY();
-                
-                //alvo.getConexoes().put(Constantes.DIREITA, lblMovido);
             }
+
             
             movedLabel.setLocation(xOrigem, yOrigem);
+            
         } else if(target.getEquipamento().getAxios().equals(Constantes.VERTICAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.VERTICAL)){ // Ambos os equipamentos na vertical
             
             int diferencaY = movedLabel.getY() - target.getY(); 

@@ -89,7 +89,7 @@ public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, 
         try(OutputStream os = Constantes.pegarEspacoTrabalhoJsonOutputStream(workspacePath); 
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8));){
         
-            writer.write("");
+            writer.write("{equipamentos:[]}");
             return true;
 
         } catch(IOException ex){

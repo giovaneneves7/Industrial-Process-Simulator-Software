@@ -364,31 +364,7 @@ public class AreaDeTrabalhoController {
     public void rotacionarEquipamento(Label lbl){
         
         EquipamentoController.rotateEquipament(lbl);
-        /*
-        ImageIcon iconAntigo = (ImageIcon) lbl.getIcon();
-        BufferedImage bufferedImage = Util.toBufferedImage(iconAntigo.getImage());
-        ImageIcon iconGirado = Util.rotate(bufferedImage, 90);
-        
-        lbl.setIcon(iconGirado);
-       
-        int newWidth = lbl.getHeight();  
-        int newHeight = lbl.getWidth();  
-        lbl.setSize(newWidth, newHeight);  
-
-        int currentX = lbl.getX();  
-        int currentY = lbl.getY();  
-        int centerX = currentX + ( newHeight/ 2);  
-        int centerY = currentY + (newWidth / 2);  
-
-        lbl.setLocation(centerX - (newWidth / 2), centerY - (newHeight / 2));
-        
-        Container parent = lbl.getParent();
-        parent.revalidate();
-        parent.repaint();
-        
-        lbl.setOrientacao(lbl.getOrientacao().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
-        lbl.getEquipamento().setAxios(lbl.getEquipamento().getAxios().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
-    */
+     
     } // rotacionarEquipamento
     
     public void atualizarImagemBotaoConectar(JButton btn){
@@ -433,74 +409,6 @@ public class AreaDeTrabalhoController {
     public void conectarEquipamentos(Label lblMovido, Label alvo){
         
         EquipamentoController.connectEquipament(lblMovido, alvo);
-        /*if(alvo.getOrientacao().equals(Constantes.HORIZONTAL) && lblMovido.getOrientacao().equals(Constantes.HORIZONTAL)){
-        
-            int diferencaX = lblMovido.getX() - alvo.getX();
-            int xOrigem = 0;
-            int yOrigem = 0;
-            
-            if(diferencaX <= 0) { //lblMovido está à esquerda do alvo
-                
-                if(alvo.getConexoes().containsKey(Constantes.ESQUERDA)) return;
-                
-                xOrigem = alvo.getX() - alvo.getWidth();
-                yOrigem = alvo.getY();
-                
-                alvo.getConexoes().put(Constantes.ESQUERDA, lblMovido);
-                
-            } else{ // lblMovido está à direita do alvo
-                
-                if(alvo.getConexoes().containsKey(Constantes.DIREITA)) return;
-                
-                xOrigem = alvo.getX() + alvo.getWidth();
-                yOrigem = alvo.getY();
-                
-                alvo.getConexoes().put(Constantes.DIREITA, lblMovido);
-            }
-            
-            lblMovido.setLocation(xOrigem, yOrigem);
-            
-            
-            
-        } else if(alvo.getOrientacao().equals(Constantes.VERTICAL) && lblMovido.getOrientacao().equals(Constantes.VERTICAL)){
-            
-            
-            int diferencaY = lblMovido.getY() - alvo.getY(); 
-   
-            if (diferencaY <= 0) { // lblMovido está acima do alvo
-                 
-                
-                if(!alvo.getEquipamento().getEntradas().get(Constantes.CIMA)) return; // retorna caso o alvo não permita conexão em cima.
-                if(alvo.getConexoes().containsKey(Constantes.CIMA)) return; // retorna caso o alvo já possua uma conexão em cima.
-                if(!lblMovido.getEquipamento().getEntradas().get(Constantes.BAIXO)) return; // retorna caso a label a ser movida não permita conexão em baixo.
-                if(lblMovido.getConexoes().containsKey(Constantes.BAIXO)) return;  // retorna caso o label movido já possua uma conexão em baixo.
-                
-                int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
-                int yOrigem = alvo.getY() - lblMovido.getHeight(); 
-                
-                lblMovido.setLocation(xOrigem, yOrigem); // junta as labels.
-                
-                alvo.getConexoes().put(Constantes.CIMA, lblMovido);
-                lblMovido.getConexoes().put(Constantes.BAIXO, alvo);
-                
-            } else { // lblMovido está abaixo do alvo
-                
-                if(!alvo.getEquipamento().getEntradas().get(Constantes.BAIXO)) return; // retorna caso o alvo não permita conexão em cima.
-                if(alvo.getConexoes().containsKey(Constantes.BAIXO)) return; // retorna caso o alvo já possua uma conexão em BAIXO.
-                if(!lblMovido.getEquipamento().getEntradas().get(Constantes.CIMA)) return; // retorna caso a label a ser movida não permita conexão em cima.
-                if(lblMovido.getConexoes().containsKey(Constantes.CIMA)) return;  // retorna caso o label movido já possua uma conexão em cima.
-                
-                int xOrigem = alvo.getX() + (alvo.getWidth() / 2) - (lblMovido.getWidth() / 2);
-                int yOrigem = (diferencaY < 0) ? alvo.getY() - lblMovido.getHeight() : alvo.getY() + alvo.getHeight();
- 
-               lblMovido.setLocation(xOrigem, yOrigem);
-                
-               alvo.getConexoes().put(Constantes.BAIXO, lblMovido);
-               lblMovido.getConexoes().put(Constantes.CIMA, alvo);
-            }
-        }*/
-        
-        
         
     } // conectarEquipamentos
     

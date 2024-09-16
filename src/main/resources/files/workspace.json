@@ -1,15 +1,1 @@
-
-{
-	 equipamentos: [
-	{
-		"id" : "eqConexÃ£o 21125",
- 		"caminho_imagem" : "/images/conexao_2.png",
- 		"largura" : 30,
- 		"altura" : 30,
- 		"x" : 369,
- 		"y" : 141,
- 		"orientacao" : "vertical"
-	}
-]
-}
-
+{equipamentos:[]}

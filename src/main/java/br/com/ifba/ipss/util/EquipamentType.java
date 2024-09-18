@@ -6,11 +6,12 @@ package br.com.ifba.ipss.util;
  */
 public enum EquipamentType {
     
-    BOMBA_CENTRIFUGA("tubulacao"),
+    BOMBA_CENTRIFUGA("bomba_centrifuga"),
     CONEXAO("conexao"),    
     REATOR("reator"),
     TUBULACAO("tubulacao"),
-    UNKNOWN("unknown");
+    UNKNOWN("unknown"),
+    VALVULA("valvula");
     
     private final String _equipament;
     

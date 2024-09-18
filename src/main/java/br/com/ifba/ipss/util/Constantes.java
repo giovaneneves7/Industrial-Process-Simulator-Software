@@ -93,8 +93,13 @@ public class Constantes {
     public static final String AXIOS_ATTRIBUTE = "axios";
     public static final String CAN_BOTTOM_CONNECT_ATTRIBUTE = "can_bottom_connect";
     public static final String CAN_TOP_CONNECT_ATTRIBUTE = "can_top_connect";
-    
+
+    public static final String BOMBA_CENTRIFUGA_TYPE = "bomba_centrifuga";
+    public static final String CONEXAO_TYPE = "conexao";
+    public static final String REATOR_TYPE = "reator";
     public static final String TUBULACAO_TYPE = "tubulacao";
+    public static final String UNKNOWN = "unknown";
+    public static final String VALVULA_TYPE = "valvula";
     
     // Caminhos de Imagens
     public static final String CAMINHO_BOTAO_REMOVER = "/images/trash.png";
@@ -197,12 +202,7 @@ public class Constantes {
     }
     
     public static OutputStream pegarEspacoTrabalhoJsonOutputStream(String workspacePath) throws IOException{
-        
-        
-        
-        //if (is == null) {
-          //  throw new FileNotFoundException("Arquivo não encontrado: " + ESPACO_TRABALHO_JSON);
-        //}
+
     
         Path diretorioDestino = Paths.get("src", "main", "resources", "files");
         Path caminhoAbsolutoArquivo = diretorioDestino.resolve(workspacePath);

@@ -113,6 +113,7 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.CAN_BOTTOM_CONNECT_ATTRIBUTE:
                             eq.setCanBottomConnect(valor.getAsInt() == 1);
                             break;
+                            
                         default:
                             if (eq instanceof Tubulacao tub) {
                                 switch (chave) {
@@ -164,14 +165,20 @@ public interface IGenericRepository<E extends Equipamento> {
     private EquipamentType getEquipamentType(String type){
     
         switch(type){
-            case "conexao" -> {
+            case Constantes.CONEXAO_TYPE -> {
                 return EquipamentType.CONEXAO;
             }
-            case "reator" -> {
+            case Constantes.REATOR_TYPE -> {
                 return EquipamentType.REATOR;
             }
-            case "tubulacao" -> {
+            case Constantes.TUBULACAO_TYPE -> {
                 return EquipamentType.TUBULACAO;
+            }
+            case Constantes.VALVULA_TYPE -> {
+                return EquipamentType.VALVULA;
+            }
+            case Constantes.BOMBA_CENTRIFUGA_TYPE -> {
+                return EquipamentType.BOMBA_CENTRIFUGA;
             }
             default -> { 
                 return EquipamentType.UNKNOWN;

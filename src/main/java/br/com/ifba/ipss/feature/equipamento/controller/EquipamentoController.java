@@ -69,10 +69,22 @@ public class EquipamentoController implements ApplicationController{
                 
                 if(!target.getEquipamento().isCanTopConnect()) return;
                 
-                int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
-                int yOrigem = target.getY() - movedLabel.getHeight(); 
+                int xOrigem = 0, yOrigem = 0;
                 
-                movedLabel.setLocation(xOrigem, yOrigem); // junta as labels.
+                if(target.getEquipamento().getType() == EquipamentType.BOMBA_CENTRIFUGA){
+                    
+                    xOrigem = target.getX();
+                    yOrigem = target.getY() - movedLabel.getHeight();
+                    
+                } else {
+                    
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                    yOrigem = target.getY() - movedLabel.getHeight();
+                
+                }
+                 
+                
+                movedLabel.setLocation(xOrigem, yOrigem); 
                 
             } else { // lblMovido está abaixo do alvo
                 

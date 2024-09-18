@@ -9,11 +9,15 @@ package br.com.ifba.ipss.feature.equipamento.domain.model;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+
 import java.util.Map;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import br.com.ifba.ipss.util.EquipamentType;
+
 // *************************************************//
 // ************** { FIM - Imports } ****************//
 // *************************************************//
@@ -41,10 +45,11 @@ public class Equipamento {
     private double _alturaPx;      // A altura do equipamento em pixels.
     private double _comprimentoM;  // O comprimento do equipamento em metros.
     private Map<String, Boolean> entradas; 
-    private boolean canMirroring; // Valor booleano. Pode ou não espelhar.
-    private EquipamentType type; // O tipo do equipamento.
-    private String axios; // Se horizontal ou vertical.
+    private boolean canMirroring;  // Valor booleano. Pode ou não espelhar.
+    private EquipamentType type;   // O tipo do equipamento.
+    private String axios;          // Se horizontal ou vertical.
     private boolean canBottomConnect; // Se é permitida a conexão na parte inferior.
     private boolean canTopConnect; // Se é permitida a conexão no topo.
-    
+    private boolean canRotate;     // Se é permitida a rotação do equipamento.
+
 } // class Equipamento

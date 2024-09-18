@@ -113,7 +113,9 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.CAN_BOTTOM_CONNECT_ATTRIBUTE:
                             eq.setCanBottomConnect(valor.getAsInt() == 1);
                             break;
-                            
+                        case Constantes.CAN_ROTATE_ATTRIBUTE:
+                            eq.setCanRotate(valor.getAsInt() == 1);
+                            break;
                         default:
                             if (eq instanceof Tubulacao tub) {
                                 switch (chave) {

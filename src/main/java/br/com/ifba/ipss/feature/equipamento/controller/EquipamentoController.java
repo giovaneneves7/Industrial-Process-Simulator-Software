@@ -51,11 +51,14 @@ public class EquipamentoController implements ApplicationController{
             int yOrigem = 0;
             
             if(diferencaX <= 0) { // movedLabel está à esquerda do alvo
+                
                 xOrigem = target.getX() - movedLabel.getWidth(); 
                 yOrigem = target.getY();
             } else { // movedLabel está à direita do alvo
+                
                 xOrigem = target.getX() + target.getWidth();
                 yOrigem = target.getY();
+                
             }
 
             
@@ -123,6 +126,8 @@ public class EquipamentoController implements ApplicationController{
     }
     
     public static void rotateEquipament(Label lbl){
+        
+        if(!lbl.getEquipamento().isCanRotate()) return;
         
         ImageIcon iconAntigo = (ImageIcon) lbl.getIcon();
         BufferedImage bufferedImage = Util.toBufferedImage(iconAntigo.getImage());

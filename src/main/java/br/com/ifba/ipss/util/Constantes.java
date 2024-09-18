@@ -92,6 +92,7 @@ public class Constantes {
     public static final String TYPE_ATTRIBUTE = "type";
     public static final String AXIOS_ATTRIBUTE = "axios";
     public static final String CAN_BOTTOM_CONNECT_ATTRIBUTE = "can_bottom_connect";
+    public static final String CAN_ROTATE_ATTRIBUTE = "can_rotate";
     public static final String CAN_TOP_CONNECT_ATTRIBUTE = "can_top_connect";
 
     public static final String BOMBA_CENTRIFUGA_TYPE = "bomba_centrifuga";

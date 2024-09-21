@@ -165,15 +165,17 @@
             "_x" : 0,
             "_y" : 0,
             "_larguraPx" : 215,
-            "_alturaPx" : 140,
+            "_alturaPx" : 133,
             "can_mirroring" : 0,
             "can_rotate" : 0,
             "can_connect" : 1,
             "axios" : "vertical",
             "can_bottom_connect": 0,
             "can_horizontal_connect" : 1,
-            "can_right_connect" : 0,
-            "can_top_connect" : 1
+            "can_left_connect" : 1,
+            "can_right_connect" : 1,
+            "can_top_connect" : 0,
+            "type" : "tanque"
         },
         
         {

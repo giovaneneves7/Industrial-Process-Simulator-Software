@@ -122,6 +122,34 @@ public class EquipamentoController implements ApplicationController{
                 
             }
             
+        } else{ // O alvo está na vertical e o equipamento a se conectar está na horizontal
+            
+            if(!target.getEquipamento().isCanLeftConnect() && target.getEquipamento().isCanRightConnect()) return;
+            
+            int diferencaX = movedLabel.getX() - target.getX();
+            int xOrigem = 0;
+            int yOrigem = 0;
+            
+            if(diferencaX <= 0) { // movedLabel está à esquerda do alvo
+                
+                if(target.getEquipamento().getType() == EquipamentType.TANQUE){
+                    xOrigem = target.getX() - movedLabel.getWidth(); 
+                    yOrigem = (target.getY() + 33);
+                }
+                
+            } else { // movedLabel está à direita do alvo
+                
+                if(target.getEquipamento().getType() == EquipamentType.TANQUE){
+                    xOrigem = target.getX() + target.getWidth() - 2;
+                    yOrigem = (target.getY() + 163);
+                }
+                
+            }
+
+            
+            movedLabel.setLocation(xOrigem, yOrigem);
+            
+            
         }
     }
     

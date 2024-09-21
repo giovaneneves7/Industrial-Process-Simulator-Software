@@ -49,6 +49,8 @@ public class Equipamento {
     private EquipamentType type;   // O tipo do equipamento.
     private String axios;          // Se horizontal ou vertical.
     private boolean canBottomConnect; // Se é permitida a conexão na parte inferior.
+    private boolean canLeftConnect;// Se é permitida a conexão na esquerda;
+    private boolean canRightConnect; // Se é permitida a conexão na direita.
     private boolean canTopConnect; // Se é permitida a conexão no topo.
     private boolean canRotate;     // Se é permitida a rotação do equipamento.
 

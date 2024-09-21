@@ -9,6 +9,7 @@ public enum EquipamentType {
     BOMBA_CENTRIFUGA("bomba_centrifuga"),
     CONEXAO("conexao"),    
     REATOR("reator"),
+    TANQUE("tanque"),
     TUBULACAO("tubulacao"),
     UNKNOWN("unknown"),
     VALVULA("valvula");

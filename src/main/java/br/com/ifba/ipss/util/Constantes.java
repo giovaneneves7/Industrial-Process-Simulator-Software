@@ -101,6 +101,7 @@ public class Constantes {
     public static final String BOMBA_CENTRIFUGA_TYPE = "bomba_centrifuga";
     public static final String CONEXAO_TYPE = "conexao";
     public static final String REATOR_TYPE = "reator";
+    public static final String TANQUE_TYPE = "tanque";
     public static final String TUBULACAO_TYPE = "tubulacao";
     public static final String UNKNOWN = "unknown";
     public static final String VALVULA_TYPE = "valvula";

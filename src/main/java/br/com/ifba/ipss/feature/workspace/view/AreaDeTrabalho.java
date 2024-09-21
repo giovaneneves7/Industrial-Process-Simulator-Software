@@ -21,7 +21,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.awt.event.KeyEvent;
 
 import java.util.List;
 
@@ -42,10 +41,8 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     // *************************************************//
     // ****************** { Atributos } ****************//
     // *************************************************//
-    private final AreaDeTrabalhoController areaDeTrabalhoController = new AreaDeTrabalhoController(this);
     
-    private final ITubulacaoService tubulacaoService = ServiceManager.find(ITubulacaoService.class);
-    private final IConexaoService conexaoService = ServiceManager.find(IConexaoService.class);
+    private final AreaDeTrabalhoController areaDeTrabalhoController = new AreaDeTrabalhoController(this);
     
     public static boolean emModoRemocao = false;
     public static boolean emModoConexao = false;
@@ -90,6 +87,11 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         
     } // AreaDeTrabalho
 
+    /**
+     * Adiciona escutadores de eventos do mouse
+     * 
+     * @author Giovane Neves
+     */
     private void addMouseListeners() {
         pnlEspacoTrabalho.addMouseListener(new java.awt.event.MouseAdapter() {
             
@@ -109,6 +111,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             
             @Override
             public void mouseDragged(java.awt.event.MouseEvent evt) {
+                
                 int x = Math.min(selectionInitialPoint.x, evt.getX());
                 int y = Math.min(selectionInitialPoint.y, evt.getY());
                 int width = Math.abs(selectionInitialPoint.x - evt.getX());
@@ -121,7 +124,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
             }
             
         });
-    }
+    } // addMouseListeners
     
     private void addTooltipToButtons(){
         
@@ -136,12 +139,14 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
 
     @Override
     public void paint(Graphics g) {
+        
         super.paint(g);
         if (selectionArea != null) {
             Graphics2D g2d = (Graphics2D) g;
             g2d.draw(selectionArea);
         }
-    }
+        
+    } // paint
     
     private void inicializadorPersonalizado(){
         

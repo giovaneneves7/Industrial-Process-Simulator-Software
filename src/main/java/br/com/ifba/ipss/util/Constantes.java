@@ -95,6 +95,9 @@ public class Constantes {
     public static final String CAN_ROTATE_ATTRIBUTE = "can_rotate";
     public static final String CAN_TOP_CONNECT_ATTRIBUTE = "can_top_connect";
 
+    public static final String SIMULATION_LIST_CONTROLLER = "simulation_list";
+    public static final String VIEW_CONTROLLER = "view";
+    
     public static final String BOMBA_CENTRIFUGA_TYPE = "bomba_centrifuga";
     public static final String CONEXAO_TYPE = "conexao";
     public static final String REATOR_TYPE = "reator";

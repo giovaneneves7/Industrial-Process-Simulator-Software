@@ -2,7 +2,7 @@
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
 
-package br.com.ifba.ipss.view;
+package br.com.ifba.ipss.feature.simulationlist.view;
 
 // *************************************************//
 // *************** { FIM - Package } ***************//
@@ -12,9 +12,12 @@ package br.com.ifba.ipss.view;
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 
+import br.com.ifba.ipss.feature.simulationlist.controller.SimulationListController;
 import br.com.ifba.ipss.helper.PathHelper;
 import br.com.ifba.ipss.helper.ScreenHelper;
+import br.com.ifba.ipss.infrastructure.manager.ControllerManager;
 import br.com.ifba.ipss.theme.ThemeManager;
+import br.com.ifba.ipss.util.Constantes;
 import static br.com.ifba.ipss.util.Dicionario.tr;
 
 import java.io.IOException;
@@ -24,6 +27,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -36,17 +40,28 @@ import javax.swing.DefaultListModel;
  */
 public class ListaSimulacoes extends javax.swing.JFrame {
 
+    private final SimulationListController simulationListController;
+    
     String typedKeyCharList = "";
     
     /**
      * Creates new form ListaSimulacoes
      */
     public ListaSimulacoes() {
+                
         initComponents();
+        
+        simulationListController = new SimulationListController(this);
+
         customIntl();
+
     }
     
-    
+    /**
+     * Inicializador Personalizado da Tela
+     * 
+     * @author Giovane Neves
+     */
     private void customIntl(){
         
         this.pnlBackground.setBackground(ThemeManager.getColor("secondary"));
@@ -54,6 +69,10 @@ public class ListaSimulacoes extends javax.swing.JFrame {
         this.btnSearch.setBackground(ThemeManager.getColor("primary"));
         this.btnSearch.setForeground(ThemeManager.getColor("secondary"));
         this.btnSearch.setText(tr(this.btnSearch.getText()));
+        
+        ImageIcon favicon = new ImageIcon(getClass().getResource(Constantes.CAMINHO_LOGO));
+        this.simulationListController.defineScreenFavicon(favicon.getImage());
+        this.simulationListController.defineScreenTitle();
         
         loadJsonFiles();
     }
@@ -109,7 +128,7 @@ public class ListaSimulacoes extends javax.swing.JFrame {
             }
         });
         pnlBackground.add(txtFieldSearchBox);
-        txtFieldSearchBox.setBounds(60, 30, 300, 22);
+        txtFieldSearchBox.setBounds(60, 30, 300, 24);
 
         listWorkspaces.setForeground(new java.awt.Color(0, 102, 51));
         listWorkspaces.setModel(new javax.swing.AbstractListModel<String>() {
@@ -136,7 +155,7 @@ public class ListaSimulacoes extends javax.swing.JFrame {
         btnSearch.setBorderPainted(false);
         btnSearch.setFocusPainted(false);
         pnlBackground.add(btnSearch);
-        btnSearch.setBounds(370, 30, 100, 23);
+        btnSearch.setBounds(370, 30, 100, 24);
 
         getContentPane().add(pnlBackground);
         pnlBackground.setBounds(-4, 0, 510, 460);

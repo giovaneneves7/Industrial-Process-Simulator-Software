@@ -11,7 +11,7 @@ package br.com.ifba.ipss.helper;
 // *************************************************//
 import br.com.ifba.ipss.feature.workspace.view.AreaDeTrabalho;
 import br.com.ifba.ipss.view.Instructions;
-import br.com.ifba.ipss.view.ListaSimulacoes;
+import br.com.ifba.ipss.feature.simulationlist.view.ListaSimulacoes;
 import br.com.ifba.ipss.view.TelaInicial;
 import br.com.ifba.ipss.view.TelaSplash;
 import java.util.Stack;

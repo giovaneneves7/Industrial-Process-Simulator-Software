@@ -20,7 +20,8 @@ import java.util.List;
 // *************************************************//
 
 /**
- *
+ * Dicionário útil com todos os textos da aplicação
+ * 
  * @author Giovane Neves
  * @since V0.0.1
  */
@@ -55,6 +56,7 @@ public class Dicionario {
         DICIONARIO.put("instrucoes", List.of("Instruções"));
         DICIONARIO.put("l", List.of("L"));
         DICIONARIO.put("limpar_area_trabalho", List.of("Limpar Área de Trabalho"));
+        DICIONARIO.put("lista_simulacao", List.of("Lista de Simulações"));
         DICIONARIO.put("modo_conexao_ativado", List.of("Modo Conexão: Ativado"));
         DICIONARIO.put("modo_conexao_desativado", List.of("Modo Conexão: Desativado"));
         DICIONARIO.put("modo_espelhamento_ativado", List.of("Modo Espelhamento: Ativado"));

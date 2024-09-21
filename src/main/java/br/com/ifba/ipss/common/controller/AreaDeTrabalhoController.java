@@ -184,9 +184,9 @@ public class AreaDeTrabalhoController {
     
     public void definirTituloAplicacao(){
         
-        ViewController.definirTituloAplicacao(this.areaDeTrabalho);
+        ViewController.defineScreenTitle(this.areaDeTrabalho);
         
-    } // definirTituloAplicacao
+    } // defineScreenTitle
     
     public void mudarEfeitoHoverNoBotao(List<JButton> botoes){
         

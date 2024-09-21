@@ -9,6 +9,7 @@ package br.com.ifba.ipss.common.controller;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
+import br.com.ifba.ipss.infrastructure.interfaces.ApplicationController;
 import static br.com.ifba.ipss.util.Dicionario.tr;
 
 import java.awt.Image;
@@ -22,12 +23,18 @@ import javax.swing.JFrame;
  * @author Giovane Neves
  * @since V0.0.1
  */
-public class ViewController {
+public class ViewController implements ApplicationController{
     
-    public static void definirTituloAplicacao(JFrame f){
+    public static void defineScreenTitle(JFrame f){
         
         f.setTitle(tr("titulo_aplicacao"));
         
+    }
+    
+    public void defineScreenTitle(JFrame f, String name){
+        
+        f.setTitle(name);
+    
     }
     
     public static void definirLogoAplicacao(JFrame f, Image img){

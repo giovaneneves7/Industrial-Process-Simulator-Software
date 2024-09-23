@@ -10,6 +10,7 @@ public enum EquipamentType {
     CONEXAO("conexao"),    
     REATOR("reator"),
     TANQUE("tanque"),
+    TORRE_DESTILACAO("torre_destilacao"),
     TUBULACAO("tubulacao"),
     UNKNOWN("unknown"),
     VALVULA("valvula");

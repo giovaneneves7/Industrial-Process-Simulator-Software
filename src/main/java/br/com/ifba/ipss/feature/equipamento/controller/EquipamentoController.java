@@ -28,7 +28,8 @@ import javax.swing.ImageIcon;
 // *************************************************//
 
 /**
- *
+ * Controller do escopo 'equipamento'
+ * 
  * @author Giovane Neves
  * @since V0.0.1
  */
@@ -52,8 +53,16 @@ public class EquipamentoController implements ApplicationController{
      */
     private static boolean canConnect(EquipamentType target, EquipamentType movedEquipament){
         
-        return (target == EquipamentType.REATOR && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false 
+        return    (target == EquipamentType.REATOR && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false 
+                : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TANQUE) ? false
+                : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
+                : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.REATOR) ? false
                 : (target == EquipamentType.BOMBA_CENTRIFUGA && movedEquipament == EquipamentType.REATOR) ? false
+                : (target == EquipamentType.BOMBA_CENTRIFUGA && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false
+                : (target == EquipamentType.TORRE_DESTILACAO && movedEquipament == EquipamentType.REATOR) ? false
+                : (target == EquipamentType.TORRE_DESTILACAO && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
+                : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TANQUE) ? false
+                : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TANQUE) ? false
                 : true;
         
     } // canConnect

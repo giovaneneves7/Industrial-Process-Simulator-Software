@@ -40,9 +40,35 @@ public class EquipamentoController implements ApplicationController{
         
         this.equipamentoService = equipamentoService;
         
-    }
+    } // EquipamentoController
     
+    /**
+     * Verifica se os tipos de equipamentos são compatíveis para a conexão
+     * 
+     * @author Giovane Neves
+     * @param target O alvo que receberá a conexão
+     * @param movedEquipament O equipamento movido que fará a conexão
+     * @return 'true' caso a conexão seja permitida, 'false' caso contrário
+     */
+    private static boolean canConnect(EquipamentType target, EquipamentType movedEquipament){
+        
+        return (target == EquipamentType.REATOR && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false 
+                : (target == EquipamentType.BOMBA_CENTRIFUGA && movedEquipament == EquipamentType.REATOR) ? false
+                : true;
+        
+    } // canConnect
+    
+    /**
+     * Conecta dois equipamentos
+     * 
+     * @author Giovane Neves
+     * @param movedLabel O equipamento que será movido e conectado ao alvo
+     * @param target O alvo fixo que receberá um equipamento conectado
+     */
     public static void connectEquipament(Label movedLabel, Label target){
+        
+        // INFO: Verifica se o tipo dos equipamentos é compatível para a conexão
+        if(!canConnect(target.getEquipamento().getType(), movedLabel.getEquipamento().getType())) return;
         
         if(target.getEquipamento().getAxios().equals(Constantes.HORIZONTAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.HORIZONTAL)){ // Ambos os equipamentos estão na horizontal
         
@@ -151,7 +177,7 @@ public class EquipamentoController implements ApplicationController{
             
             
         }
-    }
+    } // connectEquipament
     
     public static void rotateEquipament(Label lbl){
         
@@ -187,7 +213,7 @@ public class EquipamentoController implements ApplicationController{
             lbl.getEquipamento().setCanTopConnect(lbl.getEquipamento().getAxios().equals(Constantes.VERTICAL));
             
         }
-    }
+    } // rotateEquipament
     
     
     

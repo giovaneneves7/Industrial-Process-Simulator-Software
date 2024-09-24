@@ -14,6 +14,7 @@ package br.com.ifba.ipss.feature.equipamento.controller;
 
 import br.com.ifba.ipss.feature.equipamento.domain.service.IEquipamentoService;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
+import br.com.ifba.ipss.helper.GapHelper;
 import br.com.ifba.ipss.infrastructure.interfaces.ApplicationController;
 import br.com.ifba.ipss.util.Constantes;
 import br.com.ifba.ipss.util.EquipamentType;
@@ -114,7 +115,12 @@ public class EquipamentoController implements ApplicationController{
                     xOrigem = target.getX();
                     yOrigem = target.getY() - movedLabel.getHeight();
                     
-                } else {
+                } else if(target.getEquipamento().getType() == EquipamentType.REATOR){
+                    
+                    xOrigem = target.getX() + GapHelper.REATOR_TOP_CONNECTION_X_GAP;
+                    yOrigem = (target.getY() - movedLabel.getHeight() + GapHelper.REATOR_TOP_CONNECTION_GAP);
+                    
+                }else {
                     
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
                     yOrigem = target.getY() - movedLabel.getHeight();

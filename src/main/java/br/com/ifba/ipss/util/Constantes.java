@@ -13,6 +13,7 @@ package br.com.ifba.ipss.util;
 // *************************************************//
 
 import java.awt.Color;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,6 +21,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -88,9 +90,10 @@ public class Constantes {
     public static final String ATRIBUTO_RIGHT = "right";
     public static final String ATRIBUTO_DOWN = "down";
     public static final String ATRIBUTO_LEFT = "left";
-    public static final String CAN_MIRRORING_ATTRIBUTE = "can_mirroring";
-    public static final String TYPE_ATTRIBUTE = "type";
     public static final String AXIOS_ATTRIBUTE = "axios";
+    public static final String CAN_MIRRORING_ATTRIBUTE = "can_mirroring";
+    public static final String TOP_ALREADY_CONNECTED = "top_already_connected";
+    public static final String TYPE_ATTRIBUTE = "type";
     public static final String CAN_BOTTOM_CONNECT_ATTRIBUTE = "can_bottom_connect";
     public static final String CAN_ROTATE_ATTRIBUTE = "can_rotate";
     public static final String CAN_TOP_CONNECT_ATTRIBUTE = "can_top_connect";

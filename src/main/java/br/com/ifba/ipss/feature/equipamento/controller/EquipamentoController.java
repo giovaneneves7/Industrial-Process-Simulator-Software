@@ -90,6 +90,7 @@ public class EquipamentoController implements ApplicationController{
                 
                 xOrigem = target.getX() - movedLabel.getWidth(); 
                 yOrigem = target.getY();
+                
             } else { // movedLabel está à direita do alvo
                 
                 xOrigem = target.getX() + target.getWidth();
@@ -117,9 +118,21 @@ public class EquipamentoController implements ApplicationController{
                     
                 } else if(target.getEquipamento().getType() == EquipamentType.REATOR){
                     
-                    xOrigem = target.getX() + GapHelper.REATOR_TOP_CONNECTION_X_GAP;
+                    if(target.getEquipamento().isTopAlreadyConnected()){ // INFO: Verifica se já há uma conexão no topo do reator. 
+                    
+                        xOrigem = target.getX() + GapHelper.REATOR_DOUBLE_TOP_CONNECTION_X_GAP;
+                        
+                    } else {
+                       
+                        xOrigem = target.getX() + GapHelper.REATOR_TOP_CONNECTION_X_GAP;
+                        
+                        target.getEquipamento().setTopAlreadyConnected(true);
+
+                    }
+                    
                     yOrigem = (target.getY() - movedLabel.getHeight() + GapHelper.REATOR_TOP_CONNECTION_GAP);
                     
+                            
                 }else {
                     
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);

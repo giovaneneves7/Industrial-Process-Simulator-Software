@@ -14,6 +14,7 @@ package br.com.ifba.ipss.infrastructure.generic;
 
 import br.com.ifba.ipss.feature.conexao.domain.model.Conexao;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
+import br.com.ifba.ipss.feature.equipamento.domain.model.Reator;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.feature.valvula.domain.model.Valvula;
 import br.com.ifba.ipss.helper.PathHelper;
@@ -100,6 +101,9 @@ public interface IGenericRepository<E extends Equipamento> {
                             break;    
                         case Constantes.CAN_MIRRORING_ATTRIBUTE:
                             eq.setCanMirroring(valor.getAsInt() == 1);
+                            break;
+                        case Constantes.TOP_ALREADY_CONNECTED:
+                            eq.setTopAlreadyConnected(valor.getAsInt() == 1);
                             break;
                         case Constantes.TYPE_ATTRIBUTE:
                             eq.setType(getEquipamentType(valor.getAsString()));

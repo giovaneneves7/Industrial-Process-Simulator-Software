@@ -179,6 +179,27 @@
             "type" : "tanque"
         },
         
+        
+        
+        {
+            "id" : "troca_calor",
+            "_nome" : "Trocador de Calor",
+            "thumbnail" : "/images/trocador_de_calor_thumb.png",
+            "_caminhoImagem" : "/images/trocador_de_calor.png",
+            "_x" : 0,
+            "_y" : 0,
+            "_larguraPx" : 55,
+            "_alturaPx" : 98,
+            "can_mirroring" : 0,
+            "can_rotate" : 0,
+            "axios" : "vertical",
+            "can_bottom_connect": 1,
+            "can_horizontal_connect" : 1,
+            "can_right_connect" : 1,
+            "can_top_connect" : 0,
+            "type" : "trocador_calor"
+        },
+        
         {
             "id" : "dest_tow",
             "_nome" : "Torre de Destilação",

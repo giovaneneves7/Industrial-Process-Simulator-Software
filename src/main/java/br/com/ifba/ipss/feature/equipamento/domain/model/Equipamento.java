@@ -36,6 +36,7 @@ public class Equipamento {
     // ***************** { Atributos } *****************//
     // *************************************************//
     
+    private String id;             // O ID do equipamento.
     private String _nome;          // O nome do equipamento.
     private String thumbnail;      // A thumbnail do equipamento.
     private String _caminhoImagem; // O caminho para a imagem do equipamento.

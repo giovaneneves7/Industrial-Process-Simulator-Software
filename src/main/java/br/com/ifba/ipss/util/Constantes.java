@@ -70,7 +70,7 @@ public class Constantes {
     public static final Object[] OK = {"Ok"};
     
     // Nome de Atributos de Equipamentos
-    public static final String ATRIBUTO_ID = "id";
+    public static final String ID_ATTRIBUTE = "id";
     public static final String ATRIBUTO_NOME = "_nome";
     public static final String ATRIBUTO_THUMBNAIL = "thumbnail";
     public static final String ATRIBUTO_CAMINHO_IMAGEM = "_caminhoImagem";
@@ -98,9 +98,11 @@ public class Constantes {
     public static final String CAN_ROTATE_ATTRIBUTE = "can_rotate";
     public static final String CAN_TOP_CONNECT_ATTRIBUTE = "can_top_connect";
 
+    // Controllers
     public static final String SIMULATION_LIST_CONTROLLER = "simulation_list";
     public static final String VIEW_CONTROLLER = "view";
     
+    // Types
     public static final String BOMBA_CENTRIFUGA_TYPE = "bomba_centrifuga";
     public static final String CONEXAO_TYPE = "conexao";
     public static final String REATOR_TYPE = "reator";
@@ -138,6 +140,9 @@ public class Constantes {
     public static final String CONEXAO_3_MIRRORED = "/images/connection_3_mirrored.png";
     public static final String BOMBA_CENTRIFUGA = "/images/bomba_centrifuga.png";
     public static final String BOMBA_CENTRIFUGA_MIRRORED = "/images/bomba_centrifuga_mirrored.png";
+    
+    // IDs
+    public static final String CONEXAO_3_ID = "conn03";
     
     private static final  Map<String, List<String>> imagensBotoes;
     public static final Map<String, List<String>> mirroredEquipaments;

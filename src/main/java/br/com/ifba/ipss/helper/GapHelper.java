@@ -17,6 +17,7 @@ package br.com.ifba.ipss.helper;
  */
 public class GapHelper {
     
+    public static final int CONEXAO_3_X_GAP = 12;
     public static final int REATOR_DOUBLE_TOP_CONNECTION_X_GAP = 73;
     public static final int REATOR_TOP_CONNECTION_GAP = 28;
     public static final int REATOR_TOP_CONNECTION_X_GAP = 11;

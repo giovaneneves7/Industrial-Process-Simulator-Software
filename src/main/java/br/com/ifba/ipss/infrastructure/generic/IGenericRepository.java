@@ -101,6 +101,9 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.CAN_MIRRORING_ATTRIBUTE:
                             eq.setCanMirroring(valor.getAsInt() == 1);
                             break;
+                        case Constantes.ID_ATTRIBUTE:
+                            eq.setId(valor.getAsString());
+                            break;
                         case Constantes.TOP_ALREADY_CONNECTED:
                             eq.setTopAlreadyConnected(valor.getAsInt() == 1);
                             break;

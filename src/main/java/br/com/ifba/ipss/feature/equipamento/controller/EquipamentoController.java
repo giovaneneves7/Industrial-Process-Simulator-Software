@@ -133,11 +133,17 @@ public class EquipamentoController implements ApplicationController{
                     yOrigem = (target.getY() - movedLabel.getHeight() + GapHelper.REATOR_TOP_CONNECTION_GAP);
                     
                             
-                }else {
+                } else{
                     
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
                     yOrigem = target.getY() - movedLabel.getHeight();
                 
+                }
+                
+                if(movedLabel.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
+
+                    xOrigem = xOrigem - GapHelper.CONEXAO_3_X_GAP;
+
                 }
                  
                 
@@ -199,7 +205,6 @@ public class EquipamentoController implements ApplicationController{
                 }
                 
             }
-
             
             movedLabel.setLocation(xOrigem, yOrigem);
             

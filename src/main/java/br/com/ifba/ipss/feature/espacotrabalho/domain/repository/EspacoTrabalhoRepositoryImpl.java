@@ -135,7 +135,7 @@ public class EspacoTrabalhoRepositoryImpl implements IEspacoTrabalhoRepository, 
 
                     switch(chave){
                         
-                        case Constantes.ATRIBUTO_ID:
+                        case Constantes.ID_ATTRIBUTE:
                             lbl.setId(valor.getAsString());
                             break;
                         case Constantes.ATRIBUTO_ORIENTACAO:

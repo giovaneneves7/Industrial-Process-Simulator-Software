@@ -175,6 +175,8 @@ public class EquipamentoController implements ApplicationController{
                 
             } else { // lblMovido está abaixo do alvo
                 
+                if(!target.getEquipamento().isCanBottomConnect()) return; // retorna se não for permitida a conexão embaixo do alvo.
+                
                 int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
                 int yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
  

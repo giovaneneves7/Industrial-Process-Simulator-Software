@@ -19,6 +19,7 @@ import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
 import br.com.ifba.ipss.feature.valvula.domain.model.Valvula;
 import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
+import java.awt.Dimension;
 
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
@@ -83,7 +84,9 @@ public class FerramentaContainerController<E extends Equipamento> {
             imagem.setBounds(60, 40, 10, 30);
 
             int tituloX = (largura - 50) / 2;
-            titulo.setBounds(tituloX, 10, 84, 16);
+            //titulo.setBounds(tituloX, 10, 84, 16);
+            titulo.setBounds(tituloX, 10, largura - 10, 0);
+
             lblDi.setBounds(5, ((container.getHeight() / 2) - 14), 60, 20);
             lblM.setBounds(5, ((container.getHeight() / 2) - 14) + lblDi.getHeight(), 60, 20);
  
@@ -110,7 +113,9 @@ public class FerramentaContainerController<E extends Equipamento> {
             imagem.setBounds(25, 40, 84, 30);
         }
         
-        
+        titulo.setVerticalAlignment(JLabel.TOP);
+        titulo.setText("<html>" + equipamento.get_nome() + "</html>");
+        titulo.setPreferredSize(new Dimension(largura - 10, titulo.getPreferredSize().height));
         container.add(titulo);
         container.add(imagem);
         

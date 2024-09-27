@@ -11,6 +11,7 @@ public enum EquipamentType {
     REATOR("reator"),
     TANQUE("tanque"),
     TORRE_DESTILACAO("torre_destilacao"),
+    TROCADOR_CALOR("trocador_calor"),
     TUBULACAO("tubulacao"),
     UNKNOWN("unknown"),
     VALVULA("valvula");

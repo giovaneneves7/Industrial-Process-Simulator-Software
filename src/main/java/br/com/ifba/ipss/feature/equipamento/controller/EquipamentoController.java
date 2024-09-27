@@ -57,13 +57,20 @@ public class EquipamentoController implements ApplicationController{
         return    (target == EquipamentType.REATOR && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false 
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TANQUE) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
+                : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.REATOR) ? false
                 : (target == EquipamentType.BOMBA_CENTRIFUGA && movedEquipament == EquipamentType.REATOR) ? false
                 : (target == EquipamentType.BOMBA_CENTRIFUGA && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false
+                : (target == EquipamentType.TORRE_DESTILACAO && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
                 : (target == EquipamentType.TORRE_DESTILACAO && movedEquipament == EquipamentType.REATOR) ? false
                 : (target == EquipamentType.TORRE_DESTILACAO && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
+                : (target == EquipamentType.TROCADOR_CALOR && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
+                : (target == EquipamentType.TROCADOR_CALOR && movedEquipament == EquipamentType.REATOR) ? false
+                : (target == EquipamentType.TROCADOR_CALOR && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
+                : (target == EquipamentType.TROCADOR_CALOR && movedEquipament == EquipamentType.TANQUE) ? false
                 : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TANQUE) ? false
-                : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TANQUE) ? false
+                : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
+                : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
                 : true;
         
     } // canConnect
@@ -88,14 +95,31 @@ public class EquipamentoController implements ApplicationController{
             
             if(diferencaX <= 0) { // movedLabel está à esquerda do alvo
                 
-                xOrigem = target.getX() - movedLabel.getWidth(); 
-                yOrigem = target.getY();
+                if(target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR){
+                    
+                    xOrigem = target.getX() - movedLabel.getWidth();
+                    yOrigem = (target.getY() + GapHelper.TROCADOR_CALOR_Y_GAP);
+                    
+                } else{
+                    
+                    xOrigem = target.getX() - movedLabel.getWidth(); 
+                    yOrigem = target.getY();
+                
+                }
                 
             } else { // movedLabel está à direita do alvo
                 
-                xOrigem = target.getX() + target.getWidth();
-                yOrigem = target.getY();
+                if(target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR){
+                    
+                    xOrigem = (target.getX() + movedLabel.getWidth() + GapHelper.TROCADOR_CALOR_RIGHT_X_GAP);
+                    yOrigem = (target.getY() + GapHelper.TROCADOR_CALOR_Y_GAP);
+                    
+                } else{
+                    
+                    xOrigem = target.getX() + target.getWidth();
+                    yOrigem = target.getY();
                 
+                }
             }
 
             
@@ -175,12 +199,23 @@ public class EquipamentoController implements ApplicationController{
                 
             } else { // lblMovido está abaixo do alvo
                 
+                int xOrigem = 0;
+                int yOrigem = 0;
                 if(!target.getEquipamento().isCanBottomConnect()) return; // retorna se não for permitida a conexão embaixo do alvo.
                 
-                int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
-                int yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
- 
-               movedLabel.setLocation(xOrigem, yOrigem);
+                if(target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR){
+                    
+                    xOrigem = (target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2)) + GapHelper.TROCADOR_CALOR_BOTTOM_X_GAP;
+                    yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
+                    
+                } else {
+                    
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                    yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
+                
+                }
+               
+                movedLabel.setLocation(xOrigem, yOrigem);
                 
             }
             

@@ -39,7 +39,9 @@ import java.util.Map;
 // *************************************************//
 
 /**
- *
+ * 
+ * Repositório Genérico para recuperar dados de equipamentos
+ * 
  * @author Giovane Neves
  * @since V0.0.1
  */
@@ -181,6 +183,9 @@ public interface IGenericRepository<E extends Equipamento> {
             }
             case Constantes.TANQUE_TYPE -> {
                 return EquipamentType.TANQUE;
+            }
+            case Constantes.TROCADOR_CALOR_TYPE -> {
+                return EquipamentType.TROCADOR_CALOR;
             }
             case Constantes.TUBULACAO_TYPE -> {
                 return EquipamentType.TUBULACAO;

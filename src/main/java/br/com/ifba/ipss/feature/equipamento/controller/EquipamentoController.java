@@ -190,10 +190,21 @@ public class EquipamentoController implements ApplicationController{
    
             if (diferencaY <= 0) { // lblMovido está acima do alvo
                 
+                int xOrigem = 0;
+                int yOrigem = 0;
                 if(!target.getEquipamento().isCanTopConnect()) return;
                 
-                int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
-                int yOrigem = target.getY() - movedLabel.getHeight(); 
+                if(target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR){
+                
+                    xOrigem = (target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2)) - GapHelper.TROCADOR_CALOR_TOP_X_GAP;
+                    yOrigem = target.getY() - movedLabel.getHeight(); 
+                    
+                } else{
+                    
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                    yOrigem = target.getY() - movedLabel.getHeight(); 
+                
+                }
                 
                 movedLabel.setLocation(xOrigem, yOrigem); // junta as labels.
                 

@@ -24,7 +24,8 @@ public class GapHelper {
     public static final int REATOR_TOP_CONNECTION_GAP          = 28;
     public static final int REATOR_TOP_CONNECTION_X_GAP        = 11;
     public static final int TROCADOR_CALOR_BOTTOM_X_GAP        = 22;
-    public static final int TROCADOR_CALOR_RIGHT_X_GAP         = 25; 
+    public static final int TROCADOR_CALOR_RIGHT_X_GAP         = 25;
+    public static final int TROCADOR_CALOR_TOP_X_GAP           = 26;
     public static final int TROCADOR_CALOR_Y_GAP               = 18;
     
 }

@@ -28,26 +28,17 @@ import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.feature.valvula.domain.service.IValvulaService;
 import br.com.ifba.ipss.helper.SizeHelper;
 import br.com.ifba.ipss.infrastructure.exception.ServiceNotFound;
+import br.com.ifba.ipss.infrastructure.manager.ControllerManager;
 import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
-import br.com.ifba.ipss.util.Util;
 
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Point;
-import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.awt.event.MouseMotionAdapter;
 
 import java.util.HashMap;
 import java.util.List;
@@ -58,12 +49,10 @@ import javax.swing.BorderFactory;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.OverlayLayout;
 import javax.swing.Timer;
 
 import lombok.Data;
@@ -85,6 +74,7 @@ public class AreaDeTrabalhoController {
     
     private Map<String, IEquipamentoService> equipamentoServiceMap = new HashMap<>();
     private final FerramentaContainerController ferramentaContainerController = new FerramentaContainerController<>();
+    private final EquipamentoController equipamentoController = ControllerManager.find("equipamento");
     private final EspacoTrabalhoController espacoTrabalhoController = new EspacoTrabalhoController();
     private final ParametrosSimulacaoController parametrosSimulacaoController = new ParametrosSimulacaoController();
     
@@ -791,18 +781,19 @@ public class AreaDeTrabalhoController {
     
     private void mirrorEquipament(Label lbl){
         
+        this.equipamentoController.mirrorEquipament(lbl);
         
+        /*
         if(!lbl.getEquipamento().isCanMirroring()){
             return;
         }
         
         String currentImagePath = lbl.getEquipamento().get_caminhoImagem();
-        boolean isMirrored = false;
         
         String newImagePath = Constantes.getMirroredEquipament(currentImagePath);
         System.out.println(newImagePath);
         lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource(newImagePath)));
-        
+        */
     } // mirrorEquipament
     
 }

@@ -55,5 +55,6 @@ public class Equipamento {
     private boolean canTopConnect; // Se é permitida a conexão no topo.
     private boolean canRotate;     // Se é permitida a rotação do equipamento.
     private boolean topAlreadyConnected; // Se já há uma conexão no topo (exclusivo para reator).
+    private boolean mirrored;     // Se o equipamento está espelhado.
 
 } // class Equipamento

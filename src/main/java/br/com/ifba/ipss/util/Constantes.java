@@ -102,6 +102,9 @@ public class Constantes {
     public static final String SIMULATION_LIST_CONTROLLER = "simulation_list";
     public static final String VIEW_CONTROLLER = "view";
     
+    // IDs
+    public static final String CONEXAO_3_ID = "conn03";
+    
     // Types
     public static final String BOMBA_CENTRIFUGA_TYPE = "bomba_centrifuga";
     public static final String CONEXAO_TYPE = "conexao";
@@ -141,9 +144,6 @@ public class Constantes {
     public static final String CONEXAO_3_MIRRORED = "/images/connection_3_mirrored.png";
     public static final String BOMBA_CENTRIFUGA = "/images/bomba_centrifuga.png";
     public static final String BOMBA_CENTRIFUGA_MIRRORED = "/images/bomba_centrifuga_mirrored.png";
-    
-    // IDs
-    public static final String CONEXAO_3_ID = "conn03";
     
     private static final  Map<String, List<String>> imagensBotoes;
     public static final Map<String, List<String>> mirroredEquipaments;

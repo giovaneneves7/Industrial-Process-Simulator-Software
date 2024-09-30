@@ -42,7 +42,7 @@ public class EquipamentoController implements ApplicationController{
     
     public EquipamentoController(IEquipamentoService equipamentoService){
         
-        this.equipamentoService = equipamentoService;
+       this.equipamentoService = equipamentoService;
         
     } // EquipamentoController
     
@@ -268,6 +268,53 @@ public class EquipamentoController implements ApplicationController{
             
         }
     } // connectEquipament
+    
+    /**
+     * Espelha o equipamento passado por parâmetro
+     * 
+     * @author Giovane Neves
+     * @since V0.0.1
+     * @param lbl O equipamento a ser espelhado 
+     */
+    public void mirrorEquipament(Label lbl){
+        
+         if(!lbl.getEquipamento().isCanMirroring()){
+            return;
+        }
+        
+        String currentImagePath = lbl.getEquipamento().get_caminhoImagem();
+        
+        String newImagePath = "";
+        
+        if(!lbl.getEquipamento().isMirrored()){
+                
+            newImagePath = Constantes.getMirroredEquipament(currentImagePath);
+            lbl.getEquipamento().setMirrored(true);
+
+        } else{
+            
+            newImagePath = Constantes.getNormalEquipament(currentImagePath);
+            lbl.getEquipamento().setMirrored(false);
+            
+        }
+        
+        lbl.setIcon(new ImageIcon(getClass().getResource(newImagePath)));
+
+        // Lógica para equipamentos especiais
+        if(lbl.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
+            
+            if(!lbl.getEquipamento().isMirrored()){
+                
+                lbl.setLocation((lbl.getX() - GapHelper.CONXAO_3_MIRROR_X_GAP), lbl.getY());
+                
+            } else{
+                
+                lbl.setLocation((lbl.getX() + GapHelper.CONXAO_3_MIRROR_X_GAP), lbl.getY());
+                
+            }
+        } 
+        
+    } // mirrorEquipament
     
     public static void removeEquipament(String lblId, JPanel workspacePanel, Map<String, Label> workspaceMap){
     

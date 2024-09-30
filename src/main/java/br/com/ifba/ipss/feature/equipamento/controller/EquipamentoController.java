@@ -22,7 +22,9 @@ import br.com.ifba.ipss.util.Util;
 
 import java.awt.Container;
 import java.awt.image.BufferedImage;
+import java.util.Map;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 // *************************************************//
 // ************** { FIM - Imports } ****************//
@@ -266,6 +268,15 @@ public class EquipamentoController implements ApplicationController{
             
         }
     } // connectEquipament
+    
+    public static void removeEquipament(String lblId, JPanel workspacePanel, Map<String, Label> workspaceMap){
+    
+        workspacePanel.remove(workspaceMap.get(lblId));
+        workspaceMap.remove(lblId);
+        workspacePanel.revalidate();
+        workspacePanel.repaint();
+        
+    } // removeEquipament
     
     /**
      * Rotaciona o equipamento passado por parâmetro

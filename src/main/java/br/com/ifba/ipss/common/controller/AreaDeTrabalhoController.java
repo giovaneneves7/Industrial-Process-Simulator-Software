@@ -348,14 +348,18 @@ public class AreaDeTrabalhoController {
         
     } // mudarImagemBotao
     
-    public void removerEquipamento(String lblId){
+    /**
+     * Remove o quipamento passado por parâmetro
+     * 
+     * @author Giovane Neves
+     * @since V0.0.1
+     * @param lblId O id do equipamento a ser removido
+     */
+    public void removeEquipament(String lblId){
     
-        this.pnlEspacoTrabalho.remove(this.espacoTrabalhoMap.get(lblId));
-        this.espacoTrabalhoMap.remove(lblId);
-        this.pnlEspacoTrabalho.revalidate();
-        this.pnlEspacoTrabalho.repaint();
-        
-    } // removerEquipamento
+        EquipamentoController.removeEquipament(lblId, pnlEspacoTrabalho, espacoTrabalhoMap);
+       
+    } // removeEquipament
     
     public void atualizarImagemBotaoGirar(JButton btn){
         
@@ -661,7 +665,7 @@ public class AreaDeTrabalhoController {
                 
                 if(emModoRemocao){
                     
-                    removerEquipamento(lbl.getId());
+                    removeEquipament(lbl.getId());
                     
                 }
                 

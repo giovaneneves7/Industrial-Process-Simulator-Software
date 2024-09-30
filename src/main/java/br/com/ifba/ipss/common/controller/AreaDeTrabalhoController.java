@@ -699,48 +699,24 @@ public class AreaDeTrabalhoController {
         }
         
     }
+    
     int mouseX, mouseY;
     double suavizacao = 1.01;
     
     public void adicionarListenerDeMovimentoAoEquipamento(Label lbl){
-        
-        Timer timer = new Timer(100, ev -> {
-            
-                 int deltaX = lbl.getX() + mouseX;
-                int deltaY = lbl.getY() + mouseY;
-                lbl.setLocation(deltaX, deltaY);
 
-                desconectar(lbl.getConexoes(), null);
-                
-                
-                
-        });
-        
-        Timer tempoPressionado = new Timer(150, e ->{
-            
-            if(!timer.isRunning())
-                timer.start();
-            
-        });
-        
-        
         lbl.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent me) {
-                
-                if (!tempoPressionado.isRunning()) {
-                    tempoPressionado.start();
-                }
+                mouseX = me.getX();
+                mouseY = me.getY();
             }
 
             @Override
             public void mouseReleased(MouseEvent me) {
-                
-                timer.stop();
-                tempoPressionado.stop();
-            
+                desconectar(lbl.getConexoes(), null); 
             }
-            
+
             @Override
             public void mouseEntered(MouseEvent me) {
                 lbl.setBorder(BorderFactory.createLineBorder(Constantes.COR_PRIMARIA));
@@ -748,36 +724,35 @@ public class AreaDeTrabalhoController {
 
             @Override
             public void mouseExited(MouseEvent me){
-                
                 lbl.setBorder(null);
-                
             }
         });
 
         lbl.addMouseMotionListener(new MouseAdapter() {
-              
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                int deltaX = e.getXOnScreen() - lbl.getLocationOnScreen().x - mouseX;
+                int deltaY = e.getYOnScreen() - lbl.getLocationOnScreen().y - mouseY;
+                lbl.setLocation(lbl.getX() + deltaX, lbl.getY() + deltaY);
+            }
+
             @Override
             public void mouseMoved(MouseEvent e) {
                 final int x = e.getX();
                 final int y = e.getY();
+
                 final int width = lbl.getWidth();
                 final int height = lbl.getHeight();
+
                 if (x >= 0 && x <= width && y >= 0 && y <= height) {
                     lbl.setCursor(new Cursor(Cursor.HAND_CURSOR));
                 } else {
                     lbl.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-
                 }
             }
-            
-            @Override
-            public void mouseDragged(MouseEvent e) {
-                mouseX = e.getX();
-                mouseY = e.getY();
-            }
         });
-        
     }
+
     
     private void mirrorEquipament(Label lbl){
         

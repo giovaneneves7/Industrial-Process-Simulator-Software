@@ -252,6 +252,11 @@ public class EquipamentoController implements ApplicationController{
                 if(target.getEquipamento().getType() == EquipamentType.TANQUE){
                     xOrigem = target.getX() - movedLabel.getWidth(); 
                     yOrigem = (target.getY() + 33);
+                } else{
+                    
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                    yOrigem = target.getY() - movedLabel.getHeight(); 
+                    
                 }
                 
             } else { // movedLabel está à direita do alvo
@@ -259,6 +264,11 @@ public class EquipamentoController implements ApplicationController{
                 if(target.getEquipamento().getType() == EquipamentType.TANQUE){
                     xOrigem = target.getX() + target.getWidth() - 2;
                     yOrigem = (target.getY() + 163);
+                } else{
+                    
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                    yOrigem = target.getY() - movedLabel.getHeight(); 
+                    
                 }
                 
             }

@@ -95,6 +95,8 @@ public class Constantes {
     public static final String TOP_ALREADY_CONNECTED = "top_already_connected";
     public static final String TYPE_ATTRIBUTE = "type";
     public static final String CAN_BOTTOM_CONNECT_ATTRIBUTE = "can_bottom_connect";
+    public static final String CAN_LEFT_CONNECT_ATTRIBUTE = "can_left_connect";
+    public static final String CAN_RIGHT_CONNECT_ATTRIBUTE = "can_right_connect";
     public static final String CAN_ROTATE_ATTRIBUTE = "can_rotate";
     public static final String CAN_TOP_CONNECT_ATTRIBUTE = "can_top_connect";
 

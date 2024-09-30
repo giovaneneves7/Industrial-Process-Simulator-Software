@@ -115,6 +115,12 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.AXIOS_ATTRIBUTE:
                             eq.setAxios(valor.getAsString());
                             break;
+                        case Constantes.CAN_LEFT_CONNECT_ATTRIBUTE:
+                            eq.setCanLeftConnect(valor.getAsInt() == 1);
+                            break;
+                        case Constantes.CAN_RIGHT_CONNECT_ATTRIBUTE:
+                            eq.setCanRightConnect(valor.getAsInt() == 1);
+                            break;
                         case Constantes.CAN_TOP_CONNECT_ATTRIBUTE:
                             eq.setCanTopConnect(valor.getAsInt() == 1);
                             break;

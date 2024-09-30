@@ -93,6 +93,7 @@ public class EquipamentoController implements ApplicationController{
      */
     public static void connectEquipament(Label movedLabel, Label target){
         
+        
         // INFO: Verifica se o tipo dos equipamentos é compatível para a conexão
         if(!canConnect(target.getEquipamento().getType(), movedLabel.getEquipamento().getType())) return;
         
@@ -241,29 +242,48 @@ public class EquipamentoController implements ApplicationController{
             
         } else{ // O alvo está na vertical e o equipamento a se conectar está na horizontal
             
-            if(!target.getEquipamento().isCanLeftConnect() && target.getEquipamento().isCanRightConnect()) return;
+            if(!target.getEquipamento().isCanLeftConnect() && !target.getEquipamento().isCanRightConnect()) return;
             
             int diferencaX = movedLabel.getX() - target.getX();
             int xOrigem = 0;
             int yOrigem = 0;
             
-            if(diferencaX <= 0) { // movedLabel está à esquerda do alvo
+            if(diferencaX <= 0) { // movedLabel está à direita do alvo
+                
+                if(!target.getEquipamento().isCanRightConnect()) return;
                 
                 if(target.getEquipamento().getType() == EquipamentType.TANQUE){
+                
                     xOrigem = target.getX() - movedLabel.getWidth(); 
                     yOrigem = (target.getY() + 33);
-                } else{
+                
+                } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
+                
+                    xOrigem = target.getX() - movedLabel.getWidth();
+                    yOrigem = target.getY() - movedLabel.getHeight() + GapHelper.CONEXAO_3_Y_GAP;
+                
+                }else{
                     
-                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                    xOrigem = target.getX() - movedLabel.getWidth();
                     yOrigem = target.getY() - movedLabel.getHeight(); 
                     
                 }
                 
-            } else { // movedLabel está à direita do alvo
+            } else { // movedLabel está à esquerda do alvo
+                
+                if(!target.getEquipamento().isCanLeftConnect()) return;
                 
                 if(target.getEquipamento().getType() == EquipamentType.TANQUE){
+                    
                     xOrigem = target.getX() + target.getWidth() - 2;
                     yOrigem = (target.getY() + 163);
+                    
+                } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
+                
+                    xOrigem = target.getX() - movedLabel.getWidth();
+                    yOrigem = target.getY() - movedLabel.getHeight();
+                    
+                
                 } else{
                     
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);

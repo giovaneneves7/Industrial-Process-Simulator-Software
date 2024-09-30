@@ -59,16 +59,23 @@ public class EquipamentoController implements ApplicationController{
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.REATOR) ? false
+                
                 : (target == EquipamentType.BOMBA_CENTRIFUGA && movedEquipament == EquipamentType.REATOR) ? false
                 : (target == EquipamentType.BOMBA_CENTRIFUGA && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false
+                : (target == EquipamentType.BOMBA_CENTRIFUGA && movedEquipament == EquipamentType.TANQUE) ? false
+                : (target == EquipamentType.TORRE_DESTILACAO && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false
                 : (target == EquipamentType.TORRE_DESTILACAO && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
                 : (target == EquipamentType.TORRE_DESTILACAO && movedEquipament == EquipamentType.REATOR) ? false
                 : (target == EquipamentType.TORRE_DESTILACAO && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
+                
                 : (target == EquipamentType.TROCADOR_CALOR && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
+                : (target == EquipamentType.TROCADOR_CALOR && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false
                 : (target == EquipamentType.TROCADOR_CALOR && movedEquipament == EquipamentType.REATOR) ? false
                 : (target == EquipamentType.TROCADOR_CALOR && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
                 : (target == EquipamentType.TROCADOR_CALOR && movedEquipament == EquipamentType.TANQUE) ? false
+                
                 : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TANQUE) ? false
+                : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false
                 : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
                 : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
                 : true;
@@ -260,6 +267,13 @@ public class EquipamentoController implements ApplicationController{
         }
     } // connectEquipament
     
+    /**
+     * Rotaciona o equipamento passado por parâmetro
+     * 
+     * @author Giovane Neves
+     * @since V0.0.1
+     * @param lbl O equipamento a ser rotacionado
+     */
     public static void rotateEquipament(Label lbl){
         
         if(!lbl.getEquipamento().isCanRotate()) return;

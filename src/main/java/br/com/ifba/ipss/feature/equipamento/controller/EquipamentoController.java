@@ -305,11 +305,11 @@ public class EquipamentoController implements ApplicationController{
             
             if(!lbl.getEquipamento().isMirrored()){
                 
-                lbl.setLocation((lbl.getX() - GapHelper.CONXAO_3_MIRROR_X_GAP), lbl.getY());
+                lbl.setLocation((lbl.getX() - GapHelper.CONEXAO_3_MIRROR_X_GAP), lbl.getY());
                 
             } else{
                 
-                lbl.setLocation((lbl.getX() + GapHelper.CONXAO_3_MIRROR_X_GAP), lbl.getY());
+                lbl.setLocation((lbl.getX() + GapHelper.CONEXAO_3_MIRROR_X_GAP), lbl.getY());
                 
             }
         } 

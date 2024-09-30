@@ -344,6 +344,9 @@ public class EquipamentoController implements ApplicationController{
             }
         } 
         
+        lbl.getEquipamento().setCanLeftConnect(!lbl.getEquipamento().isCanLeftConnect());
+        lbl.getEquipamento().setCanRightConnect(!lbl.getEquipamento().isCanRightConnect());
+        
     } // mirrorEquipament
     
     public static void removeEquipament(String lblId, JPanel workspacePanel, Map<String, Label> workspaceMap){

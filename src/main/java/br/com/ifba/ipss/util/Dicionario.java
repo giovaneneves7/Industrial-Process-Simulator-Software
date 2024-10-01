@@ -54,6 +54,7 @@ public class Dicionario {
         DICIONARIO.put("girar_equipamento", List.of("Girar Equipamento"));
         DICIONARIO.put("insira_o_nome_da_simulacao", List.of("Insira o Nome da Simulação"));
         DICIONARIO.put("instrucoes", List.of("Instruções"));
+        DICIONARIO.put("invalid_connection", List.of("Conexão Inválida"));
         DICIONARIO.put("l", List.of("L"));
         DICIONARIO.put("limpar_area_trabalho", List.of("Limpar Área de Trabalho"));
         DICIONARIO.put("lista_simulacao", List.of("Lista de Simulações"));
@@ -73,6 +74,7 @@ public class Dicionario {
         DICIONARIO.put("salvar_area_trabalho", List.of("Salvar Área de Trabalho"));
         DICIONARIO.put("service_nao_encontrado", List.of("O serviço requerido não foi encontrado"));
         DICIONARIO.put("simular", List.of("Simular"));
+        DICIONARIO.put("this_connection_is_invalid", List.of("Esta Conexão É Inválida!"));
         DICIONARIO.put("titulo_aplicacao", List.of(Constantes.NOME_APLICACAO));
         DICIONARIO.put("tubulacao", List.of("Tubulação", "Tubulações"));
         DICIONARIO.put("valvula", List.of("Válvula", "Válvulas"));

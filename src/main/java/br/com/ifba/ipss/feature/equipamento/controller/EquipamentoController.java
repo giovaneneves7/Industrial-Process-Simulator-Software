@@ -11,9 +11,10 @@ package br.com.ifba.ipss.feature.equipamento.controller;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-
+import static br.com.ifba.ipss.util.Dicionario.tr;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.domain.service.IEquipamentoService;
+import br.com.ifba.ipss.feature.equipamento.widget.InvalidConnectionWidget;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.helper.GapHelper;
 import br.com.ifba.ipss.infrastructure.interfaces.ApplicationController;
@@ -115,7 +116,12 @@ public class EquipamentoController implements ApplicationController{
         
         
         // INFO: Verifica se o tipo dos equipamentos é compatível para a conexão
-        if(!canConnect(target.getEquipamento().getType(), movedLabel.getEquipamento().getType())) return;
+        if(!canConnect(target.getEquipamento().getType(), movedLabel.getEquipamento().getType())){
+            
+            InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+            return;
+            
+        }
         
         if(target.getEquipamento().getAxios().equals(Constantes.HORIZONTAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.HORIZONTAL)){ // Ambos os equipamentos estão na horizontal
         

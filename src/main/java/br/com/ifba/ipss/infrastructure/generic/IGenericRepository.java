@@ -190,6 +190,9 @@ public interface IGenericRepository<E extends Equipamento> {
             case Constantes.TANQUE_TYPE -> {
                 return EquipamentType.TANQUE;
             }
+            case Constantes.TORRE_DESTILACAO_TYPE -> {
+                return EquipamentType.TORRE_DESTILACAO;
+            }
             case Constantes.TROCADOR_CALOR_TYPE -> {
                 return EquipamentType.TROCADOR_CALOR;
             }

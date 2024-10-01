@@ -23,9 +23,14 @@ public class GapHelper {
     public static final int CONEXAO_3_MIRROR_X_GAP             = 23;
     public static final int CONEXAO_3_X_GAP                    = 12;
     public static final int CONEXAO_3_Y_GAP                    = 17;
+    
     public static final int REATOR_DOUBLE_TOP_CONNECTION_X_GAP = 73;
     public static final int REATOR_TOP_CONNECTION_GAP          = 28;
     public static final int REATOR_TOP_CONNECTION_X_GAP        = 11;
+    
+    public static final int TORRE_DESTILACAO_BOTTOM_X_GAP      = 6;
+    public static final int TORRE_DESTILACAO_TOP_X_GAP         = 6;
+    
     public static final int TROCADOR_CALOR_BOTTOM_X_GAP        = 22;
     public static final int TROCADOR_CALOR_RIGHT_X_GAP         = 25;
     public static final int TROCADOR_CALOR_TOP_X_GAP           = 26;

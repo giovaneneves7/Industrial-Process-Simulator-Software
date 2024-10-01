@@ -114,7 +114,6 @@ public class EquipamentoController implements ApplicationController{
      */
     public void connectEquipament(Label movedLabel, Label target){
         
-        
         // INFO: Verifica se o tipo dos equipamentos é compatível para a conexão
         if(!canConnect(target.getEquipamento().getType(), movedLabel.getEquipamento().getType())){
             
@@ -193,6 +192,11 @@ public class EquipamentoController implements ApplicationController{
                     yOrigem = (target.getY() - movedLabel.getHeight() + GapHelper.REATOR_TOP_CONNECTION_GAP);
                     
                             
+                } else if(target.getEquipamento().getType() == EquipamentType.TORRE_DESTILACAO){
+                
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.TORRE_DESTILACAO_TOP_X_GAP;
+                    yOrigem = target.getY() - movedLabel.getHeight();
+                
                 } else{
                     
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
@@ -211,11 +215,22 @@ public class EquipamentoController implements ApplicationController{
                 
             } else { // lblMovido está abaixo do alvo
                 
+                int xOrigem = 0;
+                int yOrigem = 0;
+                
                 if(!target.getEquipamento().isCanBottomConnect()) return;
                 
-                int xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
-                int yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
+                if(target.getEquipamento().getType() == EquipamentType.TORRE_DESTILACAO){
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.TORRE_DESTILACAO_BOTTOM_X_GAP;
+                    yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
+                
+                } else{
+                
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                    yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
  
+                }
+                
                 movedLabel.setLocation(xOrigem, yOrigem);
                 
             }

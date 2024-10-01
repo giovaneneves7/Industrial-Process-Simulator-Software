@@ -402,7 +402,7 @@ public class AreaDeTrabalhoController {
     
     public void conectarEquipamentos(Label lblMovido, Label alvo){
         
-        EquipamentoController.connectEquipament(lblMovido, alvo);
+        this.equipamentoController.connectEquipament(lblMovido, alvo);
         
     } // conectarEquipamentos
     

@@ -105,7 +105,12 @@ public class Constantes {
     public static final String VIEW_CONTROLLER = "view";
     
     // IDs
-    public static final String CONEXAO_3_ID = "conn03";
+    public static final String CONEXAO_3_ID   = "conn03";
+    public static final String TUBULACAO_1_ID = "tb01";
+    public static final String TUBULACAO_2_ID = "tb02";
+    public static final String TUBULACAO_3_ID = "tb03";
+    public static final String TUBULACAO_4_ID = "tb04";
+    public static final String TUBULACAO_5_ID = "tb05";
     
     // Types
     public static final String BOMBA_CENTRIFUGA_TYPE = "bomba_centrifuga";

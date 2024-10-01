@@ -12,6 +12,7 @@ package br.com.ifba.ipss.feature.equipamento.controller;
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 
+import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.domain.service.IEquipamentoService;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.helper.GapHelper;
@@ -85,13 +86,32 @@ public class EquipamentoController implements ApplicationController{
     } // canConnect
     
     /**
+     * Retorna o gap que deve haver entre a coonexão 03 e a tubulação passada
+     * por parâmetro.
+     * 
+     * @author Giovane Neves
+     * @since V0.0.1
+     * @param tub A tubulação a ser verificada
+     * @return O gap que deve haver entre a tubulação e a conexã 03
+     */
+    private int getTubToCon3Gap(Equipamento tub){
+        
+        return tub.getId().equals(Constantes.TUBULACAO_1_ID) ? 10 :
+               tub.getId().equals(Constantes.TUBULACAO_2_ID) ? -8 :
+               tub.getId().equals(Constantes.TUBULACAO_3_ID) ? -28 :
+               tub.getId().equals(Constantes.TUBULACAO_4_ID) ? -48 :
+               -58;
+        
+    } // getTubToCon3Gap
+    
+    /**
      * Conecta dois equipamentos
      * 
      * @author Giovane Neves
      * @param movedLabel O equipamento que será movido e conectado ao alvo
      * @param target O alvo fixo que receberá um equipamento conectado
      */
-    public static void connectEquipament(Label movedLabel, Label target){
+    public void connectEquipament(Label movedLabel, Label target){
         
         
         // INFO: Verifica se o tipo dos equipamentos é compatível para a conexão
@@ -280,8 +300,15 @@ public class EquipamentoController implements ApplicationController{
                     
                 } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
                 
-                    xOrigem = target.getX() - movedLabel.getWidth();
-                    yOrigem = target.getY() - movedLabel.getHeight();
+                    xOrigem = target.getX() + movedLabel.getWidth();
+                    
+                    if(movedLabel.getEquipamento().getType() == EquipamentType.TUBULACAO){
+                        
+                        xOrigem = xOrigem + this.getTubToCon3Gap(movedLabel.getEquipamento());
+                    
+                    }
+                    
+                    yOrigem = target.getY() - movedLabel.getHeight() + GapHelper.CONEXAO_3_Y_GAP;
                     
                 
                 } else{

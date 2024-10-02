@@ -1,6 +1,8 @@
 package br.com.ifba.ipss.feature.parametrossimulacao.widget;
 
 import br.com.ifba.ipss.feature.parametrossimulacao.controller.ParametrosSimulacaoController;
+import br.com.ifba.ipss.helper.FormulaHelper;
+import br.com.ifba.ipss.util.Escoamento;
 
 /**
  *
@@ -9,6 +11,9 @@ import br.com.ifba.ipss.feature.parametrossimulacao.controller.ParametrosSimulac
  */
 public class ParametrosDaSimulacao extends javax.swing.JPanel {
 
+    private double viscosidade;
+    private double velocidade;
+    private double diametroInterno;
     /**
      * Creates new form parâmentrosdasimulação
      */
@@ -31,10 +36,10 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jSpinner2 = new javax.swing.JSpinner();
-        jSpinner3 = new javax.swing.JSpinner();
-        jButton2 = new javax.swing.JButton();
+        jSpinViscosidadeCinematica = new javax.swing.JSpinner();
+        jSpinVelocidade = new javax.swing.JSpinner();
+        jSpinDiametroInterno = new javax.swing.JSpinner();
+        btnSimulation = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setLayout(null);
@@ -58,7 +63,7 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jLabel3.setBounds(20, 50, 150, 20);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel4.setText("Massa específica (Kg/m³)");
+        jLabel4.setText("Velocidade (m/s)");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(20, 90, 130, 15);
 
@@ -67,28 +72,28 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(20, 130, 160, 15);
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
-        jPanel1.add(jSpinner1);
-        jSpinner1.setBounds(220, 50, 67, 22);
+        jSpinViscosidadeCinematica.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
+        jPanel1.add(jSpinViscosidadeCinematica);
+        jSpinViscosidadeCinematica.setBounds(220, 50, 75, 24);
 
-        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
-        jPanel1.add(jSpinner2);
-        jSpinner2.setBounds(220, 90, 67, 22);
+        jSpinVelocidade.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
+        jPanel1.add(jSpinVelocidade);
+        jSpinVelocidade.setBounds(220, 90, 75, 24);
 
-        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
-        jPanel1.add(jSpinner3);
-        jSpinner3.setBounds(220, 130, 67, 22);
+        jSpinDiametroInterno.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
+        jPanel1.add(jSpinDiametroInterno);
+        jSpinDiametroInterno.setBounds(220, 130, 75, 24);
 
-        jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão simulação.2.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSimulation.setBackground(new java.awt.Color(204, 204, 204));
+        btnSimulation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão simulação.2.png"))); // NOI18N
+        btnSimulation.setBorder(null);
+        btnSimulation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSimulationActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(110, 170, 100, 40);
+        jPanel1.add(btnSimulation);
+        btnSimulation.setBounds(110, 170, 100, 40);
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
@@ -109,25 +114,45 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimulationActionPerformed
         
-        this.getParent().add(new ParametrosSimulacaoController().criarWidgetDeResultados(0, 0, 0));
+        velocidade = (double) jSpinVelocidade.getValue();
+        viscosidade =  (double) jSpinViscosidadeCinematica.getValue();
+        diametroInterno = (double) jSpinDiametroInterno.getValue();
+        
+        double numeroReynold = FormulaHelper.EQUACAO_DE_REYNOLD(velocidade, diametroInterno, viscosidade);
+        String escoamento = FormulaHelper.VERIFICAR_ESCOAMENTO(numeroReynold);
+        double perdaCarga = 0;
+        
+        if(escoamento.equals(Escoamento.ESCOAMENTO_LAMINAR)){
+            
+            /**
+             * l = Soma do comprimento de todas as tubulações.
+             */
+            perdaCarga = FormulaHelper.EQUACAO_DE_POISEULLE(30, velocidade, viscosidade, diametroInterno);
+            
+        } else{
+            
+            perdaCarga = FormulaHelper.EQUACAO_DE_DARCY_WEISBACH(30, diametroInterno, velocidade);
+            
+        }
+        this.getParent().add(new ParametrosSimulacaoController().criarWidgetDeResultados(perdaCarga, escoamento, numeroReynold));
         this.getParent().revalidate();
         this.getParent().repaint();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnSimulationActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSimulation;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner jSpinner3;
+    private javax.swing.JSpinner jSpinDiametroInterno;
+    private javax.swing.JSpinner jSpinVelocidade;
+    private javax.swing.JSpinner jSpinViscosidadeCinematica;
     // End of variables declaration//GEN-END:variables
 }

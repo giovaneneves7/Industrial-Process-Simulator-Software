@@ -10,8 +10,13 @@ public class Resultados extends javax.swing.JPanel {
     /**
      * Creates new form Resultados
      */
-    public Resultados() {
+    public Resultados(double numeroReynold, String escoamento, double perdaCarga) {
         initComponents();
+        
+        lblNumeroReynold.setText(String.valueOf(numeroReynold));
+        lblEscoamento.setText(escoamento);
+        lblPerdaCarga.setText(String.valueOf(perdaCarga));
+        
     }
 
     /**
@@ -28,9 +33,9 @@ public class Resultados extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblNumeroReynold = new javax.swing.JLabel();
+        lblEscoamento = new javax.swing.JLabel();
+        lblPerdaCarga = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
         setLayout(null);
@@ -42,19 +47,13 @@ public class Resultados extends javax.swing.JPanel {
         jLabel1.setText("Resultados");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel2.setText("Perda de carga:");
+        jLabel2.setText("N° de Re");
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel3.setText("Escoamento:");
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel4.setText("N° de Re");
-
-        jLabel5.setText("jLabel5");
-
-        jLabel6.setText("jLabel6");
-
-        jLabel7.setText("jLabel7");
+        jLabel4.setText("Perda de Carga");
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
@@ -76,15 +75,15 @@ public class Resultados extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6))
+                            .addComponent(lblEscoamento))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel4)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7))
+                            .addComponent(lblPerdaCarga))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel2)
                             .addGap(18, 18, 18)
-                            .addComponent(jLabel5)))
+                            .addComponent(lblNumeroReynold)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jLabel1)
@@ -102,16 +101,16 @@ public class Resultados extends javax.swing.JPanel {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel5))
+                    .addComponent(lblNumeroReynold))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel6))
+                    .addComponent(lblEscoamento))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel7))
-                .addContainerGap(15, Short.MAX_VALUE))
+                    .addComponent(lblPerdaCarga))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         add(jPanel1);
@@ -131,9 +130,9 @@ public class Resultados extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblEscoamento;
+    private javax.swing.JLabel lblNumeroReynold;
+    private javax.swing.JLabel lblPerdaCarga;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,7 +7,6 @@ import br.com.ifba.ipss.util.Constantes;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.BorderFactory;
-import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
@@ -85,9 +84,9 @@ public class ParametrosSimulacaoController {
 
         
     }
-    public Resultados criarWidgetDeResultados(int pontoCarga, int escoamento, int numeroDeRe){
+    public Resultados criarWidgetDeResultados(double perdaCarga, String escoamento, double numeroDeRe){
         
-        Resultados resultadosWidget = new Resultados();
+        Resultados resultadosWidget = new Resultados(numeroDeRe, escoamento, perdaCarga);
         
         resultadosWidget.setBounds(
                 SizeHelper.LARGURA_ESPACO_TRABALHO / 30, 

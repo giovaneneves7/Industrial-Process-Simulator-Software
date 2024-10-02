@@ -8,30 +8,32 @@ import br.com.ifba.ipss.util.Escoamento;
  * @since V0.0.1
  */
 public class FormulaHelper {
-    
-    private static final double PI = 3.14f;
 
-    public static final String PES = "in";
+    private static final double F    = 0.09f;
+    private static final double G    = 9.8f;
+    private static final double PI   = 3.14f;
+    private static final int TRINTA_E_DOIS = 32;
+    public static final String PES   = "in";
     public static final String METRO = "m";
     
-    public static double EQUACAO_DE_REYNOLD(double vel, double di, double rho, double vd){
+    public static double EQUACAO_DE_REYNOLD(double vel, double di, double vd){
         
-        double re = rho * vel * di / vd;
+        double re = vel * di / vd;
         
         return re;
         
     }
     
-    public static double EQUACAO_DE_POISEULLE(double l, double vel, double vc, double g, double d){
+    public static double EQUACAO_DE_POISEULLE(double l, double vel, double vc, double d){
         
-        double j = 32 * l * vel * vc / g * (d*d);
+        double j = TRINTA_E_DOIS * l * vel * vc / G * (d*d);
         
         return j;
         
     }
-    public static double EQUACAO_DE_DARCY_WEISBACH(double f, double l, double d, double vel, double g){
+    public static double EQUACAO_DE_DARCY_WEISBACH(double l, double d, double vel){
         
-        double j = f * l / d * vel * vel / 2 * g;
+        double j = F * l / d * vel * vel / 2 * G;
         
         return j;
     

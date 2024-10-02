@@ -291,7 +291,12 @@ public class EquipamentoController implements ApplicationController{
             
             if(diferencaX <= 0) { // movedLabel está à direita do alvo
                 
-                if(!target.getEquipamento().isCanRightConnect()) return;
+                if(!target.getEquipamento().isCanRightConnect()){
+
+                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    return;
+                    
+                };
                 
                 if(target.getEquipamento().getType() == EquipamentType.TANQUE){
                 
@@ -303,6 +308,21 @@ public class EquipamentoController implements ApplicationController{
                     xOrigem = target.getX() - movedLabel.getWidth();
                     yOrigem = target.getY() - movedLabel.getHeight() + GapHelper.CONEXAO_3_Y_GAP;
                 
+                }else if(target.getEquipamento().getType() == EquipamentType.TORRE_DESTILACAO){
+
+                    xOrigem = target.getX() - movedLabel.getWidth() + GapHelper.TORRE_DESTILACAO_RIGHT_X_GAP;
+
+                    if(target.getEquipamento().isTopAlreadyConnected()){// INFO: Verifica se já há uma conexão no topo direito da torre de destilação. 
+                        
+                        yOrigem = target.getY() + movedLabel.getHeight() + GapHelper.TORRE_DESTILACAO_RIGHT_BOTTOM_Y_GAP;
+                    
+                    } else {
+                        
+                        yOrigem = target.getY() + movedLabel.getHeight() + GapHelper.TORRE_DESTILACAO_RIGHT_TOP_Y_GAP;
+                        target.getEquipamento().setTopAlreadyConnected(true);
+                        
+                    }
+                    
                 }else{
                     
                     xOrigem = target.getX() - movedLabel.getWidth();
@@ -312,7 +332,12 @@ public class EquipamentoController implements ApplicationController{
                 
             } else { // movedLabel está à esquerda do alvo
                 
-                if(!target.getEquipamento().isCanLeftConnect()) return;
+                if(!target.getEquipamento().isCanLeftConnect()){
+                    
+                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    return;
+                    
+                }
                 
                 if(target.getEquipamento().getType() == EquipamentType.TANQUE){
                     

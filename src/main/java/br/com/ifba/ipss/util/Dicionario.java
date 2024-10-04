@@ -47,10 +47,12 @@ public class Dicionario {
         DICIONARIO.put("entrar", List.of("Entrar"));
         DICIONARIO.put("espelhar", List.of("Espelhar"));
         DICIONARIO.put("equipamento", List.of("Equipamento", "Equipamentos"));
+        DICIONARIO.put("equipamento_nao_pode_ser_espelhado", List.of("Este Equipamento Não Pode Ser Espelhado!"));
         DICIONARIO.put("erro", List.of("Erro", "Erros"));
         DICIONARIO.put("erro_criacao_arquivo", List.of("Ocorreu um erro ao criar o arquivo"));
         DICIONARIO.put("erro_ao_deletar_area_trabalho", List.of("Ocorreu um erro ao deletar a área de trabalho!"));
         DICIONARIO.put("erro_ao_salvar_area_trabalho", List.of("Ocorreu um erro ao salvar a área de trabalho!"));
+        DICIONARIO.put("espelhar_equipamento", List.of("Espelhar Equipamento"));
         DICIONARIO.put("girar_equipamento", List.of("Girar Equipamento"));
         DICIONARIO.put("insira_o_nome_da_simulacao", List.of("Insira o Nome da Simulação"));
         DICIONARIO.put("instrucoes", List.of("Instruções"));

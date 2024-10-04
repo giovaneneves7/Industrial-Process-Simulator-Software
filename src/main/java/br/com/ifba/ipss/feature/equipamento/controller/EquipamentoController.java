@@ -251,64 +251,68 @@ public class EquipamentoController implements ApplicationController{
                 
             }
             
-        } else if(target.getEquipamento().getAxios().equals(Constantes.HORIZONTAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.VERTICAL)){
-            
-            int diferencaY = movedLabel.getY() - target.getY(); 
-   
-            if (diferencaY <= 0) { // lblMovido está acima do alvo
-                
-                int xOrigem = 0;
-                int yOrigem = 0;
-                
-                if(!target.getEquipamento().isCanTopConnect()){
-                 
+        } else if (target.getEquipamento().getAxios().equals(Constantes.HORIZONTAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.VERTICAL)) {
+
+            int diferencaX = movedLabel.getX() - target.getX();
+            int diferencaY = movedLabel.getY() - target.getY();
+            int xOrigem = 0;
+            int yOrigem = 0;
+
+            // Conexão à esquerda
+            if (diferencaX <= 0) {
+                if (!target.getEquipamento().isCanLeftConnect()) {
                     InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
-                    
                 }
-                
-                if(target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR){
-                
-                    xOrigem = (target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2)) - GapHelper.TROCADOR_CALOR_TOP_X_GAP;
-                    yOrigem = target.getY() - movedLabel.getHeight(); 
-                    
-                } else{
-                    
-                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
-                    yOrigem = target.getY() - movedLabel.getHeight(); 
-                
-                }
-                
-                movedLabel.setLocation(xOrigem, yOrigem); // junta as labels.
-                
-            } else { // lblMovido está abaixo do alvo
-                
-                if(!target.getEquipamento().isCanBottomConnect()){
-                    
-                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
-                    return;
-                    
-                }
-                
-                int xOrigem = 0;
-                int yOrigem = 0;
-                
-                
-                if(target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR){
-                    
-                    xOrigem = (target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2)) + GapHelper.TROCADOR_CALOR_BOTTOM_X_GAP;
-                    yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
-                    
-                } else {
-                    
-                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
-                    yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
-                
-                }
-               
-                movedLabel.setLocation(xOrigem, yOrigem);
-                
+                xOrigem = target.getX() - movedLabel.getWidth();
+                yOrigem = target.getY();
             }
+            // Conexão à direita
+            else {
+                if (!target.getEquipamento().isCanRightConnect()) {
+                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    return;
+                }
+                xOrigem = target.getX() + target.getWidth();
+                yOrigem = target.getY();
+            }
+
+            movedLabel.setLocation(xOrigem, yOrigem);
+
+            // Conexão acima
+            if (diferencaY <= 0) {
+                if (!target.getEquipamento().isCanTopConnect()) {
+                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    return;
+                }
+
+                if (target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR) {
+                    xOrigem = (target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2)) - GapHelper.TROCADOR_CALOR_TOP_X_GAP;
+                } else {
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                }
+                yOrigem = target.getY() - movedLabel.getHeight();
+
+                movedLabel.setLocation(xOrigem, yOrigem);
+            }
+            // Conexão abaixo
+            else {
+                if (!target.getEquipamento().isCanBottomConnect()) {
+                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    return;
+                }
+
+                if (target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR) {
+                    xOrigem = (target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2)) + GapHelper.TROCADOR_CALOR_BOTTOM_X_GAP;
+                } else {
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                }
+                yOrigem = target.getY() + target.getHeight();
+
+                movedLabel.setLocation(xOrigem, yOrigem);
+            }
+        //}
+
             
         } else{ // O alvo está na vertical e o equipamento a se conectar está na horizontal
             
@@ -411,7 +415,10 @@ public class EquipamentoController implements ApplicationController{
     public void mirrorEquipament(Label lbl){
         
          if(!lbl.getEquipamento().isCanMirroring()){
+            
+            InvalidConnectionWidget.notifyInvalidConnection(tr("equipamento_nao_pode_ser_espelhado"), tr("espelhar_equipamento"));
             return;
+             
         }
         
         String currentImagePath = lbl.getEquipamento().get_caminhoImagem();

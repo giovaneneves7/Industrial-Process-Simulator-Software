@@ -101,6 +101,7 @@ public class Constantes {
     public static final String CAN_TOP_CONNECT_ATTRIBUTE = "can_top_connect";
 
     // Controllers
+    public static final String PARAMETROS_SIMULACAO_CONTROLLER = "parametros_simulacao";
     public static final String SIMULATION_LIST_CONTROLLER = "simulation_list";
     public static final String VIEW_CONTROLLER = "view";
     

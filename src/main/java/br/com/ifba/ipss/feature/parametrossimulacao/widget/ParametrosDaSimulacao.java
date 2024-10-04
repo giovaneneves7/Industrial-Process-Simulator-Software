@@ -1,8 +1,25 @@
+// *************************************************//
+// *************** { COMEÇO - Package } ************//
+// *************************************************//
+
 package br.com.ifba.ipss.feature.parametrossimulacao.widget;
+
+// *************************************************//
+// *************** { FIM - Package } ***************//
+// *************************************************//
+
+// *************************************************//
+// ************ { COMEÇO - Imports } ***************//
+// *************************************************//
 
 import br.com.ifba.ipss.feature.parametrossimulacao.controller.ParametrosSimulacaoController;
 import br.com.ifba.ipss.helper.FormulaHelper;
-import br.com.ifba.ipss.util.Escoamento;
+import br.com.ifba.ipss.infrastructure.manager.ControllerManager;
+import br.com.ifba.ipss.util.Constantes;
+
+// *************************************************//
+// ************** { FIM - Imports } ****************//
+// *************************************************//
 
 /**
  *
@@ -11,15 +28,26 @@ import br.com.ifba.ipss.util.Escoamento;
  */
 public class ParametrosDaSimulacao extends javax.swing.JPanel {
 
+    // INFO: Atributos
+    private final ParametrosSimulacaoController parametrosSimulacaoController;
+    
     private double viscosidade;
     private double velocidade;
     private double diametroInterno;
+    
     /**
-     * Creates new form parâmentrosdasimulação
+     * Construtor da Classe
+     * 
+     * @author Giovane Neves
+     * @since V0.0.1
      */
     public ParametrosDaSimulacao() {
+        
         initComponents();
-    }
+        
+        parametrosSimulacaoController = ControllerManager.find(Constantes.PARAMETROS_SIMULACAO_CONTROLLER);
+    
+    } // ParametrosDaSimulacao
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,12 +63,14 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblCoeficienteAtrito = new javax.swing.JLabel();
         jSpinViscosidadeCinematica = new javax.swing.JSpinner();
         jSpinVelocidade = new javax.swing.JSpinner();
-        jSpinDiametroInterno = new javax.swing.JSpinner();
+        jSpinCoeficienteAtrito = new javax.swing.JSpinner();
         btnSimulation = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jSpinDiametroInterno1 = new javax.swing.JSpinner();
 
         setLayout(null);
 
@@ -60,29 +90,29 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel3.setText("Viscosidade cinemática (m²/s)");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 50, 150, 20);
+        jLabel3.setBounds(50, 40, 150, 20);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel4.setText("Velocidade (m/s)");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 90, 130, 15);
+        jLabel4.setBounds(50, 80, 130, 15);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel5.setText("Diâmetro interno do tubo (mm)");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 130, 160, 15);
+        lblCoeficienteAtrito.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        lblCoeficienteAtrito.setText("Coeficiente de Atrito");
+        jPanel1.add(lblCoeficienteAtrito);
+        lblCoeficienteAtrito.setBounds(50, 140, 160, 15);
 
         jSpinViscosidadeCinematica.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
         jPanel1.add(jSpinViscosidadeCinematica);
-        jSpinViscosidadeCinematica.setBounds(220, 50, 75, 24);
+        jSpinViscosidadeCinematica.setBounds(220, 40, 75, 24);
 
         jSpinVelocidade.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
         jPanel1.add(jSpinVelocidade);
-        jSpinVelocidade.setBounds(220, 90, 75, 24);
+        jSpinVelocidade.setBounds(220, 70, 75, 24);
 
-        jSpinDiametroInterno.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
-        jPanel1.add(jSpinDiametroInterno);
-        jSpinDiametroInterno.setBounds(220, 130, 75, 24);
+        jSpinCoeficienteAtrito.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
+        jPanel1.add(jSpinCoeficienteAtrito);
+        jSpinCoeficienteAtrito.setBounds(220, 130, 75, 24);
 
         btnSimulation.setBackground(new java.awt.Color(204, 204, 204));
         btnSimulation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão simulação.2.png"))); // NOI18N
@@ -106,6 +136,15 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jPanel1.add(jButton1);
         jButton1.setBounds(290, 10, 20, 16);
 
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel6.setText("Diâmetro interno do tubo (mm)");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(50, 110, 160, 15);
+
+        jSpinDiametroInterno1.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
+        jPanel1.add(jSpinDiametroInterno1);
+        jSpinDiametroInterno1.setBounds(220, 100, 75, 24);
+
         add(jPanel1);
         jPanel1.setBounds(0, 0, 320, 220);
     }// </editor-fold>//GEN-END:initComponents
@@ -118,27 +157,21 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         
         velocidade = (double) jSpinVelocidade.getValue();
         viscosidade =  (double) jSpinViscosidadeCinematica.getValue();
-        diametroInterno = (double) jSpinDiametroInterno.getValue();
+        diametroInterno = (double) jSpinCoeficienteAtrito.getValue();
         
-        double numeroReynold = FormulaHelper.EQUACAO_DE_REYNOLD(velocidade, diametroInterno, viscosidade);
-        String escoamento = FormulaHelper.VERIFICAR_ESCOAMENTO(numeroReynold);
-        double perdaCarga = 0;
+        parametrosSimulacaoController.setVelocidade(velocidade);
+        parametrosSimulacaoController.setViscosidade(viscosidade);
+        parametrosSimulacaoController.setDiametroInterno(diametroInterno);
         
-        if(escoamento.equals(Escoamento.ESCOAMENTO_LAMINAR)){
-            
-            /**
-             * l = Soma do comprimento de todas as tubulações.
-             */
-            perdaCarga = FormulaHelper.EQUACAO_DE_POISEULLE(30, velocidade, viscosidade, diametroInterno);
-            
-        } else{
-            
-            perdaCarga = FormulaHelper.EQUACAO_DE_DARCY_WEISBACH(30, diametroInterno, velocidade);
-            
-        }
-        this.getParent().add(new ParametrosSimulacaoController().criarWidgetDeResultados(perdaCarga, escoamento, numeroReynold));
+        parametrosSimulacaoController.setNumeroReynold(FormulaHelper.EQUACAO_DE_REYNOLD(velocidade, diametroInterno, viscosidade));
+        parametrosSimulacaoController.setEscoamento(FormulaHelper.VERIFICAR_ESCOAMENTO(parametrosSimulacaoController.getNumeroReynold()));
+        
+        parametrosSimulacaoController.setPerdaCarga();
+        
+        this.getParent().add(parametrosSimulacaoController.createResultsWidget());
         this.getParent().revalidate();
         this.getParent().repaint();
+        
     }//GEN-LAST:event_btnSimulationActionPerformed
 
 
@@ -149,10 +182,12 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner jSpinDiametroInterno;
+    private javax.swing.JSpinner jSpinCoeficienteAtrito;
+    private javax.swing.JSpinner jSpinDiametroInterno1;
     private javax.swing.JSpinner jSpinVelocidade;
     private javax.swing.JSpinner jSpinViscosidadeCinematica;
+    private javax.swing.JLabel lblCoeficienteAtrito;
     // End of variables declaration//GEN-END:variables
 }

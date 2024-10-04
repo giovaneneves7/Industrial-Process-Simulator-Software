@@ -13,9 +13,9 @@ package br.com.ifba.ipss.util;
  */
 public enum Escoamento {
     
-    ESCOAMENTO_LAMINAR("Escoamento Laminar"),
-    ESCOAMENTO_TRANSITORIO("Escoamento Transitório"),
-    ESCOAMENTO_TURBULENTO("Escoamento Turubulento");
+    ESCOAMENTO_LAMINAR("Laminar"),
+    ESCOAMENTO_TRANSITORIO("Transitório"),
+    ESCOAMENTO_TURBULENTO("Turubulento");
     
     private final String escoamento;
 

@@ -15,7 +15,8 @@ package br.com.ifba.ipss.infrastructure.manager;
 import br.com.ifba.ipss.common.controller.ViewController;
 import br.com.ifba.ipss.feature.equipamento.controller.EquipamentoController;
 import br.com.ifba.ipss.feature.equipamento.domain.service.IEquipamentoService;
-import br.com.ifba.ipss.feature.simulationlist.controller.SimulationListController;
+import br.com.ifba.ipss.feature.parametrossimulacao.controller.ParametrosSimulacaoController;
+import br.com.ifba.ipss.feature.parametrossimulacao.widget.ParametrosDaSimulacao;
 import br.com.ifba.ipss.infrastructure.interfaces.ApplicationController;
 import br.com.ifba.ipss.util.Constantes;
 import java.util.HashMap;
@@ -36,10 +37,14 @@ public class ControllerManager {
     
     static {
         
+        ParametrosSimulacaoController parametrosSimulacaoController = new ParametrosSimulacaoController();
+        ViewController viewController = new ViewController();
+        
         controllerMap = new HashMap<>(){{
         
             put("equipamento", new EquipamentoController(ServiceManager.find(IEquipamentoService.class)));
-            put(Constantes.VIEW_CONTROLLER, new ViewController());
+            put(Constantes.PARAMETROS_SIMULACAO_CONTROLLER, parametrosSimulacaoController);
+            put(Constantes.VIEW_CONTROLLER, viewController);
             
         }};
         

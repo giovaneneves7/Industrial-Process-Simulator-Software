@@ -226,15 +226,15 @@ public class EquipamentoController implements ApplicationController{
                 
             } else { // lblMovido está abaixo do alvo
                 
-                int xOrigem = 0;
-                int yOrigem = 0;
-                
                 if(!target.getEquipamento().isCanBottomConnect()){
                  
                     InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
                     
                 }
+                
+                int xOrigem = 0;
+                int yOrigem = 0;
                 
                 if(target.getEquipamento().getType() == EquipamentType.TORRE_DESTILACAO){
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.TORRE_DESTILACAO_BOTTOM_X_GAP;
@@ -259,7 +259,13 @@ public class EquipamentoController implements ApplicationController{
                 
                 int xOrigem = 0;
                 int yOrigem = 0;
-                if(!target.getEquipamento().isCanTopConnect()) return;
+                
+                if(!target.getEquipamento().isCanTopConnect()){
+                 
+                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    return;
+                    
+                }
                 
                 if(target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR){
                 
@@ -277,9 +283,16 @@ public class EquipamentoController implements ApplicationController{
                 
             } else { // lblMovido está abaixo do alvo
                 
+                if(!target.getEquipamento().isCanBottomConnect()){
+                    
+                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    return;
+                    
+                }
+                
                 int xOrigem = 0;
                 int yOrigem = 0;
-                if(!target.getEquipamento().isCanBottomConnect()) return; // retorna se não for permitida a conexão embaixo do alvo.
+                
                 
                 if(target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR){
                     

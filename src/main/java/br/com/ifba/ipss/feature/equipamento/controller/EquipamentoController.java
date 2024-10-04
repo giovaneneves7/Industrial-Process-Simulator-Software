@@ -166,7 +166,12 @@ public class EquipamentoController implements ApplicationController{
    
             if (diferencaY <= 0) { // lblMovido está acima do alvo
                 
-                if(!target.getEquipamento().isCanTopConnect()) return;
+                if(!target.getEquipamento().isCanTopConnect()){
+                 
+                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    return;
+                    
+                }
                 
                 int xOrigem = 0, yOrigem = 0;
                 
@@ -224,7 +229,12 @@ public class EquipamentoController implements ApplicationController{
                 int xOrigem = 0;
                 int yOrigem = 0;
                 
-                if(!target.getEquipamento().isCanBottomConnect()) return;
+                if(!target.getEquipamento().isCanBottomConnect()){
+                 
+                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    return;
+                    
+                }
                 
                 if(target.getEquipamento().getType() == EquipamentType.TORRE_DESTILACAO){
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.TORRE_DESTILACAO_BOTTOM_X_GAP;

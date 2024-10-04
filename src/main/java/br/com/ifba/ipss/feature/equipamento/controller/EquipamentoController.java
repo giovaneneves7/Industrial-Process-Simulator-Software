@@ -197,7 +197,13 @@ public class EquipamentoController implements ApplicationController{
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.TORRE_DESTILACAO_TOP_X_GAP;
                     yOrigem = target.getY() - movedLabel.getHeight();
                 
-                } else{
+                } else if(target.getEquipamento().getType() == EquipamentType.TUBULACAO && movedLabel.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
+                
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
+                    yOrigem = target.getY() - movedLabel.getHeight();
+                
+                
+                }else{
                     
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
                     yOrigem = target.getY() - movedLabel.getHeight();

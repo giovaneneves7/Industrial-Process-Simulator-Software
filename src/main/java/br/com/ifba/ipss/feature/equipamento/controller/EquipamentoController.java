@@ -472,6 +472,15 @@ public class EquipamentoController implements ApplicationController{
         lbl.setOrientacao(lbl.getOrientacao().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
         lbl.getEquipamento().setAxios(lbl.getEquipamento().getAxios().equals(Constantes.VERTICAL) ? Constantes.HORIZONTAL : Constantes.VERTICAL);
         
+        boolean canRightConnect = lbl.getEquipamento().isCanRightConnect();
+        boolean canBottomConnect = lbl.getEquipamento().isCanBottomConnect();
+        boolean canLeftConnect = lbl.getEquipamento().isCanLeftConnect();
+        
+        lbl.getEquipamento().setCanRightConnect(lbl.getEquipamento().isCanTopConnect());
+        lbl.getEquipamento().setCanBottomConnect(canRightConnect);
+        lbl.getEquipamento().setCanLeftConnect(canBottomConnect);
+        lbl.getEquipamento().setCanTopConnect(canLeftConnect);
+        
         // Lógica de rotacionar personalizada para a tubulação
         if(lbl.getEquipamento().getType() == EquipamentType.CONEXAO){
             

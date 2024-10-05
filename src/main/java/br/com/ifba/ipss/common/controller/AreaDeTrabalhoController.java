@@ -41,6 +41,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -125,18 +126,30 @@ public class AreaDeTrabalhoController {
         this.pnlEspacoTrabalho.repaint();
 
     
-    }
+    } // setPnlEspacoTrabalho
     
     
     public void setWorkspacePath(String workspacePath){
         
         this.workspacePath = workspacePath;
         
-    }
+    } // setWorkspacePath
     
     // *************************************************//
     // ******************* { Métodos } *****************//
     // *************************************************//
+    
+    public void atualizarImagemBotaoConectar(JButton btn){
+        
+        this.mudarImagemBotao(btn, emModoConexao);
+        
+    } // atualizarImagemBotaoConectar
+    
+    public void atualizarImagemBotaoGirar(JButton btn){
+        
+        this.mudarImagemBotao(btn, emModoRotacao);
+        
+    } // atualizarImagemBotaoGirar
     
     public void atualizarImagemBotaoRemover(JButton btn){
 
@@ -211,7 +224,6 @@ public class AreaDeTrabalhoController {
 
                     if(algumBotaoSelecionado) return;
                     
-                    System.out.println("Nome botão:" + btn.getName());
                     ImageIcon img = new ImageIcon(this.getClass().getResource(Constantes.pegarImagemBotaoSelecionado(btn.getName())));
                     
                     if(img.getImage() != null)
@@ -338,6 +350,12 @@ public class AreaDeTrabalhoController {
         
     } // mudarImagemBotao
     
+    private void mirrorEquipament(Label lbl){
+        
+        this.equipamentoController.mirrorEquipament(lbl);
+        
+    } // mirrorEquipament
+    
     /**
      * Remove o quipamento passado por parâmetro
      * 
@@ -351,21 +369,14 @@ public class AreaDeTrabalhoController {
        
     } // removeEquipament
     
-    public void atualizarImagemBotaoGirar(JButton btn){
-        
-        this.mudarImagemBotao(btn, emModoRotacao);
-    }
+    
     public void rotacionarEquipamento(Label lbl){
         
         EquipamentoController.rotateEquipament(lbl);
      
     } // rotacionarEquipamento
     
-    public void atualizarImagemBotaoConectar(JButton btn){
-        
-        this.mudarImagemBotao(btn, emModoConexao);
-        
-    } // atualizarImagemBotaoConectar
+    
     
     public void updateMirroringButtonImage(JButton btn){
         
@@ -608,7 +619,6 @@ public class AreaDeTrabalhoController {
         this.espacoTrabalhoMap.put(lbl.getId(), lbl);
         this.pnlEspacoTrabalho.revalidate();
         this.pnlEspacoTrabalho.repaint();
-
         
     } // selecionarEquipamento
     
@@ -754,21 +764,6 @@ public class AreaDeTrabalhoController {
     }
 
     
-    private void mirrorEquipament(Label lbl){
-        
-        this.equipamentoController.mirrorEquipament(lbl);
-        
-        /*
-        if(!lbl.getEquipamento().isCanMirroring()){
-            return;
-        }
-        
-        String currentImagePath = lbl.getEquipamento().get_caminhoImagem();
-        
-        String newImagePath = Constantes.getMirroredEquipament(currentImagePath);
-        System.out.println(newImagePath);
-        lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource(newImagePath)));
-        */
-    } // mirrorEquipament
+    
     
 }

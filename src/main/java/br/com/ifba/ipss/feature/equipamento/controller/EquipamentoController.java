@@ -24,6 +24,8 @@ import br.com.ifba.ipss.util.Util;
 
 import java.awt.Container;
 import java.awt.image.BufferedImage;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -39,9 +41,30 @@ import javax.swing.JPanel;
  * @since V0.0.1
  */
 public class EquipamentoController implements ApplicationController{
-    
+
+    private List<Label> equipamentosLinkedList = new LinkedList<>();
     private final IEquipamentoService equipamentoService;
     
+    /**
+     * Adiciona o equipamento na lista encadeada de equipamentos
+     * 
+     * @author Giovane Neves
+     * @since V0.0.1
+     * @param equipamento O equipamento a ser adicionado na lista encadeada. 
+     */
+    private void addEquipamentoToTheLinkedList(Label equipamento){
+        
+        this.equipamentosLinkedList.add(equipamento);
+        
+    } // addEquipamentoToTheLinkedList
+    
+    /**
+     * Construtor da Classe
+     * 
+     * @author Giovane Neves
+     * @since V0.0.1
+     * @param equipamentoService O service do equipamento
+     */
     public EquipamentoController(IEquipamentoService equipamentoService){
         
        this.equipamentoService = equipamentoService;
@@ -52,6 +75,7 @@ public class EquipamentoController implements ApplicationController{
      * Verifica se os tipos de equipamentos são compatíveis para a conexão
      * 
      * @author Giovane Neves
+     * @since V0.0.1
      * @param target O alvo que receberá a conexão
      * @param movedEquipament O equipamento movido que fará a conexão
      * @return 'true' caso a conexão seja permitida, 'false' caso contrário
@@ -401,6 +425,7 @@ public class EquipamentoController implements ApplicationController{
             
             movedLabel.setLocation(xOrigem, yOrigem);
             
+            this.addEquipamentoToTheLinkedList(movedLabel);
             
         }
     } // connectEquipament

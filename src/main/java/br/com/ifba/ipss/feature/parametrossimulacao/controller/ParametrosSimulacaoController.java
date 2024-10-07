@@ -41,6 +41,7 @@ import lombok.Data;
 public class ParametrosSimulacaoController implements ApplicationController{
     
     // INFO: Atributos
+    private double coeficienteAtrito;
     private double velocidade;
     private double viscosidade;
     private double diametroInterno;
@@ -141,7 +142,7 @@ public class ParametrosSimulacaoController implements ApplicationController{
             
         } else{
             
-            this.perdaCarga = FormulaHelper.EQUACAO_DE_DARCY_WEISBACH(30, this.diametroInterno, this.velocidade);
+            this.perdaCarga = FormulaHelper.EQUACAO_DE_DARCY_WEISBACH(30, this.diametroInterno, this.velocidade, this.coeficienteAtrito);
             
         }
         

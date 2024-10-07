@@ -9,7 +9,6 @@ import br.com.ifba.ipss.util.Escoamento;
  */
 public class FormulaHelper {
 
-    private static final double F    = 0.09f;
     private static final double G    = 9.8f;
     private static final double PI   = 3.14f;
     private static final int TRINTA_E_DOIS = 32;
@@ -31,9 +30,9 @@ public class FormulaHelper {
         return j;
         
     }
-    public static double EQUACAO_DE_DARCY_WEISBACH(double l, double d, double vel){
+    public static double EQUACAO_DE_DARCY_WEISBACH(double l, double d, double vel, double f){
         
-        double j = F * l / d * vel * vel / 2 * G;
+        double j = f * l / d * vel * vel / 2 * G;
         
         return j;
     

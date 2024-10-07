@@ -31,6 +31,7 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
     // INFO: Atributos
     private final ParametrosSimulacaoController parametrosSimulacaoController;
     
+    private double coeficienteAtrito;
     private double viscosidade;
     private double velocidade;
     private double diametroInterno;
@@ -155,10 +156,12 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
 
     private void btnSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimulationActionPerformed
         
+        coeficienteAtrito = (double) jSpinCoeficienteAtrito.getValue();
         velocidade = (double) jSpinVelocidade.getValue();
         viscosidade =  (double) jSpinViscosidadeCinematica.getValue();
         diametroInterno = (double) jSpinCoeficienteAtrito.getValue();
         
+        parametrosSimulacaoController.setCoeficienteAtrito(coeficienteAtrito);
         parametrosSimulacaoController.setVelocidade(velocidade);
         parametrosSimulacaoController.setViscosidade(viscosidade);
         parametrosSimulacaoController.setDiametroInterno(diametroInterno);

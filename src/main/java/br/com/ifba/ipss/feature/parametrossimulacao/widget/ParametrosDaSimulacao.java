@@ -12,6 +12,7 @@ package br.com.ifba.ipss.feature.parametrossimulacao.widget;
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 
+import br.com.ifba.ipss.feature.equipamento.controller.EquipamentoController;
 import br.com.ifba.ipss.feature.parametrossimulacao.controller.ParametrosSimulacaoController;
 import br.com.ifba.ipss.helper.FormulaHelper;
 import br.com.ifba.ipss.infrastructure.manager.ControllerManager;
@@ -30,7 +31,7 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
 
     // INFO: Atributos
     private final ParametrosSimulacaoController parametrosSimulacaoController;
-    
+    private final EquipamentoController equipamentoController = ControllerManager.find(Constantes.EQUIPAMENTO_CONTROLLER);
     private double coeficienteAtrito;
     private double viscosidade;
     private double velocidade;
@@ -162,6 +163,7 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         diametroInterno = (double) jSpinCoeficienteAtrito.getValue();
         
         parametrosSimulacaoController.setCoeficienteAtrito(coeficienteAtrito);
+        parametrosSimulacaoController.setLength(equipamentoController.calculateTubulacaoLength());
         parametrosSimulacaoController.setVelocidade(velocidade);
         parametrosSimulacaoController.setViscosidade(viscosidade);
         parametrosSimulacaoController.setDiametroInterno(diametroInterno);

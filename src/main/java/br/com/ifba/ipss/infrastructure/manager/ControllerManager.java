@@ -37,12 +37,12 @@ public class ControllerManager {
     
     static {
         
+        EquipamentoController equipamentoController = new EquipamentoController(ServiceManager.find(IEquipamentoService.class));
         ParametrosSimulacaoController parametrosSimulacaoController = new ParametrosSimulacaoController();
         ViewController viewController = new ViewController();
         
         controllerMap = new HashMap<>(){{
-        
-            put("equipamento", new EquipamentoController(ServiceManager.find(IEquipamentoService.class)));
+            put("equipamento", equipamentoController);
             put(Constantes.PARAMETROS_SIMULACAO_CONTROLLER, parametrosSimulacaoController);
             put(Constantes.VIEW_CONTROLLER, viewController);
             

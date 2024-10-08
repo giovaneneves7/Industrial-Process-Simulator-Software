@@ -42,6 +42,7 @@ public class ParametrosSimulacaoController implements ApplicationController{
     
     // INFO: Atributos
     private double coeficienteAtrito;
+    private double length;
     private double velocidade;
     private double viscosidade;
     private double diametroInterno;

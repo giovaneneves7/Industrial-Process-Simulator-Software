@@ -139,11 +139,11 @@ public class ParametrosSimulacaoController implements ApplicationController{
             /**
              * l = Soma do comprimento de todas as tubulações.
              */
-            this.perdaCarga = FormulaHelper.EQUACAO_DE_POISEULLE(30, this.velocidade, this.viscosidade, this.diametroInterno);
+            this.perdaCarga = FormulaHelper.EQUACAO_DE_POISEULLE(this.length, this.velocidade, this.viscosidade, this.diametroInterno);
             
         } else{
             
-            this.perdaCarga = FormulaHelper.EQUACAO_DE_DARCY_WEISBACH(30, this.diametroInterno, this.velocidade, this.coeficienteAtrito);
+            this.perdaCarga = FormulaHelper.EQUACAO_DE_DARCY_WEISBACH(this.length, this.diametroInterno, this.velocidade, this.coeficienteAtrito);
             
         }
         

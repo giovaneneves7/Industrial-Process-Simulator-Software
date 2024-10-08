@@ -14,7 +14,7 @@ package br.com.ifba.ipss.feature.equipamento.controller;
 import static br.com.ifba.ipss.util.Dicionario.tr;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.domain.service.IEquipamentoService;
-import br.com.ifba.ipss.feature.equipamento.widget.InvalidConnectionWidget;
+import br.com.ifba.ipss.feature.equipamento.widget.WarningModal;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
 import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.helper.GapHelper;
@@ -120,6 +120,12 @@ public class EquipamentoController implements ApplicationController{
         
     } // canConnect
     
+    public boolean emptyLinkedList(){
+    
+        return this.equipamentosLinkedList.isEmpty();
+        
+    }
+    
     /**
      * Retorna o gap que deve haver entre a coonexão 03 e a tubulação passada
      * por parâmetro.
@@ -151,7 +157,7 @@ public class EquipamentoController implements ApplicationController{
         // INFO: Verifica se o tipo dos equipamentos é compatível para a conexão
         if(!canConnect(target.getEquipamento().getType(), movedLabel.getEquipamento().getType())){
             
-            InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+            WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
             return;
             
         }
@@ -202,7 +208,7 @@ public class EquipamentoController implements ApplicationController{
                 
                 if(!target.getEquipamento().isCanTopConnect()){
                  
-                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
                     
                 }
@@ -262,7 +268,7 @@ public class EquipamentoController implements ApplicationController{
                 
                 if(!target.getEquipamento().isCanBottomConnect()){
                  
-                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
                     
                 }
@@ -295,7 +301,7 @@ public class EquipamentoController implements ApplicationController{
             // Conexão à esquerda
             if (diferencaX <= 0) {
                 if (!target.getEquipamento().isCanLeftConnect()) {
-                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
                 }
                 xOrigem = target.getX() - movedLabel.getWidth();
@@ -304,7 +310,7 @@ public class EquipamentoController implements ApplicationController{
             // Conexão à direita
             else {
                 if (!target.getEquipamento().isCanRightConnect()) {
-                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
                 }
                 xOrigem = target.getX() + target.getWidth();
@@ -316,7 +322,7 @@ public class EquipamentoController implements ApplicationController{
             // Conexão acima
             if (diferencaY <= 0) {
                 if (!target.getEquipamento().isCanTopConnect()) {
-                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
                 }
 
@@ -332,7 +338,7 @@ public class EquipamentoController implements ApplicationController{
             // Conexão abaixo
             else {
                 if (!target.getEquipamento().isCanBottomConnect()) {
-                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
                 }
 
@@ -360,7 +366,7 @@ public class EquipamentoController implements ApplicationController{
                 
                 if(!target.getEquipamento().isCanRightConnect()){
 
-                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
                     
                 };
@@ -401,7 +407,7 @@ public class EquipamentoController implements ApplicationController{
                 
                 if(!target.getEquipamento().isCanLeftConnect()){
                     
-                    InvalidConnectionWidget.notifyInvalidConnection(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
                     
                 }
@@ -451,7 +457,7 @@ public class EquipamentoController implements ApplicationController{
         
          if(!lbl.getEquipamento().isCanMirroring()){
             
-            InvalidConnectionWidget.notifyInvalidConnection(tr("equipamento_nao_pode_ser_espelhado"), tr("espelhar_equipamento"));
+            WarningModal.createWarningModal(tr("equipamento_nao_pode_ser_espelhado"), tr("espelhar_equipamento"));
             return;
              
         }

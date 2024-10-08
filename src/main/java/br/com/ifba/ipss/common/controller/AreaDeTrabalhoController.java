@@ -19,6 +19,7 @@ import br.com.ifba.ipss.feature.equipamento.controller.FerramentaContainerContro
 import br.com.ifba.ipss.feature.equipamento.domain.factory.EquipamentoFactory;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
+import br.com.ifba.ipss.feature.equipamento.widget.WarningModal;
 import br.com.ifba.ipss.feature.workspace.controller.EspacoTrabalhoController;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
@@ -41,7 +42,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -418,6 +418,14 @@ public class AreaDeTrabalhoController {
     } // conectarEquipamentos
     
     public void exibirWidgetDeParametrosSimulacao(JPanel p){
+        
+        /*
+        if(equipamentoController.emptyLinkedList()){
+            
+            WarningModal.createWarningModal(tr("area_de_trabalho_vazia"), tr("a_area_trabalho_esta_vazia"));
+            return;
+            
+        }*/
         
         ParametrosDaSimulacao ps = parametrosSimulacaoController.criarWidgetDeParametros(
                 SizeHelper.LARGURA_ESPACO_TRABALHO / 30, 

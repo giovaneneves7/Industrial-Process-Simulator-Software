@@ -10,10 +10,7 @@ package br.com.ifba.ipss.feature.workspace.view;
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
 import br.com.ifba.ipss.common.controller.AreaDeTrabalhoController;
-import br.com.ifba.ipss.feature.conexao.domain.service.IConexaoService;
-import br.com.ifba.ipss.feature.tubulacao.domain.service.ITubulacaoService;
 import br.com.ifba.ipss.helper.ScreenHelper;
-import br.com.ifba.ipss.infrastructure.manager.ServiceManager;
 import br.com.ifba.ipss.util.Constantes;
 import static br.com.ifba.ipss.util.Dicionario.tr;
 

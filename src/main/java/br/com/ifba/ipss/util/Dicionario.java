@@ -31,9 +31,11 @@ public class Dicionario {
     
     static {
         
+        DICIONARIO.put("a_area_trabalho_esta_vazia", List.of("A Área de Trabalho Está Vazia!"));
         DICIONARIO.put("acesso_orientador", List.of("Acesso Orientador"));
         DICIONARIO.put("area_de_trabalho_deletada_com_sucesso", List.of("Área de Trabalho deletada com sucesso!"));
         DICIONARIO.put("area_de_trabalho_salva_com_sucesso", List.of("Área de Trabalho salva com sucesso!"));
+        DICIONARIO.put("area_de_trabalho_vazia", List.of("Área de Trabalho Vazia"));
         DICIONARIO.put("area_do_orientador", List.of("Área do Orientador"));
         DICIONARIO.put("arquivo_ja_existe", List.of("O Nome de Arquivo Informado Já Está em Uso!"));
         DICIONARIO.put("buscar", List.of("Buscar"));

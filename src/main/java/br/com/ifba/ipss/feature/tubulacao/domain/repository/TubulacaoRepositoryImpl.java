@@ -47,7 +47,7 @@ public class TubulacaoRepositoryImpl implements ITubulacaoRepository, ServiceImp
                         case "_largura" -> tubulacao.set_larguraPx(valor.getAsInt());
                         case "_altura" -> tubulacao.set_alturaPx(valor.getAsInt());
                         case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsString());
-                        case "comprimento" -> tubulacao.setComprimento(valor.getAsDouble());
+                        case "comprimento" -> tubulacao.setLength(valor.getAsDouble());
                         default -> {}
                     }
                 }
@@ -94,13 +94,13 @@ public class TubulacaoRepositoryImpl implements ITubulacaoRepository, ServiceImp
                         case "_largura" -> tubulacao.set_larguraPx(valor.getAsInt());
                         case "_altura" -> tubulacao.set_alturaPx(valor.getAsInt());
                         case "_diametroInterno" -> tubulacao.set_diametroInterno(valor.getAsString());
-                        case "comprimento" -> tubulacao.setComprimento(valor.getAsDouble());
+                        case "comprimento" -> tubulacao.setLength(valor.getAsDouble());
                         default -> {}
                     }
                 }
                 
                 if(tubulacao.get_nome().equals(nomeTubulacao)){
-                        return tubulacao.getComprimento();
+                        return tubulacao.getLength();
                 }
             }
                         

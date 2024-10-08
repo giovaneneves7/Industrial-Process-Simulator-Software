@@ -134,7 +134,7 @@ public interface IGenericRepository<E extends Equipamento> {
                             if (eq instanceof Tubulacao tub) {
                                 switch (chave) {
                                     case Constantes.ATRIBUTO_DIAMETRO_INTERNO -> tub.set_diametroInterno(valor.getAsString());
-                                    case Constantes.ATRIBUTO_COMPRIMENTO -> tub.setComprimento(valor.getAsDouble());
+                                    case Constantes.ATRIBUTO_COMPRIMENTO -> tub.setLength(valor.getAsDouble());
                                     default -> {
                             }
                                 }

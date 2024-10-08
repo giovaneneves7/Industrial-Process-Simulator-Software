@@ -16,6 +16,7 @@ import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.domain.service.IEquipamentoService;
 import br.com.ifba.ipss.feature.equipamento.widget.InvalidConnectionWidget;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
+import br.com.ifba.ipss.feature.tubulacao.domain.model.Tubulacao;
 import br.com.ifba.ipss.helper.GapHelper;
 import br.com.ifba.ipss.infrastructure.interfaces.ApplicationController;
 import br.com.ifba.ipss.util.Constantes;
@@ -58,6 +59,15 @@ public class EquipamentoController implements ApplicationController{
         
     } // addEquipamentoToTheLinkedList
     
+    public double calculateTubulacaoLength(){
+        
+        return this.equipamentosLinkedList.stream()
+            .filter(label -> label.getEquipamento().getType() == EquipamentType.TUBULACAO)
+            .mapToDouble(label -> ((Tubulacao) label.getEquipamento()).getLength())  
+            .sum();
+
+    } // calculateTubulacaoLength
+    
     /**
      * Construtor da Classe
      * 
@@ -81,7 +91,7 @@ public class EquipamentoController implements ApplicationController{
      * @return 'true' caso a conexão seja permitida, 'false' caso contrário
      */
     private static boolean canConnect(EquipamentType target, EquipamentType movedEquipament){
-        
+                
         return    (target == EquipamentType.REATOR && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false 
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TANQUE) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false

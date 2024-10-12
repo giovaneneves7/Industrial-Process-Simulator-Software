@@ -21,7 +21,7 @@
             "can_mirroring" : 0,
             "can_rotate" : 1,
             "axios" : "vertical",
-            "can_bottom_connect": 0,
+            "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
             "can_left_connect" : 0,
             "can_right_connect" : 0,

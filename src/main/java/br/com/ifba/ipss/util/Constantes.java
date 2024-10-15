@@ -107,6 +107,7 @@ public class Constantes {
     public static final String VIEW_CONTROLLER = "view";
     
     // IDs
+    public static final String CONEXAO_2_ID   = "conn02";
     public static final String CONEXAO_3_ID   = "conn03";
     public static final String TUBULACAO_1_ID = "tb01";
     public static final String TUBULACAO_2_ID = "tb02";

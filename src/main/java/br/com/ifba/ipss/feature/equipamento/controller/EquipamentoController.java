@@ -162,6 +162,8 @@ public class EquipamentoController implements ApplicationController{
             
         }
         
+        
+        
         if(target.getEquipamento().getAxios().equals(Constantes.HORIZONTAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.HORIZONTAL)){ // Ambos os equipamentos estão na horizontal
         
             int diferencaX = movedLabel.getX() - target.getX();
@@ -375,13 +377,18 @@ public class EquipamentoController implements ApplicationController{
                     WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
                     
-                };
+                }
                 
                 if(target.getEquipamento().getType() == EquipamentType.TANQUE){
                 
                     xOrigem = target.getX() - movedLabel.getWidth(); 
                     yOrigem = (target.getY() + 33);
                 
+                } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_2_ID)){
+                    
+                    xOrigem = target.getX() - movedLabel.getWidth(); 
+                    yOrigem = (target.getY() + GapHelper.CONEXAO_2_RIGHT_Y_GAP);
+                    
                 } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
                 
                     xOrigem = target.getX() - movedLabel.getWidth();
@@ -423,7 +430,12 @@ public class EquipamentoController implements ApplicationController{
                     xOrigem = target.getX() + target.getWidth() - 2;
                     yOrigem = (target.getY() + 163);
                     
-                } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
+                } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_2_ID)){
+                
+                    xOrigem = target.getX() + target.getWidth() - GapHelper.CONEXAO_2_LEFT_X_GAP;
+                    yOrigem = (target.getY() + GapHelper.CONEXAO_2_LEFT_Y_GAP);
+                
+                }else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
                 
                     xOrigem = target.getX() + movedLabel.getWidth();
                     

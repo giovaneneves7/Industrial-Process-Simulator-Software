@@ -19,6 +19,13 @@ public class GapHelper {
     
     // INFO: Valores em px.
     
+    public static final int CONEXAO_2_BOTTOM_X_GAP             = 1;
+    public static final int CONEXAO_2_LEFT_X_GAP               = 3;
+    public static final int CONEXAO_2_LEFT_Y_GAP               = 13;
+    public static final int CONEXAO_2_RIGHT_Y_GAP              = 13;
+    public static final int CONEXAO_2_TOP_X_GAP                = 1;
+    public static final int CONEXAO_2_TOP_Y_GAP                = 2;
+    
     public static final int CONEXAO_3_BOTTOM_X_GAP             = 12;
     public static final int CONEXAO_3_X_LEFT_GAP               = 23;
     public static final int CONEXAO_3_MIRROR_X_GAP             = 23;

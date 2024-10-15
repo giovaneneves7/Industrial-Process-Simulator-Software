@@ -277,7 +277,13 @@ public class EquipamentoController implements ApplicationController{
                 int yOrigem = 0;
                 
                 if(target.getEquipamento().getType() == EquipamentType.TORRE_DESTILACAO){
+                
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.TORRE_DESTILACAO_BOTTOM_X_GAP;
+                    yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
+                
+                } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
+                
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.CONEXAO_3_BOTTOM_X_GAP;
                     yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
                 
                 } else{

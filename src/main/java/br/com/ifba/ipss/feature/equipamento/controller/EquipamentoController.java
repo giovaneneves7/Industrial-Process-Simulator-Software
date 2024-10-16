@@ -222,7 +222,12 @@ public class EquipamentoController implements ApplicationController{
                     xOrigem = target.getX();
                     yOrigem = target.getY() - movedLabel.getHeight();
                     
-                } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_2_ID)){
+                } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_1_ID)){
+                
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.CONEXAO_1_TOP_X_GAP;
+                    yOrigem = target.getY() - movedLabel.getHeight();
+                
+                }else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_2_ID)){
                 
                     xOrigem = (target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) - GapHelper.CONEXAO_2_TOP_X_GAP);
                     yOrigem = (target.getY() - movedLabel.getHeight() + GapHelper.CONEXAO_2_TOP_Y_GAP);
@@ -287,6 +292,11 @@ public class EquipamentoController implements ApplicationController{
                 
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.TORRE_DESTILACAO_BOTTOM_X_GAP;
                     yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
+                
+                } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_1_ID)){
+                
+                    xOrigem = (target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.CONEXAO_1_BOTTOM_X_GAP);
+                    yOrigem = (diferencaY < 0) ? (target.getY() - movedLabel.getHeight()) : (target.getY() + target.getHeight());
                 
                 } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_2_ID)){
                 

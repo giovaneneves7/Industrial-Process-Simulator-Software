@@ -1,7 +1,9 @@
 // *************************************************//
 // *************** { COMEÇO - Package } ************//
 // *************************************************//
+
 package br.com.ifba.ipss.feature.equipamento.domain.model;
+
 // *************************************************//
 // *************** { FIM - Package } ***************//
 // *************************************************//
@@ -56,5 +58,6 @@ public class Equipamento {
     private boolean canRotate;     // Se é permitida a rotação do equipamento.
     private boolean topAlreadyConnected; // Se já há uma conexão no topo (exclusivo para reator).
     private boolean mirrored;     // Se o equipamento está espelhado.
-
+    private double perdaCarga;    // A perda de carga do equipamento.
+    
 } // class Equipamento

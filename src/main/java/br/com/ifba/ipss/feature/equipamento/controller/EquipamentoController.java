@@ -116,6 +116,9 @@ public class EquipamentoController implements ApplicationController{
                 : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false
                 : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
                 : (target == EquipamentType.TANQUE && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
+                
+                : (target == EquipamentType.VALVULA && movedEquipament == EquipamentType.VALVULA) ? false
+        
                 : true;
         
     } // canConnect
@@ -198,6 +201,12 @@ public class EquipamentoController implements ApplicationController{
                 
                 }
             }
+            
+            if(movedLabel.getEquipamento().getId().equals(Constantes.VALVULA_GLOBO_ID)){
+                    
+                yOrigem = yOrigem - GapHelper.VALVULA_GLOBO_Y_GAP;
+                    
+            }
 
             
             movedLabel.setLocation(xOrigem, yOrigem);
@@ -271,8 +280,7 @@ public class EquipamentoController implements ApplicationController{
 
                     xOrigem = xOrigem - GapHelper.CONEXAO_3_X_GAP;
 
-                }
-                 
+                } 
                 
                 movedLabel.setLocation(xOrigem, yOrigem); 
                 

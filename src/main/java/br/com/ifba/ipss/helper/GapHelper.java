@@ -38,6 +38,8 @@ public class GapHelper {
     public static final int REATOR_DOUBLE_TOP_CONNECTION_X_GAP = 73;
     public static final int REATOR_TOP_CONNECTION_GAP          = 28;
     public static final int REATOR_TOP_CONNECTION_X_GAP        = 11;
+    public static final int REATOR_TUBULACAO_X_GAP             = 30;
+    public static final int REATOR_TUBULACAO_Y_GAP             = 30;
     
     public static final int TORRE_DESTILACAO_BOTTOM_X_GAP      = 6;
     public static final int TORRE_DESTILACAO_RIGHT_BOTTOM_Y_GAP= 140;

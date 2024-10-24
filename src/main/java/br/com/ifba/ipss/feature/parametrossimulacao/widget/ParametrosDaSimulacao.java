@@ -117,7 +117,7 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jSpinCoeficienteAtrito.setBounds(220, 130, 75, 24);
 
         btnSimulation.setBackground(new java.awt.Color(204, 204, 204));
-        btnSimulation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Botão simulação.2.png"))); // NOI18N
+        btnSimulation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_simular.png"))); // NOI18N
         btnSimulation.setBorder(null);
         btnSimulation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

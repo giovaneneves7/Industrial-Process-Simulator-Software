@@ -280,7 +280,11 @@ public class EquipamentoController implements ApplicationController{
 
                     xOrigem = (xOrigem - GapHelper.CONEXAO_3_X_GAP);
 
-                } else if(movedLabel.getEquipamento().getId().equals(Constantes.VALVULA_GAVETA_ID)){
+                } else if(movedLabel.getEquipamento().getType() == EquipamentType.TUBULACAO && target.getEquipamento().getId().equals(Constantes.VALVULA_GAVETA_ID)){
+                
+                    xOrigem = (xOrigem - GapHelper.TUBULACAO_CONEXAO_3_X_GAP);
+                
+                }else if(movedLabel.getEquipamento().getId().equals(Constantes.VALVULA_GAVETA_ID)){
                     
                     xOrigem = (xOrigem + GapHelper.VALVULA_GAVETA_X_GAP);
                 }

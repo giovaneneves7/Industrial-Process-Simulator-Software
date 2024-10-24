@@ -96,6 +96,7 @@ public class EquipamentoController implements ApplicationController{
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TANQUE) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
+                : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.VALVULA) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.REATOR) ? false
                 
                 : (target == EquipamentType.BOMBA_CENTRIFUGA && movedEquipament == EquipamentType.REATOR) ? false

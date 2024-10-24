@@ -726,10 +726,7 @@ public class AreaDeTrabalhoController {
         lbl.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent me) {
-                if(lbl.getEquipamento().isConnected()){
-                    if(WarningModal.createWarningSelectionModal("deseja_desconctar", "aviso") == 1) return;
-                    
-                }
+                
                 mouseX = me.getX();
                 mouseY = me.getY();
             }

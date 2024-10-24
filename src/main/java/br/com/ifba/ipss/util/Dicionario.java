@@ -38,10 +38,12 @@ public class Dicionario {
         DICIONARIO.put("area_de_trabalho_vazia", List.of("Área de Trabalho Vazia"));
         DICIONARIO.put("area_do_orientador", List.of("Área do Orientador"));
         DICIONARIO.put("arquivo_ja_existe", List.of("O Nome de Arquivo Informado Já Está em Uso!"));
+        DICIONARIO.put("aviso", List.of("Aviso!"));
         DICIONARIO.put("buscar", List.of("Buscar"));
         DICIONARIO.put("carregar_simulacao", List.of("Carregar Simulação"));
         DICIONARIO.put("conectar_equipamento", List.of("Conectar Equipamento"));
         DICIONARIO.put("conexao", List.of("Conexão", "Conexões"));
+        DICIONARIO.put("deseja_desconectar_equipamento_conectado", List.of("O Equipamento Selecionado Está Conectado. Deseja Desconectar?"));
         DICIONARIO.put("deseja_limpar_a_area_de_trabalho", List.of("Deseja limpar a Área de Trabalho?"));
         DICIONARIO.put("deseja_retornar_ao_inicio", List.of("Deseja Retornar à Tela Inicial?"));
         DICIONARIO.put("deseja_salvar_a_area_de_trabalho", List.of("Deseja salvar a Área de Trabalho?"));

@@ -99,7 +99,8 @@ public class Constantes {
     public static final String CAN_RIGHT_CONNECT_ATTRIBUTE = "can_right_connect";
     public static final String CAN_ROTATE_ATTRIBUTE = "can_rotate";
     public static final String CAN_TOP_CONNECT_ATTRIBUTE = "can_top_connect";
-
+    public static final String CONNECTED_ATTRIBUTE = "connected";
+    
     // Controllers
     public static final String  EQUIPAMENTO_CONTROLLER = "equipamento";
     public static final String PARAMETROS_SIMULACAO_CONTROLLER = "parametros_simulacao";
@@ -107,15 +108,16 @@ public class Constantes {
     public static final String VIEW_CONTROLLER = "view";
     
     // IDs
-    public static final String CONEXAO_1_ID     = "conn01";
-    public static final String CONEXAO_2_ID     = "conn02";
-    public static final String CONEXAO_3_ID     = "conn03";
-    public static final String TUBULACAO_1_ID   = "tb01";
-    public static final String TUBULACAO_2_ID   = "tb02";
-    public static final String TUBULACAO_3_ID   = "tb03";
-    public static final String TUBULACAO_4_ID   = "tb04";
-    public static final String TUBULACAO_5_ID   = "tb05";
-    public static final String VALVULA_GLOBO_ID = "glob_valv";
+    public static final String CONEXAO_1_ID      = "conn01";
+    public static final String CONEXAO_2_ID      = "conn02";
+    public static final String CONEXAO_3_ID      = "conn03";
+    public static final String TUBULACAO_1_ID    = "tb01";
+    public static final String TUBULACAO_2_ID    = "tb02";
+    public static final String TUBULACAO_3_ID    = "tb03";
+    public static final String TUBULACAO_4_ID    = "tb04";
+    public static final String TUBULACAO_5_ID    = "tb05";
+    public static final String VALVULA_GAVETA_ID = "galv_valv";
+    public static final String VALVULA_GLOBO_ID  = "glob_valv";
     
     // Types
     public static final String BOMBA_CENTRIFUGA_TYPE = "bomba_centrifuga";

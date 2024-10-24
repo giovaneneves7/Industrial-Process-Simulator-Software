@@ -50,7 +50,10 @@ public class GapHelper {
     public static final int TROCADOR_CALOR_TOP_X_GAP           = 26;
     public static final int TROCADOR_CALOR_Y_GAP               = 18;
     
+    public static final int VALVULA_GAVETA_X_GAP               = 16;
+    
     public static final int VALVULA_GLOBO_Y_GAP                = 40;
+    
     public static final int VALVULA_RETENCAO_Y_GAP             = 45;
     
 } // GapHelper

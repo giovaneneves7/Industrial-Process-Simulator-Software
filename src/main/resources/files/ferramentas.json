@@ -25,7 +25,8 @@
             "can_horizontal_connect" : 1,
             "can_left_connect" : 0,
             "can_right_connect" : 0,
-            "can_top_connect" : 1
+            "can_top_connect" : 1,
+            "connected" : 0
 
         },
 
@@ -51,7 +52,8 @@
             "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
             "can_right_connect" : 0,
-            "can_top_connect" : 1
+            "can_top_connect" : 1,
+            "connected" : 0
 
         },
  
@@ -77,7 +79,8 @@
             "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
             "can_right_connect" : 0,
-            "can_top_connect" : 1
+            "can_top_connect" : 1,
+            "connected" : 0
 
         },
 
@@ -103,7 +106,8 @@
             "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
             "can_right_connect" : 0,
-            "can_top_connect" : 1
+            "can_top_connect" : 1,
+            "connected" : 0
 
        },
 
@@ -129,7 +133,8 @@
             "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
             "can_right_connect" : 0,
-            "can_top_connect" : 1
+            "can_top_connect" : 1,
+            "connected" : 0
 
        }
 
@@ -156,7 +161,8 @@
             "can_horizontal_connect" : 1,
             "can_right_connect" : 0,
             "can_top_connect" : 1,
-            "top_already_connected" : 0
+            "top_already_connected" : 0,
+            "connected" : 0
         },
         
         {
@@ -177,7 +183,8 @@
             "can_left_connect" : 1,
             "can_right_connect" : 1,
             "can_top_connect" : 0,
-            "type" : "tanque"
+            "type" : "tanque",
+            "connected" : 0
         },
         
         
@@ -198,7 +205,8 @@
             "can_horizontal_connect" : 1,
             "can_right_connect" : 1,
             "can_top_connect" : 1,
-            "type" : "trocador_calor"
+            "type" : "trocador_calor",
+            "connected" : 0
         },
         
         {
@@ -219,7 +227,8 @@
             "can_right_connect" : 1,
             "can_top_connect" : 1,
             "top_already_connected" : 0,
-            "type" : "torre_destilacao"
+            "type" : "torre_destilacao",
+            "connected" : 0
         },
         
         {
@@ -238,7 +247,8 @@
             "can_horizontal_connect" : 1,
             "can_right_connect" : 0,
             "can_top_connect" : 1,
-            "type" : "bomba_centrifuga"
+            "type" : "bomba_centrifuga",
+            "connected" : 0
         }
     ],
   
@@ -261,7 +271,8 @@
             "can_horizontal_connect" : 1,
             "can_right_connect" : 0,
             "can_top_connect" : 0,
-            "type" : "valvula"
+            "type" : "valvula",
+            "connected" : 0
 
         },
         
@@ -281,7 +292,8 @@
             "can_horizontal_connect" : 1,
             "can_right_connect" : 0,
             "can_top_connect" : 0,
-            "type" : "valvula"
+            "type" : "valvula",
+            "connected" : 0
 
         },
 
@@ -302,7 +314,8 @@
             "can_left_connect" : 0,
             "can_right_connect" : 0,
             "can_top_connect" : 1,
-            "type" : "valvula"
+            "type" : "valvula",
+            "connected" : 0
 
         },
         
@@ -322,7 +335,8 @@
             "can_horizontal_connect" : 1,
             "can_right_connect" : 0,
             "can_top_connect" : 0,
-            "type" : "valvula"
+            "type" : "valvula",
+            "connected" : 0
 
         },
 
@@ -342,7 +356,8 @@
             "can_horizontal_connect" : 1,
             "can_right_connect" : 0,
             "can_top_connect" : 0,
-            "type" : "valvula"
+            "type" : "valvula",
+            "connected" : 0
 
        }
         
@@ -364,7 +379,8 @@
             "can_horizontal_connect" : 1,
             "can_left_connect" : 0,
             "can_right_connect" : 1,
-            "can_top_connect" : 1
+            "can_top_connect" : 1,
+            "connected" : 0
         },
    
 
@@ -384,7 +400,8 @@
             "can_horizontal_connect" : 1,
             "can_left_connect" : 1,
             "can_right_connect" : 1,
-            "can_top_connect" : 1
+            "can_top_connect" : 1,
+            "connected" : 0
 
         },
 
@@ -404,7 +421,8 @@
             "can_horizontal_connect" : 1,
             "can_left_connect" : 0,
             "can_right_connect" : 1,
-            "can_top_connect" : 0 
+            "can_top_connect" : 0,
+            "connected" : 0
         }
    
    ]

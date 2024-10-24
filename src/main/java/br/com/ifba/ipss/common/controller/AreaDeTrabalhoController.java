@@ -726,6 +726,10 @@ public class AreaDeTrabalhoController {
         lbl.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent me) {
+                if(lbl.getEquipamento().isConnected()){
+                    if(WarningModal.createWarningSelectionModal("deseja_desconctar", "aviso") == 1) return;
+                    
+                }
                 mouseX = me.getX();
                 mouseY = me.getY();
             }
@@ -749,6 +753,7 @@ public class AreaDeTrabalhoController {
         lbl.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
+                
                 int deltaX = e.getXOnScreen() - lbl.getLocationOnScreen().x - mouseX;
                 int deltaY = e.getYOnScreen() - lbl.getLocationOnScreen().y - mouseY;
                 lbl.setLocation(lbl.getX() + deltaX, lbl.getY() + deltaY);
@@ -756,6 +761,7 @@ public class AreaDeTrabalhoController {
 
             @Override
             public void mouseMoved(MouseEvent e) {
+                
                 final int x = e.getX();
                 final int y = e.getY();
 

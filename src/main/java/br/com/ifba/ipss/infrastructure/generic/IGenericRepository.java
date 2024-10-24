@@ -130,6 +130,9 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.CAN_ROTATE_ATTRIBUTE:
                             eq.setCanRotate(valor.getAsInt() == 1);
                             break;
+                        case Constantes.CONNECTED_ATTRIBUTE:
+                            eq.setConnected((valor.getAsInt() == 1));
+                            break;
                         default:
                             if (eq instanceof Tubulacao tub) {
                                 switch (chave) {

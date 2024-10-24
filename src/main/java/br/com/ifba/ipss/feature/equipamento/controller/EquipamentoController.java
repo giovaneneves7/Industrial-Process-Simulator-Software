@@ -278,9 +278,12 @@ public class EquipamentoController implements ApplicationController{
                 
                 if(movedLabel.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
 
-                    xOrigem = xOrigem - GapHelper.CONEXAO_3_X_GAP;
+                    xOrigem = (xOrigem - GapHelper.CONEXAO_3_X_GAP);
 
-                } 
+                } else if(movedLabel.getEquipamento().getId().equals(Constantes.VALVULA_GAVETA_ID)){
+                    
+                    xOrigem = (xOrigem + GapHelper.VALVULA_GAVETA_X_GAP);
+                }
                 
                 movedLabel.setLocation(xOrigem, yOrigem); 
                 
@@ -487,6 +490,8 @@ public class EquipamentoController implements ApplicationController{
             }
             
             movedLabel.setLocation(xOrigem, yOrigem);
+            movedLabel.getEquipamento().setConnected(true);
+            target.getEquipamento().setConnected(true);
             
             this.addEquipamentoToTheLinkedList(movedLabel);
             

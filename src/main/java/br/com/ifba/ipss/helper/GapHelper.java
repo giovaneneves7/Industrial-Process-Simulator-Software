@@ -46,6 +46,7 @@ public class GapHelper {
     public static final int TORRE_DESTILACAO_RIGHT_TOP_Y_GAP   = 25;
     public static final int TORRE_DESTILACAO_RIGHT_X_GAP       = 1;
     public static final int TORRE_DESTILACAO_TOP_X_GAP         = 6;
+    public static final int TORRE_DE_DESTILACAO_X_GAP          = 8;
     
     public static final int TROCADOR_CALOR_BOTTOM_X_GAP        = 22;
     public static final int TROCADOR_CALOR_RIGHT_X_GAP         = 25;

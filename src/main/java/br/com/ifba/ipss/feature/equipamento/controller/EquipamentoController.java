@@ -349,6 +349,10 @@ public class EquipamentoController implements ApplicationController{
                     xOrigem = (xOrigem + GapHelper.REATOR_TUBULACAO_X_GAP);
                     yOrigem = (yOrigem - GapHelper.REATOR_TUBULACAO_Y_GAP);
                     
+                } else if(movedLabel.getEquipamento().getType() == EquipamentType.TORRE_DESTILACAO){
+                    
+                    xOrigem = (xOrigem - GapHelper.TORRE_DE_DESTILACAO_X_GAP);
+                    
                 }
                 
                 movedLabel.setLocation(xOrigem, yOrigem);

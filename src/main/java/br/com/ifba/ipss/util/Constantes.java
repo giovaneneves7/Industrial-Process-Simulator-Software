@@ -116,6 +116,7 @@ public class Constantes {
     public static final String TUBULACAO_3_ID    = "tb03";
     public static final String TUBULACAO_4_ID    = "tb04";
     public static final String TUBULACAO_5_ID    = "tb05";
+    public static final String VALVULA_ESFERA_ID = "esf_valv";
     public static final String VALVULA_GAVETA_ID = "galv_valv";
     public static final String VALVULA_GLOBO_ID  = "glob_valv";
     

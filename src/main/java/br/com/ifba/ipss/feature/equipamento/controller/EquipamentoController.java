@@ -173,7 +173,6 @@ public class EquipamentoController implements ApplicationController{
         
         if(target.getEquipamento().getAxios().equals(Constantes.HORIZONTAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.HORIZONTAL)){ // Ambos os equipamentos estão na horizontal
         
-            System.out.println("Ambos na horizontal");
             int diferencaX = movedLabel.getX() - target.getX();
             int xOrigem = 0;
             int yOrigem = 0;
@@ -218,7 +217,6 @@ public class EquipamentoController implements ApplicationController{
             
         } else if(target.getEquipamento().getAxios().equals(Constantes.VERTICAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.VERTICAL)){ // Ambos os equipamentos na vertical
             
-            System.out.println("Ambos na vertical");
             int diferencaY = movedLabel.getY() - target.getY(); 
    
             if (diferencaY <= 0) { // lblMovido está acima do alvo
@@ -235,7 +233,7 @@ public class EquipamentoController implements ApplicationController{
                 if(target.getEquipamento().getType() == EquipamentType.BOMBA_CENTRIFUGA){
                     
                     xOrigem = target.getX();
-                    yOrigem = target.getY() - movedLabel.getHeight();
+                    yOrigem = (target.getY() - movedLabel.getHeight());
                     
                 } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_1_ID)){
                 
@@ -290,9 +288,18 @@ public class EquipamentoController implements ApplicationController{
                 
                     xOrigem = (xOrigem - GapHelper.TUBULACAO_CONEXAO_3_X_GAP);
                 
-                }else if(movedLabel.getEquipamento().getId().equals(Constantes.VALVULA_GAVETA_ID)){
+                }else if(movedLabel.getEquipamento().getId().equals(Constantes.VALVULA_ESFERA_ID)){
+                    
+                    xOrigem = (xOrigem + GapHelper.VALVULA_ESFERA_X_GAP);
+                    
+                } else if(movedLabel.getEquipamento().getId().equals(Constantes.VALVULA_GAVETA_ID)){
                     
                     xOrigem = (xOrigem + GapHelper.VALVULA_GAVETA_X_GAP);
+                    
+                } else if(movedLabel.getEquipamento().getId().equals(Constantes.VALVULA_GLOBO_ID)){
+                    
+                    xOrigem = (xOrigem + GapHelper.VALVULA_GLOBO_X_GAP);
+                    
                 }
                 
                 movedLabel.setLocation(xOrigem, yOrigem); 

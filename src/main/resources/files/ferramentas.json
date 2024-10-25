@@ -51,6 +51,7 @@
             "axios" : "vertical",
             "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
+            "can_left_connect" : 0,
             "can_right_connect" : 0,
             "can_top_connect" : 1,
             "connected" : 0
@@ -78,6 +79,7 @@
             "axios" : "vertical",
             "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
+            "can_left_connect" : 0,
             "can_right_connect" : 0,
             "can_top_connect" : 1,
             "connected" : 0
@@ -105,6 +107,7 @@
             "axios" : "vertical",
             "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
+            "can_left_connect" : 0,
             "can_right_connect" : 0,
             "can_top_connect" : 1,
             "connected" : 0
@@ -132,6 +135,7 @@
             "axios" : "vertical",
             "can_bottom_connect": 1,
             "can_horizontal_connect" : 1,
+            "can_left_connect" : 0,
             "can_right_connect" : 0,
             "can_top_connect" : 1,
             "connected" : 0
@@ -381,7 +385,8 @@
             "can_left_connect" : 0,
             "can_right_connect" : 1,
             "can_top_connect" : 1,
-            "connected" : 0
+            "connected" : 0,
+            "type" : "conexao"
         },
    
 
@@ -402,7 +407,8 @@
             "can_left_connect" : 1,
             "can_right_connect" : 1,
             "can_top_connect" : 1,
-            "connected" : 0
+            "connected" : 0,
+            "type" : "conexao"
 
         },
 
@@ -423,7 +429,8 @@
             "can_left_connect" : 0,
             "can_right_connect" : 1,
             "can_top_connect" : 0,
-            "connected" : 0
+            "connected" : 0,
+            "type" : "conexao"
         }
    
    ]

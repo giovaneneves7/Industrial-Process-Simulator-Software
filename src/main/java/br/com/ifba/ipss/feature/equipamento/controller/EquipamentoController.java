@@ -92,7 +92,10 @@ public class EquipamentoController implements ApplicationController{
      */
     private static boolean canConnect(EquipamentType target, EquipamentType movedEquipament){
                 
-        return    (target == EquipamentType.REATOR && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false 
+        return  (target == EquipamentType.CONEXAO && movedEquipament == EquipamentType.REATOR) ? false
+                
+                :  (target == EquipamentType.REATOR && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false 
+                : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.CONEXAO) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TANQUE) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TROCADOR_CALOR) ? false
@@ -170,6 +173,7 @@ public class EquipamentoController implements ApplicationController{
         
         if(target.getEquipamento().getAxios().equals(Constantes.HORIZONTAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.HORIZONTAL)){ // Ambos os equipamentos estão na horizontal
         
+            System.out.println("Ambos na horizontal");
             int diferencaX = movedLabel.getX() - target.getX();
             int xOrigem = 0;
             int yOrigem = 0;
@@ -214,6 +218,7 @@ public class EquipamentoController implements ApplicationController{
             
         } else if(target.getEquipamento().getAxios().equals(Constantes.VERTICAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.VERTICAL)){ // Ambos os equipamentos na vertical
             
+            System.out.println("Ambos na vertical");
             int diferencaY = movedLabel.getY() - target.getY(); 
    
             if (diferencaY <= 0) { // lblMovido está acima do alvo
@@ -345,6 +350,7 @@ public class EquipamentoController implements ApplicationController{
             
         } else if (target.getEquipamento().getAxios().equals(Constantes.HORIZONTAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.VERTICAL)) {
 
+            System.out.println("Horizontal e vertical");
             int diferencaX = movedLabel.getX() - target.getX();
             int diferencaY = movedLabel.getY() - target.getY();
             int xOrigem = 0;
@@ -581,6 +587,8 @@ public class EquipamentoController implements ApplicationController{
      */
     public static void rotateEquipament(Label lbl){
         
+        System.out.println("Axios: ");
+        System.out.println(lbl.getEquipamento().getAxios());
         if(!lbl.getEquipamento().isCanRotate()) return;
         
         ImageIcon iconAntigo = (ImageIcon) lbl.getIcon();

@@ -162,6 +162,11 @@ public class EquipamentoController implements ApplicationController{
      */
     public void connectEquipament(Label movedLabel, Label target){
         
+        System.out.println("Target Axios");
+        System.out.println(target.getEquipamento().getAxios());
+        System.out.println("MovedLabel Axios");
+        System.out.println(movedLabel.getEquipamento().getAxios());
+        
         // INFO: Verifica se o tipo dos equipamentos é compatível para a conexão
         if(!canConnect(target.getEquipamento().getType(), movedLabel.getEquipamento().getType())){
             
@@ -458,7 +463,6 @@ public class EquipamentoController implements ApplicationController{
             int yOrigem = 0;
             
             if(diferencaX <= 0) { // movedLabel está à direita do alvo
-                System.out.println("direita");
                 if(!target.getEquipamento().isCanRightConnect()){
 
                     WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));

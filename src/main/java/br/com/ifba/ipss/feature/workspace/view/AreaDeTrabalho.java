@@ -80,7 +80,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         this.areaDeTrabalhoController.setWorkspacePath(workspacePath);
         
         addTooltipToButtons();
-        addMouseListeners();
+        //addMouseListeners();
         
     } // AreaDeTrabalho
 

@@ -23,6 +23,7 @@ public class GapHelper {
     
     public static final int CONEXAO_1_BOTTOM_X_GAP             = 9;
     public static final int CONEXAO_1_TOP_X_GAP                = 9;
+    public static final int CONEXAO_1_X_GAP                    = 10;
     
     public static final int CONEXAO_2_BOTTOM_X_GAP             = 1;
     public static final int CONEXAO_2_LEFT_X_GAP               = 3;

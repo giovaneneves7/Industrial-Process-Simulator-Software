@@ -280,7 +280,11 @@ public class EquipamentoController implements ApplicationController{
                 
                 }
                 
-                if(movedLabel.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
+                if(movedLabel.getEquipamento().getId().equals(Constantes.CONEXAO_1_ID)){
+
+                    xOrigem = (xOrigem - GapHelper.CONEXAO_1_X_GAP);
+
+                } else if(movedLabel.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
 
                     xOrigem = (xOrigem - GapHelper.CONEXAO_3_X_GAP);
 
@@ -353,7 +357,11 @@ public class EquipamentoController implements ApplicationController{
  
                 }
                 
-                if(movedLabel.getEquipamento().getType() == EquipamentType.REATOR){
+                if(movedLabel.getEquipamento().getId().equals(Constantes.CONEXAO_1_ID)){
+                
+                    xOrigem = (xOrigem - GapHelper.CONEXAO_1_X_GAP);
+                
+                } else if(movedLabel.getEquipamento().getType() == EquipamentType.REATOR){
                 
                     xOrigem = (xOrigem + GapHelper.REATOR_TUBULACAO_X_GAP);
                     yOrigem = (yOrigem - GapHelper.REATOR_TUBULACAO_Y_GAP);

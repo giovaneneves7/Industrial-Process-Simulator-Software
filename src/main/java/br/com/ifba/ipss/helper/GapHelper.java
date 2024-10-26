@@ -20,6 +20,7 @@ public class GapHelper {
     // INFO: Valores em px.
     
     public static final int BOMBA_CENTRIFUGA_TUBULACAO_X_GAP   = 17; 
+    
     public static final int CONEXAO_1_BOTTOM_X_GAP             = 9;
     public static final int CONEXAO_1_TOP_X_GAP                = 9;
     
@@ -54,6 +55,8 @@ public class GapHelper {
     public static final int TROCADOR_CALOR_TOP_X_GAP           = 26;
     public static final int TROCADOR_CALOR_Y_GAP               = 18;
     
+    public static final int TUBULACAO_BOMBA_CENTRIFUGA_X_GAP   = 57;
+    public static final int TUBULACAO_BOMBA_CENTRIFUGA_Y_GAP   = 52;
     public static final int TUBULACAO_CONEXAO_3_X_GAP          = 16;
     
     public static final int VALVULA_ESFERA_X_GAP               = 16;

@@ -365,7 +365,6 @@ public class EquipamentoController implements ApplicationController{
             
         } else if (target.getEquipamento().getAxios().equals(Constantes.HORIZONTAL) && movedLabel.getEquipamento().getAxios().equals(Constantes.VERTICAL)) {
 
-            System.out.println("Horizontal e vertical");
             int diferencaX = movedLabel.getX() - target.getX();
             int diferencaY = movedLabel.getY() - target.getY();
             int xOrigem = 0;
@@ -429,14 +428,19 @@ public class EquipamentoController implements ApplicationController{
             
         } else{ // O alvo está na vertical e o equipamento a se conectar está na horizontal
             
-            if(!target.getEquipamento().isCanLeftConnect() && !target.getEquipamento().isCanRightConnect()) return;
+            if(!target.getEquipamento().isCanLeftConnect() && !target.getEquipamento().isCanRightConnect()){
+                
+                WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
+                return;
+                
+            }
             
             int diferencaX = movedLabel.getX() - target.getX();
             int xOrigem = 0;
             int yOrigem = 0;
             
             if(diferencaX <= 0) { // movedLabel está à direita do alvo
-                
+                System.out.println("direita");
                 if(!target.getEquipamento().isCanRightConnect()){
 
                     WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
@@ -513,7 +517,12 @@ public class EquipamentoController implements ApplicationController{
                     yOrigem = target.getY() - movedLabel.getHeight() + GapHelper.CONEXAO_3_Y_GAP;
                     
                 
-                } else{
+                } else if(target.getEquipamento().getType() == EquipamentType.BOMBA_CENTRIFUGA){
+                
+                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.TUBULACAO_BOMBA_CENTRIFUGA_X_GAP;
+                    yOrigem = target.getY() - movedLabel.getHeight() + GapHelper.TUBULACAO_BOMBA_CENTRIFUGA_Y_GAP;
+                
+                }else{
                     
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2);
                     yOrigem = target.getY() - movedLabel.getHeight(); 

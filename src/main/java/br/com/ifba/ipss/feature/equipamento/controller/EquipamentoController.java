@@ -89,12 +89,13 @@ public class EquipamentoController implements ApplicationController{
      * @param target O alvo que receberá a conexão
      * @param movedEquipament O equipamento movido que fará a conexão
      * @return 'true' caso a conexão seja permitida, 'false' caso contrário
-     */
+    */
     private static boolean canConnect(EquipamentType target, EquipamentType movedEquipament){
                 
         return  (target == EquipamentType.CONEXAO && movedEquipament == EquipamentType.REATOR) ? false
+                : (target == EquipamentType.CONEXAO && movedEquipament == EquipamentType.CONEXAO) ? false
                 
-                :  (target == EquipamentType.REATOR && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false 
+                : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.BOMBA_CENTRIFUGA) ? false 
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.CONEXAO) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TANQUE) ? false
                 : (target == EquipamentType.REATOR && movedEquipament == EquipamentType.TORRE_DESTILACAO) ? false

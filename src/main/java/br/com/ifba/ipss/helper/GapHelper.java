@@ -19,6 +19,7 @@ public class GapHelper {
     
     // INFO: Valores em px.
     
+    public static final int BOMBA_CENTRIFUGA_TUBULACAO_X_GAP   = 17; 
     public static final int CONEXAO_1_BOTTOM_X_GAP             = 9;
     public static final int CONEXAO_1_TOP_X_GAP                = 9;
     

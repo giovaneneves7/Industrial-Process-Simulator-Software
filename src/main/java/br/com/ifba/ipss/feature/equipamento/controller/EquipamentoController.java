@@ -353,6 +353,10 @@ public class EquipamentoController implements ApplicationController{
                     
                     xOrigem = (xOrigem - GapHelper.TORRE_DE_DESTILACAO_X_GAP);
                     
+                } else if(movedLabel.getEquipamento().getType() == EquipamentType.BOMBA_CENTRIFUGA){
+                    
+                    xOrigem = (xOrigem + GapHelper.BOMBA_CENTRIFUGA_TUBULACAO_X_GAP);
+                    
                 }
                 
                 movedLabel.setLocation(xOrigem, yOrigem);

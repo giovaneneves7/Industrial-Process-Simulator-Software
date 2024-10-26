@@ -59,6 +59,8 @@ public class GapHelper {
     public static final int TUBULACAO_BOMBA_CENTRIFUGA_Y_GAP   = 52;
     public static final int TUBULACAO_CONEXAO_3_X_GAP          = 16;
     
+    public static final int VALVULAS_TUBULACAO_X_GAP           = 16;
+    
     public static final int VALVULA_ESFERA_X_GAP               = 16;
     
     public static final int VALVULA_GAVETA_X_GAP               = 16;

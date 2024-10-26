@@ -360,7 +360,8 @@
             "can_bottom_connect": 0,
             "can_rotate" : 1,
             "can_horizontal_connect" : 1,
-            "can_right_connect" : 0,
+            "can_left_connect" : 1,
+            "can_right_connect" : 1,
             "can_top_connect" : 0,
             "type" : "valvula",
             "connected" : 0

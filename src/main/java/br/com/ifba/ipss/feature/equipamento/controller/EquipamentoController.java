@@ -284,9 +284,9 @@ public class EquipamentoController implements ApplicationController{
 
                     xOrigem = (xOrigem - GapHelper.CONEXAO_3_X_GAP);
 
-                } else if(movedLabel.getEquipamento().getType() == EquipamentType.TUBULACAO && target.getEquipamento().getId().equals(Constantes.VALVULA_GAVETA_ID)){
+                } else if(movedLabel.getEquipamento().getType() == EquipamentType.TUBULACAO && target.getEquipamento().getType() == EquipamentType.VALVULA){
                 
-                    xOrigem = (xOrigem - GapHelper.TUBULACAO_CONEXAO_3_X_GAP);
+                    xOrigem = (xOrigem - GapHelper.VALVULAS_TUBULACAO_X_GAP);
                 
                 }else if(movedLabel.getEquipamento().getId().equals(Constantes.VALVULA_ESFERA_ID)){
                     

@@ -240,12 +240,12 @@ public class EquipamentoController implements ApplicationController{
                     xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.CONEXAO_1_TOP_X_GAP;
                     yOrigem = target.getY() - movedLabel.getHeight();
                 
-                }else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_2_ID)){
+                } else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_2_ID)){
                 
                     xOrigem = (target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) - GapHelper.CONEXAO_2_TOP_X_GAP);
                     yOrigem = (target.getY() - movedLabel.getHeight() + GapHelper.CONEXAO_2_TOP_Y_GAP);
                 
-                }else if(target.getEquipamento().getType() == EquipamentType.REATOR){
+                } else if(target.getEquipamento().getType() == EquipamentType.REATOR){
                     
                     if(target.getEquipamento().isTopAlreadyConnected()){ // INFO: Verifica se já há uma conexão no topo do reator. 
                     
@@ -334,7 +334,16 @@ public class EquipamentoController implements ApplicationController{
                 
                 }else if(target.getEquipamento().getId().equals(Constantes.CONEXAO_3_ID)){
                 
-                    xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.CONEXAO_3_BOTTOM_X_GAP;
+                    if(!target.getEquipamento().isMirrored()){
+                        
+                        xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) + GapHelper.CONEXAO_3_BOTTOM_X_GAP;
+                        
+                    } else{
+                        
+                        xOrigem = target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2) - GapHelper.TUBULACAO_CONEXAO_3_MIRRORED_X_GAP;
+                    
+                    }
+                  
                     yOrigem = (diferencaY < 0) ? target.getY() - movedLabel.getHeight() : target.getY() + target.getHeight();
                 
                 } else{
@@ -588,8 +597,11 @@ public class EquipamentoController implements ApplicationController{
             }
         } 
         
-        lbl.getEquipamento().setCanLeftConnect(!lbl.getEquipamento().isCanLeftConnect());
-        lbl.getEquipamento().setCanRightConnect(!lbl.getEquipamento().isCanRightConnect());
+        boolean canLeftConnect = lbl.getEquipamento().isCanLeftConnect();
+        boolean canRightConnect = lbl.getEquipamento().isCanRightConnect();
+        
+        lbl.getEquipamento().setCanLeftConnect(canRightConnect);
+        lbl.getEquipamento().setCanRightConnect(canLeftConnect);
         
     } // mirrorEquipament
     

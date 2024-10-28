@@ -162,11 +162,6 @@ public class EquipamentoController implements ApplicationController{
      */
     public void connectEquipament(Label movedLabel, Label target){
         
-        System.out.println("Target Axios");
-        System.out.println(target.getEquipamento().getAxios());
-        System.out.println("MovedLabel Axios");
-        System.out.println(movedLabel.getEquipamento().getAxios());
-        
         // INFO: Verifica se o tipo dos equipamentos é compatível para a conexão
         if(!canConnect(target.getEquipamento().getType(), movedLabel.getEquipamento().getType())){
             
@@ -393,33 +388,29 @@ public class EquipamentoController implements ApplicationController{
             int xOrigem = 0;
             int yOrigem = 0;
 
-            // Conexão à esquerda
-            if (diferencaX <= 0) {
-                if (!target.getEquipamento().isCanLeftConnect()) {
-                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
-                    return;
-                }
+            // Conexão à direita
+            if (diferencaX <= 0 && target.getEquipamento().isCanRightConnect()) {
+
                 xOrigem = target.getX() - movedLabel.getWidth();
                 yOrigem = target.getY();
+                
+                movedLabel.setLocation(xOrigem, yOrigem);
+                return;
             }
-            // Conexão à direita
-            else {
-                if (!target.getEquipamento().isCanRightConnect()) {
-                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
-                    return;
-                }
+            // Conexão à esquerda
+            else if(diferencaX > 0 && target.getEquipamento().isCanLeftConnect()){
+
                 xOrigem = target.getX() + target.getWidth();
                 yOrigem = target.getY();
+                
+                movedLabel.setLocation(xOrigem, yOrigem);
+                return;
             }
 
-            movedLabel.setLocation(xOrigem, yOrigem);
 
             // Conexão acima
-            if (diferencaY <= 0) {
-                if (!target.getEquipamento().isCanTopConnect()) {
-                    WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
-                    return;
-                }
+            if (diferencaY <= 0 && target.getEquipamento().isCanTopConnect()) {
+                
 
                 if (target.getEquipamento().getType() == EquipamentType.TROCADOR_CALOR) {
                     xOrigem = (target.getX() + (target.getWidth() / 2) - (movedLabel.getWidth() / 2)) - GapHelper.TROCADOR_CALOR_TOP_X_GAP;
@@ -431,7 +422,7 @@ public class EquipamentoController implements ApplicationController{
                 movedLabel.setLocation(xOrigem, yOrigem);
             }
             // Conexão abaixo
-            else {
+            else if(diferencaY > 0 && target.getEquipamento().isCanBottomConnect()){
                 if (!target.getEquipamento().isCanBottomConnect()) {
                     WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
@@ -446,7 +437,9 @@ public class EquipamentoController implements ApplicationController{
 
                 movedLabel.setLocation(xOrigem, yOrigem);
             }
-        //}
+            
+            WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
+
 
             
         } else{ // O alvo está na vertical e o equipamento a se conectar está na horizontal

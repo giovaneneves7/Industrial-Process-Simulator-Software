@@ -182,6 +182,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         pnlSpanSpace2 = new javax.swing.JPanel();
         pnlEspacoTrabalho = new javax.swing.JPanel();
         lblNotificacaoDeEstado = new javax.swing.JLabel();
+        jComboFluidoType = new javax.swing.JComboBox<>();
         PnlBotoes = new javax.swing.JPanel();
         btnTubulacoes = new javax.swing.JButton();
         btnConexoes = new javax.swing.JButton();
@@ -404,6 +405,10 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
         lblNotificacaoDeEstado.setText("Nenhum modo de edição selecionado");
         pnlEspacoTrabalho.add(lblNotificacaoDeEstado);
         lblNotificacaoDeEstado.setBounds(30, 10, 320, 18);
+
+        jComboFluidoType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Água", "Biodiesel", "Diesel", "Gasolina" }));
+        pnlEspacoTrabalho.add(jComboFluidoType);
+        jComboFluidoType.setBounds(30, 30, 95, 24);
 
         pnlBackgruond.add(pnlEspacoTrabalho);
         pnlEspacoTrabalho.setBounds(0, 80, 1250, 710);
@@ -666,6 +671,7 @@ public class AreaDeTrabalho extends javax.swing.JFrame {
     private javax.swing.JButton btnSimular;
     private javax.swing.JButton btnTubulacoes;
     private javax.swing.JButton btnVavulas;
+    private javax.swing.JComboBox<String> jComboFluidoType;
     private javax.swing.JLabel lblNotificacaoDeEstado;
     private javax.swing.JPanel pnlBackgruond;
     private javax.swing.JPanel pnlEspacoTrabalho;

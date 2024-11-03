@@ -47,10 +47,13 @@ public class ParametrosSimulacaoController implements ApplicationController{
     private double viscosidade;
     private double diametroInterno;
     private double perdaCarga;
+    private double perdaCargaTotal;
     private double numeroReynold;
     private String escoamento;
     
-    public ParametrosDaSimulacao criarWidgetDeParametros(int x, int y){
+    public ParametrosDaSimulacao criarWidgetDeParametros(int x, int y, double perdaCargaTotal){
+        
+        this.perdaCargaTotal = perdaCargaTotal;
         
         ParametrosDaSimulacao pnlParametrosSimulacao = new ParametrosDaSimulacao();
         pnlParametrosSimulacao.setBounds(

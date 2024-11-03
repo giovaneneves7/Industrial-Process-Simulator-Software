@@ -46,6 +46,8 @@ public class EquipamentoController implements ApplicationController{
     private List<Label> equipamentosLinkedList = new LinkedList<>();
     private final IEquipamentoService equipamentoService;
     
+    private double perdaCargaTotal = 0;
+
     /**
      * Adiciona o equipamento na lista encadeada de equipamentos
      * 

@@ -19,7 +19,6 @@ import br.com.ifba.ipss.feature.equipamento.controller.FerramentaContainerContro
 import br.com.ifba.ipss.feature.equipamento.domain.factory.EquipamentoFactory;
 import br.com.ifba.ipss.feature.equipamento.domain.model.Equipamento;
 import br.com.ifba.ipss.feature.equipamento.widget.FerramentaContainer;
-import br.com.ifba.ipss.feature.equipamento.widget.WarningModal;
 import br.com.ifba.ipss.feature.workspace.controller.EspacoTrabalhoController;
 import br.com.ifba.ipss.feature.label.domain.builder.LabelBuilder;
 import br.com.ifba.ipss.feature.label.domain.model.Label;
@@ -97,8 +96,9 @@ public class AreaDeTrabalhoController {
     
     private Map<String, Label> espacoTrabalhoMap = new HashMap<>();
     
-    private Label selectEquipament;
+    private Label selectEquipament;    
     
+    private double perdaCargaTotal = 0;
     
     // *************************************************//
     // ****************** { Construtor } ***************//
@@ -365,6 +365,9 @@ public class AreaDeTrabalhoController {
      */
     public void removeEquipament(String lblId){
     
+        Label lbl = espacoTrabalhoMap.get(lblId);
+        perdaCargaTotal -= lbl.getEquipamento().getPerdaCarga();
+        
         EquipamentoController.removeEquipament(lblId, pnlEspacoTrabalho, espacoTrabalhoMap);
        
     } // removeEquipament
@@ -419,17 +422,10 @@ public class AreaDeTrabalhoController {
     
     public void exibirWidgetDeParametrosSimulacao(JPanel p){
         
-        /*
-        if(equipamentoController.emptyLinkedList()){
-            
-            WarningModal.createWarningModal(tr("area_de_trabalho_vazia"), tr("a_area_trabalho_esta_vazia"));
-            return;
-            
-        }*/
-        
         ParametrosDaSimulacao ps = parametrosSimulacaoController.criarWidgetDeParametros(
                 SizeHelper.LARGURA_ESPACO_TRABALHO / 30, 
-                SizeHelper.ALTURA_ESPACO_TRABALHO / 4
+                SizeHelper.ALTURA_ESPACO_TRABALHO / 4,
+                this.perdaCargaTotal
         );
         
         p.add(ps);
@@ -590,6 +586,7 @@ public class AreaDeTrabalhoController {
                     public void mouseClicked(MouseEvent me) {
 
                             adicionarEquipamento(ferramentaContainer.getEquipamento(), index);
+                            perdaCargaTotal += ferramentaContainer.getEquipamento().getPerdaCarga();
                         } 
                     });
 

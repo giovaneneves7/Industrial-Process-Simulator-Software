@@ -133,6 +133,9 @@ public interface IGenericRepository<E extends Equipamento> {
                         case Constantes.CONNECTED_ATTRIBUTE:
                             eq.setConnected((valor.getAsInt() == 1));
                             break;
+                        case Constantes.PERDA_CARGA_ATTRIBUTE:
+                            eq.setPerdaCarga((valor.getAsDouble()));
+                            break;
                         default:
                             if (eq instanceof Tubulacao tub) {
                                 switch (chave) {

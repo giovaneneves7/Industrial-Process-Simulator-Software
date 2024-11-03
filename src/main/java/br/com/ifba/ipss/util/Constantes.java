@@ -100,6 +100,7 @@ public class Constantes {
     public static final String CAN_ROTATE_ATTRIBUTE = "can_rotate";
     public static final String CAN_TOP_CONNECT_ATTRIBUTE = "can_top_connect";
     public static final String CONNECTED_ATTRIBUTE = "connected";
+    public static final String PERDA_CARGA_ATTRIBUTE = "perda_carga";
     
     // Controllers
     public static final String  EQUIPAMENTO_CONTROLLER = "equipamento";

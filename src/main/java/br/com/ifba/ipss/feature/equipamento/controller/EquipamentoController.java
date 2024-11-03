@@ -224,7 +224,7 @@ public class EquipamentoController implements ApplicationController{
    
             if (diferencaY <= 0) { // lblMovido está acima do alvo
                 
-                if(!target.getEquipamento().isCanTopConnect()){
+                if(!target.getEquipamento().isCanTopConnect() ||  !movedLabel.getEquipamento().isCanBottomConnect()){
                  
                     WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;
@@ -313,7 +313,7 @@ public class EquipamentoController implements ApplicationController{
                 
             } else { // lblMovido está abaixo do alvo
                 
-                if(!target.getEquipamento().isCanBottomConnect()){
+                if(!target.getEquipamento().isCanBottomConnect() || !movedLabel.getEquipamento().isCanTopConnect()){
                  
                     WarningModal.createWarningModal(tr("this_connection_is_invalid"), tr("invalid_connection"));
                     return;

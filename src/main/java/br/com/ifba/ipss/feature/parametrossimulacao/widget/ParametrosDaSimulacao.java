@@ -32,7 +32,6 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
     // INFO: Atributos
     private final ParametrosSimulacaoController parametrosSimulacaoController;
     private final EquipamentoController equipamentoController = ControllerManager.find(Constantes.EQUIPAMENTO_CONTROLLER);
-    private double coeficienteAtrito;
     private double viscosidade;
     private double velocidade;
     private double diametroInterno;
@@ -65,14 +64,12 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        lblCoeficienteAtrito = new javax.swing.JLabel();
         jSpinViscosidadeCinematica = new javax.swing.JSpinner();
         jSpinVelocidade = new javax.swing.JSpinner();
-        jSpinCoeficienteAtrito = new javax.swing.JSpinner();
         btnSimulation = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jSpinDiametroInterno1 = new javax.swing.JSpinner();
+        jSpinDiametroInterno = new javax.swing.JSpinner();
 
         setLayout(null);
 
@@ -99,11 +96,6 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(50, 80, 130, 15);
 
-        lblCoeficienteAtrito.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        lblCoeficienteAtrito.setText("Coeficiente de Atrito");
-        jPanel1.add(lblCoeficienteAtrito);
-        lblCoeficienteAtrito.setBounds(50, 140, 160, 15);
-
         jSpinViscosidadeCinematica.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
         jPanel1.add(jSpinViscosidadeCinematica);
         jSpinViscosidadeCinematica.setBounds(220, 40, 75, 24);
@@ -111,10 +103,6 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jSpinVelocidade.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
         jPanel1.add(jSpinVelocidade);
         jSpinVelocidade.setBounds(220, 70, 75, 24);
-
-        jSpinCoeficienteAtrito.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
-        jPanel1.add(jSpinCoeficienteAtrito);
-        jSpinCoeficienteAtrito.setBounds(220, 130, 75, 24);
 
         btnSimulation.setBackground(new java.awt.Color(204, 204, 204));
         btnSimulation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botao_simular.png"))); // NOI18N
@@ -143,9 +131,9 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(50, 110, 160, 15);
 
-        jSpinDiametroInterno1.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
-        jPanel1.add(jSpinDiametroInterno1);
-        jSpinDiametroInterno1.setBounds(220, 100, 75, 24);
+        jSpinDiametroInterno.setModel(new javax.swing.SpinnerNumberModel(0.1d, 0.1d, 100.0d, 1.0d));
+        jPanel1.add(jSpinDiametroInterno);
+        jSpinDiametroInterno.setBounds(220, 100, 75, 24);
 
         add(jPanel1);
         jPanel1.setBounds(0, 0, 320, 220);
@@ -157,12 +145,10 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
 
     private void btnSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimulationActionPerformed
         
-        coeficienteAtrito = (double) jSpinCoeficienteAtrito.getValue();
         velocidade = (double) jSpinVelocidade.getValue();
         viscosidade =  (double) jSpinViscosidadeCinematica.getValue();
-        diametroInterno = (double) jSpinCoeficienteAtrito.getValue();
+        diametroInterno = (double) jSpinDiametroInterno.getValue();
         
-        parametrosSimulacaoController.setCoeficienteAtrito(coeficienteAtrito);
         parametrosSimulacaoController.setLength(equipamentoController.calculateTubulacaoLength());
         parametrosSimulacaoController.setVelocidade(velocidade);
         parametrosSimulacaoController.setViscosidade(viscosidade);
@@ -189,10 +175,8 @@ public class ParametrosDaSimulacao extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner jSpinCoeficienteAtrito;
-    private javax.swing.JSpinner jSpinDiametroInterno1;
+    private javax.swing.JSpinner jSpinDiametroInterno;
     private javax.swing.JSpinner jSpinVelocidade;
     private javax.swing.JSpinner jSpinViscosidadeCinematica;
-    private javax.swing.JLabel lblCoeficienteAtrito;
     // End of variables declaration//GEN-END:variables
 }

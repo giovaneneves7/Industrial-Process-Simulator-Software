@@ -11,7 +11,7 @@ package br.com.ifba.ipss.feature.parametrossimulacao.controller;
 // *************************************************//
 // ************ { COMEÇO - Imports } ***************//
 // *************************************************//
-
+import static br.com.ifba.ipss.util.Dicionario.tr;
 import br.com.ifba.ipss.feature.parametrossimulacao.widget.ParametrosDaSimulacao;
 import br.com.ifba.ipss.feature.resultado.widget.Resultados;
 import br.com.ifba.ipss.helper.FormulaHelper;
@@ -23,6 +23,7 @@ import br.com.ifba.ipss.util.Escoamento;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 import lombok.Data;
@@ -123,7 +124,7 @@ public class ParametrosSimulacaoController implements ApplicationController{
    
     public Resultados createResultsWidget(){
         
-        Resultados resultadosWidget = new Resultados(this.numeroReynold, this.escoamento, this.perdaCarga);
+        Resultados resultadosWidget = new Resultados(this.numeroReynold, this.escoamento, this.perdaCargaTotal);
         
         resultadosWidget.setBounds(SizeHelper.LARGURA_ESPACO_TRABALHO / 30, 
                 SizeHelper.ALTURA_ESPACO_TRABALHO - 300, 
@@ -145,7 +146,8 @@ public class ParametrosSimulacaoController implements ApplicationController{
             this.perdaCarga = FormulaHelper.EQUACAO_DE_POISEULLE(this.length, this.velocidade, this.viscosidade, this.diametroInterno);
             
         } else{
-            
+          
+            this.coeficienteAtrito = Double.parseDouble(JOptionPane.showInputDialog(null, tr("insira_o_coeficiente_atrito"), tr("coeficiente_atrito"), JOptionPane.INFORMATION_MESSAGE));
             this.perdaCarga = FormulaHelper.EQUACAO_DE_DARCY_WEISBACH(this.length, this.diametroInterno, this.velocidade, this.coeficienteAtrito);
             
         }

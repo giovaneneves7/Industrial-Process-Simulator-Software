@@ -41,6 +41,7 @@ public class Dicionario {
         DICIONARIO.put("aviso", List.of("Aviso!"));
         DICIONARIO.put("buscar", List.of("Buscar"));
         DICIONARIO.put("carregar_simulacao", List.of("Carregar Simulação"));
+        DICIONARIO.put("coeficiente_atrito", List.of("Coeficiente de Atrito"));
         DICIONARIO.put("conectar_equipamento", List.of("Conectar Equipamento"));
         DICIONARIO.put("conexao", List.of("Conexão", "Conexões"));
         DICIONARIO.put("deseja_desconectar_equipamento_conectado", List.of("O Equipamento Selecionado Está Conectado. Deseja Desconectar?"));
@@ -58,6 +59,7 @@ public class Dicionario {
         DICIONARIO.put("erro_ao_salvar_area_trabalho", List.of("Ocorreu um erro ao salvar a área de trabalho!"));
         DICIONARIO.put("espelhar_equipamento", List.of("Espelhar Equipamento"));
         DICIONARIO.put("girar_equipamento", List.of("Girar Equipamento"));
+        DICIONARIO.put("insira_o_coeficiente_atrito", List.of("Insira o Coeficiente de Atrito"));
         DICIONARIO.put("insira_o_nome_da_simulacao", List.of("Insira o Nome da Simulação"));
         DICIONARIO.put("instrucoes", List.of("Instruções"));
         DICIONARIO.put("invalid_connection", List.of("Conexão Inválida"));
